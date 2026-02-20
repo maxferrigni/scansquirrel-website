@@ -3,22 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kept by Crows</title>
+<title>ScanSquirrel — Photo Scanning & Preservation</title>
+<meta name="description" content="Professional in-home photo scanning in Los Angeles. 600 DPI archival scans, AI enhancement, and direct delivery to your Google Photos or Apple Photos timeline.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;--feather:#2a2a2a;--ember:#c4501a;--glow:#e8652a;--ash:#6b6660;--nest:#d4c9b8;--branch:#8b7e6a}
+:root{--ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;--feather:#2a2a2a;--acorn:#8b5e3c;--acorn-bright:#a0693f;--ash:#6b6660;--nest:#d4c9b8;--branch:#8b7e6a;--bark:#5c4a3a}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--bone);-webkit-font-smoothing:antialiased;line-height:1.6}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:background .4s}
 nav.scrolled{background:rgba(240,235,227,.95);backdrop-filter:blur(12px)}
-.nav-logo{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.nav-logo img{width:32px;height:32px}
+.nav-logo span{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;color:var(--ink)}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:var(--ash);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}
-.nav-links a:hover{color:var(--ember)}
+.nav-links a:hover{color:var(--acorn)}
 section{padding:2rem 3rem}
 .wrap{max-width:720px;margin:0 auto}
-.section-label{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin-bottom:.2rem}
 h2{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;letter-spacing:-.02em;line-height:1.25;margin-bottom:.4rem}
 p{margin-bottom:.25rem;color:var(--feather);font-size:.95rem}
 ul{margin:.15rem 0 .4rem 1.25rem;color:var(--feather);font-size:.95rem}
@@ -27,8 +29,7 @@ ul li{margin-bottom:.1rem}
 /* Hero */
 .hero{background:var(--bone);display:flex;align-items:center;justify-content:center}
 .hero-content{max-width:900px;padding:5rem 2rem 1rem;text-align:center}
-.hero-video{width:90%;max-width:700px;height:auto;margin-bottom:1.5rem;border-radius:0;display:block;margin-left:auto;margin-right:auto}
-.hero-crow{width:90%;max-width:700px;height:auto;margin-bottom:1.5rem;border-radius:0}
+.hero-img{width:90%;max-width:700px;height:auto;margin-bottom:1.5rem;border-radius:0;display:block;margin-left:auto;margin-right:auto}
 .hero-statement{font-family:"Fraunces",serif;font-size:1.15rem;font-weight:300;color:var(--feather);line-height:1.85;max-width:780px;margin:0 auto;text-align:left;letter-spacing:.01em}
 
 /* Story Image */
@@ -45,16 +46,16 @@ ul li{margin-bottom:.1rem}
 .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
 .price-row:last-child{border-bottom:none}
 .price-row h3{font-size:.95rem;font-weight:600}
-.price-row .price{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--ember)}
+.price-row .price{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--acorn)}
 .price-row p{font-size:.85rem;color:var(--ash);margin:0}
-.contact-email{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--glow);text-decoration:none}
+.contact-email{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--acorn-bright);text-decoration:none}
 .contact-email:hover{color:var(--bone)}
 footer{background:var(--feather);padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center}
 footer p{font-size:.8rem;color:var(--ash);margin:0}
 footer .ft{font-family:'Fraunces',serif;font-style:italic;font-size:.85rem;color:var(--branch)}
 @media(max-width:768px){
 nav{padding:1rem 1.5rem}.nav-links{display:none}section{padding:1.5rem 1.5rem}
-.hero-video,.hero-crow{width:95%}
+.hero-img{width:95%}
 .price-row{flex-direction:column;gap:.25rem}
 footer{flex-direction:column;gap:.5rem;text-align:center}
 }
@@ -62,7 +63,10 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
 </head>
 <body>
 <nav id="nav">
-  <a href="#" class="nav-logo">Kept by Crows</a>
+  <a href="#" class="nav-logo">
+    <img src="Squirrel.png" alt="ScanSquirrel">
+    <span>ScanSquirrel</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#how">How It Works</a></li>
     <li><a href="#what">What We Do</a></li>
@@ -71,16 +75,13 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
   </ul>
 </nav>
 
-<!-- Hero with video (fallback to static image if video fails) -->
+<!-- Hero -->
 <section class="hero">
   <div class="hero-content">
-    <video class="hero-video" autoplay loop muted playsinline poster="Kept-By-Crows_Hero.png">
-      <source src="crow_hero_transition.mp4" type="video/mp4">
-      <img src="Kept-By-Crows_Hero.png" alt="Max the Crow" class="hero-crow">
-    </video>
+    <img src="Faded_Squirrel.png" alt="ScanSquirrel" class="hero-img">
     <div class="hero-statement">
       <p>Hi, I'm Max. I live in Glassell Park. In 2025 I watched the Eaton fire tear through Altadena and thought about all the family photos that burned with it — knowing most hadn't been digitized.</p>
-      <p>That's why I built Kept by Crows. I take the photos sitting in shoeboxes and turn them into archive-level scans and enhanced versions that go directly into your Google Photos / iPhotos timeline.</p>
+      <p>That's why I built ScanSquirrel. I take the photos sitting in shoeboxes and turn them into archive-level scans and enhanced versions that go directly into your Google Photos / Apple Photos timeline.</p>
     </div>
   </div>
 </section>
@@ -88,14 +89,14 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
 <section id="how" class="bg-warm">
   <div class="wrap">
     <h2>I come to you.</h2>
-    <p>I'm your neighbor and I come to your home. We go through your collection together and organize your photos into batches by the events and eras of your life. I take them back to my studio and scan and enhance everything within 48 hours. Your originals come back organized in a fireproof, water-resistant case. You get a link to your archive-level master scans for long-term preservation, and a ready-to-upload link that drops your enhanced photos directly into your Google Photos or iPhotos timeline.</p>
+    <p>I'm your neighbor and I come to your home. We go through your collection together and organize your photos into batches by the events and eras of your life. I take them back to my studio and scan and enhance everything within 48 hours. Your originals come back organized in a fireproof, water-resistant case. You get a link to your archive-level master scans for long-term preservation, and a ready-to-upload link that drops your enhanced photos directly into your Google Photos or Apple Photos timeline.</p>
   </div>
 </section>
 
 <!-- Story Image -->
 <section class="story-section bg-cream">
   <div class="story-wrap">
-    <img src="Story%20Image.png" alt="Your shoebox plus Kept by Crows equals organized photos and digital access">
+    <img src="Story%20Image.png" alt="Your shoebox plus ScanSquirrel equals organized photos and digital access">
   </div>
 </section>
 
@@ -104,7 +105,7 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
     <h2>I build your archive.</h2>
     <ul>
       <li>600 DPI archival scans of every photo, front & back</li>
-      <li>AI enhanced versions optimized for Google Photos / iPhotos</li>
+      <li>AI enhanced versions optimized for Google Photos / Apple Photos</li>
       <li>Embedded IPTC metadata: dates, event names, people</li>
       <li>Photos organized by timeline, not scan order</li>
     </ul>
@@ -121,8 +122,8 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
 
 <section class="bg-dark">
   <div class="wrap">
-    <h2>Crows collect. They remember. They recognize faces.</h2>
-    <p>Kept by Crows is built around those same principles: intelligence, organization, and long memory.</p>
+    <h2>Squirrels stash. They organize. They never forget where they put things.</h2>
+    <p>ScanSquirrel is built around those same principles: gathering what matters, organizing it carefully, and keeping it safe for the long haul.</p>
   </div>
 </section>
 
@@ -147,7 +148,7 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
 
 <section class="bg-warm">
   <div class="wrap" style="text-align:center">
-    <p style="font-size:1.05rem">Your memories, carefully kept.</p>
+    <p style="font-size:1.05rem">Your memories, safely stashed.</p>
   </div>
 </section>
 
@@ -155,13 +156,13 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
   <div class="wrap">
     <h2>Ready to get started?</h2>
     <p>Every consultation is free. No pressure.</p>
-    <a href="mailto:hello@keptbycrows.com" class="contact-email">hello@keptbycrows.com</a>
+    <a href="mailto:hello@scansquirrel.com" class="contact-email">hello@scansquirrel.com</a>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Kept by Crows &middot; Los Angeles, CA</p>
-  <span class="ft">Faces remembered. Photos organized. Built to last.</span>
+  <p>&copy; 2025 ScanSquirrel &middot; Los Angeles, CA</p>
+  <span class="ft">Gathered. Organized. Preserved.</span>
 </footer>
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
