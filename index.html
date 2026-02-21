@@ -78,8 +78,8 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
 <!-- Hero -->
 <section class="hero">
   <div class="hero-content">
-    <video class="hero-img" autoplay loop muted playsinline poster="Faded_Squirrel.png">
-      <source src="squirrel_fade.mp4" type="video/mp4">
+    <video id="hero-vid" class="hero-img" autoplay muted playsinline poster="Faded_Squirrel.png">
+      <source src="squirrel_transition2.mp4" type="video/mp4">
       <img src="Faded_Squirrel.png" alt="ScanSquirrel" class="hero-img">
     </video>
     <div class="hero-statement">
@@ -169,6 +169,8 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
 </footer>
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
+var v=document.getElementById('hero-vid'),plays=0;
+v.addEventListener('ended',function(){if(plays<1){plays++;v.play()}});
 </script>
 </body>
 </html>
