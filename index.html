@@ -19,6 +19,7 @@ nav.scrolled{background:rgba(240,235,227,.95);backdrop-filter:blur(12px)}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{color:var(--ash);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}
 .nav-links a:hover{color:var(--acorn)}
+section[id]{scroll-margin-top:5rem}
 section{padding:2rem 3rem}
 .wrap{max-width:720px;margin:0 auto}
 h2{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;letter-spacing:-.02em;line-height:1.25;margin-bottom:.6rem}
@@ -144,7 +145,7 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
       <tr>
         <td style="vertical-align:middle" rowspan="2"><img src="Shoebox%20Disarray_f0ebe3.png" alt="Messy shoebox of photos" style="max-height:400px"></td>
         <td class="symbol" rowspan="2">+</td>
-        <td><img src="Max.png" alt="Max from Scan Squirrel" style="max-height:140px"></td>
+        <td><img src="Max.png" alt="Max from Scan Squirrel" style="max-height:245px"></td>
         <td class="symbol" rowspan="2">=</td>
         <td><img src="Happy_Customer.png" alt="Happy customer with photos on phone"></td>
       </tr>
@@ -153,49 +154,6 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
         <td><img src="Organized%20Photos_f0ebe3.png" alt="Photos organized in fireproof case"></td>
       </tr>
     </table>
-  </div>
-</section>
-
-<!-- What You Get -->
-<section id="what" class="bg-warm">
-  <div class="wrap">
-    <h2>From Messy Shoebox to&hellip;</h2>
-    <ul>
-      <li><strong>600 DPI archival scans</strong> — front &amp; back, every photo</li>
-      <li><strong>AI-enhanced versions</strong> — fading reversed, faces sharpened, colors corrected</li>
-      <li><strong>Dates &amp; names embedded</strong> — so photos land in the right spot on your timeline</li>
-      <li><strong>Delivered to your phone</strong> — one link drops everything into Google Photos or Apple Photos</li>
-      <li><strong>Originals returned in a fireproof case</strong> — organized, labeled, protected</li>
-      <li><strong>48-hour turnaround</strong> — your photos never leave the neighborhood</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Fire Quote + Free Advice -->
-<section style="background:#c44a1a;color:#1a1a1a;padding:2rem 3rem">
-  <div class="wrap">
-    <p style="color:#1a1a1a;font-size:1.05rem;line-height:1.8">Watching the Eaton fires consume Altadena in 2025 left a permanent mark on me. What really stuck was knowing hundreds of thousands of irreplaceable photos were gone. If you've been thinking about preserving yours — don't wait. My service is personal, nearby, and much cheaper than the big scanning companies. Talking to me is always free. Make this the week you do something about it.</p>
-  </div>
-</section>
-
-<!-- Service Areas -->
-<section class="bg-cream">
-  <div class="wrap">
-    <h2>Where I Work</h2>
-    <p>I'm based in Eagle Rock and serve neighborhoods across Northeast LA, Pasadena, and the surrounding area. If you're nearby and have photos to preserve, I can come to you.</p>
-    <div class="area-list">
-      <span class="area-pill">Eagle Rock</span>
-      <span class="area-pill">Highland Park</span>
-      <span class="area-pill">Glassell Park</span>
-      <span class="area-pill">Pasadena</span>
-      <span class="area-pill">Altadena</span>
-      <span class="area-pill">Silver Lake</span>
-      <span class="area-pill">Los Feliz</span>
-      <span class="area-pill">Glendale</span>
-      <span class="area-pill">Atwater Village</span>
-      <span class="area-pill">Mt. Washington</span>
-    </div>
-    <p style="margin-top:.6rem;color:var(--ash);font-size:.9rem">Somewhere else in LA? Reach out anyway — I'm flexible.</p>
   </div>
 </section>
 
@@ -219,10 +177,32 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
   </div>
 </section>
 
+<!-- Fire Quote + Free Advice -->
+<section style="background:#c44a1a;color:#1a1a1a;padding:2rem 3rem">
+  <div class="wrap">
+    <p style="color:#1a1a1a;font-size:1.05rem;line-height:1.8">Watching the Eaton fires consume Altadena in 2025 left a permanent mark on me. What really stuck was knowing hundreds of thousands of irreplaceable photos were gone. If you've been thinking about preserving yours — don't wait. My service is personal, nearby, and much cheaper than the big scanning companies. Talking to me is always free. Make this the week you do something about it.</p>
+  </div>
+</section>
+
+<!-- What You Get -->
+<section id="what" class="bg-warm">
+  <div class="wrap">
+    <h2>From Messy Shoebox to&hellip;</h2>
+    <ul>
+      <li><strong>600 DPI archival scans</strong> — front &amp; back, every photo</li>
+      <li><strong>AI-enhanced versions</strong> — fading reversed, faces sharpened, colors corrected</li>
+      <li><strong>Dates &amp; names embedded</strong> — so photos land in the right spot on your timeline</li>
+      <li><strong>Delivered to your phone</strong> — one link drops everything into Google Photos or Apple Photos</li>
+      <li><strong>Originals returned in a fireproof case</strong> — organized, labeled, protected</li>
+      <li><strong>48-hour turnaround</strong> — your photos never leave the neighborhood</li>
+    </ul>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="bg-bone">
   <div class="wrap" style="text-align:center">
-    <p style="font-size:1.05rem">Your memories, safely stashed.  Like a squirrel stashes and organizes things.  Get it?</p>
+    <p style="font-size:1.05rem">Your memories, safely stashed.</p>
   </div>
 </section>
 
@@ -232,6 +212,27 @@ footer{flex-direction:column;gap:.5rem;text-align:center}
     <h2>Ready to get started?</h2>
     <p>Every consultation is free. No pressure.</p>
     <a href="mailto:hello@scansquirrel.com" class="contact-email">hello@scansquirrel.com</a>
+  </div>
+</section>
+
+<!-- Service Areas -->
+<section class="bg-warm">
+  <div class="wrap">
+    <h2>Where I Work</h2>
+    <p>I'm based in Eagle Rock and serve neighborhoods across Northeast LA, Pasadena, and the surrounding area. If you're nearby and have photos to preserve, I can come to you.</p>
+    <div class="area-list">
+      <span class="area-pill">Eagle Rock</span>
+      <span class="area-pill">Highland Park</span>
+      <span class="area-pill">Glassell Park</span>
+      <span class="area-pill">Pasadena</span>
+      <span class="area-pill">Altadena</span>
+      <span class="area-pill">Silver Lake</span>
+      <span class="area-pill">Los Feliz</span>
+      <span class="area-pill">Glendale</span>
+      <span class="area-pill">Atwater Village</span>
+      <span class="area-pill">Mt. Washington</span>
+    </div>
+    <p style="margin-top:.6rem;color:var(--ash);font-size:.9rem">Somewhere else in LA? Reach out anyway — I'm flexible.</p>
   </div>
 </section>
 
