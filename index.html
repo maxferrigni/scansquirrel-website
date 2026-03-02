@@ -382,20 +382,19 @@ const youText = youSlider.querySelector('.text');
 
 function showMe() {
   meSlider.classList.remove('visible', 'exiting');
+  void meSlider.offsetWidth; // Force reflow to reset position
+  
+  meText.textContent = meLines[meIndex];
+  
+  requestAnimationFrame(() => {
+    meSlider.classList.add('visible');
+  });
   
   setTimeout(() => {
-    meText.textContent = meLines[meIndex];
-    
-    requestAnimationFrame(() => {
-      meSlider.classList.add('visible');
-    });
-    
-    setTimeout(() => {
-      meSlider.classList.remove('visible');
-      meSlider.classList.add('exiting');
-      meIndex = (meIndex + 1) % meLines.length;
-    }, 4000);
-  }, 50);
+    meSlider.classList.remove('visible');
+    meSlider.classList.add('exiting');
+    meIndex = (meIndex + 1) % meLines.length;
+  }, 4000);
 }
 
 function showYou() {
@@ -403,24 +402,23 @@ function showYou() {
   youIndex = (youIndex + 1) % youLines.length;
   
   youSlider.classList.remove('visible', 'exiting');
+  void youSlider.offsetWidth; // Force reflow to reset position
   
   if (line === "") {
     youText.textContent = "";
     return;
   }
   
+  youText.textContent = line;
+  
+  requestAnimationFrame(() => {
+    youSlider.classList.add('visible');
+  });
+  
   setTimeout(() => {
-    youText.textContent = line;
-    
-    requestAnimationFrame(() => {
-      youSlider.classList.add('visible');
-    });
-    
-    setTimeout(() => {
-      youSlider.classList.remove('visible');
-      youSlider.classList.add('exiting');
-    }, 7000);
-  }, 50);
+    youSlider.classList.remove('visible');
+    youSlider.classList.add('exiting');
+  }, 7000);
 }
 
 showMe();
