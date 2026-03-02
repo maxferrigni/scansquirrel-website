@@ -41,17 +41,12 @@ ul.punchy li strong{color:var(--ink)}
 .hero-cta a{color:var(--acorn);text-decoration:none;font-weight:500}
 .hero-cta a:hover{text-decoration:underline}
 
-/* Story Image */
-.story-section{padding:2.5rem 2rem}
-.story-wrap{max-width:1100px;margin:0 auto;text-align:center}
-.story-table{width:100%;border-collapse:collapse;border:none}
-.story-table td{vertical-align:middle;text-align:center;padding:.25rem}
-.story-table img{max-width:100%;height:auto;max-height:300px;object-fit:contain}
-.story-table .symbol{font-family:'Fraunces',serif;font-size:2rem;font-weight:700;color:var(--ink);padding:0 .2rem;vertical-align:middle}
-
-/* Two-column about */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:.5rem}
-.about-card{background:var(--bone);border-radius:8px;padding:1.25rem 1.5rem}
+/* Step flow */
+.steps-flow{display:flex;gap:1.5rem;overflow-x:auto;padding-bottom:1rem;-webkit-overflow-scrolling:touch}
+.step-card{flex:0 0 280px;background:var(--warm);border-radius:10px;padding:1.25rem;text-align:center}
+.step-img{width:100%;height:200px;object-fit:contain;margin-bottom:.75rem}
+.step-card h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:.4rem}
+.step-card p{font-size:.88rem;text-align:left;line-height:1.55}
 
 .bg-warm{background:var(--warm)}
 .bg-bone{background:var(--bone)}
@@ -78,7 +73,6 @@ footer .ft{font-family:'Fraunces',serif;font-style:italic;font-size:.85rem;color
 nav{padding:1rem 1.5rem}.nav-links{display:none}section{padding:1.5rem 1.5rem}
 .hero{padding:5rem 1.5rem 2rem}
 .hero-headline{font-size:2.2rem}
-.about-grid{grid-template-columns:1fr}
 .price-row{flex-direction:column;gap:.25rem}
 footer{flex-direction:column;gap:.5rem;text-align:center}
 }
@@ -137,51 +131,47 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
 <section class="bg-warm">
   <div class="wrap">
     <h2>Hey, I'm Max.</h2>
-    <p>I'm based in Eagle Rock, Los Angeles. I'm deeply passionate about photos, preservation, and the new technologies that are making it easier than ever to bring old prints back to life.</p>
+    <p>I'm based in Eagle Rock, Los Angeles. I'm passionate about photos and my side hustle is preserving, protecting, and bringing them back to life.</p>
   </div>
 </section>
 
-<!-- How It Works -->
+<!-- How It Works — 5-step flow -->
 <section id="how" class="bg-bone">
-  <div class="wrap">
-    <h2>How It Works</h2>
-    <div class="about-grid">
-      <div class="about-card" style="background:var(--warm)">
-        <h3>1. We Meet Up</h3>
-        <p>We go through your collection together and organize your photos into batches by the events and eras of your life — holidays, vacations, school years, whatever matters to you. Then I take them back to my studio.</p>
-      </div>
-      <div class="about-card" style="background:var(--warm)">
-        <h3>2. I Scan Everything</h3>
-        <p>I take your photos back to my studio and scan every single one at 600 DPI — front and back. This is archive-quality, the same standard used by museums and libraries for long-term preservation.</p>
-      </div>
-      <div class="about-card" style="background:var(--warm)">
-        <h3>3. AI Enhancement</h3>
-        <p>Each photo gets an AI-enhanced version: colors corrected, faces sharpened, fading reversed. The original scan is always preserved untouched — the enhanced version is a bonus, not a replacement.</p>
-      </div>
-      <div class="about-card" style="background:var(--warm)">
-        <h3>4. You Get It All Back</h3>
-        <p>Your originals come back organized in a fireproof, water-resistant case. You get a simple link that drops your enhanced photos directly into Google Photos or Apple Photos — dated and organized, right in your timeline.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <div style="max-width:1100px;margin:0 auto;padding:0 2rem">
+    <h2 style="text-align:center;margin-bottom:1.5rem">How It Works</h2>
+    <div class="steps-flow">
 
-<!-- Story Table -->
-<section class="story-section bg-bone" style="padding-top:0">
-  <div class="story-wrap">
-    <table class="story-table">
-      <tr>
-        <td style="vertical-align:middle" rowspan="2"><img src="Shoebox%20Disarray_f0ebe3.png" alt="Messy shoebox of photos" style="max-height:400px"></td>
-        <td class="symbol" rowspan="2">+</td>
-        <td><img src="Max.png" alt="Max from Scan Squirrel" style="max-height:245px"></td>
-        <td class="symbol" rowspan="2">=</td>
-        <td><img src="Happy_Customer.png" alt="Happy customer with photos on phone"></td>
-      </tr>
-      <tr>
-        <td><img src="AI%20Scanning_f0ebe3.png" alt="AI scanning and enhancement"></td>
-        <td><img src="Organized%20Photos_f0ebe3.png" alt="Photos organized in fireproof case"></td>
-      </tr>
-    </table>
+      <div class="step-card">
+        <h3>1. Tell Me About Your Shoebox</h3>
+        <p>Maybe it's a mess. Maybe it's just a handful of photos. Maybe it's massive, or all in picture frames. No matter what you have, it deserves to be protected and preserved. We start by talking about what you've got and what matters most to you. No rush, no pressure — just a conversation.</p>
+        <img src="Shoebox%20Disarray_f0ebe3.png" alt="Messy shoebox of photos" class="step-img">
+      </div>
+
+      <div class="step-card">
+        <h3>2. I Scan Everything</h3>
+        <p>Let's be honest — scanning your own photos sucks. It takes forever without the right equipment, and the results never look great on your phone. I use a professional high-speed scanner at 600 DPI, front and back. Archive-quality, the same standard used by museums and libraries.</p>
+        <img src="scan_office.png" alt="Professional scanning studio" class="step-img">
+      </div>
+
+      <div class="step-card">
+        <h3>3. AI Enhancement</h3>
+        <p>Every photo gets an AI-enhanced version: colors corrected, faces sharpened, fading reversed. The original scan is always preserved untouched — the enhanced version is a bonus, not a replacement. The technology gets better every month.</p>
+        <img src="AI%20Scanning_f0ebe3.png" alt="AI enhancement" class="step-img">
+      </div>
+
+      <div class="step-card">
+        <h3>4. Organized &amp; Safe</h3>
+        <p>One of the biggest frustrations with old photos is never being able to find them. Your collection comes back cataloged — every photo dated, named, and organized by event. Physical originals returned in a fireproof, water-resistant case. No more digging through shoeboxes.</p>
+        <img src="Organized%20Photos_f0ebe3.png" alt="Organized photo catalog" class="step-img">
+      </div>
+
+      <div class="step-card">
+        <h3>5. Enjoyed Forever</h3>
+        <p>Your photos land right in your Google Photos or Apple Photos timeline — dated and in order. Automatic face tagging, the ability to create collages, videos, and more. And if you need help with any of that, Scan Squirrel can help with that too.</p>
+        <img src="Happy_Customer.png" alt="Person enjoying photos on phone" class="step-img">
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -190,7 +180,7 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
   <div class="wrap">
     <h2>Simple Pricing</h2>
     <div class="price-row">
-      <div><h3>Per photo</h3></div>
+      <div><h3>Per Photo</h3></div>
       <div class="price">$1</div>
     </div>
     <div class="price-row">
@@ -198,10 +188,9 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
       <div class="price">~$200</div>
     </div>
     <div class="price-row">
-      <div><h3>Fireproof storage case</h3><p>Included as an option</p></div>
+      <div><h3>Fireproof Case (optional)</h3></div>
       <div class="price">$50</div>
     </div>
-    <p style="margin-top:.5rem;color:var(--ash)">No surprise add-ons. No complicated tiers. Just photos scanned.</p>
   </div>
 </section>
 
