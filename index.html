@@ -26,6 +26,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0.6rem 2rem 0.5rem;d
 .nav-links{display:flex;gap:2rem;list-style:none;padding-top:0.5rem}
 .nav-links a{color:var(--ash);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}
 .nav-links a:hover{color:var(--acorn)}
+.nav-email{color:var(--ash);text-decoration:none;font-size:.9rem;font-weight:500;padding-top:0.5rem}
+.nav-email:hover{color:var(--acorn)}
 
 section[id]{scroll-margin-top:5rem}
 section{padding:2rem 3rem}
@@ -75,7 +77,7 @@ footer p{font-size:.8rem;color:var(--ash);margin:0}
 footer .ft{font-family:'Fraunces',serif;font-style:italic;font-size:.85rem;color:var(--branch)}
 
 /* About section with Max image */
-.about-container{display:flex;align-items:center;justify-content:center;gap:2.5rem;max-width:800px;margin:0 auto}
+.about-container{display:flex;align-items:center;justify-content:center;gap:2.5rem;max-width:800px;margin:0 auto;padding:1.5rem 0}
 .about-image{flex-shrink:0}
 .about-image img{height:192px;width:auto;border-radius:8px}
 .about-text{max-width:480px}
@@ -138,11 +140,7 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
       <span class="label">Me:</span><span class="text">People should scan their old photos.</span>
     </div>
   </div>
-  <ul class="nav-links">
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#what">No More Shoebox</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-  </ul>
+  <a href="mailto:hello@scansquirrel.com" class="nav-email">hello@scansquirrel.com</a>
 </nav>
 
 <!-- About Me -->
@@ -279,7 +277,7 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
   <div class="wrap">
     <h2>Ready to get started?</h2>
     <p>Every consultation is free. No pressure.</p>
-    <a href="mailto:hello@scansquirrel.com" class="contact-email">hello@scansquirrel.com</a>
+    <a href="/cdn-cgi/l/email-protection#a2cac7cececde2d1c1c3ccd1d3d7cbd0d0c7ce8cc1cdcf" class="contact-email"><span class="__cf_email__" data-cfemail="721a171e1e1d320111131c0103071b0000171e5c111d1f">[email&#160;protected]</span></a>
   </div>
 </section>
 
@@ -309,7 +307,7 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
   <span class="ft">Gathered. Organized. Preserved.</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Shuffle function
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -406,7 +404,9 @@ setTimeout(() => {
 // After opener shows, start cycling
 setTimeout(updateSubtitle, 3000); // Show "Why?" after 3s
 setTimeout(updateSubtitle, 5500); // Show first Because after 5.5s
-setInterval(updateSubtitle, 4500); // Then cycle every 4.5s
+setTimeout(() => {
+  setInterval(updateSubtitle, 4500);
+}, 10000); // Start interval after first Because has shown
 </script>
 
 <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/UYPYKi/klaviyo.js?company_id=UYPYKi'></script>
