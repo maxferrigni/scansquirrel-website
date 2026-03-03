@@ -3,21 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scan Squirrel — Photo Scanning & Preservation</title>
-<meta name="description" content="Professional in-home photo scanning in Los Angeles. 600 DPI archival scans, AI enhancement, and direct delivery to your Google Photos or Apple Photos timeline.">
+<title>Scan Squirrel - Photo Scanning and Preservation</title>
+<meta name="description" content="Professional in-home photo scanning in Los Angeles. 600 DPI archival scans, enhancement, and direct delivery to your Google Photos or Apple Photos timeline.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;--feather:#2a2a2a;--acorn:#8b5e3c;--acorn-bright:#a0693f;--ash:#6b6660;--nest:#d4c9b8;--branch:#8b7e6a;--bark:#5c4a3a;--teal:#2c6e6a}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--bone);-webkit-font-smoothing:antialiased;line-height:1.6}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;transition:background .4s}
-nav.scrolled{background:rgba(240,235,227,.95);backdrop-filter:blur(12px)}
-.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+
+/* Nav with subtitle */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0.6rem 2rem 0.5rem;display:flex;justify-content:space-between;align-items:flex-start;background:rgba(240,235,227,.97);backdrop-filter:blur(12px)}
+.nav-left{display:flex;flex-direction:column}
+.nav-logo{text-decoration:none}
 .nav-logo span{font-family:'DM Sans',sans-serif;font-size:1.8rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
-.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-subtitle{font-size:0.9rem;font-weight:500;min-height:1.3rem;opacity:0;transition:opacity 0.4s ease;margin-top:0.1rem}
+.nav-subtitle.visible{opacity:1}
+.nav-subtitle .label{font-weight:700;color:var(--teal);margin-right:0.4rem}
+.nav-subtitle .text{color:var(--ink)}
+.nav-subtitle.you-line .label{color:var(--teal)}
+.nav-subtitle.you-line .text{color:var(--acorn)}
+.nav-links{display:flex;gap:2rem;list-style:none;padding-top:0.5rem}
 .nav-links a{color:var(--ash);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}
 .nav-links a:hover{color:var(--acorn)}
+
 section[id]{scroll-margin-top:5rem}
 section{padding:2rem 3rem}
 .wrap{max-width:720px;margin:0 auto}
@@ -27,18 +36,7 @@ p{margin-bottom:.5rem;color:var(--feather);font-size:.95rem}
 ul{margin:.15rem 0 .6rem 1.25rem;color:var(--feather);font-size:.95rem}
 ul li{margin-bottom:.25rem}
 
-/* Hero with slider */
-.hero{background:var(--bone);padding:5.5rem 2rem 2rem;max-width:900px;margin:0 auto}
-.dialogue-line{display:flex;align-items:baseline;font-size:1.1rem;font-weight:500;margin-bottom:0.3rem}
-.dialogue-line.opener{font-size:1.8rem;font-weight:600}
-.dialogue-line .label{min-width:4rem;font-weight:700;color:var(--teal);flex-shrink:0;text-align:right;margin-right:0.75rem}
-.dialogue-line .text{color:var(--ink)}
-.dialogue-line.you .text{color:var(--acorn)}
-.slider-section{margin-top:1rem;min-height:3rem}
-.dialogue-line.slider{opacity:0;transition:opacity 0.4s ease}
-.dialogue-line.slider.visible{opacity:1}
-
-/* Step flow — table layout (4 steps) */
+/* Step flow - table layout (4 steps) */
 .steps-table{width:100%;max-width:1000px;margin:0 auto;border-collapse:collapse;table-layout:fixed}
 .steps-table td{vertical-align:top;padding:.4rem .8rem;width:25%}
 .steps-table .step-num{font-family:'Fraunces',serif;font-size:.85rem;font-weight:600;color:var(--acorn);margin-bottom:.15rem}
@@ -82,17 +80,16 @@ footer .ft{font-family:'Fraunces',serif;font-style:italic;font-size:.85rem;color
 .about-image img{height:192px;width:auto;border-radius:8px}
 .about-text{max-width:480px}
 
+/* First section needs more top padding for fixed nav */
+.first-section{padding-top:5rem}
+
 @media(max-width:768px){
-nav{padding:1rem 1rem}
-.nav-logo span{font-size:1.5rem}
+nav{padding:0.5rem 1rem 0.4rem}
+.nav-logo span{font-size:1.4rem}
+.nav-subtitle{font-size:0.75rem;min-height:1.1rem}
 .nav-links{display:none}
 section{padding:1.5rem 1.5rem}
-.hero{padding:5rem 1rem 1.5rem}
-.dialogue-line.opener{font-size:1.4rem}
-.dialogue-line.opener .label{min-width:3rem;margin-right:0.6rem}
-.dialogue-line{font-size:1rem}
-.dialogue-line .label{min-width:3rem;margin-right:0.6rem;text-align:right}
-.slider-section{min-height:8rem}
+.first-section{padding-top:4.5rem}
 .steps-table{display:none}
 .steps-mobile{display:block}
 .price-row{flex-direction:column;gap:.25rem}
@@ -133,9 +130,14 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
 </head>
 <body>
 <nav id="nav">
-  <a href="#" class="nav-logo">
-    <span>Scan Your Old Photos</span>
-  </a>
+  <div class="nav-left">
+    <a href="#" class="nav-logo">
+      <span>Scan Your Old Photos</span>
+    </a>
+    <div id="nav-subtitle" class="nav-subtitle">
+      <span class="label">Me:</span><span class="text">People should scan their old photos.</span>
+    </div>
+  </div>
   <ul class="nav-links">
     <li><a href="#how">How It Works</a></li>
     <li><a href="#what">No More Shoebox</a></li>
@@ -143,30 +145,20 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
   </ul>
 </nav>
 
-<!-- Hero with slider -->
-<section class="hero">
-  <div class="dialogue-line opener"><span class="label">Me:</span><span class="text">People should scan their old photos.</span></div>
-  <div class="dialogue-line opener you"><span class="label">You:</span><span class="text">Why?</span></div>
-  
-  <div class="slider-section">
-    <div id="me-slider" class="dialogue-line slider"><span class="label">Me:</span><span class="text"></span></div>
-  </div>
-</section>
-
 <!-- About Me -->
-<section class="bg-warm">
+<section class="bg-warm first-section">
   <div class="about-container">
     <div class="about-image">
       <img src="Max.png" alt="Max">
     </div>
     <div class="about-text">
-      <h2>I'm Max, Your LA Neighbor</h2>
-      <p>I'm based in Eagle Rock, Los Angeles. Preserving old photos is my passion and my side hustle — I protect and bring your memories back to life.</p>
+      <h2>I am Max, Your LA Neighbor</h2>
+      <p>I am based in Eagle Rock, Los Angeles. Preserving old photos is my passion and my side hustle. I protect and bring your memories back to life.</p>
     </div>
   </div>
 </section>
 
-<!-- How It Works — 4-step table -->
+<!-- How It Works - 4-step table -->
 <section id="how" class="bg-bone">
   <div style="max-width:1000px;margin:0 auto;padding:0 1rem">
     <h2 style="text-align:center;margin-bottom:1.5rem">How It Works</h2>
@@ -177,22 +169,22 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
         <td>
           <div class="step-num">01</div>
           <div class="step-title">We Talk</div>
-          <p>You tell me about your photos — what you have, where they are, what shape they're in. Maybe it's a shoebox, maybe it's a bin in the garage, maybe it's a few frames on the wall. Every collection is different. We start with a simple conversation.</p>
+          <p>You tell me about your photos - what you have, where they are, what shape they are in. Maybe it is a shoebox, maybe it is a bin in the garage, maybe it is a few frames on the wall. Every collection is different. We start with a simple conversation.</p>
         </td>
         <td>
           <div class="step-num">02</div>
           <div class="step-title">Scanning</div>
-          <p>I use a professional high-speed scanner at 600 DPI, front and back — archival standard. The original scan is always preserved untouched. As an option for your iPhotos or Google Photos library, every photo can also be cleaned up, tagged, and dated so it lands in the right spot on your timeline.</p>
+          <p>I use a professional high-speed scanner at 600 DPI, front and back - archival standard. The original scan is always preserved untouched. As an option for your iPhotos or Google Photos library, every photo can also be cleaned up, tagged, and dated so it lands in the right spot on your timeline.</p>
         </td>
         <td>
           <div class="step-num">03</div>
-          <div class="step-title">Organized &amp; Safe</div>
-          <p>The biggest frustration with old photos is never finding them. Your collection comes back cataloged — dated, named, organized by event. Originals in a fireproof case. No more digging through shoeboxes.</p>
+          <div class="step-title">Organized and Safe</div>
+          <p>The biggest frustration with old photos is never finding them. Your collection comes back cataloged - dated, named, organized by event. Originals in a fireproof case. No more digging through shoeboxes.</p>
         </td>
         <td>
           <div class="step-num">04</div>
           <div class="step-title">Enjoyed Forever</div>
-          <p>Your photos land in your Google Photos or Apple Photos timeline — dated and in order. Face tagging, collages, videos, and more. Need help with any of that? Scan Squirrel can help with that too.</p>
+          <p>Your photos land in your Google Photos or Apple Photos timeline - dated and in order. Face tagging, collages, videos, and more. Need help with any of that? Scan Squirrel can help with that too.</p>
         </td>
       </tr>
       <tr class="img-row">
@@ -208,25 +200,25 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
       <div class="m-step">
         <div class="step-num">01</div>
         <div class="step-title">We Talk</div>
-        <p>You tell me about your photos — what you have, where they are, what shape they're in. Maybe it's a shoebox, maybe it's a bin in the garage, maybe it's a few frames on the wall. Every collection is different. We start with a simple conversation.</p>
+        <p>You tell me about your photos - what you have, where they are, what shape they are in. Maybe it is a shoebox, maybe it is a bin in the garage, maybe it is a few frames on the wall. Every collection is different. We start with a simple conversation.</p>
         <img src="Shoebox%20Disarray_f0ebe3.png" alt="Messy shoebox of photos">
       </div>
       <div class="m-step">
         <div class="step-num">02</div>
         <div class="step-title">Scanning</div>
-        <p>I use a professional high-speed scanner at 600 DPI, front and back — archival standard. The original scan is always preserved untouched. As an option for your iPhotos or Google Photos library, every photo can also be cleaned up, tagged, and dated so it lands in the right spot on your timeline.</p>
+        <p>I use a professional high-speed scanner at 600 DPI, front and back - archival standard. The original scan is always preserved untouched. As an option for your iPhotos or Google Photos library, every photo can also be cleaned up, tagged, and dated so it lands in the right spot on your timeline.</p>
         <img src="scan_office3.png" alt="Scanning studio">
       </div>
       <div class="m-step">
         <div class="step-num">03</div>
-        <div class="step-title">Organized &amp; Safe</div>
-        <p>The biggest frustration with old photos is never finding them. Your collection comes back cataloged — dated, named, organized by event. Originals in a fireproof case. No more digging through shoeboxes.</p>
+        <div class="step-title">Organized and Safe</div>
+        <p>The biggest frustration with old photos is never finding them. Your collection comes back cataloged - dated, named, organized by event. Originals in a fireproof case. No more digging through shoeboxes.</p>
         <img src="Organized%20Photos_f0ebe3.png" alt="Organized photos">
       </div>
       <div class="m-step">
         <div class="step-num">04</div>
         <div class="step-title">Enjoyed Forever</div>
-        <p>Your photos land in your Google Photos or Apple Photos timeline — dated and in order. Face tagging, collages, videos, and more. Need help with any of that? Scan Squirrel can help with that too.</p>
+        <p>Your photos land in your Google Photos or Apple Photos timeline - dated and in order. Face tagging, collages, videos, and more. Need help with any of that? Scan Squirrel can help with that too.</p>
         <img src="Happy_Customer.png" alt="Enjoying photos on phone">
       </div>
     </div>
@@ -256,21 +248,21 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
 <!-- Fire Quote + Free Advice -->
 <section style="background:#c44a1a;color:#1a1a1a;padding:2rem 3rem">
   <div class="wrap">
-    <p style="color:#1a1a1a;font-size:1.05rem;line-height:1.8">Watching the Eaton fires consume Altadena in 2025 left a permanent mark on me. What really stuck was knowing hundreds of thousands of irreplaceable photos were gone. If you've been thinking about preserving yours — don't wait. My service is personal, nearby, and much cheaper than the big scanning companies. Talking to me is always free. Make this the week you do something about it.</p>
+    <p style="color:#1a1a1a;font-size:1.05rem;line-height:1.8">Watching the Eaton fires consume Altadena in 2025 left a permanent mark on me. What really stuck was knowing hundreds of thousands of irreplaceable photos were gone. If you have been thinking about preserving yours - do not wait. My service is personal, nearby, and much cheaper than the big scanning companies. Talking to me is always free. Make this the week you do something about it.</p>
   </div>
 </section>
 
 <!-- What You Get -->
 <section id="what" class="bg-bone">
   <div class="wrap">
-    <h2>From Messy Shoebox to&hellip;</h2>
+    <h2>From Messy Shoebox to...</h2>
     <ul>
-      <li><strong>600 DPI archival scans</strong> — front &amp; back, every photo</li>
-      <li><strong>Enhanced versions</strong> — fading reversed, faces sharpened, colors corrected</li>
-      <li><strong>Dates &amp; names embedded</strong> — so photos land in the right spot on your timeline</li>
-      <li><strong>Delivered to your phone</strong> — one link drops everything into Google Photos or Apple Photos</li>
-      <li><strong>Originals returned in a fireproof case</strong> — organized, labeled, protected</li>
-      <li><strong>48-hour turnaround</strong> — your photos never leave the neighborhood</li>
+      <li><strong>600 DPI archival scans</strong> - front and back, every photo</li>
+      <li><strong>Enhanced versions</strong> - fading reversed, faces sharpened, colors corrected</li>
+      <li><strong>Dates and names embedded</strong> - so photos land in the right spot on your timeline</li>
+      <li><strong>Delivered to your phone</strong> - one link drops everything into Google Photos or Apple Photos</li>
+      <li><strong>Originals returned in a fireproof case</strong> - organized, labeled, protected</li>
+      <li><strong>48-hour turnaround</strong> - your photos never leave the neighborhood</li>
     </ul>
   </div>
 </section>
@@ -287,7 +279,7 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
   <div class="wrap">
     <h2>Ready to get started?</h2>
     <p>Every consultation is free. No pressure.</p>
-    <a href="/cdn-cgi/l/email-protection#fa929f969695ba89999b94898b8f9388889f96d4999597" class="contact-email"><span class="__cf_email__" data-cfemail="c0a8a5acacaf80b3a3a1aeb3b1b5a9b2b2a5aceea3afad">[email&#160;protected]</span></a>
+    <a href="mailto:hello@scansquirrel.com" class="contact-email">hello@scansquirrel.com</a>
   </div>
 </section>
 
@@ -295,7 +287,7 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
 <section class="bg-bone">
   <div class="wrap">
     <h2>Where I Work</h2>
-    <p>I'm based in Eagle Rock and serve neighborhoods across Northeast LA, Pasadena, and the surrounding area. If you're nearby and have photos to preserve, I can come to you.</p>
+    <p>I am based in Eagle Rock and serve neighborhoods across Northeast LA, Pasadena, and the surrounding area. If you are nearby and have photos to preserve, I can come to you.</p>
     <div class="area-list">
       <span class="area-pill">Eagle Rock</span>
       <span class="area-pill">Highland Park</span>
@@ -308,18 +300,16 @@ src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"
       <span class="area-pill">Atwater Village</span>
       <span class="area-pill">Mt. Washington</span>
     </div>
-    <p style="margin-top:.6rem;color:var(--ash);font-size:.9rem">Somewhere else in LA? Reach out anyway — I'm flexible.</p>
+    <p style="margin-top:.6rem;color:var(--ash);font-size:.9rem">Somewhere else in LA? Reach out anyway - I am flexible.</p>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Scan Squirrel &middot; Los Angeles, CA</p>
+  <p>2025 Scan Squirrel - Los Angeles, CA</p>
   <span class="ft">Gathered. Organized. Preserved.</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
-
+<script>
 // Shuffle function
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -382,25 +372,43 @@ const meLines = shuffle([
   "Because AI can sharpen a blurry face from 1974."
 ]);
 
+const navSubtitle = document.getElementById('nav-subtitle');
+let phase = 0; // 0=opener, 1=why, 2+=becauses
 let meIndex = 0;
 
-const meSlider = document.getElementById('me-slider');
-const meText = meSlider.querySelector('.text');
-
-function showMe() {
-  meSlider.classList.remove('visible');
+function updateSubtitle() {
+  navSubtitle.classList.remove('visible');
   
   setTimeout(() => {
-    meText.textContent = meLines[meIndex];
-    meSlider.classList.add('visible');
-    meIndex = (meIndex + 1) % meLines.length;
+    if (phase === 0) {
+      // Already showing opener, move to Why
+      navSubtitle.innerHTML = '<span class="label">You:</span><span class="text" style="color:var(--acorn)">Why?</span>';
+      phase = 1;
+    } else if (phase === 1) {
+      // Show first Because
+      navSubtitle.innerHTML = '<span class="text">' + meLines[meIndex] + '</span>';
+      meIndex = (meIndex + 1) % meLines.length;
+      phase = 2;
+    } else {
+      // Cycle Becauses
+      navSubtitle.innerHTML = '<span class="text">' + meLines[meIndex] + '</span>';
+      meIndex = (meIndex + 1) % meLines.length;
+    }
+    navSubtitle.classList.add('visible');
   }, 400);
 }
 
-showMe();
-setInterval(showMe, 4500);
+// Start sequence
+setTimeout(() => {
+  navSubtitle.classList.add('visible');
+}, 500);
+
+// After opener shows, start cycling
+setTimeout(updateSubtitle, 3000); // Show "Why?" after 3s
+setTimeout(updateSubtitle, 5500); // Show first Because after 5.5s
+setInterval(updateSubtitle, 4500); // Then cycle every 4.5s
 </script>
 
 <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/UYPYKi/klaviyo.js?company_id=UYPYKi'></script>
-<script type="text/javascript">
-!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((fu
+</body>
+</html>
