@@ -4,76 +4,286 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scan Squirrel - Photo Scanning and Preservation</title>
+<meta name="description" content="Professional in-home photo scanning in Los Angeles. 600 DPI archival scans, enhancement, and direct delivery to your Google Photos or Apple Photos timeline.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;--feather:#2a2a2a;--acorn:#8b5e3c;--acorn-bright:#a0693f;--ash:#6b6660;--nest:#d4c9b8;--branch:#8b7e6a;--bark:#5c4a3a;--teal:#2c6e6a}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--bone);-webkit-font-smoothing:antialiased;line-height:1.6}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0.6rem 2rem 0.5rem;display:flex;justify-content:space-between;align-items:flex-start;background:rgba(240,235,227,.97);backdrop-filter:blur(12px)}
-.nav-left{display:flex;flex-direction:column}
-.nav-logo{text-decoration:none}
-.nav-logo span{font-family:"DM Sans",sans-serif;font-size:1.8rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
-.nav-subtitle{font-size:0.9rem;font-weight:500;min-height:1.3rem;opacity:0;transition:opacity 0.4s ease;margin-top:0.1rem}
-.nav-subtitle.visible{opacity:1}
-.nav-subtitle .label{font-weight:700;color:var(--teal);margin-right:0.4rem}
-.nav-subtitle .text{color:var(--ink)}
-section[id]{scroll-margin-top:5rem}
-section{padding:2rem 3rem}
-.wrap{max-width:720px;margin:0 auto}
-h2{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:400;letter-spacing:-.02em;line-height:1.25;margin-bottom:.6rem}
-h3{font-family:"Fraunces",serif;font-size:1.1rem;font-weight:600;margin-bottom:.3rem}
-p{margin-bottom:.5rem;color:var(--feather);font-size:.95rem}
-ul{margin:.15rem 0 .6rem 1.25rem;color:var(--feather);font-size:.95rem}
-ul li{margin-bottom:.25rem}
-.steps-table{width:100%;max-width:1000px;margin:0 auto;border-collapse:collapse;table-layout:fixed}
-.steps-table td{vertical-align:top;padding:.4rem .8rem;width:25%}
-.steps-table .step-num{font-family:"Fraunces",serif;font-size:.85rem;font-weight:600;color:var(--acorn);margin-bottom:.15rem}
-.steps-table .step-title{font-family:"Fraunces",serif;font-size:1rem;font-weight:600;margin-bottom:.3rem}
-.steps-table p{font-size:.84rem;line-height:1.5;color:var(--feather)}
-.steps-table .img-row td{text-align:center;padding-top:.4rem}
-.steps-table .img-row img{max-width:100%;height:auto;max-height:200px;object-fit:contain}
-.steps-mobile{display:none}
-.steps-mobile .m-step{padding:1.25rem;margin-bottom:1.25rem;text-align:center}
-.steps-mobile .m-step .step-num{font-family:"Fraunces",serif;font-size:.85rem;font-weight:600;color:var(--acorn);margin-bottom:.15rem}
-.steps-mobile .m-step .step-title{font-family:"Fraunces",serif;font-size:1.05rem;font-weight:600;margin-bottom:.35rem}
-.steps-mobile .m-step p{font-size:.9rem;line-height:1.5;color:var(--feather);text-align:left;margin-bottom:.75rem}
-.steps-mobile .m-step img{max-width:260px;height:auto}
-.bg-warm{background:var(--warm)}
-.bg-bone{background:var(--bone)}
-.bg-dark{background:var(--feather);color:var(--bone)}
-.bg-dark h2,.bg-dark p{color:var(--nest)}
-.bg-dark h2{color:var(--bone)}
-.area-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
-.area-pill{background:var(--cream);color:var(--bark);padding:.3rem .85rem;border-radius:20px;font-size:.85rem;font-weight:500}
-.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
-.price-row:last-child{border-bottom:none}
-.price-row h3{font-size:.95rem;font-weight:600;margin-bottom:0}
-.price-row .price{font-family:"Fraunces",serif;font-size:1.3rem;font-weight:700;color:var(--acorn)}
-.contact-email{font-family:"Fraunces",serif;font-size:1.4rem;color:var(--acorn-bright);text-decoration:none}
-.contact-email:hover{color:var(--bone)}
-footer{background:var(--feather);padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center}
-footer p{font-size:.8rem;color:var(--ash);margin:0}
-footer .ft{font-family:"Fraunces",serif;font-style:italic;font-size:.85rem;color:var(--branch)}
-.about-container{display:flex;align-items:center;justify-content:center;gap:2.5rem;max-width:800px;margin:0 auto;padding:1.5rem 0}
-.about-image{flex-shrink:0;display:flex;align-items:center}
-.about-image img{height:192px;width:auto;border-radius:8px}
-.about-text{max-width:480px}
-.first-section{padding-top:5rem}
-@media(max-width:768px){
-nav{padding:0.5rem 1rem 0.4rem}
-.nav-logo span{font-size:1.4rem}
-.nav-subtitle{font-size:0.75rem;min-height:1.1rem}
-section{padding:1.5rem 1.5rem}
-.first-section{padding-top:6rem}
-.steps-table{display:none}
-.steps-mobile{display:block}
-.price-row{flex-direction:column;gap:.25rem}
-footer{flex-direction:column;gap:.5rem;text-align:center}
-.about-container{flex-direction:column;text-align:center;gap:1.5rem}
-.about-image img{height:140px}
+:root {
+  --ink: #1a1a1a;
+  --bone: #f0ebe3;
+  --warm: #f5f0e8;
+  --cream: #e8e1d5;
+  --feather: #2a2a2a;
+  --acorn: #8b5e3c;
+  --acorn-bright: #a0693f;
+  --ash: #6b6660;
+  --nest: #d4c9b8;
+  --branch: #8b7e6a;
+  --bark: #5c4a3a;
+  --teal: #2c6e6a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  background: var(--bone);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* Nav with subtitle */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0.6rem 2rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: rgba(240, 235, 227, 0.97);
+  backdrop-filter: blur(12px);
+}
+
+.nav-left { display: flex; flex-direction: column; }
+.nav-logo { text-decoration: none; }
+.nav-logo span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.nav-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 1.3rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  margin-top: 0.1rem;
+}
+.nav-subtitle.visible { opacity: 1; }
+.nav-subtitle .label {
+  font-weight: 700;
+  color: var(--teal);
+  margin-right: 0.4rem;
+}
+.nav-subtitle .text { color: var(--ink); }
+
+section[id] { scroll-margin-top: 5rem; }
+section { padding: 2rem 3rem; }
+.wrap { max-width: 720px; margin: 0 auto; }
+
+h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+  color: var(--feather);
+  font-size: 0.95rem;
+}
+
+ul {
+  margin: 0.15rem 0 0.6rem 1.25rem;
+  color: var(--feather);
+  font-size: 0.95rem;
+}
+ul li { margin-bottom: 0.25rem; }
+
+/* Step flow - table layout */
+.steps-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.steps-table td {
+  vertical-align: top;
+  padding: 0.4rem 0.8rem;
+  width: 25%;
+}
+.steps-table .step-num {
+  font-family: 'Fraunces', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--acorn);
+  margin-bottom: 0.15rem;
+}
+.steps-table .step-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.steps-table p {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--feather);
+}
+.steps-table .img-row td {
+  text-align: center;
+  padding-top: 0.4rem;
+}
+.steps-table .img-row img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+/* Mobile: stacked */
+.steps-mobile { display: none; }
+.steps-mobile .m-step {
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.steps-mobile .m-step .step-num {
+  font-family: 'Fraunces', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--acorn);
+  margin-bottom: 0.15rem;
+}
+.steps-mobile .m-step .step-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.steps-mobile .m-step p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--feather);
+  text-align: left;
+  margin-bottom: 0.75rem;
+}
+.steps-mobile .m-step img {
+  max-width: 260px;
+  height: auto;
+}
+
+.bg-warm { background: var(--warm); }
+.bg-bone { background: var(--bone); }
+.bg-cream { background: var(--cream); }
+.bg-dark { background: var(--feather); color: var(--bone); }
+.bg-dark h2, .bg-dark p, .bg-dark ul, .bg-dark li { color: var(--nest); }
+.bg-dark h2 { color: var(--bone); }
+
+/* Service area pills */
+.area-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.area-pill {
+  background: var(--cream);
+  color: var(--bark);
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.price-row:last-child { border-bottom: none; }
+.price-row h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.price-row .price {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--acorn);
+}
+
+.contact-email {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--acorn-bright);
+  text-decoration: none;
+}
+
+footer {
+  background: var(--feather);
+  padding: 1.25rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p {
+  font-size: 0.8rem;
+  color: var(--ash);
+  margin: 0;
+}
+footer .ft {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--branch);
+}
+
+/* About section */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+.about-image { flex-shrink: 0; }
+.about-image img {
+  height: 192px;
+  width: auto;
+  border-radius: 8px;
+}
+.about-text { max-width: 480px; }
+
+.first-section { padding-top: 5rem; }
+
+@media (max-width: 768px) {
+  nav { padding: 0.5rem 1rem 0.4rem; }
+  .nav-logo span { font-size: 1.4rem; }
+  .nav-subtitle { font-size: 0.75rem; min-height: 1.1rem; }
+  section { padding: 1.5rem 1.5rem; }
+  .first-section { padding-top: 6rem; }
+  .steps-table { display: none; }
+  .steps-mobile { display: block; }
+  .price-row { flex-direction: column; gap: 0.25rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .about-container { flex-direction: column; text-align: center; gap: 1.5rem; }
+  .about-image img { height: 140px; }
 }
 </style>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
 <script>
@@ -83,6 +293,7 @@ gtag('js', new Date());
 gtag('config', 'G-M0DFY2Y7XE');
 gtag('config', 'AW-17990603569');
 </script>
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -97,148 +308,292 @@ fbq('init', '2148206675947024');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"/></noscript>
+
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "vp5j1zbe4c");
 </script>
+
 </head>
 <body>
+
 <nav id="nav">
-<div class="nav-left">
-<a href="#" class="nav-logo"><span>Scan Your Old Photos</span></a>
-<div id="nav-subtitle" class="nav-subtitle"><span class="label">Me:</span><span class="text">People should scan their old photos.</span></div>
-</div>
+  <div class="nav-left">
+    <a href="#" class="nav-logo">
+      <span>Scan Your Old Photos</span>
+    </a>
+    <div id="nav-subtitle" class="nav-subtitle">
+      <span class="label">Me:</span><span class="text">People should scan their old photos.</span>
+    </div>
+  </div>
 </nav>
 
+<!-- About Me -->
 <section class="bg-warm first-section">
-<div class="about-container">
-<div class="about-image"><img src="Max.png" alt="Max"></div>
-<div class="about-text">
-<h2>I am Max, Your LA Neighbor</h2>
-<p>I am based in Eagle Rock, Los Angeles. Preserving old photos is my passion and my side hustle. I protect and bring your memories back to life.</p>
-</div>
-</div>
+  <div class="about-container">
+    <div class="about-image">
+      <img src="Max.png" alt="Max">
+    </div>
+    <div class="about-text">
+      <h2>I am Max, Your LA Neighbor</h2>
+      <p>I am based in Eagle Rock, Los Angeles. Preserving old photos is my passion and my side hustle. I protect and bring your memories back to life.</p>
+    </div>
+  </div>
 </section>
 
+<!-- How It Works -->
 <section id="how" class="bg-bone">
-<div style="max-width:1000px;margin:0 auto;padding:0 1rem">
-<h2 style="text-align:center;margin-bottom:1.5rem">How It Works</h2>
-<table class="steps-table">
-<tr>
-<td><div class="step-num">01</div><div class="step-title">We Talk</div><p>Tell me what you have got - a shoebox, a bin, frames on the wall. Every collection is different. We start with a free and easy conversation.</p></td>
-<td><div class="step-num">02</div><div class="step-title">Scanning</div><p>I scan your photos because my system is faster, safer, and better than doing it yourself. Your originals get a 600 DPI archival scan (forever) and a cleaned up, dated and tagged version comes to your iPhone for sharing.</p></td>
-<td><div class="step-num">03</div><div class="step-title">Organized and Safe</div><p>Your collection comes back cataloged - dated, named, organized. Originals returned in a fireproof case.</p></td>
-<td><div class="step-num">04</div><div class="step-title">Enjoyed Forever</div><p>Now your photos are in Google Photos or iPhotos. Here is where the magic happens - they start showing up as reminders, memories, and more.</p></td>
-</tr>
-<tr class="img-row">
-<td><img src="Shoebox%20Disarray_f0ebe3.png" alt="Messy shoebox"></td>
-<td><img src="scan_office3.png" alt="Scanning"></td>
-<td><img src="Organized%20Photos_f0ebe3.png" alt="Organized"></td>
-<td><img src="Happy_Customer.png" alt="Enjoying"></td>
-</tr>
-</table>
-<div class="steps-mobile">
-<div class="m-step"><div class="step-num">01</div><div class="step-title">We Talk</div><p>Tell me what you have got - a shoebox, a bin, frames on the wall. Every collection is different. We start with a free and easy conversation.</p><img src="Shoebox%20Disarray_f0ebe3.png" alt="Messy shoebox"></div>
-<div class="m-step"><div class="step-num">02</div><div class="step-title">Scanning</div><p>I scan your photos because my system is faster, safer, and better than doing it yourself. Your originals get a 600 DPI archival scan (forever) and a cleaned up, dated and tagged version comes to your iPhone for sharing.</p><img src="scan_office3.png" alt="Scanning"></div>
-<div class="m-step"><div class="step-num">03</div><div class="step-title">Organized and Safe</div><p>Your collection comes back cataloged - dated, named, organized. Originals returned in a fireproof case.</p><img src="Organized%20Photos_f0ebe3.png" alt="Organized"></div>
-<div class="m-step"><div class="step-num">04</div><div class="step-title">Enjoyed Forever</div><p>Now your photos are in Google Photos or iPhotos. Here is where the magic happens - they start showing up as reminders, memories, and more.</p><img src="Happy_Customer.png" alt="Enjoying"></div>
-</div>
-</div>
+  <div style="max-width:1000px;margin:0 auto;padding:0 1rem">
+    <h2 style="text-align:center;margin-bottom:1.5rem">How It Works</h2>
+
+    <!-- Desktop: table -->
+    <table class="steps-table">
+      <tr>
+        <td>
+          <div class="step-num">01</div>
+          <div class="step-title">We Talk</div>
+          <p>Tell me what you have got - a shoebox, a bin, frames on the wall. Every collection is different. We start with a free and easy conversation.</p>
+        </td>
+        <td>
+          <div class="step-num">02</div>
+          <div class="step-title">Scanning</div>
+          <p>I scan your photos because my system is faster, safer, and better than doing it yourself. Your originals get a 600 DPI archival scan (forever) and a cleaned up, dated and tagged version comes to your iPhone for sharing.</p>
+        </td>
+        <td>
+          <div class="step-num">03</div>
+          <div class="step-title">Organized and Safe</div>
+          <p>Your collection comes back cataloged - dated, named, organized. Originals returned in a fireproof case.</p>
+        </td>
+        <td>
+          <div class="step-num">04</div>
+          <div class="step-title">Enjoyed Forever</div>
+          <p>Now your photos are in Google Photos or iPhotos. Here is where the magic happens - they start showing up as reminders, memories, and more.</p>
+        </td>
+      </tr>
+      <tr class="img-row">
+        <td><img src="Shoebox%20Disarray_f0ebe3.png" alt="Messy shoebox of photos"></td>
+        <td><img src="scan_office3.png" alt="Scanning studio"></td>
+        <td><img src="Organized%20Photos_f0ebe3.png" alt="Organized photos"></td>
+        <td><img src="Happy_Customer.png" alt="Enjoying photos on phone"></td>
+      </tr>
+    </table>
+
+    <!-- Mobile: stacked -->
+    <div class="steps-mobile">
+      <div class="m-step">
+        <div class="step-num">01</div>
+        <div class="step-title">We Talk</div>
+        <p>Tell me what you have got - a shoebox, a bin, frames on the wall. Every collection is different. We start with a free and easy conversation.</p>
+        <img src="Shoebox%20Disarray_f0ebe3.png" alt="Messy shoebox of photos">
+      </div>
+      <div class="m-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Scanning</div>
+        <p>I scan your photos because my system is faster, safer, and better than doing it yourself. Your originals get a 600 DPI archival scan (forever) and a cleaned up, dated and tagged version comes to your iPhone for sharing.</p>
+        <img src="scan_office3.png" alt="Scanning studio">
+      </div>
+      <div class="m-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Organized and Safe</div>
+        <p>Your collection comes back cataloged - dated, named, organized. Originals returned in a fireproof case.</p>
+        <img src="Organized%20Photos_f0ebe3.png" alt="Organized photos">
+      </div>
+      <div class="m-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Enjoyed Forever</div>
+        <p>Now your photos are in Google Photos or iPhotos. Here is where the magic happens - they start showing up as reminders, memories, and more.</p>
+        <img src="Happy_Customer.png" alt="Enjoying photos on phone">
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- Pricing -->
 <section id="pricing" class="bg-warm">
-<div class="wrap">
-<h2>Simple Pricing</h2>
-<div class="price-row"><div><h3>Per Photo</h3></div><div class="price">$1</div></div>
-<div class="price-row"><div><h3>Per Shoebox (~200 photos)</h3></div><div class="price">~$200</div></div>
-<div class="price-row"><div><h3>Fireproof Case (optional)</h3></div><div class="price">$50</div></div>
-</div>
+  <div class="wrap">
+    <h2>Simple Pricing</h2>
+    <div class="price-row">
+      <div><h3>Per Photo</h3></div>
+      <div class="price">$1</div>
+    </div>
+    <div class="price-row">
+      <div><h3>Per Shoebox (~200 photos)</h3></div>
+      <div class="price">~$200</div>
+    </div>
+    <div class="price-row">
+      <div><h3>Fireproof Case (optional)</h3></div>
+      <div class="price">$50</div>
+    </div>
+  </div>
 </section>
 
-<section style="background:#c44a1a;padding:2rem 3rem">
-<div class="wrap">
-<p style="color:#1a1a1a;font-size:1.05rem;line-height:1.8">Watching the Eaton fires consume Altadena in 2025 left a permanent mark on me. What really stuck was knowing hundreds of thousands of irreplaceable photos were gone. If you have been thinking about preserving yours - do not wait. My service is personal, nearby, and much cheaper than the big scanning companies. Talking to me is always free. Make this the week you do something about it.</p>
-</div>
+<!-- Fire Quote -->
+<section style="background:#c44a1a;color:#1a1a1a;padding:2rem 3rem">
+  <div class="wrap">
+    <p style="color:#1a1a1a;font-size:1.05rem;line-height:1.8">Watching the Eaton fires consume Altadena in 2025 left a permanent mark on me. What really stuck was knowing hundreds of thousands of irreplaceable photos were gone. If you have been thinking about preserving yours - do not wait. My service is personal, nearby, and much cheaper than the big scanning companies. Talking to me is always free. Make this the week you do something about it.</p>
+  </div>
 </section>
 
+<!-- What You Get -->
 <section id="what" class="bg-bone">
-<div class="wrap">
-<h2>From Messy Shoebox to...</h2>
-<ul>
-<li><strong>600 DPI archival scans</strong> - front and back, every photo</li>
-<li><strong>Enhanced versions</strong> - fading reversed, faces sharpened, colors corrected</li>
-<li><strong>Dates and names embedded</strong> - so photos land in the right spot on your timeline</li>
-<li><strong>Delivered to your phone</strong> - one link drops everything into Google Photos or Apple Photos</li>
-<li><strong>Originals returned in a fireproof case</strong> - organized, labeled, protected</li>
-<li><strong>48-hour turnaround</strong> - your photos never leave the neighborhood</li>
-</ul>
-</div>
+  <div class="wrap">
+    <h2>From Messy Shoebox to...</h2>
+    <ul>
+      <li><strong>600 DPI archival scans</strong> - front and back, every photo</li>
+      <li><strong>Enhanced versions</strong> - fading reversed, faces sharpened, colors corrected</li>
+      <li><strong>Dates and names embedded</strong> - so photos land in the right spot on your timeline</li>
+      <li><strong>Delivered to your phone</strong> - one link drops everything into Google Photos or Apple Photos</li>
+      <li><strong>Originals returned in a fireproof case</strong> - organized, labeled, protected</li>
+      <li><strong>48-hour turnaround</strong> - your photos never leave the neighborhood</li>
+    </ul>
+  </div>
 </section>
 
+<!-- CTA -->
 <section class="bg-warm">
-<div class="wrap" style="text-align:center">
-<p style="font-size:1.05rem">Your memories, safely stashed.</p>
-</div>
+  <div class="wrap" style="text-align:center">
+    <p style="font-size:1.05rem">Your memories, safely stashed.</p>
+  </div>
 </section>
 
+<!-- Contact -->
 <section id="contact" class="bg-dark" style="text-align:center">
-<div class="wrap">
-<h2>Ready to get started?</h2>
-<p>Every consultation is free. No pressure.</p>
-<p class="contact-email">hello@scansquirrel.com</p>
-<p style="margin-top:0.3rem;font-family:Fraunces,serif;font-size:1.2rem;color:var(--acorn-bright)">(213) 290-2327</p>
-</div>
+  <div class="wrap">
+    <h2>Ready to get started?</h2>
+    <p>Every consultation is free. No pressure.</p>
+    <p class="contact-email">hello@scansquirrel.com</p>
+    <p style="margin-top:0.3rem;font-family:Fraunces,serif;font-size:1.2rem;color:var(--acorn-bright)">(213) 290-2327</p>
+  </div>
 </section>
 
+<!-- Service Areas -->
 <section class="bg-bone">
-<div class="wrap">
-<h2>Where I Work</h2>
-<p>I am based in Eagle Rock and serve neighborhoods across Northeast LA, Pasadena, and the surrounding area.</p>
-<div class="area-list">
-<span class="area-pill">Eagle Rock</span>
-<span class="area-pill">Highland Park</span>
-<span class="area-pill">Glassell Park</span>
-<span class="area-pill">Pasadena</span>
-<span class="area-pill">Altadena</span>
-<span class="area-pill">Silver Lake</span>
-<span class="area-pill">Los Feliz</span>
-<span class="area-pill">Glendale</span>
-<span class="area-pill">Atwater Village</span>
-<span class="area-pill">Mt. Washington</span>
-</div>
-<p style="margin-top:.6rem;color:var(--ash);font-size:.9rem">Somewhere else in LA? Reach out anyway - I am flexible.</p>
-</div>
+  <div class="wrap">
+    <h2>Where I Work</h2>
+    <p>I am based in Eagle Rock and serve neighborhoods across Northeast LA, Pasadena, and the surrounding area. If you are nearby and have photos to preserve, I can come to you.</p>
+    <div class="area-list">
+      <span class="area-pill">Eagle Rock</span>
+      <span class="area-pill">Highland Park</span>
+      <span class="area-pill">Glassell Park</span>
+      <span class="area-pill">Pasadena</span>
+      <span class="area-pill">Altadena</span>
+      <span class="area-pill">Silver Lake</span>
+      <span class="area-pill">Los Feliz</span>
+      <span class="area-pill">Glendale</span>
+      <span class="area-pill">Atwater Village</span>
+      <span class="area-pill">Mt. Washington</span>
+    </div>
+    <p style="margin-top:0.6rem;color:var(--ash);font-size:0.9rem">Somewhere else in LA? Reach out anyway - I am flexible.</p>
+  </div>
 </section>
 
 <footer>
-<p>2025 Scan Squirrel - Los Angeles, CA</p>
-<span class="ft">Gathered. Organized. Preserved.</span>
+  <p>2025 Scan Squirrel - Los Angeles, CA</p>
+  <span class="ft">Gathered. Organized. Preserved.</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
-var meLines=shuffle(["Because fire does not care about nostalgia.","Because in Los Angeles, entire lifetimes of photos were gone overnight.","Because basements flood. Photos do not float.","Because one pipe burst can erase 40 years.","Because disasters are not scheduled.","Because digital copies do not burn.","Because your shoebox is one basement flood away from becoming soup.","Because moisture turns memories into pulp.","Because attics are ovens.","Because time is not gentle with paper.","Because moving the box from shelf to shelf is not progress.","Because I will do it someday usually means never.","Because you will not scan them but you will feel guilty about not scanning them.","Because this is on the same list as organize the garage and learn guitar.","Because you could do it yourself but you will not. And now someone will.","Because paying someone to do it is cheaper and faster than buying a scanner.","Because you already know you should.","Because the shoebox is not a system.","Because someday no one will remember who Uncle Mikes friend Dave is.","Because you will not always be there to explain who is in them.","Because your parents handwriting will not exist forever.","Because the handwriting on the back matters as much as the photo.","Because your grandkids deserve to see what you looked like.","Because these photos are the only proof your family was ever all in one place.","Because your story did not start with your iPhone.","Because preserving your story is an act of respect.","Because your kids will fight over these someday. Make it easy for them.","Because faded photos fade more every single year.","Because your moms 1978 smile deserves better than a bent corner.","Because seeing your parents younger than you are now hits different.","Because seeing your parents young and happy is the best feeling.","Because your grandmas face deserves to be seen every day, not once a decade.","Because the photo of your dad holding you at the hospital is everything.","Because your wedding photos should not live in a box you have not opened since 2004.","Because your daughter does not believe you were ever cool and you have evidence.","Because showing your son that awkward dance photo might convince him to go to his.","Because your kids have never seen you awkward and 17.","Because your kid thinks you were born at 40.","Because you were a cuter baby than your daughter and you can prove it.","Because your phone has 18000 photos and zero from 1992.","Because Google Photos will make you a birthday video that makes you cry.","Because the picture of you playing soccer at age 8 is objectively hilarious.","Because you once slow-danced under a disco ball and there is proof.","Because you took epic trips before smartphones existed.","Because nostalgia hits harder in high resolution.","Because garages are not archives.","Because something with teeth will find that box before your kids do.","Because Google cannot auto-generate memories from a box in your closet.","Because the big companies charge a fortune and I live ten minutes away.","Because AI can sharpen a blurry face from 1974."]);
-var navSubtitle=document.getElementById("nav-subtitle");
-var phase=0,meIndex=0;
-function updateSubtitle(){
+<script>
+function shuffle(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+var meLines = shuffle([
+  "Because fire does not care about nostalgia.",
+  "Because in Los Angeles, entire lifetimes of photos were gone overnight.",
+  "Because basements flood. Photos do not float.",
+  "Because one pipe burst can erase 40 years.",
+  "Because disasters are not scheduled.",
+  "Because digital copies do not burn.",
+  "Because your shoebox is one basement flood away from becoming soup.",
+  "Because moisture turns memories into pulp.",
+  "Because attics are ovens.",
+  "Because time is not gentle with paper.",
+  "Because moving the box from shelf to shelf is not progress.",
+  "Because I will do it someday usually means never.",
+  "Because you will not scan them but you will feel guilty about not scanning them.",
+  "Because this is on the same list as organize the garage and learn guitar.",
+  "Because you could do it yourself but you will not. And now someone will.",
+  "Because paying someone to do it is cheaper and faster than buying a scanner.",
+  "Because you already know you should.",
+  "Because the shoebox is not a system.",
+  "Because someday no one will remember who Uncle Mikes friend Dave is.",
+  "Because you will not always be there to explain who is in them.",
+  "Because your parents handwriting will not exist forever.",
+  "Because the handwriting on the back matters as much as the photo.",
+  "Because your grandkids deserve to see what you looked like.",
+  "Because these photos are the only proof your family was ever all in one place.",
+  "Because your story did not start with your iPhone.",
+  "Because preserving your story is an act of respect.",
+  "Because your kids will fight over these someday. Make it easy for them.",
+  "Because faded photos fade more every single year.",
+  "Because your moms 1978 smile deserves better than a bent corner.",
+  "Because seeing your parents younger than you are now hits different.",
+  "Because seeing your parents young and happy is the best feeling.",
+  "Because your grandmas face deserves to be seen every day, not once a decade.",
+  "Because the photo of your dad holding you at the hospital is everything.",
+  "Because your wedding photos should not live in a box you have not opened since 2004.",
+  "Because your daughter does not believe you were ever cool and you have evidence.",
+  "Because showing your son that awkward dance photo might convince him to go to his.",
+  "Because your kids have never seen you awkward and 17.",
+  "Because your kid thinks you were born at 40.",
+  "Because you were a cuter baby than your daughter and you can prove it.",
+  "Because your phone has 18000 photos and zero from 1992.",
+  "Because Google Photos will make you a birthday video that makes you cry.",
+  "Because the picture of you playing soccer at age 8 is objectively hilarious.",
+  "Because you once slow-danced under a disco ball and there is proof.",
+  "Because you took epic trips before smartphones existed.",
+  "Because nostalgia hits harder in high resolution.",
+  "Because garages are not archives.",
+  "Because something with teeth will find that box before your kids do.",
+  "Because Google cannot auto-generate memories from a box in your closet.",
+  "Because the big companies charge a fortune and I live ten minutes away.",
+  "Because AI can sharpen a blurry face from 1974."
+]);
+
+var navSubtitle = document.getElementById("nav-subtitle");
+var phase = 0;
+var meIndex = 0;
+
+function updateSubtitle() {
   navSubtitle.classList.remove("visible");
-  setTimeout(function(){
-    if(phase===0){
-      navSubtitle.innerHTML='<span class="label">You:</span><span class="text" style="color:var(--acorn)">Why?</span>';
-      phase=1;
-    }else{
-      navSubtitle.innerHTML='<span class="text">'+meLines[meIndex]+'</span>';
-      meIndex=(meIndex+1)%meLines.length;
-      phase=2;
+  
+  setTimeout(function() {
+    if (phase === 0) {
+      navSubtitle.innerHTML = '<span class="label">You:</span><span class="text" style="color:var(--acorn)">Why?</span>';
+      phase = 1;
+    } else {
+      navSubtitle.innerHTML = '<span class="text">' + meLines[meIndex] + '</span>';
+      meIndex = (meIndex + 1) % meLines.length;
+      phase = 2;
     }
     navSubtitle.classList.add("visible");
-  },400);
+  }, 400);
 }
-setTimeout(function(){navSubtitle.classList.add("visible");},500);
-setTimeout(updateSubtitle,2500);
-setTimeout(updateSubtitle,4000);
-setTimeout(function(){setInterval(updateSubtitle,3500);},7500);
+
+// Start sequence - show opener
+setTimeout(function() {
+  navSubtitle.classList.add("visible");
+}, 500);
+
+// Show "Why?" after 2.5s
+setTimeout(updateSubtitle, 2500);
+
+// Show first Because after 4s
+setTimeout(updateSubtitle, 4000);
+
+// Start cycling Becauses every 3.5s
+setTimeout(function() {
+  setInterval(updateSubtitle, 3500);
+}, 7500);
 </script>
+
 <script async src="https://static.klaviyo.com/onsite/js/UYPYKi/klaviyo.js?company_id=UYPYKi"></script>
+
 </body>
 </html>
