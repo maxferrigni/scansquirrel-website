@@ -73,6 +73,22 @@ nav {
 }
 .nav-subtitle .text { color: var(--ink); }
 
+/* Nav menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding-top: 0.5rem;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.nav-menu a:hover { color: var(--acorn-bright); }
+
 section[id] { scroll-margin-top: 5rem; }
 section { padding: 2rem 3rem; }
 .wrap { max-width: 720px; margin: 0 auto; }
@@ -270,11 +286,19 @@ footer .ft {
 .first-section { padding-top: 5rem; }
 
 @media (max-width: 768px) {
-  nav { padding: 0.5rem 1rem 0.4rem; }
+  nav { padding: 0.5rem 1rem 0.4rem; flex-wrap: wrap; }
   .nav-logo span { font-size: 1.4rem; }
   .nav-subtitle { font-size: 0.75rem; min-height: 1.1rem; }
+  .nav-menu {
+    gap: 0.9rem;
+    padding-top: 0.3rem;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.3rem;
+  }
+  .nav-menu a { font-size: 0.85rem; }
   section { padding: 1.5rem 1.5rem; }
-  .first-section { padding-top: 6rem; }
+  .first-section { padding-top: 7.5rem; }
   .steps-table { display: none; }
   .steps-mobile { display: block; }
   .price-row { flex-direction: column; gap: 0.25rem; }
@@ -325,6 +349,12 @@ fbq('track', 'PageView');
     <div id="nav-subtitle" class="nav-subtitle">
       <span class="label">Me:</span><span class="text">People should scan their old photos.</span>
     </div>
+  </div>
+  <div class="nav-menu">
+    <a href="/squirrel.html">#1 Squirrel</a>
+    <a href="/equipment.html">Equipment &amp; Tech</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
