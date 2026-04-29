@@ -32,7 +32,6 @@ body {
   line-height: 1.6;
 }
 
-/* Nav */
 nav {
   position: fixed;
   top: 0;
@@ -145,7 +144,6 @@ a.inline-link:hover { color: var(--acorn); }
 .bg-dark h2, .bg-dark p { color: var(--nest); }
 .bg-dark h2 { color: var(--bone); }
 
-/* Equipment cards */
 .gear-card {
   background: var(--bone);
   border-left: 3px solid var(--acorn);
@@ -208,13 +206,7 @@ a.inline-link:hover { color: var(--acorn); }
   transition: background 0.2s ease;
 }
 .gear-link:hover { background: var(--acorn); }
-.gear-note {
-  font-size: 0.8rem;
-  color: var(--ash);
-  font-style: italic;
-}
 
-/* Squirrel callout */
 .squirrel-callout {
   border: 2px solid var(--acorn);
   border-radius: 10px;
@@ -251,9 +243,12 @@ a.inline-link:hover { color: var(--acorn); }
 footer {
   background: var(--feather);
   padding: 1.25rem 3rem;
+}
+.footer-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 footer p {
   font-size: 0.8rem;
@@ -265,6 +260,13 @@ footer .ft {
   font-style: italic;
   font-size: 0.85rem;
   color: var(--branch);
+}
+.footer-permission {
+  font-size: 0.72rem;
+  color: var(--branch);
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.4rem;
 }
 
 @media (max-width: 768px) {
@@ -284,7 +286,7 @@ footer .ft {
   h1 { font-size: 1.7rem; }
   .gear-card { flex-direction: column; gap: 1rem; }
   .gear-card .gear-img { width: 100%; max-width: 180px; margin: 0 auto; }
-  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .footer-row { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 
 .first-section { padding-top: 5rem; }
@@ -340,7 +342,6 @@ fbq('track', 'PageView');
   </div>
 </nav>
 
-<!-- Intro -->
 <section class="bg-warm first-section">
   <div class="wrap">
     <h1>Equipment &amp; Tech</h1>
@@ -350,7 +351,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- Photo Scanners -->
 <section class="bg-bone">
   <div class="wrap">
     <h2>Photo Scanners</h2>
@@ -358,7 +358,7 @@ fbq('track', 'PageView');
 
     <div class="gear-card">
       <div class="gear-img">
-        <img src="epson_scanner_ff680w.jpg" alt="Epson FastFoto FF-680W photo scanner">
+        <img src="images/epson_scanner_ff680w.jpg" alt="Epson FastFoto FF-680W photo scanner">
       </div>
       <div class="gear-body">
         <div class="gear-tag">My Favorite</div>
@@ -381,7 +381,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- Slides & Negatives -->
 <section class="bg-warm">
   <div class="wrap">
     <h2>Slides &amp; Negatives</h2>
@@ -389,7 +388,7 @@ fbq('track', 'PageView');
 
     <div class="gear-card">
       <div class="gear-img">
-        <img src="of135i.jpg" alt="Plustek OpticFilm 135i Ai film scanner">
+        <img src="images/of135i.jpg" alt="Plustek OpticFilm 135i Ai film scanner">
       </div>
       <div class="gear-body">
         <div class="gear-tag">My Favorite So Far</div>
@@ -404,7 +403,7 @@ fbq('track', 'PageView');
 
     <div class="gear-card">
       <div class="gear-img">
-        <img src="plustek_of8300i.jpg" alt="Plustek OpticFilm 8300i Ai film scanner">
+        <img src="images/plustek_of8300i.jpg" alt="Plustek OpticFilm 8300i Ai film scanner">
       </div>
       <div class="gear-body">
         <div class="gear-tag">Also Excellent</div>
@@ -419,7 +418,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- AI Enhancement -->
 <section class="bg-bone">
   <div class="wrap">
     <h2>AI Enhancement</h2>
@@ -429,7 +427,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- Storage -->
 <section class="bg-warm">
   <div class="wrap">
     <h2>Storage &amp; Protection</h2>
@@ -449,7 +446,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- Become a Squirrel -->
 <section class="bg-bone">
   <div class="wrap">
     <h2>Want to Scan Your Own Photos?</h2>
@@ -462,7 +458,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- Contact CTA -->
 <section id="contact" class="bg-dark" style="text-align:center">
   <div class="wrap">
     <h2>Want me to do it for you?</h2>
@@ -473,8 +468,11 @@ fbq('track', 'PageView');
 </section>
 
 <footer>
-  <p>2025 Scan Squirrel - Los Angeles, CA</p>
-  <span class="ft">Gathered. Organized. Preserved.</span>
+  <div class="footer-row">
+    <p>2025 Scan Squirrel - Los Angeles, CA</p>
+    <span class="ft">Gathered. Organized. Preserved.</span>
+  </div>
+  <p class="footer-permission">All photographs on this site are displayed with permission of their owners. Please do not reproduce without consent.</p>
 </footer>
 
 <script>
