@@ -32,7 +32,6 @@ body {
   line-height: 1.6;
 }
 
-/* Nav */
 nav {
   position: fixed;
   top: 0;
@@ -57,13 +56,21 @@ nav {
   letter-spacing: -0.01em;
 }
 
-.nav-tagline {
-  font-size: 0.85rem;
+.nav-subtitle {
+  font-size: 0.9rem;
   font-weight: 500;
-  color: var(--ash);
-  font-style: italic;
+  min-height: 1.3rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
   margin-top: 0.1rem;
 }
+.nav-subtitle.visible { opacity: 1; }
+.nav-subtitle .label {
+  font-weight: 700;
+  color: var(--teal);
+  margin-right: 0.4rem;
+}
+.nav-subtitle .text { color: var(--ink); }
 
 .nav-menu {
   display: flex;
@@ -129,7 +136,6 @@ p {
 .bg-dark h2, .bg-dark p { color: var(--nest); }
 .bg-dark h2 { color: var(--bone); }
 
-/* Hero / Intro */
 .about-container {
   display: flex;
   align-items: center;
@@ -149,7 +155,6 @@ p {
 
 .first-section { padding-top: 5rem; }
 
-/* Story callout */
 .story-callout {
   background: #c44a1a;
   padding: 2rem 3rem;
@@ -160,7 +165,6 @@ p {
   line-height: 1.8;
 }
 
-/* Become a Squirrel */
 .squirrel-callout {
   border: 2px solid var(--acorn);
   border-radius: 10px;
@@ -173,7 +177,6 @@ p {
   margin-bottom: 0.5rem;
 }
 
-/* CTA */
 .cta-button {
   display: inline-block;
   background: var(--acorn-bright);
@@ -198,9 +201,12 @@ p {
 footer {
   background: var(--feather);
   padding: 1.25rem 3rem;
+}
+.footer-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 footer p {
   font-size: 0.8rem;
@@ -213,11 +219,18 @@ footer .ft {
   font-size: 0.85rem;
   color: var(--branch);
 }
+.footer-permission {
+  font-size: 0.72rem;
+  color: var(--branch);
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.4rem;
+}
 
 @media (max-width: 768px) {
   nav { padding: 0.5rem 1rem 0.4rem; flex-wrap: wrap; }
   .nav-logo span { font-size: 1.4rem; }
-  .nav-tagline { font-size: 0.75rem; }
+  .nav-subtitle { font-size: 0.75rem; min-height: 1.1rem; }
   .nav-menu {
     gap: 0.9rem;
     padding-top: 0.3rem;
@@ -232,7 +245,7 @@ footer .ft {
   .about-container { flex-direction: column; text-align: center; gap: 1.5rem; }
   .about-image img { height: 160px; }
   .story-callout { padding: 1.5rem 1.5rem; }
-  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .footer-row { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
 
@@ -274,7 +287,9 @@ fbq('track', 'PageView');
     <a href="/" class="nav-logo">
       <span>Scan Your Old Photos</span>
     </a>
-    <div class="nav-tagline">Eagle Rock, Los Angeles</div>
+    <div id="nav-subtitle" class="nav-subtitle">
+      <span class="label">Me:</span><span class="text">People should scan their old photos.</span>
+    </div>
   </div>
   <div class="nav-menu">
     <a href="/squirrel.html" class="current">#1 Squirrel</a>
@@ -284,11 +299,10 @@ fbq('track', 'PageView');
   </div>
 </nav>
 
-<!-- Hero / Meet Max -->
 <section class="bg-warm first-section">
   <div class="about-container">
     <div class="about-image">
-      <img src="Max.png" alt="Max Ferrigni, founder of Scan Squirrel">
+      <img src="images/Max.png" alt="Max Ferrigni, founder of Scan Squirrel">
     </div>
     <div class="about-text">
       <h1>I am Max, Your LA Neighbor</h1>
@@ -297,7 +311,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- Why This Exists (the fires) -->
 <section class="story-callout">
   <div class="wrap">
     <p>Watching the Eaton fires consume Altadena in 2025 left a permanent mark on me. What really stuck was knowing hundreds of thousands of irreplaceable photos were gone. Families in the Palisades and Altadena lost everything - and the photos were the part that hurt the most. You can rebuild a house. You cannot rebuild the picture of your dad holding you at the hospital.</p>
@@ -305,7 +318,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- A Passion Project -->
 <section class="bg-bone">
   <div class="wrap">
     <h2>A Passion Project, Not a Big Company</h2>
@@ -314,7 +326,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- I Take Care -->
 <section class="bg-warm">
   <div class="wrap">
     <h2>I Take Extremely Good Care</h2>
@@ -323,7 +334,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- What I Believe -->
 <section class="bg-bone">
   <div class="wrap">
     <h2>What I Believe</h2>
@@ -332,7 +342,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- Become a Squirrel -->
 <section class="bg-warm">
   <div class="wrap">
     <h2>Become a Squirrel</h2>
@@ -345,7 +354,6 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- Contact CTA -->
 <section id="contact" class="bg-dark" style="text-align:center">
   <div class="wrap">
     <h2>Want me to do it for you?</h2>
@@ -356,9 +364,106 @@ fbq('track', 'PageView');
 </section>
 
 <footer>
-  <p>2025 Scan Squirrel - Los Angeles, CA</p>
-  <span class="ft">Gathered. Organized. Preserved.</span>
+  <div class="footer-row">
+    <p>2025 Scan Squirrel - Los Angeles, CA</p>
+    <span class="ft">Gathered. Organized. Preserved.</span>
+  </div>
+  <p class="footer-permission">All photographs on this site are displayed with permission of their owners. Please do not reproduce without consent.</p>
 </footer>
+
+<script>
+function shuffle(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+var meLines = shuffle([
+  "Because fire does not care about nostalgia.",
+  "Because in Los Angeles, entire lifetimes of photos were gone overnight.",
+  "Because basements flood. Photos do not float.",
+  "Because one pipe burst can erase 40 years.",
+  "Because disasters are not scheduled.",
+  "Because digital copies do not burn.",
+  "Because your shoebox is one basement flood away from becoming soup.",
+  "Because moisture turns memories into pulp.",
+  "Because attics are ovens.",
+  "Because time is not gentle with paper.",
+  "Because moving the box from shelf to shelf is not progress.",
+  "Because I will do it someday usually means never.",
+  "Because you will not scan them but you will feel guilty about not scanning them.",
+  "Because this is on the same list as organize the garage and learn guitar.",
+  "Because you could do it yourself but you will not. And now someone will.",
+  "Because paying someone to do it is cheaper and faster than buying a scanner.",
+  "Because you already know you should.",
+  "Because the shoebox is not a system.",
+  "Because someday no one will remember who Uncle Mikes friend Dave is.",
+  "Because you will not always be there to explain who is in them.",
+  "Because your parents handwriting will not exist forever.",
+  "Because the handwriting on the back matters as much as the photo.",
+  "Because your grandkids deserve to see what you looked like.",
+  "Because these photos are the only proof your family was ever all in one place.",
+  "Because your story did not start with your iPhone.",
+  "Because preserving your story is an act of respect.",
+  "Because your kids will fight over these someday. Make it easy for them.",
+  "Because faded photos fade more every single year.",
+  "Because your moms 1978 smile deserves better than a bent corner.",
+  "Because seeing your parents younger than you are now hits different.",
+  "Because seeing your parents young and happy is the best feeling.",
+  "Because your grandmas face deserves to be seen every day, not once a decade.",
+  "Because the photo of your dad holding you at the hospital is everything.",
+  "Because your wedding photos should not live in a box you have not opened since 2004.",
+  "Because your daughter does not believe you were ever cool and you have evidence.",
+  "Because showing your son that awkward dance photo might convince him to go to his.",
+  "Because your kids have never seen you awkward and 17.",
+  "Because your kid thinks you were born at 40.",
+  "Because you were a cuter baby than your daughter and you can prove it.",
+  "Because your phone has 18000 photos and zero from 1992.",
+  "Because Google Photos will make you a birthday video that makes you cry.",
+  "Because the picture of you playing soccer at age 8 is objectively hilarious.",
+  "Because you once slow-danced under a disco ball and there is proof.",
+  "Because you took epic trips before smartphones existed.",
+  "Because nostalgia hits harder in high resolution.",
+  "Because garages are not archives.",
+  "Because something with teeth will find that box before your kids do.",
+  "Because Google cannot auto-generate memories from a box in your closet.",
+  "Because the big companies charge a fortune and I live ten minutes away.",
+  "Because AI can sharpen a blurry face from 1974."
+]);
+
+var navSubtitle = document.getElementById("nav-subtitle");
+var phase = 0;
+var meIndex = 0;
+
+function updateSubtitle() {
+  navSubtitle.classList.remove("visible");
+
+  setTimeout(function() {
+    if (phase === 0) {
+      navSubtitle.innerHTML = '<span class="label">You:</span><span class="text" style="color:var(--acorn)">Why?</span>';
+      phase = 1;
+    } else {
+      navSubtitle.innerHTML = '<span class="text">' + meLines[meIndex] + '</span>';
+      meIndex = (meIndex + 1) % meLines.length;
+      phase = 2;
+    }
+    navSubtitle.classList.add("visible");
+  }, 400);
+}
+
+setTimeout(function() {
+  navSubtitle.classList.add("visible");
+}, 500);
+setTimeout(updateSubtitle, 2500);
+setTimeout(updateSubtitle, 4000);
+setTimeout(function() {
+  setInterval(updateSubtitle, 3500);
+}, 7500);
+</script>
 
 <script async src="https://static.klaviyo.com/onsite/js/UYPYKi/klaviyo.js?company_id=UYPYKi"></script>
 
