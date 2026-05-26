@@ -28,9 +28,65 @@
         }
       });
 
+      setupMobileToggle(placeholder);
       startSubtitleAnimation();
     })
     .catch(function () { /* nav fetch failed — fail silent */ });
+
+  function setupMobileToggle(placeholder) {
+    var nav = placeholder.querySelector('#nav');
+    var menu = placeholder.querySelector('.nav-menu');
+    if (!nav || !menu) return;
+
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'nav-toggle';
+    toggle.setAttribute('aria-label', 'Open menu');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', 'nav');
+    toggle.innerHTML = '&#9776;'; // ☰
+    nav.appendChild(toggle);
+
+    function setOpen(open) {
+      if (open) {
+        nav.classList.add('menu-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Close menu');
+        toggle.innerHTML = '&times;'; // ✕
+      } else {
+        nav.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+        toggle.innerHTML = '&#9776;';
+      }
+    }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!nav.classList.contains('menu-open'));
+    });
+
+    // Tap outside the nav closes the menu
+    document.addEventListener('click', function (e) {
+      if (!nav.classList.contains('menu-open')) return;
+      if (nav.contains(e.target)) return;
+      setOpen(false);
+    });
+
+    // Tapping a link in the menu closes it (in case of in-page anchors or tel: links)
+    menu.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (a) setOpen(false);
+    });
+
+    // If viewport grows back to desktop, force-close so state is sane
+    var mq = window.matchMedia('(min-width: 769px)');
+    if (mq.addEventListener) {
+      mq.addEventListener('change', function (ev) { if (ev.matches) setOpen(false); });
+    } else if (mq.addListener) {
+      mq.addListener(function (ev) { if (ev.matches) setOpen(false); });
+    }
+  }
 
   function shuffle(array) {
     for (var i = array.length - 1; i > 0; i--) {

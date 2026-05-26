@@ -87,17 +87,105 @@ nav#nav {
   color: var(--bone);
 }
 
+/* ---- Hamburger toggle button (desktop hidden, mobile only) ---- */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  color: var(--acorn);
+  font-size: 1.6rem;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
 @media (max-width: 768px) {
-  nav#nav { padding: 0.5rem 1rem 0.4rem; flex-wrap: wrap; }
-  .nav-logo span { font-size: 1.4rem; }
-  .nav-subtitle { font-size: 0.75rem; min-height: 1.1rem; }
-  .nav-menu {
-    gap: 0.7rem;
-    padding-top: 0.3rem;
-    width: 100%;
-    justify-content: flex-end;
-    margin-top: 0.3rem;
-    flex-wrap: wrap;
+  nav#nav {
+    padding: 0.5rem 1rem;
+    flex-wrap: nowrap;
+    align-items: center;
   }
-  .nav-menu a { font-size: 0.85rem; }
+  .nav-logo span { font-size: 1.4rem; }
+  .nav-subtitle { display: none; }
+
+  /* Show hamburger */
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    color: var(--acorn);
+    transition: color 0.2s ease;
+  }
+  .nav-toggle:hover,
+  .nav-toggle:focus { color: var(--acorn-bright); outline: none; }
+
+  /* Menu becomes a full-width dropdown panel below the nav */
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    background: rgba(240, 235, 227, 0.98);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--cream);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+  nav#nav.menu-open .nav-menu {
+    max-height: 80vh;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Dropdown menu items — generous tap targets */
+  .nav-menu a {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1.25rem;
+    min-height: 44px;
+    font-size: 1rem;
+    color: var(--ink);
+    border-bottom: 1px solid var(--cream);
+    border-left: 3px solid transparent;
+  }
+  .nav-menu a:last-child { border-bottom: none; }
+
+  /* Active page highlight in dropdown */
+  .nav-menu a.active {
+    background: var(--warm);
+    border-left-color: var(--acorn);
+    border-bottom: 1px solid var(--cream);
+    padding-bottom: 0.9rem;
+    color: var(--acorn-bright);
+  }
+
+  /* Phone link looks like a regular row inside the dropdown */
+  .nav-menu a.nav-phone {
+    border: none;
+    border-bottom: 1px solid var(--cream);
+    border-left: 3px solid transparent;
+    border-radius: 0;
+    padding: 0.9rem 1.25rem;
+    margin-left: 0;
+    background: transparent;
+    color: var(--acorn-bright);
+    font-weight: 700;
+  }
+  .nav-menu a.nav-phone:last-child { border-bottom: none; }
+  .nav-menu a.nav-phone:hover { background: transparent; color: var(--acorn-bright); }
+
+  /* Anchor links should clear the smaller mobile nav, not the desktop 5rem */
+  body section[id] { scroll-margin-top: 4rem; }
 }
