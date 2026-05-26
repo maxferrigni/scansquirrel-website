@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I Come to You - In-Home Photo Scanning in Los Angeles | Scan Squirrel</title>
-<meta name="description" content="I come to you for in-home photo scanning across Los Angeles. Your photos never leave LA. 600 DPI archival scans, 48-hour turnaround, $1 per photo. Eagle Rock based, serving all of Northeast LA.">
+<title>Scan Squirrel - Photo Scanning and Preservation</title>
+<meta name="description" content="Professional in-home photo scanning in Los Angeles. 600 DPI archival scans, enhancement, and direct delivery to your Google Photos or Apple Photos timeline.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/nav.css">
 <style>
@@ -34,199 +34,229 @@ body {
 }
 
 section[id] { scroll-margin-top: 5rem; }
-section { padding: 2.5rem 3rem; }
-.wrap { max-width: 900px; margin: 0 auto; }
+section { padding: 2rem 3rem; }
+.wrap { max-width: 720px; margin: 0 auto; }
 
-h1 {
-  font-family: 'Fraunces', serif;
-  font-size: 2.6rem;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 1rem;
-  color: var(--ink);
-}
 h2 {
   font-family: 'Fraunces', serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.25;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
+
 h3 {
   font-family: 'Fraunces', serif;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
 }
+
 p {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   color: var(--feather);
-  font-size: 1rem;
+  font-size: 0.95rem;
+}
+
+ul {
+  margin: 0.15rem 0 0.6rem 1.25rem;
+  color: var(--feather);
+  font-size: 0.95rem;
+}
+ul li { margin-bottom: 0.25rem; }
+
+/* Hero intro */
+.hero-intro {
+  max-width: 900px;
+  margin: 1.5rem auto 1.5rem auto;
+  text-align: center;
+}
+.hero-intro h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+.hero-intro p {
+  font-size: 1.05rem;
+  color: var(--feather);
+  text-align: justify;
+  text-align-last: center;
+  max-width: 720px;
+  margin: 0 auto;
   line-height: 1.7;
+}
+
+/* Hero gallery */
+.gallery-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.gallery-heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.gallery-heading h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+.gallery-heading p {
+  font-size: 0.95rem;
+  color: var(--ash);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+}
+.gallery-img-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* square container */
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--cream);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.gallery-img-wrap:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+.gallery-img-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-img-wrap img.crop-top {
+  object-position: top;
+}
+.gallery-caption {
+  margin-top: 0.6rem;
+  text-align: center;
+}
+.gallery-caption .era {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: block;
+  line-height: 1.3;
+}
+.gallery-caption .decade {
+  font-size: 0.8rem;
+  color: var(--ash);
+  display: block;
+  margin-top: 0.15rem;
+}
+.gallery-disclaimer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ash);
+  font-style: italic;
+  margin-top: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Step flow - table layout */
+.steps-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.steps-table td {
+  vertical-align: top;
+  padding: 0.4rem 0.8rem;
+  width: 25%;
+}
+.steps-table .step-num {
+  font-family: 'Fraunces', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--acorn);
+  margin-bottom: 0.15rem;
+}
+.steps-table .step-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.steps-table p {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--feather);
+}
+.steps-table .img-row td {
+  text-align: center;
+  padding-top: 0.4rem;
+}
+.steps-table .img-row img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+/* Mobile: stacked */
+.steps-mobile { display: none; }
+.steps-mobile .m-step {
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.steps-mobile .m-step .step-num {
+  font-family: 'Fraunces', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--acorn);
+  margin-bottom: 0.15rem;
+}
+.steps-mobile .m-step .step-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.steps-mobile .m-step p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--feather);
+  text-align: left;
+  margin-bottom: 0.75rem;
+}
+.steps-mobile .m-step img {
+  max-width: 260px;
+  height: auto;
 }
 
 .bg-warm { background: var(--warm); }
 .bg-bone { background: var(--bone); }
 .bg-cream { background: var(--cream); }
 .bg-dark { background: var(--feather); color: var(--bone); }
-.bg-dark h2, .bg-dark p { color: var(--nest); }
+.bg-dark h2, .bg-dark p, .bg-dark ul, .bg-dark li { color: var(--nest); }
 .bg-dark h2 { color: var(--bone); }
-
-.first-section { padding-top: 6.5rem; }
-
-/* Hero */
-.hero {
-  text-align: center;
-  max-width: 820px;
-  margin: 0 auto;
-}
-.hero h1 {
-  font-size: 2.8rem;
-}
-.hero .lede {
-  font-size: 1.15rem;
-  color: var(--feather);
-  margin: 0.5rem auto 1.75rem;
-  max-width: 680px;
-  line-height: 1.6;
-}
-.hero-ctas {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
-.cta-primary, .cta-secondary {
-  display: inline-block;
-  text-decoration: none;
-  padding: 0.85rem 1.6rem;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: transform 0.15s ease, background 0.2s ease;
-}
-.cta-primary {
-  background: var(--acorn);
-  color: var(--bone);
-}
-.cta-primary:hover { background: var(--acorn-bright); }
-.cta-secondary {
-  background: transparent;
-  color: var(--acorn-bright);
-  border: 2px solid var(--acorn-bright);
-}
-.cta-secondary:hover { background: var(--acorn-bright); color: var(--bone); }
-
-/* How it works */
-.how-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-.how-step {
-  background: var(--bone);
-  border-radius: 8px;
-  padding: 1.25rem 1.1rem;
-}
-.how-step .step-num {
-  font-family: 'Fraunces', serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--acorn);
-  margin-bottom: 0.3rem;
-  letter-spacing: 0.05em;
-}
-.how-step .step-title {
-  font-family: 'Fraunces', serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  line-height: 1.3;
-}
-.how-step p {
-  font-size: 0.9rem;
-  line-height: 1.55;
-  margin-bottom: 0;
-}
-
-/* Comparison table */
-.compare-wrap { overflow-x: auto; }
-.compare {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  min-width: 640px;
-  background: var(--bone);
-  border-radius: 8px;
-  overflow: hidden;
-}
-.compare th, .compare td {
-  padding: 0.7rem 0.9rem;
-  text-align: left;
-  font-size: 0.92rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  vertical-align: top;
-}
-.compare th {
-  background: var(--cream);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 0.88rem;
-}
-.compare th.me {
-  background: var(--acorn);
-  color: var(--bone);
-}
-.compare td.me {
-  background: rgba(160, 105, 63, 0.08);
-  font-weight: 600;
-  color: var(--ink);
-}
-.compare tr:last-child td { border-bottom: none; }
-.compare .row-label {
-  font-weight: 600;
-  color: var(--ink);
-  background: var(--warm);
-}
-
-/* Trust signals */
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  margin-top: 1rem;
-}
-.trust-stat {
-  text-align: center;
-  padding: 1.25rem 0.5rem;
-}
-.trust-stat .num {
-  font-family: 'Fraunces', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--acorn);
-  line-height: 1.1;
-  display: block;
-}
-.trust-stat .label {
-  font-size: 0.9rem;
-  color: var(--feather);
-  margin-top: 0.4rem;
-  line-height: 1.4;
-  display: block;
-}
 
 /* Service area pills */
 .area-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
 }
 .area-pill {
   background: var(--cream);
@@ -237,20 +267,31 @@ p {
   font-weight: 500;
 }
 
-/* Contact */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.price-row:last-child { border-bottom: none; }
+.price-row h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.price-row .price {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--acorn);
+}
+
 .contact-email {
   font-family: 'Fraunces', serif;
   font-size: 1.4rem;
   color: var(--acorn-bright);
   text-decoration: none;
-}
-.contact-phone {
-  font-family: 'Fraunces', serif;
-  font-size: 1.25rem;
-  color: var(--acorn-bright);
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 0.3rem;
 }
 
 footer {
@@ -282,16 +323,24 @@ footer .ft {
   margin-top: 0.4rem;
 }
 
+.first-section { padding-top: 6.5rem; }
+
 @media (max-width: 768px) {
-  section { padding: 1.75rem 1.25rem; }
+  section { padding: 1.5rem 1.5rem; }
   .first-section { padding-top: 7.5rem; }
-  .hero h1 { font-size: 1.85rem; }
-  .hero .lede { font-size: 1rem; }
-  .hero-ctas { flex-direction: column; align-items: stretch; }
-  .cta-primary, .cta-secondary { text-align: center; }
-  .how-grid { grid-template-columns: 1fr; gap: 0.9rem; }
-  .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
-  .trust-stat .num { font-size: 2rem; }
+  .hero-intro h1 { font-size: 1.7rem; }
+  .hero-intro p { font-size: 0.95rem; text-align: left; text-align-last: left; }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .gallery-img-wrap {
+    padding-bottom: 75%; /* slightly less square on mobile */
+  }
+  .gallery-heading h2 { font-size: 1.5rem; }
+  .steps-table { display: none; }
+  .steps-mobile { display: block; }
+  .price-row { flex-direction: column; gap: 0.25rem; }
   .footer-row { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
@@ -331,147 +380,220 @@ fbq('track', 'PageView');
 
 <div id="nav-placeholder"></div>
 
-<!-- 1. Hero -->
+<!-- Hero Gallery -->
 <section class="bg-warm first-section">
-  <div class="hero">
-    <h1>I come to you. Your photos never leave Los Angeles.</h1>
-    <p class="lede">I am a one-person photo scanning service based in Eagle Rock. I drive to your home, scan your photos in person, and return everything within 48 hours - originals organized in a fireproof case, digital scans on your phone.</p>
-    <div class="hero-ctas">
-      <a href="tel:+12132902327" class="cta-primary">Call (213) 290-2327</a>
-      <a href="mailto:hello@scansquirrel.com?subject=I%20want%20you%20to%20come%20to%20me" class="cta-secondary">Email Me</a>
+  <div class="hero-intro">
+    <h1>Did you know there were photos before the iPhone?</h1>
+    <p>Look at what some of our customers have brought us. With modern scanners and AI tools, we can stop you in your tracks and melt your heart. Please protect your memories and get them into your iPhotos and Google Photos so you can share them. Don't wait.</p>
+  </div>
+  <div class="gallery-wrap">
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="gallery-img-wrap">
+          <img src="/images/8194966_6987301_03_004.jpg" alt="Vintage portrait of a baby in a wicker chair">
+        </div>
+        <div class="gallery-caption">
+          <span class="era">Way, Way Back</span>
+          <span class="decade">Early 1900s</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-wrap">
+          <img src="/images/8194966_6987301_15_010.jpg" alt="Worker on a Los Angeles building, 1940s">
+        </div>
+        <div class="gallery-caption">
+          <span class="era">Old Los Angeles</span>
+          <span class="decade">1940s</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-wrap">
+          <img src="/images/8899420_9490747_01_002.jpg" alt="Boy in a pedal car, 1950s">
+        </div>
+        <div class="gallery-caption">
+          <span class="era">Mid-Century Memories</span>
+          <span class="decade">1950s</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-wrap">
+          <img src="/images/5514008_5080152_02_001.jpg" alt="Jazz band performing on stage, 1960s">
+        </div>
+        <div class="gallery-caption">
+          <span class="era">Smoky Stages</span>
+          <span class="decade">1960s</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-wrap">
+          <img src="/images/7189107_5997803_01_005.jpg" alt="Three brothers studio portrait, 1980s" class="crop-top">
+        </div>
+        <div class="gallery-caption">
+          <span class="era">Family Studio Portraits</span>
+          <span class="decade">1980s</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-wrap">
+          <img src="/images/7189107_7365862_03_027.jpg" alt="Young dancer at a recital, 1980s">
+        </div>
+        <div class="gallery-caption">
+          <span class="era">Dance Recitals</span>
+          <span class="decade">1980s</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-wrap">
+          <img src="/images/7189107_7196181_01_227.jpg" alt="Goofy moment with a cat, 1990s">
+        </div>
+        <div class="gallery-caption">
+          <span class="era">Goofy Moments</span>
+          <span class="decade">1990s</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-wrap">
+          <img src="/images/9435919_5048715_08_016.jpg" alt="College football game, 1990s">
+        </div>
+        <div class="gallery-caption">
+          <span class="era">College Years</span>
+          <span class="decade">1990s</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-wrap">
+          <img src="/images/PXL_20260428_234607130.jpg" alt="Negatives and a Kodak slide held against the sky">
+        </div>
+        <div class="gallery-caption">
+          <span class="era">Negatives &amp; Slides Too</span>
+          <span class="decade">Every format</span>
+        </div>
+      </div>
     </div>
+    <p class="gallery-disclaimer">Photographs shown with permission of their owners. Please do not reproduce without consent.</p>
   </div>
 </section>
 
-<!-- 2. How It Works -->
-<section class="bg-bone">
-  <div class="wrap">
-    <h2 style="text-align:center">How It Works</h2>
-    <p style="text-align:center;max-width:600px;margin:0 auto 0.5rem">No shipping, no warehouses, no anonymous handlers. Just me, your kitchen table, and your photos.</p>
-    <div class="how-grid">
-      <div class="how-step">
+<!-- How It Works -->
+<section id="how" class="bg-bone">
+  <div style="max-width:1000px;margin:0 auto;padding:0 1rem">
+    <h2 style="text-align:center;margin-bottom:1.5rem">How It Works</h2>
+
+    <!-- Desktop: table -->
+    <table class="steps-table">
+      <tr>
+        <td>
+          <div class="step-num">01</div>
+          <div class="step-title">We Talk</div>
+          <p>Tell me what you have got - a shoebox, a bin, frames on the wall. Every collection is different. We start with a free and easy conversation.</p>
+        </td>
+        <td>
+          <div class="step-num">02</div>
+          <div class="step-title">Scanning</div>
+          <p>I scan your photos because my system is faster, safer, and better than doing it yourself. Your originals get a 600 DPI archival scan (forever) and a cleaned up, dated and tagged version comes to your iPhone for sharing.</p>
+        </td>
+        <td>
+          <div class="step-num">03</div>
+          <div class="step-title">Organized and Safe</div>
+          <p>Your collection comes back cataloged - dated, named, organized. Originals returned in a fireproof case.</p>
+        </td>
+        <td>
+          <div class="step-num">04</div>
+          <div class="step-title">Enjoyed Forever</div>
+          <p>Now your photos are in Google Photos or iPhotos. Here is where the magic happens - they start showing up as reminders, memories, and more.</p>
+        </td>
+      </tr>
+      <tr class="img-row">
+        <td><img src="/images/Shoebox_Disarray_f0ebe3.png" alt="Messy shoebox of photos"></td>
+        <td><img src="/images/scan_office3.png" alt="Scanning studio"></td>
+        <td><img src="/images/Organized_Photos_f0ebe3.png" alt="Organized photos"></td>
+        <td><img src="/images/Happy_Customer.png" alt="Enjoying photos on phone"></td>
+      </tr>
+    </table>
+
+    <!-- Mobile: stacked -->
+    <div class="steps-mobile">
+      <div class="m-step">
         <div class="step-num">01</div>
         <div class="step-title">We Talk</div>
-        <p>A quick call or text to understand what you have - shoebox, photo albums, slides, negatives. Free, no pressure.</p>
+        <p>Tell me what you have got - a shoebox, a bin, frames on the wall. Every collection is different. We start with a free and easy conversation.</p>
+        <img src="/images/Shoebox_Disarray_f0ebe3.png" alt="Messy shoebox of photos">
       </div>
-      <div class="how-step">
+      <div class="m-step">
         <div class="step-num">02</div>
-        <div class="step-title">I Visit and Pick Up</div>
-        <p>I drive to your home in Eagle Rock, Highland Park, Pasadena, Silver Lake - anywhere in LA. We pack up your photos together so you know exactly what is leaving.</p>
+        <div class="step-title">Scanning</div>
+        <p>I scan your photos because my system is faster, safer, and better than doing it yourself. Your originals get a 600 DPI archival scan (forever) and a cleaned up, dated and tagged version comes to your iPhone for sharing.</p>
+        <img src="/images/scan_office3.png" alt="Scanning studio">
       </div>
-      <div class="how-step">
+      <div class="m-step">
         <div class="step-num">03</div>
-        <div class="step-title">I Scan and Enhance</div>
-        <p>600 DPI archival scans of every photo, front and back. AI enhancement to fix fading and sharpen faces. Dating and names embedded so they land in the right spot on your timeline.</p>
+        <div class="step-title">Organized and Safe</div>
+        <p>Your collection comes back cataloged - dated, named, organized. Originals returned in a fireproof case.</p>
+        <img src="/images/Organized_Photos_f0ebe3.png" alt="Organized photos">
       </div>
-      <div class="how-step">
+      <div class="m-step">
         <div class="step-num">04</div>
-        <div class="step-title">I Return Everything</div>
-        <p>Within 48 hours, I bring your originals back in a fireproof case - organized and labeled. Your scans drop into Google Photos or Apple Photos in one tap.</p>
+        <div class="step-title">Enjoyed Forever</div>
+        <p>Now your photos are in Google Photos or iPhotos. Here is where the magic happens - they start showing up as reminders, memories, and more.</p>
+        <img src="/images/Happy_Customer.png" alt="Enjoying photos on phone">
       </div>
     </div>
   </div>
 </section>
 
-<!-- 3. Me vs Mail-In -->
-<section class="bg-warm">
+<!-- Pricing -->
+<section id="pricing" class="bg-warm">
   <div class="wrap">
-    <h2 style="text-align:center">Local Neighbor vs. Mail-In Warehouse</h2>
-    <p style="text-align:center;max-width:680px;margin:0 auto 0.5rem">The big mail-in services ship your irreplaceable photos to a warehouse hundreds or thousands of miles away. Here is what that looks like compared to working with me.</p>
-    <div class="compare-wrap">
-      <table class="compare">
-        <thead>
-          <tr>
-            <th></th>
-            <th class="me">ScanSquirrel</th>
-            <th>LegacyBox</th>
-            <th>ScanMyPhotos</th>
-            <th>iMemories</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="row-label">Where photos go</td>
-            <td class="me">Stay in your LA neighborhood</td>
-            <td>Shipped to Tennessee</td>
-            <td>Shipped to California warehouse</td>
-            <td>Shipped to Arizona</td>
-          </tr>
-          <tr>
-            <td class="row-label">Turnaround</td>
-            <td class="me">48 hours</td>
-            <td>Weeks to months</td>
-            <td>Weeks</td>
-            <td>Weeks to months</td>
-          </tr>
-          <tr>
-            <td class="row-label">Who handles them</td>
-            <td class="me">Me, in person. You meet me.</td>
-            <td>Anonymous workers</td>
-            <td>Anonymous workers</td>
-            <td>Anonymous workers</td>
-          </tr>
-          <tr>
-            <td class="row-label">If something goes wrong in transit</td>
-            <td class="me">I drive. You watch me leave with them.</td>
-            <td>Shipped twice, multiple handlers</td>
-            <td>Shipped twice, multiple handlers</td>
-            <td>Shipped twice, multiple handlers</td>
-          </tr>
-          <tr>
-            <td class="row-label">Originals returned</td>
-            <td class="me">Organized in fireproof case</td>
-            <td>Returned in shipping box</td>
-            <td>Returned in shipping box</td>
-            <td>Returned in shipping box</td>
-          </tr>
-          <tr>
-            <td class="row-label">Dates and names embedded</td>
-            <td class="me">Yes, on every photo</td>
-            <td>Limited</td>
-            <td>No</td>
-            <td>Limited</td>
-          </tr>
-          <tr>
-            <td class="row-label">Price per photo</td>
-            <td class="me">$1</td>
-            <td>Varies, often higher</td>
-            <td>Varies</td>
-            <td>Varies</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2>Simple Pricing</h2>
+    <div class="price-row">
+      <div><h3>Per Photo</h3></div>
+      <div class="price">$1</div>
+    </div>
+    <div class="price-row">
+      <div><h3>Per Shoebox (~200 photos)</h3></div>
+      <div class="price">~$200</div>
+    </div>
+    <div class="price-row">
+      <div><h3>Fireproof Case (optional)</h3></div>
+      <div class="price">$50</div>
     </div>
   </div>
 </section>
 
-<!-- 4. Trust Signals -->
+<!-- What You Get -->
+<section id="what" class="bg-bone">
+  <div class="wrap">
+    <h2>From Messy Shoebox to...</h2>
+    <ul>
+      <li><strong>600 DPI archival scans</strong> - front and back, every photo</li>
+      <li><strong>Enhanced versions</strong> - fading reversed, faces sharpened, colors corrected</li>
+      <li><strong>Dates and names embedded</strong> - so photos land in the right spot on your timeline</li>
+      <li><strong>Delivered to your phone</strong> - one link drops everything into Google Photos or Apple Photos</li>
+      <li><strong>Originals returned in a fireproof case</strong> - organized, labeled, protected</li>
+      <li><strong>48-hour turnaround</strong> - your photos never leave the neighborhood</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-warm">
+  <div class="wrap" style="text-align:center">
+    <p style="font-size:1.05rem">Your memories, safely stashed.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-dark" style="text-align:center">
+  <div class="wrap">
+    <h2>Ready to get started?</h2>
+    <p>Every consultation is free. No pressure.</p>
+    <p class="contact-email">hello@scansquirrel.com</p>
+    <p style="margin-top:0.3rem;font-family:Fraunces,serif;font-size:1.2rem;color:var(--acorn-bright)">(213) 290-2327</p>
+  </div>
+</section>
+
+<!-- Service Areas -->
 <section class="bg-bone">
-  <div class="wrap">
-    <h2 style="text-align:center">The Numbers</h2>
-    <div class="trust-grid">
-      <div class="trust-stat">
-        <span class="num">600</span>
-        <span class="label">DPI archival scans, front and back</span>
-      </div>
-      <div class="trust-stat">
-        <span class="num">48h</span>
-        <span class="label">Average turnaround in your hands</span>
-      </div>
-      <div class="trust-stat">
-        <span class="num">$1</span>
-        <span class="label">Per photo. All in. No surprises.</span>
-      </div>
-      <div class="trust-stat">
-        <span class="num">0</span>
-        <span class="label">Miles your photos travel outside LA</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5. Neighborhoods -->
-<section class="bg-warm">
   <div class="wrap">
     <h2>Where I Work</h2>
     <p>I am based in Eagle Rock and serve neighborhoods across Northeast LA, Pasadena, and the surrounding area. If you are nearby and have photos to preserve, I can come to you.</p>
@@ -487,21 +609,10 @@ fbq('track', 'PageView');
       <span class="area-pill">Atwater Village</span>
       <span class="area-pill">Mt. Washington</span>
     </div>
-    <p style="margin-top:0.75rem;color:var(--ash);font-size:0.9rem">Somewhere else in LA? Reach out anyway - I am flexible.</p>
+    <p style="margin-top:0.6rem;color:var(--ash);font-size:0.9rem">Somewhere else in LA? Reach out anyway - I am flexible.</p>
   </div>
 </section>
 
-<!-- 6. Contact -->
-<section id="contact" class="bg-dark" style="text-align:center">
-  <div class="wrap">
-    <h2>Ready to get started?</h2>
-    <p>Every consultation is free. No pressure.</p>
-    <p><a href="mailto:hello@scansquirrel.com" class="contact-email">hello@scansquirrel.com</a></p>
-    <a href="tel:+12132902327" class="contact-phone">(213) 290-2327</a>
-  </div>
-</section>
-
-<!-- 7. Footer -->
 <footer>
   <div class="footer-row">
     <p>2025 Scan Squirrel - Los Angeles, CA</p>
@@ -511,6 +622,8 @@ fbq('track', 'PageView');
 </footer>
 
 <script src="/js/nav-loader.js"></script>
+
+<script async src="https://static.klaviyo.com/onsite/js/UYPYKi/klaviyo.js?company_id=UYPYKi"></script>
 
 </body>
 </html>

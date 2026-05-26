@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipment & Tech | Scan Squirrel</title>
+<meta name="description" content="The scanners, software, and storage I use to preserve your photos. A look at my favorite gear and the tools I trust.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/nav.css">
+<style>
+:root {
+  --ink: #1a1a1a;
+  --bone: #f0ebe3;
+  --warm: #f5f0e8;
+  --cream: #e8e1d5;
+  --feather: #2a2a2a;
+  --acorn: #8b5e3c;
+  --acorn-bright: #a0693f;
+  --ash: #6b6660;
+  --nest: #d4c9b8;
+  --branch: #8b7e6a;
+  --bark: #5c4a3a;
+  --teal: #2c6e6a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  background: var(--bone);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+section[id] { scroll-margin-top: 5rem; }
+section { padding: 2rem 3rem; }
+.wrap { max-width: 720px; margin: 0 auto; }
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+p {
+  margin-bottom: 0.8rem;
+  color: var(--feather);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+a.inline-link {
+  color: var(--acorn-bright);
+  text-decoration: none;
+  border-bottom: 1px solid var(--acorn-bright);
+  font-weight: 500;
+}
+a.inline-link:hover { color: var(--acorn); }
+
+.bg-warm { background: var(--warm); }
+.bg-bone { background: var(--bone); }
+.bg-cream { background: var(--cream); }
+.bg-dark { background: var(--feather); color: var(--bone); }
+.bg-dark h2, .bg-dark p { color: var(--nest); }
+.bg-dark h2 { color: var(--bone); }
+
+.gear-card {
+  background: var(--bone);
+  border-left: 3px solid var(--acorn);
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+  border-radius: 0 6px 6px 0;
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+}
+.gear-card .gear-img {
+  flex-shrink: 0;
+  width: 140px;
+}
+.gear-card .gear-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  background: white;
+  padding: 0.4rem;
+}
+.gear-card .gear-body { flex: 1; }
+.gear-card .gear-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--acorn);
+  margin-bottom: 0.3rem;
+}
+.gear-card h3 {
+  margin-bottom: 0.3rem;
+}
+.gear-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+.gear-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+.gear-price {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--acorn);
+}
+.gear-link {
+  display: inline-block;
+  background: var(--acorn-bright);
+  color: var(--bone);
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.gear-link:hover { background: var(--acorn); }
+
+.squirrel-callout {
+  border: 2px solid var(--acorn);
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+  background: var(--warm);
+  margin-top: 1rem;
+}
+.squirrel-callout h3 {
+  color: var(--acorn);
+  margin-bottom: 0.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--acorn-bright);
+  color: var(--bone);
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+}
+.cta-button:hover { background: var(--acorn); }
+
+.contact-email {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--acorn-bright);
+  text-decoration: none;
+}
+
+footer {
+  background: var(--feather);
+  padding: 1.25rem 3rem;
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+footer p {
+  font-size: 0.8rem;
+  color: var(--ash);
+  margin: 0;
+}
+footer .ft {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--branch);
+}
+.footer-permission {
+  font-size: 0.72rem;
+  color: var(--branch);
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  section { padding: 1.5rem 1.5rem; }
+  .first-section { padding-top: 7.5rem; }
+  h1 { font-size: 1.7rem; }
+  .gear-card { flex-direction: column; gap: 1rem; }
+  .gear-card .gear-img { width: 100%; max-width: 180px; margin: 0 auto; }
+  .footer-row { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+.first-section { padding-top: 5rem; }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-M0DFY2Y7XE');
+gtag('config', 'AW-17990603569');
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2148206675947024');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"/></noscript>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "vp5j1zbe4c");
+</script>
+
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<section class="bg-warm first-section">
+  <div class="wrap">
+    <h1>Equipment &amp; Tech</h1>
+    <p>I get this question a lot: <em>what do you actually use?</em> Here is the short answer. These are the scanners, software, and storage tools I trust with other people's irreplaceable photos. I am a big fan of all of them.</p>
+    <p>If you are thinking about scanning your own photos, this list is also a pretty good starting point.</p>
+    <p style="font-size:0.85rem;color:var(--ash);font-style:italic">Prices below are approximate and change all the time on Amazon. Click through for current pricing.</p>
+  </div>
+</section>
+
+<section class="bg-bone">
+  <div class="wrap">
+    <h2>Photo Scanners</h2>
+    <p>For shoeboxes, photo albums, loose prints - the stuff most people have a lot of - speed and consistency matter more than anything.</p>
+
+    <div class="gear-card">
+      <div class="gear-img">
+        <img src="/images/epson_scanner_ff680w.jpg" alt="Epson FastFoto FF-680W photo scanner">
+      </div>
+      <div class="gear-body">
+        <div class="gear-tag">My Favorite</div>
+        <h3>Epson FastFoto FF-680W</h3>
+        <p>This is the workhorse. It scans a stack of photos at 600 DPI faster than you can blink, captures the front and back of every photo, and the image quality is genuinely excellent. I am a big fan. If you only buy one scanner, this is the one.</p>
+        <div class="gear-meta">
+          <span class="gear-price">~$599</span>
+          <a href="https://www.amazon.com/dp/B07DLX26BB" target="_blank" rel="noopener" class="gear-link">View on Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card">
+      <div class="gear-body">
+        <div class="gear-tag">For The Tricky Stuff</div>
+        <h3>A More Powerful Flatbed</h3>
+        <p>For oversized photos, fragile originals, frames, and anything that should not go through a feeder, I use a high-quality flatbed scanner. It is slower but it is the right tool for delicate or unusual pieces.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-warm">
+  <div class="wrap">
+    <h2>Slides &amp; Negatives</h2>
+    <p>Slides and negatives are a different world. They need a dedicated film scanner with much higher resolution, infrared dust removal, and proper color calibration. The cheap stuff will not cut it.</p>
+
+    <div class="gear-card">
+      <div class="gear-img">
+        <img src="/images/of135i.jpg" alt="Plustek OpticFilm 135i Ai film scanner">
+      </div>
+      <div class="gear-body">
+        <div class="gear-tag">My Favorite So Far</div>
+        <h3>Plustek OpticFilm 135i Ai</h3>
+        <p>This is what I reach for first for slides and negatives. Auto-feeding, sharp, fast for a film scanner, and the image quality looks outstanding. I have not tested it too extensively yet, but so far I really like it.</p>
+        <div class="gear-meta">
+          <span class="gear-price">~$799</span>
+          <a href="https://www.amazon.com/dp/B0DQXW6TWT" target="_blank" rel="noopener" class="gear-link">View on Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card">
+      <div class="gear-img">
+        <img src="/images/plustek_of8300i.jpg" alt="Plustek OpticFilm 8300i Ai film scanner">
+      </div>
+      <div class="gear-body">
+        <div class="gear-tag">Also Excellent</div>
+        <h3>Plustek OpticFilm 8300i Ai</h3>
+        <p>I have also used the 8300i Ai - manual feed, but the image quality is right up there with the 135i. A great choice if you only have a small batch of slides or negatives and you do not need the auto-feeder.</p>
+        <div class="gear-meta">
+          <span class="gear-price">~$539</span>
+          <a href="https://www.amazon.com/dp/B09L7NDNFG" target="_blank" rel="noopener" class="gear-link">View on Amazon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-bone">
+  <div class="wrap">
+    <h2>AI Enhancement</h2>
+    <p>This is the part that genuinely amazes people. Once your photos are scanned, I run them through a custom-built enhancement pipeline. Faded colors come back. Faces sharpen. Damaged spots get repaired. Dates and names get embedded automatically - so when your photos arrive in your iPhone Photos or Google Photos, they land in the right spot on your timeline. No sorting. No dragging. No "what year was this?" - they just appear where they belong.</p>
+    <p>That is the magic moment. You open your phone and a photo from 1978 shows up in your timeline like it was always there. You scroll your year and your dad is suddenly young again, your kids are small, and the memories come back in order. Your collection becomes part of your life again, not a box in the closet.</p>
+    <p>The original archival scan is always preserved untouched. Enhancements are a separate file, so nothing about the original is ever lost.</p>
+  </div>
+</section>
+
+<section class="bg-warm">
+  <div class="wrap">
+    <h2>Storage &amp; Protection</h2>
+    <p>Scanning your photos is only half the job. The originals still need a safe place to live. I am still researching the best, most cost-effective way to keep your memories organized and fireproof - but this case is a great starting point at a great price.</p>
+
+    <div class="gear-card">
+      <div class="gear-body">
+        <div class="gear-tag">Huge Fan</div>
+        <h3>ENGPOW Fireproof Photo Storage Box</h3>
+        <p>Your originals come back to you in one of these. Fireproof to 2000°F, water-resistant, lockable, and sized perfectly for organized photo cases. I am a huge fan - it is the right balance of protection, portability, and price.</p>
+        <div class="gear-meta">
+          <span class="gear-price">~$28</span>
+          <a href="https://www.amazon.com/dp/B07TVWXN3D" target="_blank" rel="noopener" class="gear-link">View on Amazon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-bone">
+  <div class="wrap">
+    <h2>Want to Scan Your Own Photos?</h2>
+    <p>If you would rather do this yourself, I am happy to help. I would rather you scan them yourself than not scan them at all.</p>
+    <div class="squirrel-callout">
+      <h3>Become a Squirrel</h3>
+      <p>I will share what I have learned - which scanner to buy for your situation, how to organize a shoebox before you start, how to back things up properly, and the mistakes that ruin originals. No catch.</p>
+      <a href="mailto:hello@scansquirrel.com?subject=I%20want%20to%20become%20a%20Squirrel" class="cta-button">Email Me to Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="bg-dark" style="text-align:center">
+  <div class="wrap">
+    <h2>Want me to do it for you?</h2>
+    <p>Every consultation is free. No pressure.</p>
+    <p class="contact-email">hello@scansquirrel.com</p>
+    <p style="margin-top:0.3rem;font-family:Fraunces,serif;font-size:1.2rem;color:var(--acorn-bright)">(213) 290-2327</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-row">
+    <p>2025 Scan Squirrel - Los Angeles, CA</p>
+    <span class="ft">Gathered. Organized. Preserved.</span>
+  </div>
+  <p class="footer-permission">All photographs on this site are displayed with permission of their owners. Please do not reproduce without consent.</p>
+</footer>
+
+<script src="/js/nav-loader.js"></script>
+
+<script async src="https://static.klaviyo.com/onsite/js/UYPYKi/klaviyo.js?company_id=UYPYKi"></script>
+
+</body>
+</html>
