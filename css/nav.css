@@ -65,7 +65,16 @@ nav#nav {
 }
 .nav-menu a.nav-phone {
   color: var(--acorn-bright);
-  font-weight: 600;
+  font-weight: 700;
+  border: 1.5px solid var(--acorn-bright);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-left: 0.6rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.nav-menu a.nav-phone:hover {
+  background: var(--acorn-bright);
+  color: var(--bone);
 }
 
 @media (max-width: 768px) {
