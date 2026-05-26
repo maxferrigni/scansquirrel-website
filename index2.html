@@ -3,10 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scan Squirrel - Photo Scanning and Preservation</title>
-<meta name="description" content="Professional in-home photo scanning in Los Angeles. 600 DPI archival scans, enhancement, and direct delivery to your Google Photos or Apple Photos timeline.">
+<title>ScanSquirrel — Photo Scanning and Preservation, Los Angeles</title>
+<meta name="description" content="Local photo scanning in Northeast LA. $1 per photo, 48-hour turnaround, originals returned in a fireproof case. Serving Eagle Rock, Pasadena, Glendale and beyond.">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/nav.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-M0DFY2Y7XE');
+gtag('config', 'AW-17990603569');
+</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2148206675947024');fbq('track','PageView');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vp5j1zbe4c");
+</script>
+
 <style>
 :root {
   --ink: #1a1a1a;
@@ -22,581 +42,665 @@
   --bark: #5c4a3a;
   --teal: #2c6e6a;
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  font-family: 'DM Sans', sans-serif;
-  color: var(--ink);
-  background: var(--bone);
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.6;
+  font-family:'DM Sans',sans-serif;
+  color:var(--ink);
+  background:var(--bone);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
 }
-
-section[id] { scroll-margin-top: 5rem; }
-section { padding: 2rem 3rem; }
-.wrap { max-width: 720px; margin: 0 auto; }
+section { padding:2.5rem 3rem; }
+section[id] { scroll-margin-top:5rem; }
+.wrap { max-width:720px; margin:0 auto; }
+.wrap-wide { max-width:1100px; margin:0 auto; }
 
 h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin-bottom: 0.6rem;
+  font-family:'Fraunces',serif;
+  font-size:1.5rem;
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.25;
+  margin-bottom:0.6rem;
 }
-
 h3 {
-  font-family: 'Fraunces', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+  font-family:'Fraunces',serif;
+  font-size:1.1rem;
+  font-weight:600;
+  margin-bottom:0.3rem;
 }
-
 p {
-  margin-bottom: 0.5rem;
-  color: var(--feather);
-  font-size: 0.95rem;
+  margin-bottom:0.5rem;
+  color:var(--feather);
+  font-size:0.95rem;
 }
 
-ul {
-  margin: 0.15rem 0 0.6rem 1.25rem;
-  color: var(--feather);
-  font-size: 0.95rem;
-}
-ul li { margin-bottom: 0.25rem; }
+.bg-warm  { background:var(--warm); }
+.bg-bone  { background:var(--bone); }
+.bg-cream { background:var(--cream); }
+.bg-dark  { background:var(--feather); color:var(--bone); }
+.bg-dark h2, .bg-dark p { color:var(--nest); }
+.bg-dark h2 { color:var(--bone); }
 
-/* Hero intro */
-.hero-intro {
-  max-width: 900px;
-  margin: 1.5rem auto 1.5rem auto;
-  text-align: center;
+/* ============================================================
+   HERO — two column
+   ============================================================ */
+.hero {
+  background:var(--warm);
+  padding-top:6.5rem;
+  padding-bottom:0;
 }
-.hero-intro h1 {
-  font-family: 'Fraunces', serif;
-  font-size: 2.4rem;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 1rem;
-  color: var(--ink);
+.hero-inner {
+  max-width:1100px;
+  margin:0 auto;
+  padding:2rem 3rem 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+  min-height:calc(100vh - 6.5rem);
 }
-.hero-intro p {
-  font-size: 1.05rem;
-  color: var(--feather);
-  text-align: justify;
-  text-align-last: center;
-  max-width: 720px;
-  margin: 0 auto;
-  line-height: 1.7;
+.hero-left { padding-bottom:3rem; }
+.hero-eyebrow {
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:1rem;
+  display:block;
+}
+.hero-h1 {
+  font-family:'Fraunces',serif;
+  font-size:3rem;
+  font-weight:400;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  color:var(--ink);
+  margin-bottom:1rem;
+}
+.hero-h1 em {
+  font-style:italic;
+  color:var(--acorn);
+}
+.hero-sub {
+  font-size:1.05rem;
+  color:var(--ash);
+  line-height:1.7;
+  margin-bottom:1.75rem;
+  max-width:420px;
+}
+.hero-ctas {
+  display:flex;
+  gap:0.75rem;
+  flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+.btn-call {
+  background:var(--acorn);
+  color:var(--bone);
+  padding:0.8rem 1.6rem;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1rem;
+  transition:background 0.2s;
+  display:inline-block;
+}
+.btn-call:hover { background:var(--acorn-bright); }
+.btn-email {
+  color:var(--acorn);
+  padding:0.8rem 1.4rem;
+  border:2px solid var(--acorn);
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1rem;
+  display:inline-block;
+  transition:all 0.2s;
+}
+.btn-email:hover { background:var(--acorn); color:var(--bone); }
+
+/* Trust pills */
+.trust-pills {
+  display:flex;
+  gap:0.6rem;
+  flex-wrap:wrap;
+}
+.trust-pill {
+  background:var(--cream);
+  color:var(--bark);
+  padding:0.3rem 0.8rem;
+  border-radius:20px;
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.04em;
 }
 
-/* Hero gallery */
-.gallery-wrap {
-  max-width: 1100px;
-  margin: 0 auto;
+/* Hero photo — physical photo feel */
+.hero-right {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-bottom:3rem;
+  position:relative;
 }
-.gallery-heading {
-  text-align: center;
-  margin-bottom: 1.5rem;
+.hero-photo-frame {
+  position:relative;
+  display:inline-block;
 }
-.gallery-heading h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
+/* Shadow photo behind — gives depth */
+.hero-photo-frame::before {
+  content:'';
+  position:absolute;
+  inset:-4px;
+  background:var(--cream);
+  transform:rotate(3.5deg);
+  border-radius:2px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.12);
+  z-index:0;
 }
-.gallery-heading p {
-  font-size: 0.95rem;
-  color: var(--ash);
+.hero-photo-frame::after {
+  content:'';
+  position:absolute;
+  inset:-4px;
+  background:var(--nest);
+  transform:rotate(-1.5deg);
+  border-radius:2px;
+  z-index:1;
 }
+.hero-photo {
+  position:relative;
+  z-index:2;
+  display:block;
+  width:100%;
+  max-width:400px;
+  border-radius:2px;
+  object-fit:cover;
+}
+.hero-photo-caption {
+  position:absolute;
+  bottom:-2rem;
+  right:0;
+  font-family:'Fraunces',serif;
+  font-size:0.78rem;
+  font-style:italic;
+  color:var(--ash);
+  z-index:3;
+}
+
+/* ============================================================
+   TESTIMONIALS STRIP
+   ============================================================ */
+.testimonials {
+  background:var(--cream);
+  padding:3rem;
+}
+.testimonials-inner {
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:2rem;
+}
+.testimonial {
+  display:flex;
+  flex-direction:column;
+  gap:0.75rem;
+}
+.testimonial-quote {
+  font-family:'Fraunces',serif;
+  font-size:1rem;
+  font-weight:400;
+  font-style:italic;
+  color:var(--ink);
+  line-height:1.65;
+  flex:1;
+}
+.testimonial-quote::before {
+  content:'\201C';
+  color:var(--acorn);
+  font-size:1.4rem;
+  line-height:0;
+  vertical-align:-0.3rem;
+  margin-right:0.15rem;
+}
+.testimonial-attr {
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ash);
+}
+
+/* ============================================================
+   GALLERY — below fold
+   ============================================================ */
+.gallery-section {
+  background:var(--warm);
+  padding:2.5rem 3rem;
+}
+.gallery-header {
+  max-width:1100px;
+  margin:0 auto 1.5rem;
+}
+.gallery-header h2 { margin-bottom:0.25rem; }
+.gallery-header p { color:var(--ash); font-size:0.9rem; }
+
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
 }
-.gallery-item {
-  display: flex;
-  flex-direction: column;
-}
+.gallery-item { display:flex; flex-direction:column; }
 .gallery-img-wrap {
-  position: relative;
-  width: 100%;
-  padding-bottom: 100%; /* square container */
-  overflow: hidden;
-  border-radius: 4px;
-  background: var(--cream);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.gallery-img-wrap:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  position:relative;
+  width:100%;
+  padding-bottom:100%;
+  overflow:hidden;
+  border-radius:4px;
+  background:var(--cream);
 }
 .gallery-img-wrap img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform 0.3s ease;
 }
-.gallery-img-wrap img.crop-top {
-  object-position: top;
-}
-.gallery-caption {
-  margin-top: 0.6rem;
-  text-align: center;
-}
+.gallery-img-wrap:hover img { transform:scale(1.03); }
+.gallery-caption { margin-top:0.5rem; }
 .gallery-caption .era {
-  font-family: 'Fraunces', serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--ink);
-  display: block;
-  line-height: 1.3;
+  font-family:'Fraunces',serif;
+  font-size:0.9rem;
+  font-weight:600;
+  color:var(--ink);
+  display:block;
+  line-height:1.3;
 }
 .gallery-caption .decade {
-  font-size: 0.8rem;
-  color: var(--ash);
-  display: block;
-  margin-top: 0.15rem;
+  font-size:0.75rem;
+  color:var(--ash);
+  display:block;
+  margin-top:0.1rem;
 }
 .gallery-disclaimer {
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--ash);
-  font-style: italic;
-  margin-top: 1.5rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align:center;
+  font-size:0.78rem;
+  color:var(--ash);
+  font-style:italic;
+  margin-top:1.25rem;
+  max-width:1100px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-/* Step flow - table layout */
-.steps-table {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  table-layout: fixed;
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.steps-grid {
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
 }
-.steps-table td {
-  vertical-align: top;
-  padding: 0.4rem 0.8rem;
-  width: 25%;
+.step { display:flex; flex-direction:column; align-items:center; text-align:center; }
+.step-num {
+  font-family:'Fraunces',serif;
+  font-size:0.8rem;
+  font-weight:600;
+  color:var(--acorn);
+  margin-bottom:0.25rem;
+  letter-spacing:0.08em;
 }
-.steps-table .step-num {
-  font-family: 'Fraunces', serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--acorn);
-  margin-bottom: 0.15rem;
+.step-title {
+  font-family:'Fraunces',serif;
+  font-size:1rem;
+  font-weight:600;
+  margin-bottom:0.4rem;
+  color:var(--ink);
 }
-.steps-table .step-title {
-  font-family: 'Fraunces', serif;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+.step p {
+  font-size:0.84rem;
+  line-height:1.55;
+  color:var(--ash);
+  margin-bottom:0.75rem;
 }
-.steps-table p {
-  font-size: 0.84rem;
-  line-height: 1.5;
-  color: var(--feather);
-}
-.steps-table .img-row td {
-  text-align: center;
-  padding-top: 0.4rem;
-}
-.steps-table .img-row img {
-  max-width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: contain;
+.step img {
+  max-width:100%;
+  max-height:160px;
+  object-fit:contain;
+  margin-top:auto;
 }
 
-/* Mobile: stacked */
-.steps-mobile { display: none; }
-.steps-mobile .m-step {
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
-  text-align: center;
+/* ============================================================
+   WHAT YOU GET
+   ============================================================ */
+.what-list {
+  list-style:none;
+  padding:0;
+  margin-top:0.5rem;
 }
-.steps-mobile .m-step .step-num {
-  font-family: 'Fraunces', serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--acorn);
-  margin-bottom: 0.15rem;
+.what-list li {
+  display:flex;
+  align-items:flex-start;
+  gap:0.75rem;
+  padding:0.5rem 0;
+  border-bottom:1px solid var(--cream);
+  font-size:0.93rem;
+  color:var(--feather);
 }
-.steps-mobile .m-step .step-title {
-  font-family: 'Fraunces', serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-}
-.steps-mobile .m-step p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--feather);
-  text-align: left;
-  margin-bottom: 0.75rem;
-}
-.steps-mobile .m-step img {
-  max-width: 260px;
-  height: auto;
-}
+.what-list li:last-child { border-bottom:none; }
+.what-check { color:var(--teal); font-weight:700; flex-shrink:0; }
 
-.bg-warm { background: var(--warm); }
-.bg-bone { background: var(--bone); }
-.bg-cream { background: var(--cream); }
-.bg-dark { background: var(--feather); color: var(--bone); }
-.bg-dark h2, .bg-dark p, .bg-dark ul, .bg-dark li { color: var(--nest); }
-.bg-dark h2 { color: var(--bone); }
-
-/* Service area pills */
-.area-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-.area-pill {
-  background: var(--cream);
-  color: var(--bark);
-  padding: 0.3rem 0.85rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
+/* ============================================================
+   PRICING
+   ============================================================ */
 .price-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  padding:0.6rem 0;
+  border-bottom:1px solid rgba(0,0,0,0.08);
 }
-.price-row:last-child { border-bottom: none; }
-.price-row h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-bottom: 0;
-}
+.price-row:last-child { border-bottom:none; }
+.price-row h3 { font-size:0.95rem; font-weight:600; margin-bottom:0; }
 .price-row .price {
-  font-family: 'Fraunces', serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--acorn);
+  font-family:'Fraunces',serif;
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--acorn);
 }
 
+/* ============================================================
+   CONTACT
+   ============================================================ */
 .contact-email {
-  font-family: 'Fraunces', serif;
-  font-size: 1.4rem;
-  color: var(--acorn-bright);
-  text-decoration: none;
+  font-family:'Fraunces',serif;
+  font-size:1.4rem;
+  color:var(--acorn-bright);
+  text-decoration:none;
+}
+.contact-phone {
+  font-family:'Fraunces',serif;
+  font-size:1.2rem;
+  color:var(--acorn-bright);
+  text-decoration:none;
+  display:block;
+  margin-top:0.3rem;
 }
 
-footer {
-  background: var(--feather);
-  padding: 1.25rem 3rem;
-}
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-footer p {
-  font-size: 0.8rem;
-  color: var(--ash);
-  margin: 0;
-}
-footer .ft {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 0.85rem;
-  color: var(--branch);
-}
-.footer-permission {
-  font-size: 0.72rem;
-  color: var(--branch);
-  font-style: italic;
-  text-align: center;
-  margin-top: 0.4rem;
+/* ============================================================
+   AREA PILLS
+   ============================================================ */
+.area-list { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem; }
+.area-pill {
+  background:var(--cream);
+  color:var(--bark);
+  padding:0.3rem 0.85rem;
+  border-radius:20px;
+  font-size:0.85rem;
+  font-weight:500;
 }
 
-.first-section { padding-top: 6.5rem; }
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer { background:var(--feather); padding:1.25rem 3rem; }
+.footer-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem; }
+footer p { font-size:0.8rem; color:var(--ash); margin:0; }
+footer .ft { font-family:'Fraunces',serif; font-style:italic; font-size:0.85rem; color:var(--branch); }
+.footer-permission { font-size:0.72rem; color:var(--branch); font-style:italic; text-align:center; margin-top:0.4rem; }
 
-@media (max-width: 768px) {
-  section { padding: 1.5rem 1.5rem; }
-  .first-section { padding-top: 7.5rem; }
-  .hero-intro h1 { font-size: 1.7rem; }
-  .hero-intro p { font-size: 0.95rem; text-align: left; text-align-last: left; }
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width:900px) {
+  .hero-inner {
+    grid-template-columns:1fr;
+    min-height:auto;
+    gap:2rem;
+    padding:1.5rem 1.5rem 0;
   }
-  .gallery-img-wrap {
-    padding-bottom: 75%; /* slightly less square on mobile */
-  }
-  .gallery-heading h2 { font-size: 1.5rem; }
-  .steps-table { display: none; }
-  .steps-mobile { display: block; }
-  .price-row { flex-direction: column; gap: 0.25rem; }
-  .footer-row { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .hero-h1 { font-size:2.2rem; }
+  .hero-right { padding-bottom:2rem; }
+  .hero-photo { max-width:280px; }
+  .testimonials-inner { grid-template-columns:1fr; gap:1.5rem; }
+  .gallery-grid { grid-template-columns:1fr 1fr; }
+  .steps-grid { grid-template-columns:1fr 1fr; gap:1.25rem; }
+  section { padding:1.5rem 1.5rem; }
+  .gallery-section { padding:1.5rem 1.5rem; }
+  .testimonials { padding:2rem 1.5rem; }
+}
+@media (max-width:540px) {
+  .hero-h1 { font-size:1.75rem; }
+  .gallery-grid { grid-template-columns:1fr; }
+  .steps-grid { grid-template-columns:1fr; }
+  .hero-ctas { flex-direction:column; }
+  .btn-call, .btn-email { text-align:center; }
+  .footer-row { flex-direction:column; gap:0.5rem; text-align:center; }
 }
 </style>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-M0DFY2Y7XE');
-gtag('config', 'AW-17990603569');
-</script>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2148206675947024');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2148206675947024&ev=PageView&noscript=1"/></noscript>
-
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "vp5j1zbe4c");
-</script>
-
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
 
-<!-- Hero Gallery -->
-<section class="bg-warm first-section">
-  <div class="hero-intro">
-    <h1>Did you know there were photos before the iPhone?</h1>
-    <p>Look at what some of our customers have brought us. With modern scanners and AI tools, we can stop you in your tracks and melt your heart. Please protect your memories and get them into your iPhotos and Google Photos so you can share them. Don't wait.</p>
-  </div>
-  <div class="gallery-wrap">
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <div class="gallery-img-wrap">
-          <img src="/images/8194966_6987301_03_004.jpg" alt="Vintage portrait of a baby in a wicker chair">
-        </div>
-        <div class="gallery-caption">
-          <span class="era">Way, Way Back</span>
-          <span class="decade">Early 1900s</span>
-        </div>
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<div class="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT: headline + CTAs -->
+    <div class="hero-left">
+      <span class="hero-eyebrow">Eagle Rock · Los Angeles</span>
+      <h1 class="hero-h1">Your old photos.<br><em>Saved. Organized.<br>Back on your phone.</em></h1>
+      <p class="hero-sub">Local pickup in Northeast LA. 48-hour turnaround. $1 per photo. Your originals returned in a fireproof case.</p>
+      <div class="hero-ctas">
+        <a href="mailto:hello@scansquirrel.com" class="btn-call">Get a free consultation</a>
+        <a href="/pricing2.html" class="btn-email">See pricing</a>
       </div>
-      <div class="gallery-item">
-        <div class="gallery-img-wrap">
-          <img src="/images/8194966_6987301_15_010.jpg" alt="Worker on a Los Angeles building, 1940s">
-        </div>
-        <div class="gallery-caption">
-          <span class="era">Old Los Angeles</span>
-          <span class="decade">1940s</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-img-wrap">
-          <img src="/images/8899420_9490747_01_002.jpg" alt="Boy in a pedal car, 1950s">
-        </div>
-        <div class="gallery-caption">
-          <span class="era">Mid-Century Memories</span>
-          <span class="decade">1950s</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-img-wrap">
-          <img src="/images/5514008_5080152_02_001.jpg" alt="Jazz band performing on stage, 1960s">
-        </div>
-        <div class="gallery-caption">
-          <span class="era">Smoky Stages</span>
-          <span class="decade">1960s</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-img-wrap">
-          <img src="/images/7189107_5997803_01_005.jpg" alt="Three brothers studio portrait, 1980s" class="crop-top">
-        </div>
-        <div class="gallery-caption">
-          <span class="era">Family Studio Portraits</span>
-          <span class="decade">1980s</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-img-wrap">
-          <img src="/images/7189107_7365862_03_027.jpg" alt="Young dancer at a recital, 1980s">
-        </div>
-        <div class="gallery-caption">
-          <span class="era">Dance Recitals</span>
-          <span class="decade">1980s</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-img-wrap">
-          <img src="/images/7189107_7196181_01_227.jpg" alt="Goofy moment with a cat, 1990s">
-        </div>
-        <div class="gallery-caption">
-          <span class="era">Goofy Moments</span>
-          <span class="decade">1990s</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-img-wrap">
-          <img src="/images/9435919_5048715_08_016.jpg" alt="College football game, 1990s">
-        </div>
-        <div class="gallery-caption">
-          <span class="era">College Years</span>
-          <span class="decade">1990s</span>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-img-wrap">
-          <img src="/images/PXL_20260428_234607130.jpg" alt="Negatives and a Kodak slide held against the sky">
-        </div>
-        <div class="gallery-caption">
-          <span class="era">Negatives &amp; Slides Too</span>
-          <span class="decade">Every format</span>
-        </div>
+      <div class="trust-pills">
+        <span class="trust-pill">600 DPI archival</span>
+        <span class="trust-pill">48-hour turnaround</span>
+        <span class="trust-pill">$1 per photo</span>
+        <span class="trust-pill">No subscriptions</span>
       </div>
     </div>
-    <p class="gallery-disclaimer">Photographs shown with permission of their owners. Please do not reproduce without consent.</p>
+
+    <!-- RIGHT: single hero photo -->
+    <div class="hero-right">
+      <div class="hero-photo-frame">
+        <img
+          src="/images/5514008_5080152_02_001.jpg"
+          alt="Jazz band performing on stage, 1960s — scanned by ScanSquirrel"
+          class="hero-photo"
+        >
+      </div>
+      <span class="hero-photo-caption">Smoky Stages, 1960s</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+
+    <div class="testimonial">
+      <p class="testimonial-quote">I've been meaning to digitize my parents' photos for years. Max showed up, went through everything with me, and two days later they were in my iPhone sorted by date — no hassle, no requirements from me. I was able to share with my family and to Facebook easily. I didn't have to ship anything, didn't have to figure out a scanner, didn't have to do anything except let him in. Worth every penny.</p>
+      <span class="testimonial-attr">Brian · Highland Park</span>
+    </div>
+
+    <div class="testimonial">
+      <p class="testimonial-quote">Max scanned all of my family's photos as a test run before he ever took a client. My mom called me crying when I sent her the album. That was the moment I knew this was something real.</p>
+      <span class="testimonial-attr">Kristin · Eagle Rock</span>
+    </div>
+
+    <div class="testimonial">
+      <p class="testimonial-quote">I scanned my own family's photos before I started taking clients. Seeing my grandmother at 25, looking exactly like my daughter does now — that's why I do this. These photos deserve better than a shoebox.</p>
+      <span class="testimonial-attr">Max · Founder, ScanSquirrel</span>
+    </div>
+
   </div>
 </section>
 
-<!-- How It Works -->
-<section id="how" class="bg-bone">
-  <div style="max-width:1000px;margin:0 auto;padding:0 1rem">
-    <h2 style="text-align:center;margin-bottom:1.5rem">How It Works</h2>
+<!-- ============================================================
+     GALLERY — the proof
+     ============================================================ -->
+<section class="gallery-section">
+  <div class="gallery-header">
+    <h2>Look at what people have brought us.</h2>
+    <p>Real photos from real collections. This is what's sitting in shoeboxes right now.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/images/8194966_6987301_03_004.jpg" alt="Vintage portrait of a baby in a wicker chair">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Way, Way Back</span>
+        <span class="decade">Early 1900s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/images/8194966_6987301_15_010.jpg" alt="Worker on a Los Angeles building, 1940s">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Old Los Angeles</span>
+        <span class="decade">1940s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/images/8899420_9490747_01_002.jpg" alt="Boy in a pedal car, 1950s">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Mid-Century Memories</span>
+        <span class="decade">1950s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/images/7189107_5997803_01_005.jpg" alt="Three brothers studio portrait, 1980s" style="object-position:top">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Family Studio Portraits</span>
+        <span class="decade">1980s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/images/7189107_7365862_03_027.jpg" alt="Young dancer at a recital, 1980s">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Dance Recitals</span>
+        <span class="decade">1980s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/images/7189107_7196181_01_227.jpg" alt="Goofy moment with a cat, 1990s">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Goofy Moments</span>
+        <span class="decade">1990s</span>
+      </div>
+    </div>
+  </div>
+  <p class="gallery-disclaimer">Photographs shown with permission of their owners. Please do not reproduce without consent.</p>
+</section>
 
-    <!-- Desktop: table -->
-    <table class="steps-table">
-      <tr>
-        <td>
-          <div class="step-num">01</div>
-          <div class="step-title">We Talk</div>
-          <p>Tell me what you have got - a shoebox, a bin, frames on the wall. Every collection is different. We start with a free and easy conversation.</p>
-        </td>
-        <td>
-          <div class="step-num">02</div>
-          <div class="step-title">Scanning</div>
-          <p>I scan your photos because my system is faster, safer, and better than doing it yourself. Your originals get a 600 DPI archival scan (forever) and a cleaned up, dated and tagged version comes to your iPhone for sharing.</p>
-        </td>
-        <td>
-          <div class="step-num">03</div>
-          <div class="step-title">Organized and Safe</div>
-          <p>Your collection comes back cataloged - dated, named, organized. Originals returned in a fireproof case.</p>
-        </td>
-        <td>
-          <div class="step-num">04</div>
-          <div class="step-title">Enjoyed Forever</div>
-          <p>Now your photos are in Google Photos or iPhotos. Here is where the magic happens - they start showing up as reminders, memories, and more.</p>
-        </td>
-      </tr>
-      <tr class="img-row">
-        <td><img src="/images/Shoebox_Disarray_f0ebe3.png" alt="Messy shoebox of photos"></td>
-        <td><img src="/images/scan_office3.png" alt="Scanning studio"></td>
-        <td><img src="/images/Organized_Photos_f0ebe3.png" alt="Organized photos"></td>
-        <td><img src="/images/Happy_Customer.png" alt="Enjoying photos on phone"></td>
-      </tr>
-    </table>
-
-    <!-- Mobile: stacked -->
-    <div class="steps-mobile">
-      <div class="m-step">
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
+<section class="bg-bone" id="how">
+  <div style="max-width:1100px;margin:0 auto">
+    <h2 style="text-align:center;margin-bottom:1.75rem">How it works.</h2>
+    <div class="steps-grid">
+      <div class="step">
         <div class="step-num">01</div>
         <div class="step-title">We Talk</div>
-        <p>Tell me what you have got - a shoebox, a bin, frames on the wall. Every collection is different. We start with a free and easy conversation.</p>
+        <p>Tell me what you have — a shoebox, a bin, frames on the wall. Every collection is different. Free consultation, no commitment.</p>
         <img src="/images/Shoebox_Disarray_f0ebe3.png" alt="Messy shoebox of photos">
       </div>
-      <div class="m-step">
+      <div class="step">
         <div class="step-num">02</div>
-        <div class="step-title">Scanning</div>
-        <p>I scan your photos because my system is faster, safer, and better than doing it yourself. Your originals get a 600 DPI archival scan (forever) and a cleaned up, dated and tagged version comes to your iPhone for sharing.</p>
+        <div class="step-title">Local Pickup</div>
+        <p>We meet near you. I take your photos back to my Eagle Rock studio. No shipping, no warehouse, no strangers.</p>
         <img src="/images/scan_office3.png" alt="Scanning studio">
       </div>
-      <div class="m-step">
+      <div class="step">
         <div class="step-num">03</div>
         <div class="step-title">Organized and Safe</div>
-        <p>Your collection comes back cataloged - dated, named, organized. Originals returned in a fireproof case.</p>
+        <p>600 DPI scans. AI Photo Correction for damaged prints. Dates and names embedded. Originals organized and labeled.</p>
         <img src="/images/Organized_Photos_f0ebe3.png" alt="Organized photos">
       </div>
-      <div class="m-step">
+      <div class="step">
         <div class="step-num">04</div>
         <div class="step-title">Enjoyed Forever</div>
-        <p>Now your photos are in Google Photos or iPhotos. Here is where the magic happens - they start showing up as reminders, memories, and more.</p>
+        <p>Your photos land on your phone in Google Photos or Apple Photos. They start showing up as memories. That's the magic.</p>
         <img src="/images/Happy_Customer.png" alt="Enjoying photos on phone">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Pricing -->
-<section id="pricing" class="bg-warm">
+<!-- ============================================================
+     WHAT YOU GET
+     ============================================================ -->
+<section class="bg-warm" id="what">
   <div class="wrap">
-    <h2>Simple Pricing</h2>
-    <div class="price-row">
-      <div><h3>Per Photo</h3></div>
-      <div class="price">$1</div>
-    </div>
-    <div class="price-row">
-      <div><h3>Per Shoebox (~200 photos)</h3></div>
-      <div class="price">~$200</div>
-    </div>
-    <div class="price-row">
-      <div><h3>Fireproof Case (optional)</h3></div>
-      <div class="price">$50</div>
-    </div>
-  </div>
-</section>
-
-<!-- What You Get -->
-<section id="what" class="bg-bone">
-  <div class="wrap">
-    <h2>From Messy Shoebox to...</h2>
-    <ul>
-      <li><strong>600 DPI archival scans</strong> - front and back, every photo</li>
-      <li><strong>Enhanced versions</strong> - fading reversed, faces sharpened, colors corrected</li>
-      <li><strong>Dates and names embedded</strong> - so photos land in the right spot on your timeline</li>
-      <li><strong>Delivered to your phone</strong> - one link drops everything into Google Photos or Apple Photos</li>
-      <li><strong>Originals returned in a fireproof case</strong> - organized, labeled, protected</li>
-      <li><strong>48-hour turnaround</strong> - your photos never leave the neighborhood</li>
+    <h2>From messy shoebox to...</h2>
+    <ul class="what-list">
+      <li><span class="what-check">✓</span><span><strong>600 DPI archival scans</strong> — front and back, every photo</span></li>
+      <li><span class="what-check">✓</span><span><strong>AI Photo Correction</strong> — color restoration, scratch and dust removal for damaged prints</span></li>
+      <li><span class="what-check">✓</span><span><strong>Dates and names embedded</strong> — photos land in the right spot on your timeline automatically</span></li>
+      <li><span class="what-check">✓</span><span><strong>Delivered to your phone</strong> — one link drops everything into Google Photos or Apple Photos</span></li>
+      <li><span class="what-check">✓</span><span><strong>Originals returned organized</strong> — sorted, labeled, protected</span></li>
+      <li><span class="what-check">✓</span><span><strong>48-hour turnaround</strong> — your photos stay in Los Angeles the entire time</span></li>
     </ul>
+    <p style="margin-top:1rem;color:var(--ash);font-size:0.88rem;font-style:italic">Your memories, safely stashed.</p>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="bg-warm">
-  <div class="wrap" style="text-align:center">
-    <p style="font-size:1.05rem">Your memories, safely stashed.</p>
+<!-- Pricing lives on its own page -->
+<section class="bg-bone" id="pricing" style="text-align:center">
+  <div class="wrap">
+    <h2>Simple, transparent pricing.</h2>
+    <p>$1 per photo. No subscriptions, no hidden fees, no surprises.</p>
+    <a href="/pricing2.html" style="display:inline-block;margin-top:1rem;background:var(--acorn);color:var(--bone);padding:0.75rem 1.75rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:0.95rem;">See full pricing →</a>
   </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="bg-dark" style="text-align:center">
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="bg-dark" id="contact" style="text-align:center">
   <div class="wrap">
     <h2>Ready to get started?</h2>
-    <p>Every consultation is free. No pressure.</p>
-    <p class="contact-email">hello@scansquirrel.com</p>
-    <p style="margin-top:0.3rem;font-family:Fraunces,serif;font-size:1.2rem;color:var(--acorn-bright)">(213) 290-2327</p>
+    <p>Every consultation is free. No pressure, ever.</p>
+    <p style="margin-top:1rem">
+      <a href="mailto:hello@scansquirrel.com" class="contact-email">hello@scansquirrel.com</a>
+    </p>
   </div>
 </section>
 
-<!-- Service Areas -->
+<!-- ============================================================
+     WHERE I WORK
+     ============================================================ -->
 <section class="bg-bone">
   <div class="wrap">
-    <h2>Where I Work</h2>
-    <p>I am based in Eagle Rock and serve neighborhoods across Northeast LA, Pasadena, and the surrounding area. If you are nearby and have photos to preserve, I can come to you.</p>
+    <h2>Where I work.</h2>
+    <p>Based in Eagle Rock. Serving Northeast LA, Pasadena, and the surrounding area.</p>
     <div class="area-list">
       <span class="area-pill">Eagle Rock</span>
       <span class="area-pill">Highland Park</span>
@@ -609,21 +713,21 @@ fbq('track', 'PageView');
       <span class="area-pill">Atwater Village</span>
       <span class="area-pill">Mt. Washington</span>
     </div>
-    <p style="margin-top:0.6rem;color:var(--ash);font-size:0.9rem">Somewhere else in LA? Reach out anyway - I am flexible.</p>
+    <p style="margin-top:0.75rem;color:var(--ash);font-size:0.9rem">Somewhere else in LA? Reach out anyway — I'm flexible.</p>
   </div>
 </section>
 
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer>
   <div class="footer-row">
-    <p>2025 Scan Squirrel - Los Angeles, CA</p>
+    <p>2025 ScanSquirrel · Los Angeles, CA</p>
     <span class="ft">Gathered. Organized. Preserved.</span>
   </div>
   <p class="footer-permission">All photographs on this site are displayed with permission of their owners. Please do not reproduce without consent.</p>
 </footer>
 
 <script src="/js/nav-loader.js"></script>
-
-<script async src="https://static.klaviyo.com/onsite/js/UYPYKi/klaviyo.js?company_id=UYPYKi"></script>
-
 </body>
 </html>
