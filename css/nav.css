@@ -1,0 +1,84 @@
+/* Shared nav for ScanSquirrel
+   Loaded into #nav-placeholder by /js/nav-loader.js
+   Color variables (--ink, --bone, --acorn-bright, --teal, etc.)
+   are defined in each page's :root block. */
+
+nav#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0.6rem 2rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: rgba(240, 235, 227, 0.97);
+  backdrop-filter: blur(12px);
+}
+
+.nav-left { display: flex; flex-direction: column; }
+.nav-logo { text-decoration: none; }
+.nav-logo span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.nav-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 1.3rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  margin-top: 0.1rem;
+}
+.nav-subtitle.visible { opacity: 1; }
+.nav-subtitle .label {
+  font-weight: 700;
+  color: var(--teal);
+  margin-right: 0.4rem;
+}
+.nav-subtitle .text { color: var(--ink); }
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding-top: 0.5rem;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.nav-menu a:hover { color: var(--acorn-bright); }
+.nav-menu a.active {
+  color: var(--acorn-bright);
+  font-weight: 700;
+  border-bottom: 2px solid var(--acorn-bright);
+  padding-bottom: 2px;
+}
+.nav-menu a.nav-phone {
+  color: var(--acorn-bright);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  nav#nav { padding: 0.5rem 1rem 0.4rem; flex-wrap: wrap; }
+  .nav-logo span { font-size: 1.4rem; }
+  .nav-subtitle { font-size: 0.75rem; min-height: 1.1rem; }
+  .nav-menu {
+    gap: 0.7rem;
+    padding-top: 0.3rem;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.3rem;
+    flex-wrap: wrap;
+  }
+  .nav-menu a { font-size: 0.85rem; }
+}
