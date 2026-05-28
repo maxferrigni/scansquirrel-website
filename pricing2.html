@@ -113,7 +113,7 @@ p:last-child { margin-bottom:0; }
 /* ---- Big price cards ---- */
 .price-cards {
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1fr 1fr;
   gap:1rem;
   margin-top:2rem;
 }
@@ -194,6 +194,8 @@ p:last-child { margin-bottom:0; }
   font-size:1.1rem;
   color:var(--acorn);
 }
+.ex-row.optional .ex-label { color:var(--ash); font-style:italic; }
+.ex-row.optional .ex-val { color:var(--ash); font-weight:400; }
 
 /* ---- Included list ---- */
 .included-list {
@@ -213,6 +215,7 @@ p:last-child { margin-bottom:0; }
 }
 .included-list li:last-child { border-bottom:none; }
 .inc-icon { color:var(--teal); font-weight:700; flex-shrink:0; }
+.inc-icon.add-on { color:var(--acorn); }
 
 /* ---- Never charge list ---- */
 .never-list {
@@ -264,6 +267,13 @@ p:last-child { margin-bottom:0; }
 }
 .weird-card h3 { font-size:0.9rem; color:var(--ink); margin-bottom:0.25rem; }
 .weird-card p { font-size:0.82rem; color:var(--ash); }
+.weird-card .price-tag {
+  display:inline-block;
+  font-size:0.78rem;
+  font-weight:700;
+  color:var(--acorn);
+  margin-top:0.4rem;
+}
 
 /* ---- Minimum ---- */
 .minimum-note {
@@ -285,22 +295,6 @@ p:last-child { margin-bottom:0; }
   padding-top:0.1rem;
 }
 .minimum-note p { font-size:0.88rem; color:var(--ash); margin:0; }
-
-/* ---- Pull quote ---- */
-.pull-quote {
-  border-left:3px solid var(--acorn);
-  padding:0.75rem 1.25rem;
-  margin:1.5rem 0 0;
-  background:var(--warm);
-  border-radius:0 4px 4px 0;
-}
-.pull-quote p {
-  font-family:'Fraunces',serif;
-  font-size:1rem;
-  font-style:italic;
-  color:var(--ink);
-  line-height:1.6;
-}
 
 /* ---- CTA ---- */
 .cta-strip {
@@ -379,17 +373,17 @@ footer .ft {
   <div class="wrap">
     <p class="eyebrow">Simple and transparent</p>
     <h1>$1 per photo.<br>That's the whole baseline.</h1>
-    <p class="sub">Most collections are exactly that simple. For anything more complicated — photos glued into albums, frames to open, slides and negatives — I'll look at what you have and give you the exact number before I start. No surprises.</p>
+    <p class="sub">Most collections are exactly that simple. For anything more complicated — photos glued into albums, frames to open, slides, negatives, or documents — I'll look at what you have and give you the exact number before I start. No surprises.</p>
   </div>
 </section>
 
 <!-- ============================================================
-     THE TWO PRICES
+     THE PRICES
      ============================================================ -->
 <section class="bg-warm">
   <div class="wrap">
     <h2>The prices.</h2>
-    <p>Two rates cover almost everything. Everything else gets a free quote first.</p>
+    <p>Three rates cover almost everything. Everything else gets a free quote first.</p>
 
     <div class="price-cards">
       <div class="price-card featured">
@@ -403,6 +397,12 @@ footer .ft {
         <div class="pc-amount">$1.50</div>
         <div class="pc-unit">per slide or negative</div>
         <p>35mm slides and negatives. Different scanner, different workflow — takes more time per frame. Still includes enhancement and delivery.</p>
+      </div>
+      <div class="price-card">
+        <div class="pc-label">Documents &amp; paperwork</div>
+        <div class="pc-amount">$0.50</div>
+        <div class="pc-unit">per page</div>
+        <p>Recipes, letters, certificates, military records, newspaper clippings, tax returns — any flat letter or legal-size page through the ADF. Fragile or odd-sized pages go on the flatbed at $1.00/page.</p>
       </div>
     </div>
 
@@ -433,12 +433,16 @@ footer .ft {
         <span class="ex-label">Originals returned organized in fireproof case</span>
         <span class="ex-val">Included</span>
       </div>
-      <div class="ex-row">
+      <div class="ex-row optional">
+        <span class="ex-label">OCR text recognition — makes documents searchable (optional add-on)</span>
+        <span class="ex-val">+$0.25/page</span>
+      </div>
+      <div class="ex-row optional">
         <span class="ex-label">Fireproof storage case (optional)</span>
         <span class="ex-val">$40</span>
       </div>
       <div class="ex-row total">
-        <span class="ex-label">Total (without case)</span>
+        <span class="ex-label">Total (without options)</span>
         <span class="ex-val">~$200</span>
       </div>
       <div class="ex-row total" style="border-top:none;padding-top:0.2rem">
@@ -485,8 +489,12 @@ footer .ft {
         <span><strong>Originals returned organized.</strong> Sorted by era or event, labeled, ready to store — physically and digitally.</span>
       </li>
       <li>
-        <span class="inc-icon">+</span>
+        <span class="inc-icon add-on">+</span>
         <span><strong>Fireproof storage case — $40 optional add-on.</strong> A waterproof, fireproof case for your originals to live in permanently. Not required, but most people add it. Your photos survived this long — worth protecting going forward.</span>
+      </li>
+      <li>
+        <span class="inc-icon add-on">+</span>
+        <span><strong>OCR text recognition — $0.25/page optional add-on.</strong> Makes your scanned documents fully text-searchable. Find grandma's recipe, a military record, or any letter by typing a word — not by scrolling through hundreds of files. Worth adding any time documents are part of the job.</span>
       </li>
     </ul>
   </div>
@@ -511,12 +519,14 @@ footer .ft {
         <p>I can open frames carefully and scan the print inside. Quoted per job after I see what you have — some frames are simple, some are delicate.</p>
       </div>
       <div class="weird-card">
-        <h3>Documents &amp; memorabilia</h3>
-        <p>Letters, certificates, newspaper clippings, magazine pages — all doable. Quoted before I start, priced per page.</p>
+        <h3>Documents &amp; paperwork</h3>
+        <p>Recipes, letters, certificates, military records, newspaper clippings — all doable. Standard letter/legal pages are $0.50 each through the ADF. Anything fragile or odd-sized goes on the flatbed at $1.00/page. Add OCR for $0.25/page to make everything text-searchable.</p>
+        <span class="price-tag">$0.50/page · $1.00/page flatbed · +$0.25 OCR</span>
       </div>
       <div class="weird-card">
         <h3>Oversized prints</h3>
         <p>Anything larger than 8×10 goes on the flatbed and takes more time. I'll quote you when I see it — most oversized prints are still very reasonable.</p>
+        <span class="price-tag">$1.00/page flatbed</span>
       </div>
     </div>
 
