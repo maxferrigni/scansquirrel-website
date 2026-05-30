@@ -180,34 +180,15 @@ a.inline-link:hover { color: var(--acorn); }
   text-decoration: none;
 }
 
-footer {
-  background: var(--feather);
-  padding: 1.25rem 3rem;
-}
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-footer p {
-  font-size: 0.8rem;
-  color: var(--ash);
-  margin: 0;
-}
-footer .ft {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 0.85rem;
-  color: var(--branch);
-}
-.footer-permission {
-  font-size: 0.72rem;
-  color: var(--branch);
-  font-style: italic;
-  text-align: center;
-  margin-top: 0.4rem;
-}
+footer { background:var(--feather); padding:2rem 3rem; }
+.footer-inner { max-width:720px; margin:0 auto; text-align:center; }
+footer .ft { font-family:'Fraunces',serif; font-style:italic; font-size:0.95rem; color:var(--branch); margin-bottom:0.75rem; }
+footer p { margin:0; }
+.footer-contact, .footer-legal { margin-bottom:0.5rem; }
+.footer-contact a, .footer-legal a { color:var(--ash); text-decoration:none; font-size:0.8rem; }
+.footer-contact a:hover, .footer-legal a:hover { color:var(--bone); }
+.footer-copy { font-size:0.78rem; color:var(--ash); margin-bottom:0.3rem; }
+.footer-credit { font-size:0.72rem; color:var(--branch); font-style:italic; }
 
 @media (max-width: 768px) {
   section { padding: 1.5rem 1.5rem; }
@@ -215,8 +196,7 @@ footer .ft {
   h1 { font-size: 1.7rem; }
   .gear-card { flex-direction: column; gap: 1rem; }
   .gear-card .gear-img { width: 100%; max-width: 180px; margin: 0 auto; }
-  .footer-row { flex-direction: column; gap: 0.5rem; text-align: center; }
-}
+  }
 
 .first-section { padding-top: 5rem; }
 </style>
@@ -382,13 +362,14 @@ fbq('track', 'PageView');
 </section>
 
 <footer>
-  <div class="footer-row">
-    <p>2025 Scan Squirrel - Los Angeles, CA</p>
-    <span class="ft">Gathered. Organized. Preserved.</span>
+  <div class="footer-inner">
+    <p class="ft">Gathered. Organized. Preserved.</p>
+    <p class="footer-contact"><a href="mailto:hello@scansquirrel.com">hello@scansquirrel.com</a> &middot; <a href="tel:+12132902327">(213) 290-2327</a></p>
+    <p class="footer-legal"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/release.html">Release Agreement</a></p>
+    <p class="footer-copy">&copy; 2026 Scan Squirrel &middot; Los Angeles, CA</p>
+    <p class="footer-credit">All photographs displayed with permission. Please do not reproduce.</p>
   </div>
-  <p class="footer-permission">All photographs on this site are displayed with permission of their owners. Please do not reproduce without consent.</p>
 </footer>
-
 <script src="/js/nav-loader.js"></script>
 
 <script async src="https://static.klaviyo.com/onsite/js/UYPYKi/klaviyo.js?company_id=UYPYKi"></script>
