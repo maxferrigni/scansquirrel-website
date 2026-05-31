@@ -431,85 +431,6 @@ p:last-child { margin-bottom:0; }
 .traits-list li:last-child { border-bottom:none; }
 .trait-icon { color:var(--acorn); flex-shrink:0; font-weight:700; margin-top:0.05rem; }
 
-/* ---- ECONOMICS (recruit) ---- */
-.econ-grid {
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:1.5rem;
-  margin-top:1.5rem;
-  align-items:start;
-}
-.earn-table {
-  width:100%;
-  border-collapse:collapse;
-  background:rgba(255,255,255,0.04);
-  border-radius:8px;
-  overflow:hidden;
-}
-.earn-table th, .earn-table td {
-  text-align:left;
-  padding:0.8rem 1rem;
-  font-size:0.86rem;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-.earn-table th {
-  font-family:'DM Sans',sans-serif;
-  font-weight:700;
-  font-size:0.7rem;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:var(--nest);
-  background:rgba(255,255,255,0.04);
-}
-.earn-table td { color:var(--bone); }
-.earn-table td.fig {
-  font-family:'Fraunces',serif;
-  font-weight:600;
-  color:var(--acorn-bright);
-  font-size:1rem;
-}
-.earn-table tr:last-child td { border-bottom:none; }
-.earn-caption {
-  font-size:0.74rem;
-  color:var(--branch);
-  margin-top:0.7rem;
-  line-height:1.5;
-}
-.kit-card {
-  background:rgba(160,105,63,0.12);
-  border:1px solid rgba(160,105,63,0.35);
-  border-radius:8px;
-  padding:1.5rem;
-}
-.kit-card .kit-label {
-  font-size:0.7rem; font-weight:700; letter-spacing:0.1em;
-  text-transform:uppercase; color:var(--acorn-bright); margin-bottom:0.5rem;
-}
-.kit-card .kit-fig {
-  font-family:'Fraunces',serif;
-  font-size:1.9rem; font-weight:600; color:var(--bone); line-height:1;
-  margin-bottom:0.5rem;
-}
-.kit-card .kit-fig span { font-size:0.9rem; color:var(--nest); font-weight:400; }
-.kit-card p { font-size:0.82rem; color:var(--nest); line-height:1.6; }
-.kit-list { list-style:none; padding:0; margin:0.75rem 0 0; }
-.kit-list li {
-  font-size:0.82rem; color:var(--nest); padding:0.25rem 0;
-  display:flex; gap:0.5rem;
-}
-.kit-list li::before { content:"→"; color:var(--acorn-bright); }
-
-.econ-disclaimer {
-  margin-top:1.25rem;
-  font-size:0.82rem;
-  color:var(--nest);
-  background:rgba(255,255,255,0.04);
-  border-left:3px solid var(--branch);
-  padding:0.9rem 1.1rem;
-  border-radius:0 6px 6px 0;
-  line-height:1.6;
-}
-
 /* ---- What you get / training ---- */
 .training-grid {
   display:grid;
@@ -591,8 +512,8 @@ footer p { margin:0; }
   .hero { padding-top:5rem; }
   h1 { font-size:1.7rem; }
   .squirrels-grid { grid-template-columns:1fr; }
-  .training-grid, .promise-grid, .steps, .quotes, .econ-grid { grid-template-columns:1fr; }
-  }
+  .training-grid, .promise-grid, .steps, .quotes { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
@@ -606,7 +527,7 @@ footer p { margin:0; }
   <div class="wrap">
     <p class="eyebrow">The people behind ScanSquirrel</p>
     <h1>Meet the Squirrels.</h1>
-    <p class="sub">Every Squirrel is a trained, local specialist who handles your collection personally — from pickup to delivery. Not a warehouse. Not a mail-away box. A neighbor who's accountable to you by name.</p>
+    <p class="sub">Every Squirrel is a trained, local specialist who handles your collection personally &mdash; from pickup to delivery. Not a warehouse. Not a mail-away box. A neighbor who's accountable to you by name.</p>
   </div>
 </section>
 
@@ -615,7 +536,7 @@ footer p { margin:0; }
      ============================================================ -->
 <div class="thesis">
   <div class="wrap">
-    <p>Every Squirrel lives in the neighborhood they serve. <span class="hl">That's not a detail — it's the whole product.</span></p>
+    <p>Every Squirrel lives in the neighborhood they serve. <span class="hl">That's not a detail &mdash; it's the whole product.</span></p>
   </div>
 </div>
 
@@ -626,31 +547,31 @@ footer p { margin:0; }
   <div class="wrap-wide">
     <p class="section-label label-customer">For customers</p>
     <h2>Why a network beats a warehouse.</h2>
-    <p style="max-width:620px">Companies like Legacybox put your irreplaceable photos in a box and ship them to a facility hundreds of miles away, where strangers you'll never meet handle them in bulk. We do the opposite.</p>
+    <p style="max-width:620px">Companies like Legacybox put your irreplaceable photos in a box and ship them to a facility hundreds of miles away, where strangers you'll never meet handle them in bulk. We do the opposite. ScanSquirrel is a network of hardworking local people &mdash; focused entirely on photos, documents, and the things that matter most &mdash; who come to you and do the careful work by hand.</p>
 
     <div class="promise-grid">
       <div class="promise">
-        <div class="pico">◷</div>
+        <div class="pico">&#9719;</div>
         <h3>Local</h3>
-        <p>Your Squirrel lives in your area. Same streets, same history, same fire risk. They drive to you — your photos never leave the neighborhood.</p>
+        <p>Your Squirrel lives in your area. Same streets, same history, same fire risk. They drive to you &mdash; your photos never leave the neighborhood.</p>
       </div>
       <div class="promise">
-        <div class="pico">✦</div>
+        <div class="pico">&#10022;</div>
         <h3>Trained</h3>
         <p>Every Squirrel works to one standard: 600 DPI, proper handling, consistent workflow, honest pricing. Same quality on every job.</p>
       </div>
       <div class="promise">
-        <div class="pico">◆</div>
+        <div class="pico">&#9670;</div>
         <h3>Accountable</h3>
-        <p>One person picks up, scans, and returns your collection. Their name is on it. You know exactly who's responsible — because you've met them.</p>
+        <p>One person picks up, scans, and returns your collection. Their name is on it. You know exactly who's responsible &mdash; because you've met them.</p>
       </div>
     </div>
 
     <!-- PLACEHOLDER: comparison infographic -->
     <div class="ph" style="margin-top:1.5rem; min-height:200px;">
-      <span class="ph-tag">Infographic — to design</span>
-      <div class="ph-title">"Warehouse vs. Neighbor" comparison graphic</div>
-      <div class="ph-note">Side-by-side visual: LEFT = photos shipped in a box, crossing a map to a distant facility, handled by anonymous staff. RIGHT = a Squirrel driving across the neighborhood, photos staying local, returned by the same person. Reinforces the "your photos never leave the area" trust message.</div>
+      <span class="ph-tag">Infographic &mdash; to design</span>
+      <div class="ph-title">&ldquo;Warehouse vs. Neighbor&rdquo; comparison graphic</div>
+      <div class="ph-note">Side-by-side visual: LEFT = photos shipped in a box, crossing a map to a distant facility, handled by anonymous staff. RIGHT = a Squirrel driving across the neighborhood, photos staying local, returned by the same person. Reinforces the &ldquo;your photos never leave the area&rdquo; trust message.</div>
     </div>
   </div>
 </section>
@@ -693,25 +614,25 @@ footer p { margin:0; }
 
     <!-- PLACEHOLDER: territory map -->
     <div class="ph" style="margin-top:1.5rem; min-height:260px;">
-      <span class="ph-tag">Map graphic — to design</span>
+      <span class="ph-tag">Map graphic &mdash; to design</span>
       <div class="ph-title">LA territory coverage map</div>
-      <div class="ph-note">Stylized map of greater LA with territories shaded in. ACTIVE territories (Northeast LA) in solid acorn/teal with a Squirrel pin; COMING SOON territories (Westside, SFV, SGV) in lighter dashed outline. Doubles as customer reassurance ("we cover my area") and recruit signal ("there's open territory near me"). Could be interactive later.</div>
+      <div class="ph-note">Stylized map of greater LA with territories shaded in. ACTIVE territories (Northeast LA) in solid acorn/teal with a Squirrel pin; COMING SOON territories (Westside, SFV, SGV) in lighter dashed outline. Doubles as customer reassurance (&ldquo;we cover my area&rdquo;) and recruit signal (&ldquo;there's open territory near me&rdquo;). Could be interactive later.</div>
     </div>
 
     <div class="squirrels-grid">
 
       <!-- ACTIVE: Max / Northeast LA — links to his territory page -->
-      <a class="squirrel-card live" href="/squirrels/northeast-la" style="text-decoration:none; color:inherit;">
+      <a class="squirrel-card live" href="/squirrels/northeast-la/" style="text-decoration:none; color:inherit;">
         <div class="squirrel-headshot-wrap">
           <img src="/img/brn/Max.png" alt="Max Ferrigni" class="squirrel-headshot">
           <div class="squirrel-headshot-info">
-            <span class="squirrel-badge">#1 Squirrel · Founder</span>
+            <span class="squirrel-badge">#1 Squirrel &middot; Founder</span>
             <div class="squirrel-name">Max Ferrigni</div>
             <div class="squirrel-title">Northeast LA</div>
           </div>
         </div>
         <div class="squirrel-body">
-          <p>Glassell Park native, based in Eagle Rock. Started ScanSquirrel after the 2025 Eaton fires and handles every job in the area personally — same care he'd want for his own family's photos.</p>
+          <p>Glassell Park native, based in Eagle Rock. Started ScanSquirrel after the 2025 Eaton fires and handles every job in the area personally &mdash; same care he'd want for his own family's photos.</p>
           <div class="area-pills">
             <span class="area-pill">Eagle Rock</span>
             <span class="area-pill">Glassell Park</span>
@@ -723,6 +644,28 @@ footer p { margin:0; }
             <span class="area-pill">+ more</span>
           </div>
           <span class="card-link">Meet Max &amp; see the area &rarr;</span>
+        </div>
+      </a>
+
+      <!-- ACTIVE: Pasadena — links to the Pasadena territory page -->
+      <a class="squirrel-card live" href="/squirrels/pasadena/" style="text-decoration:none; color:inherit;">
+        <div class="squirrel-headshot-wrap">
+          <img src="/img/brn/Max.png" alt="Pasadena Squirrel" class="squirrel-headshot">
+          <div class="squirrel-headshot-info">
+            <span class="squirrel-badge" style="background:var(--teal)">Active territory</span>
+            <div class="squirrel-name">Pasadena</div>
+            <div class="squirrel-title">Pasadena &amp; Altadena</div>
+          </div>
+        </div>
+        <div class="squirrel-body">
+          <p>Personal, in-home photo and document scanning for Pasadena and Altadena &mdash; handled locally by a trained Squirrel who knows the area and the fire risk firsthand.</p>
+          <div class="area-pills">
+            <span class="area-pill">Pasadena</span>
+            <span class="area-pill">Altadena</span>
+            <span class="area-pill">South Pas</span>
+            <span class="area-pill">San Marino</span>
+          </div>
+          <span class="card-link">See the Pasadena page &rarr;</span>
         </div>
       </a>
 
@@ -749,7 +692,7 @@ footer p { margin:0; }
         <div class="cs-pin">&#128205;</div>
         <span class="cs-status">Territory opening</span>
         <h3>San Gabriel Valley</h3>
-        <p>Open territory — could be you.</p>
+        <p>Open territory &mdash; could be you.</p>
         <div class="cs-area">Arcadia &middot; Monrovia &middot; San Marino</div>
       </div>
 
@@ -768,7 +711,7 @@ footer p { margin:0; }
     <div class="quotes">
       <!-- PLACEHOLDER testimonial 1 -->
       <div class="quote">
-        <p class="qbody">[Placeholder testimonial — replace with a real review that names the Squirrel. e.g. "Max came to the house, walked us through everything, and three days later handed back every photo my mom thought she'd lost in the fire. I trusted him completely."]</p>
+        <p class="qbody">[Placeholder testimonial &mdash; replace with a real review that names the Squirrel. e.g. &ldquo;Max came to the house, walked us through everything, and three days later handed back every photo my mom thought she'd lost in the fire. I trusted him completely.&rdquo;]</p>
         <div class="qmeta">
           <div class="qavatar">&#9733;</div>
           <div>
@@ -780,7 +723,7 @@ footer p { margin:0; }
 
       <!-- PLACEHOLDER testimonial 2 -->
       <div class="quote">
-        <p class="qbody">[Placeholder testimonial — second real review. The detail that matters: mention the Squirrel by name and the personal handoff. That's what makes us different from a mail-in service.]</p>
+        <p class="qbody">[Placeholder testimonial &mdash; second real review. The detail that matters: mention the Squirrel by name and the personal handoff. That's what makes us different from a mail-in service.]</p>
         <div class="qmeta">
           <div class="qavatar">&#9733;</div>
           <div>
@@ -800,79 +743,39 @@ footer p { margin:0; }
   <div class="wrap">
     <p class="section-label label-recruit">Become a Squirrel</p>
     <h2>Could you be a Squirrel?</h2>
-    <p>We're building a network of people who care about this the way we do — and we're looking for the right person in a handful of LA neighborhoods. Here's what the role actually is.</p>
+    <p>We're growing a network of people who care about this the way we do. You don't need experience &mdash; just the right instincts. If this sounds like you, we'd love to hear from you.</p>
 
     <ul class="traits-list">
       <li>
         <span class="trait-icon">&rarr;</span>
-        <span><strong>You know your neighborhood.</strong> A Squirrel serves the area they live in — people who know the same streets, the same history, the same fire risk. That's not a marketing angle. It's the whole point.</span>
+        <span><strong>You're local.</strong> You'd serve the neighborhood you actually live in &mdash; same streets, same history, same fire risk. That personal connection is the whole point.</span>
       </li>
       <li>
         <span class="trait-icon">&rarr;</span>
-        <span><strong>You handle things personally.</strong> No hand-offs to a warehouse. You pick up, you scan, you return. Your name is on it.</span>
+        <span><strong>You're organized and careful.</strong> The work is detailed and hands-on. People are trusting you with irreplaceable things, so the little stuff matters.</span>
       </li>
       <li>
         <span class="trait-icon">&rarr;</span>
-        <span><strong>You care about getting it right.</strong> Not just technically correct — actually right. The kind of careful that comes from understanding what these photos mean to the person who owns them.</span>
+        <span><strong>You're willing to learn.</strong> No tech background needed. If you're up for being trained properly, we'll teach you everything &mdash; scanning, handling, the software, all of it.</span>
       </li>
       <li>
         <span class="trait-icon">&rarr;</span>
-        <span><strong>You follow the ScanSquirrel standard.</strong> 600 DPI, proper handling, consistent workflow, honest pricing. Same quality, every job, every Squirrel.</span>
+        <span><strong>You like helping people.</strong> At the end of the day this is about showing up for your neighbors and protecting what matters to them.</span>
       </li>
     </ul>
   </div>
 </section>
 
 <!-- ============================================================
-     JOB 2 — ECONOMICS: what, how much, what it costs
+     JOB 2 — A GOOD SIDE HUSTLE (soft invitation, no dollar figures)
      ============================================================ -->
-<section class="bg-dark" id="the-numbers">
+<section class="bg-dark" id="side-hustle">
   <div class="wrap">
-    <p class="section-label label-recruit" style="color:var(--acorn-bright)">The numbers</p>
-    <h2>What you make, what it costs.</h2>
-    <p style="margin-bottom:0.5rem">The three things every serious person wants to know up front. We're still finalizing the exact model — but here's the honest shape of it so you can decide if it's worth a conversation.</p>
-
-    <div class="econ-grid">
-      <!-- Earnings illustration -->
-      <div>
-        <table class="earn-table">
-          <thead>
-            <tr><th>A typical job</th><th>Looks like</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>One shoebox (~200 photos)</td><td class="fig">~$200</td></tr>
-            <tr><td>A larger family collection</td><td class="fig">$500–$1,000+</td></tr>
-            <tr><td>Pricing model</td><td>~$1 / photo &middot; $200 / shoebox</td></tr>
-            <tr><td>Your time per job</td><td>Mostly scanning + a personal pickup &amp; return</td></tr>
-          </tbody>
-        </table>
-        <p class="earn-caption">Illustrative figures based on current ScanSquirrel pricing — not a guarantee of earnings. Your actual split and structure are exactly what we'll work out together.</p>
-      </div>
-
-      <!-- Kit cost -->
-      <div class="kit-card">
-        <div class="kit-label">What it costs to start</div>
-        <div class="kit-fig">The kit <span>(scanner + supplies)</span></div>
-        <p>A Squirrel needs a proper setup that meets our standard. We'll guide you to the exact gear — you don't guess.</p>
-        <ul class="kit-list">
-          <li>ADF photo scanner (the workhorse)</li>
-          <li>Flatbed for oversized &amp; fragile items</li>
-          <li>Protective cases &amp; handling supplies</li>
-          <li>Access to our software &amp; AI tools</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- PLACEHOLDER: earnings / unit-economics infographic -->
-    <div class="ph dark" style="margin-top:1.5rem; min-height:170px;">
-      <span class="ph-tag">Infographic — to design</span>
-      <div class="ph-title">"Anatomy of a job" earnings graphic</div>
-      <div class="ph-note">Simple visual breakdown of a single job: shoebox in &rarr; scanning &rarr; revenue out, with the Squirrel's share highlighted. Keep it honest and directional (ranges, not promises) until the comp model is locked. Helps serious recruits self-qualify.</div>
-    </div>
-
-    <div class="econ-disclaimer">
-      <strong>Straight talk:</strong> ScanSquirrel is early. There's no formal contract or comp structure published yet — we're working through the legal and operational framework now. Revenue comes from doing jobs, never from recruiting other people. If that sounds like something you'd want to help build, the next step is just a conversation.
-    </div>
+    <p class="section-label label-recruit" style="color:var(--acorn-bright)">A good side hustle</p>
+    <h2>Meaningful work, on your own schedule.</h2>
+    <p style="margin-bottom:0.5rem">Being a Squirrel is hands-on, flexible work helping people in your own neighborhood protect what matters to them. It's the kind of side hustle that actually feels good to do &mdash; you finish a job knowing you saved someone's family memories.</p>
+    <p style="margin-bottom:0.5rem">You don't need to be a tech expert or own any special equipment. If you're organized, careful, and willing to learn, I'll personally train you on how to do this work the right way &mdash; the scanning, the handling, the software, all of it.</p>
+    <p>We're still early and figuring things out as we grow, so the best way to learn more is simply to reach out. No application, no pressure &mdash; just a conversation about whether it's a fit.</p>
   </div>
 </section>
 
@@ -883,12 +786,12 @@ footer p { margin:0; }
   <div class="wrap">
     <p class="section-label label-recruit" style="color:var(--acorn-bright)">What we provide</p>
     <h2>You won't be doing this alone.</h2>
-    <p style="margin-bottom:1.5rem">We set you up to succeed — guidance on equipment, training, workflow, and ongoing support.</p>
+    <p style="margin-bottom:1.5rem">We set you up to succeed &mdash; guidance on equipment, training, workflow, and ongoing support.</p>
 
     <div class="training-grid">
       <div class="training-card">
         <h3>Equipment guidance</h3>
-        <p>We tell you the exact scanner setup that meets the ScanSquirrel standard — and how to use it properly from day one.</p>
+        <p>We tell you the exact scanner setup that meets the ScanSquirrel standard &mdash; and how to use it properly from day one.</p>
       </div>
       <div class="training-card">
         <h3>Training &amp; certification</h3>
@@ -896,11 +799,11 @@ footer p { margin:0; }
       </div>
       <div class="training-card">
         <h3>Software &amp; tools</h3>
-        <p>Access to the ScanSquirrel processing tools — AI Photo Correction, delivery system, and everything you need to run a job professionally.</p>
+        <p>Access to the ScanSquirrel processing tools &mdash; AI Photo Correction, delivery system, and everything you need to run a job professionally.</p>
       </div>
       <div class="training-card">
         <h3>Ongoing support</h3>
-        <p>Questions, edge cases, weird collections — we've seen it and we'll help you through it. The network has your back.</p>
+        <p>Questions, edge cases, weird collections &mdash; we've seen it and we'll help you through it. The network has your back.</p>
       </div>
     </div>
   </div>
@@ -935,12 +838,12 @@ footer p { margin:0; }
       <span class="area-pill" style="background:var(--warm);color:var(--bark)">Redondo Beach</span>
     </div>
 
-    <p style="margin-top:1rem;color:var(--ash);font-size:0.88rem">Don't see your neighborhood? Reach out anyway — if you're the right person, geography is a detail we can work around.</p>
+    <p style="margin-top:1rem;color:var(--ash);font-size:0.88rem">Don't see your neighborhood? Reach out anyway &mdash; if you're the right person, geography is a detail we can work around.</p>
 
     <div class="apply-box">
       <h3>Interested in becoming a Squirrel?</h3>
-      <p>Tell me a little about yourself — where you live, why this appeals to you, and any relevant background. No formal application, no bureaucracy. Just a conversation.</p>
-      <a href="mailto:hello@scansquirrel.com?subject=I%20want%20to%20be%20a%20Squirrel" class="btn-primary">Email Max — hello@scansquirrel.com</a>
+      <p>Tell me a little about yourself &mdash; where you live, why this appeals to you, and any relevant background. No formal application, no bureaucracy. Just a conversation.</p>
+      <a href="mailto:hello@scansquirrel.com?subject=I%20want%20to%20be%20a%20Squirrel" class="btn-primary">Email Max &mdash; hello@scansquirrel.com</a>
     </div>
   </div>
 </section>
@@ -964,6 +867,7 @@ footer p { margin:0; }
     <p class="footer-credit">All photographs displayed with permission. Please do not reproduce.</p>
   </div>
 </footer>
+
 <script src="/js/nav-loader.js"></script>
 </body>
 </html>
