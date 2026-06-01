@@ -155,27 +155,19 @@
       "Because AI can sharpen a blurry face from 1974."
     ]);
 
-    var phase = 0;
     var meIndex = 0;
 
     function updateSubtitle() {
       navSubtitle.classList.remove('visible');
       setTimeout(function () {
-        if (phase === 0) {
-          navSubtitle.innerHTML = '<span class="label">You:</span><span class="text" style="color:var(--acorn)">Why?</span>';
-          phase = 1;
-        } else {
-          navSubtitle.innerHTML = '<span class="text">' + meLines[meIndex] + '</span>';
-          meIndex = (meIndex + 1) % meLines.length;
-          phase = 2;
-        }
+        navSubtitle.innerHTML = '<span class="text">' + meLines[meIndex] + '</span>';
+        meIndex = (meIndex + 1) % meLines.length;
         navSubtitle.classList.add('visible');
       }, 400);
     }
 
     setTimeout(function () { navSubtitle.classList.add('visible'); }, 500);
-    setTimeout(updateSubtitle, 2500);
-    setTimeout(updateSubtitle, 4000);
-    setTimeout(function () { setInterval(updateSubtitle, 3500); }, 7500);
+    setTimeout(updateSubtitle, 3500);
+    setTimeout(function () { setInterval(updateSubtitle, 3500); }, 7000);
   }
 })();
