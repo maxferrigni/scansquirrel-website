@@ -152,7 +152,12 @@
       "Because something with teeth will find that box before your kids do.",
       "Because Google cannot auto-generate memories from a box in your closet.",
       "Because the big companies charge a fortune and I live ten minutes away.",
-      "Because AI can sharpen a blurry face from 1974."
+      "Because AI can sharpen a blurry face from 1974.",
+      "Because that Rolling Stone interview you wrote is not going to reprint itself.",
+      "Because your kids will never believe you were published unless they see it.",
+      "Because magazine paper was never meant to last this long.",
+      "Because your birth certificate is one coffee spill away from gone.",
+      "Because the diploma on the wall is fading and the one in the drawer is worse."
     ]);
 
     var meIndex = 0;
