@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan Squirrel — Style Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;
+  --feather:#2a2a2a;--acorn:#8b5e3c;--acorn-bright:#a0693f;--ash:#6b6660;
+  --nest:#d4c9b8;--branch:#8b7e6a;--bark:#5c4a3a;--teal:#2c6e6a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--bone);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ===== STYLE-GUIDE CHROME (not part of the brand system) ===== */
+.gx-top{background:var(--feather);color:var(--bone);padding:2.5rem 3rem}
+.gx-top h1{font-family:'Fraunces',serif;font-weight:400;font-size:2.2rem;letter-spacing:-.02em;color:var(--bone)}
+.gx-top p{color:var(--nest);font-size:.95rem;margin-top:.4rem;max-width:640px}
+.gx-wrap{max-width:880px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.gx-sec{margin-bottom:3rem;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;overflow:hidden}
+.gx-sec > h2{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);padding:1.1rem 1.5rem;border-bottom:1px solid rgba(0,0,0,.07);background:var(--warm)}
+.gx-body{padding:1.5rem}
+.gx-note{font-size:.8rem;color:var(--ash);margin-top:.5rem;font-style:italic}
+.gx-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start}
+.gx-spec{font-family:'DM Sans',monospace;font-size:.72rem;color:var(--ash);background:var(--bone);padding:.15rem .5rem;border-radius:4px;display:inline-block;margin-top:.35rem}
+hr.gx{border:none;border-top:1px dashed rgba(0,0,0,.12);margin:1.5rem 0}
+
+/* ===== THE ACTUAL BRAND SYSTEM (what the guide is documenting) ===== */
+h1.brand{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:400;letter-spacing:-.02em;line-height:1.15}
+h2.brand{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;letter-spacing:-.02em;line-height:1.25}
+h3.brand{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;line-height:1.3}
+p.brand{font-size:.95rem;color:var(--feather)}
+.label.brand{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.btn.brand{display:inline-block;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:700;background:var(--acorn);color:#fff;padding:.7rem 1.4rem;border-radius:6px;text-decoration:none}
+.btn.brand.ghost{background:transparent;color:var(--acorn);border:1.5px solid var(--acorn)}
+
+/* swatches */
+.sw{width:120px}
+.sw .chip{height:64px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.sw .nm{font-size:.78rem;font-weight:600;margin-top:.4rem}
+.sw .hex{font-size:.7rem;color:var(--ash);font-family:monospace}
+.sw .use{font-size:.68rem;color:var(--ash);margin-top:.1rem}
+
+/* sample card to show radius + dark section + teal accent */
+.demo-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-left:3px solid var(--teal);border-radius:8px;padding:1.1rem 1.25rem}
+.demo-dark{background:var(--feather);color:var(--bone);border-radius:8px;padding:1.5rem}
+.demo-dark h3{color:var(--bone)}
+.demo-dark p{color:var(--nest)}
+.x-bad{background:var(--ink);border-radius:8px;padding:1.5rem;color:#fff;position:relative}
+.tag{position:absolute;top:8px;right:10px;font-size:.62rem;font-weight:700;letter-spacing:.08em;padding:.15rem .5rem;border-radius:4px}
+.tag.no{background:#a32d2d;color:#fff}
+.tag.yes{background:var(--teal);color:#fff}
+.demo-good{position:relative}
+.demo-good .tag.yes{background:var(--teal)}
+.case{display:flex;gap:.6rem;align-items:baseline;padding:.45rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.case .k{font-size:.66rem;font-weight:700;letter-spacing:.05em;padding:.1rem .45rem;border-radius:3px;flex-shrink:0;width:74px;text-align:center}
+.case .k.do{background:#e1f0e8;color:#0f6e56}
+.case .k.dont{background:#f7e0e0;color:#a32d2d}
+.case .t{font-family:'Fraunces',serif;font-size:1.05rem}
+
+.asset-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.asset{margin:0}
+.asset img{width:100%;border-radius:6px;border:1px solid rgba(0,0,0,.08);display:block;background:var(--bone)}
+.asset figcaption{font-family:monospace;font-size:.62rem;color:var(--ash);margin-top:.3rem;word-break:break-all}
+</style>
+</head>
+<body>
+
+<div class="gx-top">
+  <h1>Scan Squirrel — Visual Style Guide</h1>
+  <p>One reference for every page on scansquirrel.com. Everything below is rendered in the real fonts and colors, so what you see is what the site should look like.</p>
+</div>
+
+<div class="gx-wrap">
+
+  <!-- TYPE SCALE -->
+  <div class="gx-sec">
+    <h2>Type scale</h2>
+    <div class="gx-body">
+      <div style="margin-bottom:1.3rem">
+        <h1 class="brand">Did you know there were photos before the iPhone?</h1>
+        <span class="gx-spec">H1 · Fraunces · 2.2rem · weight 400 · sentence case</span>
+      </div>
+      <hr class="gx">
+      <div style="margin-bottom:1.3rem">
+        <h2 class="brand">Three steps. One person the whole way.</h2>
+        <span class="gx-spec">H2 · Fraunces · 1.5rem · weight 400 · sentence case</span>
+      </div>
+      <hr class="gx">
+      <div style="margin-bottom:1.3rem">
+        <h3 class="brand">What it costs</h3>
+        <span class="gx-spec">H3 · Fraunces · 1.1rem · weight 600 · sentence case</span>
+      </div>
+      <hr class="gx">
+      <div style="margin-bottom:1.3rem">
+        <p class="brand">Tell me what you've got — a shoebox, a bin, frames on the wall. Every collection is different, so we start with a free, easy conversation.</p>
+        <span class="gx-spec">Body · DM Sans · 0.95rem · weight 400</span>
+      </div>
+      <hr class="gx">
+      <div style="margin-bottom:.6rem">
+        <span class="label brand">Where I work</span>
+        <div><span class="gx-spec">Section label · DM Sans · 0.72rem · weight 700 · uppercase (via CSS)</span></div>
+        <div class="gx-note">Write the source HTML in sentence case — CSS uppercases it. Keeps the markup clean.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAPITALIZATION RULE -->
+  <div class="gx-sec">
+    <h2>Capitalization — the one rule</h2>
+    <div class="gx-body">
+      <p class="brand" style="margin-bottom:1rem">Sentence case everywhere. It matches your voice — direct and human, not brochure-corporate. Capitalize only the first word and proper nouns.</p>
+      <div class="case"><span class="k do">DO</span><span class="t">Meet the squirrels</span></div>
+      <div class="case"><span class="k dont">DON'T</span><span class="t" style="color:var(--ash)">Meet The Squirrels.</span></div>
+      <div class="case"><span class="k do">DO</span><span class="t">Equipment &amp; tech</span></div>
+      <div class="case"><span class="k dont">DON'T</span><span class="t" style="color:var(--ash)">Equipment &amp; Tech</span></div>
+      <div class="case"><span class="k do">DO</span><span class="t">What it costs</span></div>
+      <div class="case" style="border-bottom:none"><span class="k dont">DON'T</span><span class="t" style="color:var(--ash)">What It Costs</span></div>
+    </div>
+  </div>
+
+  <!-- COLOR -->
+  <div class="gx-sec">
+    <h2>Color palette</h2>
+    <div class="gx-body">
+      <div class="gx-row">
+        <div class="sw"><div class="chip" style="background:#f0ebe3"></div><div class="nm">--bone</div><div class="hex">#f0ebe3</div><div class="use">Page background</div></div>
+        <div class="sw"><div class="chip" style="background:#f5f0e8"></div><div class="nm">--warm</div><div class="hex">#f5f0e8</div><div class="use">Alt surface</div></div>
+        <div class="sw"><div class="chip" style="background:#e8e1d5"></div><div class="nm">--cream</div><div class="hex">#e8e1d5</div><div class="use">Soft fill</div></div>
+        <div class="sw"><div class="chip" style="background:#2a2a2a"></div><div class="nm">--feather</div><div class="hex">#2a2a2a</div><div class="use">Dark sections</div></div>
+        <div class="sw"><div class="chip" style="background:#1a1a1a"></div><div class="nm">--ink</div><div class="hex">#1a1a1a</div><div class="use">Body text only</div></div>
+      </div>
+      <hr class="gx">
+      <div class="gx-row">
+        <div class="sw"><div class="chip" style="background:#8b5e3c"></div><div class="nm">--acorn</div><div class="hex">#8b5e3c</div><div class="use">Primary buttons</div></div>
+        <div class="sw"><div class="chip" style="background:#a0693f"></div><div class="nm">--acorn-bright</div><div class="hex">#a0693f</div><div class="use">Hover</div></div>
+        <div class="sw"><div class="chip" style="background:#2c6e6a"></div><div class="nm">--teal</div><div class="hex">#2c6e6a</div><div class="use">Accent only</div></div>
+        <div class="sw"><div class="chip" style="background:#6b6660"></div><div class="nm">--ash</div><div class="hex">#6b6660</div><div class="use">Muted text</div></div>
+        <div class="sw"><div class="chip" style="background:#d4c9b8"></div><div class="nm">--nest</div><div class="hex">#d4c9b8</div><div class="use">Text on dark</div></div>
+      </div>
+      <p class="gx-note">Dark sections use <strong>--feather</strong>, never <strong>--ink</strong>. Teal is an accent — labels, step numbers, card borders — and never a section background.</p>
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="gx-sec">
+    <h2>Buttons</h2>
+    <div class="gx-body">
+      <div class="gx-row" style="align-items:center">
+        <a class="btn brand" href="#">Book a scan</a>
+        <a class="btn brand ghost" href="#">See pricing</a>
+        <a class="btn brand" href="#">Email Max</a>
+      </div>
+      <span class="gx-spec" style="margin-top:.9rem">DM Sans · 0.95rem · weight 700 · sentence case · radius 6px · imperative voice</span>
+      <p class="gx-note">Always a command: "Book a scan", not "Booking". Solid acorn for primary, outlined acorn for secondary.</p>
+    </div>
+  </div>
+
+  <!-- SURFACES -->
+  <div class="gx-sec">
+    <h2>Surfaces &amp; sections</h2>
+    <div class="gx-body">
+      <div class="gx-row" style="flex-wrap:nowrap">
+        <div style="flex:1" class="demo-good">
+          <span class="tag yes">USE</span>
+          <div class="demo-dark">
+            <span class="label brand" style="color:#5dcaa5">Step 02</span>
+            <h3 class="brand" style="margin:.3rem 0">Scanning</h3>
+            <p class="brand" style="font-size:.88rem">Dark section on --feather. Teal used only as the small accent label.</p>
+          </div>
+        </div>
+        <div style="flex:1" class="demo-good">
+          <span class="tag no">AVOID</span>
+          <div class="x-bad">
+            <h3 class="brand" style="color:#fff;margin-bottom:.3rem">Too harsh</h3>
+            <p style="color:#bbb;font-size:.88rem">Pure --ink (#1a1a1a) background reads cold. Don't use it for sections.</p>
+          </div>
+        </div>
+      </div>
+      <hr class="gx">
+      <div class="demo-card">
+        <span class="label brand">Catalog</span>
+        <h3 class="brand" style="margin:.3rem 0">Card with teal accent border</h3>
+        <p class="brand" style="font-size:.9rem">Cards: 8px radius, white background, 1px hairline border, optional teal left-accent. Smaller chips/pills: 6px.</p>
+      </div>
+      <span class="gx-spec" style="margin-top:.9rem">Card radius 8px · small elements 6px</span>
+    </div>
+  </div>
+
+  <!-- TOKENS / CONVENTIONS -->
+  <div class="gx-sec">
+    <h2>Conventions</h2>
+    <div class="gx-body">
+      <p class="brand" style="margin-bottom:.5rem"><strong>Em dashes</strong> as <code>&amp;mdash;</code> — like this, for breaks in thought.</p>
+      <p class="brand" style="margin-bottom:.5rem"><strong>Middots</strong> as <code>&amp;middot;</code> · for separators · in footers and meta lines.</p>
+      <p class="brand" style="margin-bottom:.5rem"><strong>Fonts:</strong> Fraunces for all headings, DM Sans for everything else.</p>
+      <p class="brand"><strong>Two weights of DM Sans in practice:</strong> 400 body, 700 labels &amp; buttons.</p>
+    </div>
+  </div>
+
+
+  <!-- ILLUSTRATIONS -->
+  <div class="gx-sec">
+    <h2>Illustrations</h2>
+    <div class="gx-body">
+      <p class="brand" style="margin-bottom:1rem">The kind of illustrations we use: woodcut/engraving style, ink on bone, monochrome &mdash; so the real customer photos are the only color on the page.</p>
+      <div class="asset-grid">
+        <figure class="asset"><img src="../img/ill/scan_office3.png"><figcaption>img/ill/scan_office3.png</figcaption></figure>
+        <figure class="asset"><img src="../img/ill/Organized_Photos_f0ebe3.png"><figcaption>img/ill/Organized_Photos_f0ebe3.png</figcaption></figure>
+        <figure class="asset"><img src="../img/ill/Happy_Customer.png"><figcaption>img/ill/Happy_Customer.png</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE -->
+  <div class="gx-sec">
+    <h2>Quick reference</h2>
+    <div class="gx-body">
+      <table style="width:100%;border-collapse:collapse;font-size:.85rem">
+        <thead>
+          <tr style="text-align:left;border-bottom:2px solid var(--nest)">
+            <th style="padding:.5rem .4rem">Element</th><th>Font</th><th>Size</th><th>Weight</th><th>Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(0,0,0,.06)"><td style="padding:.5rem .4rem">H1</td><td>Fraunces</td><td>2.2rem</td><td>400</td><td>Sentence</td></tr>
+          <tr style="border-bottom:1px solid rgba(0,0,0,.06)"><td style="padding:.5rem .4rem">H2</td><td>Fraunces</td><td>1.5rem</td><td>400</td><td>Sentence</td></tr>
+          <tr style="border-bottom:1px solid rgba(0,0,0,.06)"><td style="padding:.5rem .4rem">H3</td><td>Fraunces</td><td>1.1rem</td><td>600</td><td>Sentence</td></tr>
+          <tr style="border-bottom:1px solid rgba(0,0,0,.06)"><td style="padding:.5rem .4rem">Body</td><td>DM Sans</td><td>0.95rem</td><td>400</td><td>—</td></tr>
+          <tr style="border-bottom:1px solid rgba(0,0,0,.06)"><td style="padding:.5rem .4rem">Section label</td><td>DM Sans</td><td>0.72rem</td><td>700</td><td>Uppercase (CSS)</td></tr>
+          <tr><td style="padding:.5rem .4rem">Buttons</td><td>DM Sans</td><td>0.95rem</td><td>700</td><td>Sentence</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
