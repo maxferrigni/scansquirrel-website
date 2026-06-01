@@ -2,7 +2,7 @@
 
 ## Repository
 - GitHub: https://github.com/maxferrigni/scansquirrel-website
-- Local clone: ~/Desktop/scansquirrel-pages-repo/
+- Local clone: ~/Projects/scansquirrel-website/
 - Owner: Max Ferrigni (maxferrigni)
 
 ## Workflow
