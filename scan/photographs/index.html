@@ -28,10 +28,14 @@ fbq('init','2148206675947024');fbq('track','PageView');
 </script>
 
 <style>
-/* ===== media page system (scoped) ===== */
-.mp{--ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;--feather:#2a2a2a;--acorn:#8b5e3c;--acorn-bright:#a0693f;--ash:#6b6660;--nest:#d4c9b8;--teal:#2c6e6a;}
+/* ===== global vars (nav + footer need these on :root) ===== */
+:root{--ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;--feather:#2a2a2a;--acorn:#8b5e3c;--acorn-bright:#a0693f;--ash:#6b6660;--nest:#d4c9b8;--branch:#8b7e6a;--bark:#5c4a3a;--teal:#2c6e6a;}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--bone);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+/* ===== media page system ===== */
 .mp{font-family:'DM Sans',sans-serif;color:var(--ink);line-height:1.6;background:var(--bone)}
-.mp-wrap{max-width:980px;margin:0 auto;padding:3rem 1.5rem 4rem}
+.mp-wrap{max-width:980px;margin:0 auto;padding:7rem 1.5rem 4rem}
 
 /* hero */
 .mp-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:center;margin-bottom:3.5rem}
