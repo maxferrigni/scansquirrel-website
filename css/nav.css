@@ -219,6 +219,27 @@ nav#nav {
 }
 
 /* ============================================================
+   Shared eyebrow nav
+   ============================================================ */
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal, #2c6e6a);
+  margin-bottom: 0.75rem;
+}
+.eyebrow a,
+.eyebrow a:link,
+.eyebrow a:visited {
+  color: var(--teal, #2c6e6a);
+  text-decoration: none;
+}
+.eyebrow a:hover {
+  color: var(--acorn, #8b5e3c);
+}
+
+/* ============================================================
    Shared footer
    ============================================================ */
 footer {
