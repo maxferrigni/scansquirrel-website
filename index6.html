@@ -53,8 +53,8 @@ section{padding:3rem 3rem}
 .lobby-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.9rem;max-width:900px;margin:0 auto}
 .lobby-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:1.3rem 1rem;text-align:center;text-decoration:none;color:var(--ink);transition:border-color .2s ease}
 .lobby-card:hover{border-color:var(--teal)}
-.lobby-card .ico{width:34px;height:34px;margin:0 auto .5rem;color:var(--teal)}
-.lobby-card .ico svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.6;fill:none}
+.lobby-card .ico{width:96px;height:96px;margin:0 auto .6rem;display:flex;align-items:center;justify-content:center}
+.lobby-card .ico img{max-width:100%;max-height:100%;object-fit:contain}
 .lobby-card .nm{font-family:'Fraunces',serif;font-size:1rem;font-weight:600}
 
 /* compare */
@@ -122,23 +122,23 @@ section{padding:3rem 3rem}
     </div>
     <div class="lobby-grid">
       <a class="lobby-card" href="/scan/photographs/">
-        <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M3 17l5-4 4 3 3-2 6 5"/></svg></span>
+        <span class="ico"><img src="/img/items/photo_s.png" alt=""></span>
         <span class="nm">Photos</span>
       </a>
       <a class="lobby-card" href="/scan/slides/">
-        <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><rect x="6.5" y="8.5" width="11" height="7" rx="1"/></svg></span>
+        <span class="ico"><img src="/img/items/slide_s.png" alt=""></span>
         <span class="nm">35mm slides</span>
       </a>
       <a class="lobby-card" href="/scan/negatives/">
-        <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 9h18M3 15h18M8 6v12M16 6v12"/></svg></span>
+        <span class="ico"><img src="/img/items/negative_strip_s.png" alt=""></span>
         <span class="nm">Negatives</span>
       </a>
       <a class="lobby-card" href="/scan/documents/">
-        <span class="ico"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 16h6"/></svg></span>
+        <span class="ico"><img src="/img/items/document_records_s.png" alt=""></span>
         <span class="nm">Documents</span>
       </a>
       <a class="lobby-card" href="/scan/articles/">
-        <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h13v14H4z"/><path d="M17 8h3v9a2 2 0 0 1-2 2"/><path d="M7 8h7M7 12h7M7 16h4"/></svg></span>
+        <span class="ico"><img src="/img/items/article_pdf_s.png" alt=""></span>
         <span class="nm">Magazines</span>
       </a>
     </div>
