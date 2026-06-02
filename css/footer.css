@@ -1,0 +1,39 @@
+/* ============================================================
+   Shared footer
+   ============================================================ */
+footer {
+  background: var(--feather, #2a2a2a);
+  padding: 2rem 3rem;
+}
+footer p { margin: 0; }
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+footer .ft {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--branch, #8b7e6a);
+  margin-bottom: 0.75rem;
+}
+.footer-contact, .footer-legal { margin-bottom: 0.5rem; }
+.footer-contact a, .footer-legal a {
+  color: var(--ash, #6b6660);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.footer-contact a:hover, .footer-legal a:hover {
+  color: var(--bone, #f0ebe3);
+}
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--ash, #6b6660);
+  margin-bottom: 0.3rem;
+}
+.footer-credit {
+  font-size: 0.72rem;
+  color: var(--branch, #8b7e6a);
+  font-style: italic;
+}
