@@ -219,43 +219,42 @@ nav#nav {
 }
 
 /* ============================================================
-   Eyebrow link styles
-   ============================================================ */
-.eyebrow a {
-  color: var(--teal, #2c6e6a);
-  text-decoration: none;
-}
-.eyebrow a:hover {
-  text-decoration: underline;
-}
-
-/* ============================================================
    Shared footer
    ============================================================ */
 footer {
   background: var(--feather, #2a2a2a);
-  padding: 2rem 3rem;
+  padding: 2.75rem 3rem 2.5rem;
 }
 footer p { margin: 0; }
 .footer-inner {
-  max-width: 720px;
+  max-width: 540px;
   margin: 0 auto;
   text-align: center;
+}
+.footer-logo {
+  display: inline-block;
+  line-height: 0;
+}
+.footer-logo img {
+  width: 240px;
+  height: auto;
+  display: block;
 }
 footer .ft {
   font-family: 'Fraunces', serif;
   font-style: italic;
-  font-size: 0.95rem;
-  color: var(--branch, #8b7e6a);
-  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--bone, #f0ebe3);
+  margin-top: 0.6rem;
+  margin-bottom: 1.4rem;
 }
-.footer-contact, .footer-legal { margin-bottom: 0.5rem; }
-.footer-contact a, .footer-legal a {
-  color: var(--ash, #6b6660);
+.footer-legal { margin-bottom: 0.9rem; }
+.footer-legal a {
+  color: var(--nest, #d4c9b8);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
 }
-.footer-contact a:hover, .footer-legal a:hover {
+.footer-legal a:hover {
   color: var(--bone, #f0ebe3);
 }
 .footer-copy {
