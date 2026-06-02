@@ -51,10 +51,10 @@ section{padding:3rem 3rem}
 /* format lobby */
 .lobby-heading{text-align:center;margin-bottom:1.4rem}
 .lobby-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.9rem;max-width:900px;margin:0 auto}
-.lobby-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:1.3rem 1rem;text-align:center;text-decoration:none;color:var(--ink);transition:border-color .2s ease}
-.lobby-card:hover{border-color:var(--teal)}
-.lobby-card .ico{width:96px;height:96px;margin:0 auto .6rem;display:flex;align-items:center;justify-content:center}
-.lobby-card .ico img{max-width:100%;max-height:100%;object-fit:contain}
+.lobby-card{background:var(--bone);border:1px solid rgba(0,0,0,.07);border-radius:8px;padding:1.1rem .8rem 1rem;text-align:center;text-decoration:none;color:var(--ink);transition:border-color .2s ease,background .2s ease}
+.lobby-card:hover{border-color:var(--teal);background:var(--warm)}
+.lobby-card .ico{display:block;width:100%;height:96px;margin:0 auto .6rem}
+.lobby-card .ico img{width:auto;height:100%;max-width:100%;object-fit:contain;display:block;margin:0 auto}
 .lobby-card .nm{font-family:'Fraunces',serif;font-size:1rem;font-weight:600}
 
 /* compare */
@@ -122,23 +122,23 @@ section{padding:3rem 3rem}
     </div>
     <div class="lobby-grid">
       <a class="lobby-card" href="/scan/photographs/">
-        <span class="ico"><img src="/img/items/photo_s.png" alt=""></span>
+        <span class="ico"><img src="/img/items/photo_s.png" alt="Photos"></span>
         <span class="nm">Photos</span>
       </a>
       <a class="lobby-card" href="/scan/slides/">
-        <span class="ico"><img src="/img/items/slide_s.png" alt=""></span>
+        <span class="ico"><img src="/img/items/slide_s.png" alt="35mm slides"></span>
         <span class="nm">35mm slides</span>
       </a>
       <a class="lobby-card" href="/scan/negatives/">
-        <span class="ico"><img src="/img/items/negative_strip_s.png" alt=""></span>
+        <span class="ico"><img src="/img/items/negative_strip_s.png" alt="Negatives"></span>
         <span class="nm">Negatives</span>
       </a>
       <a class="lobby-card" href="/scan/documents/">
-        <span class="ico"><img src="/img/items/document_records_s.png" alt=""></span>
+        <span class="ico"><img src="/img/items/document_records_s.png" alt="Documents"></span>
         <span class="nm">Documents</span>
       </a>
       <a class="lobby-card" href="/scan/articles/">
-        <span class="ico"><img src="/img/items/article_pdf_s.png" alt=""></span>
+        <span class="ico"><img src="/img/items/article_pdf_s.png" alt="Magazines"></span>
         <span class="nm">Magazines</span>
       </a>
     </div>
