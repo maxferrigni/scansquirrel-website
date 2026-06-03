@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Film Negatives — Scan Squirrel Photo Scanning Los Angeles</title>
 <meta name="description" content="Professional film negative scanning in Los Angeles. High-resolution archival scans with color reversal, dust removal, and restoration included. The strips in the envelope deserve to be seen again.">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/nav.css">
+<link rel="stylesheet" href="/css/scan.css">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
@@ -28,76 +29,141 @@ fbq('init','2148206675947024');fbq('track','PageView');
 </script>
 
 <style>
-/* ===== global vars (nav + footer need these on :root) ===== */
-:root{--ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;--feather:#2a2a2a;--acorn:#8b5e3c;--acorn-bright:#a0693f;--ash:#6b6660;--nest:#d4c9b8;--branch:#8b7e6a;--bark:#5c4a3a;--teal:#2c6e6a;}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--bone);-webkit-font-smoothing:antialiased;line-height:1.6}
+/* ── Page-specific: Negatives ── */
+.mp-wrap { max-width: 980px; margin: 0 auto; padding: 7rem 1.5rem 4rem; }
 
-/* ===== media page system (scoped .mp-*) ===== */
-.mp-wrap{max-width:980px;margin:0 auto;padding:7rem 1.5rem 4rem}
+/* Hero */
+.mp-hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: center; margin-bottom: 3.5rem; }
+.mp-hero h1 { margin: 0.5rem 0 0.8rem; }
+.mp-hero .sub {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--feather);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.mp-hero p { font-size: 0.95rem; color: var(--feather); margin-bottom: 1.4rem; }
+.mp-hero .mp-art { display: flex; align-items: center; justify-content: center; }
+.mp-hero .mp-art img { width: 100%; max-width: 380px; height: auto; display: block; }
 
-/* hero */
-.mp-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:center;margin-bottom:3.5rem}
-.mp-hero .label{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
-.mp-hero h1{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:400;letter-spacing:-.02em;line-height:1.12;margin:.5rem 0 .8rem}
-.mp-hero .sub{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:400;color:var(--feather);margin-bottom:1rem;line-height:1.3}
-.mp-hero p{font-size:.95rem;color:var(--feather);margin-bottom:1.4rem}
-.mp-hero .mp-art{display:flex;align-items:center;justify-content:center}
-.mp-hero .mp-art img{width:100%;max-width:380px;height:auto;display:block}
+/* Spec list */
+.mp-do {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--teal);
+  border-radius: var(--radius-card);
+  padding: 1.6rem 1.8rem;
+  margin-bottom: 3rem;
+}
+.mp-spec {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0.6rem 1.5rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.mp-spec:last-child { border-bottom: none; }
+.mp-spec .k {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  padding-top: 0.1rem;
+}
+.mp-spec .k em { font-style: italic; text-transform: none; }
+.mp-spec .v { font-size: 0.92rem; color: var(--feather); }
 
-/* section heads */
-.mp h2{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;letter-spacing:-.02em;margin-bottom:1.2rem}
-.mp h3{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;line-height:1.3}
+/* Trust callout */
+.mp-trust {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--teal);
+  border-radius: var(--radius-card);
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 3rem;
+}
+.mp-trust h3 { margin: 0.3rem 0 0.5rem; }
+.mp-trust p { font-size: 0.9rem; color: var(--feather); }
 
-/* what-we-do spec list */
-.mp-do{background:#fff;border:1px solid rgba(0,0,0,.08);border-left:3px solid var(--teal);border-radius:8px;padding:1.6rem 1.8rem;margin-bottom:3rem}
-.mp-spec{display:grid;grid-template-columns:160px 1fr;gap:.6rem 1.5rem;padding:.7rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
-.mp-spec:last-child{border-bottom:none}
-.mp-spec .k{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);padding-top:.1rem}
-.mp-spec .k em{font-style:italic;text-transform:none}
-.mp-spec .v{font-size:.92rem;color:var(--feather)}
-@media(max-width:620px){.mp-spec{grid-template-columns:1fr;gap:.2rem}}
+/* Human band */
+.mp-human {
+  background: var(--feather);
+  border-radius: var(--radius-card);
+  padding: 2.2rem 2.2rem 2.4rem;
+  margin-bottom: 3rem;
+}
+.mp-human .label { color: #5dcaa5; }
+.mp-human h2 {
+  font-size: 1.7rem;
+  color: var(--bone);
+  margin: 0.5rem 0 0.8rem;
+  line-height: 1.2;
+}
+.mp-human p { color: var(--nest); max-width: 680px; }
 
-/* trust callout */
-.mp-trust{background:#fff;border:1px solid rgba(0,0,0,.08);border-left:3px solid var(--teal);border-radius:8px;padding:1.4rem 1.6rem;margin-bottom:3rem}
-.mp-trust .label{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
-.mp-trust h3{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;margin:.3rem 0 .5rem}
-.mp-trust p{font-size:.9rem;color:var(--feather)}
+/* Contrast strip */
+.mp-vs {
+  background: var(--feather);
+  border-radius: var(--radius-card);
+  padding: 2rem 2rem 2.2rem;
+  margin-bottom: 3rem;
+}
+.mp-vs h2 { color: var(--bone); margin-bottom: 1.4rem; }
+.mp-vs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.4rem; }
+.mp-vs-item .big {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #5dcaa5;
+  margin-bottom: 0.35rem;
+}
+.mp-vs-item p { font-size: 0.85rem; color: var(--nest); line-height: 1.5; }
 
-/* human band */
-.mp-human{background:var(--feather);border-radius:8px;padding:2.2rem 2.2rem 2.4rem;margin-bottom:3rem}
-.mp-human .label{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5dcaa5}
-.mp-human h2{font-family:'Fraunces',serif;font-size:1.7rem;font-weight:400;letter-spacing:-.02em;color:var(--bone);margin:.5rem 0 .8rem;line-height:1.2}
-.mp-human p{font-size:.95rem;color:var(--nest);max-width:680px}
+/* Problems */
+.mp-probs { margin-bottom: 3rem; }
+.mp-prob-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.mp-prob {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: 1.1rem 1.25rem;
+}
+.mp-prob h3 { margin-bottom: 0.35rem; }
+.mp-prob p { font-size: 0.85rem; color: var(--ash); }
 
-/* contrast strip */
-.mp-vs{background:var(--feather);border-radius:8px;padding:2rem 2rem 2.2rem;margin-bottom:3rem}
-.mp-vs h2{color:var(--bone);margin-bottom:1.4rem}
-.mp-vs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.4rem}
-.mp-vs-item .big{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;color:#5dcaa5;margin-bottom:.35rem}
-.mp-vs-item p{font-size:.85rem;color:var(--nest);line-height:1.5}
+/* Pricing */
+.mp-price {
+  background: var(--feather);
+  color: var(--bone);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.mp-price .label { color: #5dcaa5; }
+.mp-price h3 { color: var(--bone); font-size: 1.6rem; margin: 0.2rem 0; }
+.mp-price .fine { color: var(--nest); font-size: 0.82rem; }
 
-/* problems */
-.mp-probs{margin-bottom:3rem}
-.mp-prob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.mp-prob{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;padding:1.1rem 1.25rem}
-.mp-prob h3{margin-bottom:.35rem}
-.mp-prob p{font-size:.85rem;color:var(--ash)}
-
-/* pricing */
-.mp-price{background:var(--feather);color:var(--bone);border-radius:8px;padding:1.5rem 1.8rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.mp-price .label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5dcaa5}
-.mp-price h3{color:var(--bone);font-size:1.6rem;margin:.2rem 0}
-.mp-price .fine{color:var(--nest);font-size:.82rem}
-
-@media(max-width:760px){.mp-hero{grid-template-columns:1fr;gap:1.8rem}.mp-hero .mp-art img{max-width:300px}}
+@media (max-width: 760px) {
+  .mp-hero { grid-template-columns: 1fr; gap: 1.8rem; }
+  .mp-hero .mp-art img { max-width: 300px; }
+}
+@media (max-width: 620px) {
+  .mp-spec { grid-template-columns: 1fr; gap: 0.2rem; }
+}
 </style>
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
 
-<div class="mp">
+<div class="scan-page">
 <div class="mp-wrap">
 
   <!-- HERO -->
@@ -183,6 +249,10 @@ body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--bone);-w
   <div class="footer-inner">
     <a href="/" class="footer-logo"><img src="/img/logos/footer_bone_on_feather.png" alt="Scan Squirrel"></a>
     <p class="ft">Gathered. Organized. Preserved.</p>
+    <div class="footer-cta">
+      <a href="tel:+12132902327">Call (213) 290-2327</a>
+      <a href="mailto:hello@scansquirrel.com">Email us</a>
+    </div>
     <p class="footer-legal"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/release.html">Release Agreement</a></p>
     <p class="footer-copy">&copy; 2026 Scan Squirrel &middot; Los Angeles, CA</p>
     <p class="footer-credit">All photographs displayed with permission. Please do not reproduce.</p>
