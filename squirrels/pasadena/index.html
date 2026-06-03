@@ -1,405 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pasadena Photo Scanning, In Your Home — ScanSquirrel Photo Scanning Los Angeles</title>
-  <meta name="description" content="Local in-home photo scanning for Pasadena, Altadena, San Marino & Arcadia. Your photos never leave your house. Meet Max, your neighborhood Squirrel.">
-  <link rel="canonical" href="https://scansquirrel.com/squirrels/pasadena/">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/nav.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Scanning in Pasadena — ScanSquirrel</title>
+<meta name="description" content="Local photo scanning for Pasadena, South Pasadena, Altadena & San Marino. Meet your Squirrel over coffee and talk about your photos.">
+<link rel="canonical" href="https://scansquirrel.com/squirrels/pasadena/">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="stylesheet" href="/css/territory.css">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-M0DFY2Y7XE');
-  gtag('config', 'AW-17990603569');
-  </script>
-  <!-- Meta Pixel -->
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init','2148206675947024');fbq('track','PageView');
-  </script>
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vp5j1zbe4c");
-  </script>
-
-  <style>
-  :root {
-    --ink: #1a1a1a;
-    --bone: #f0ebe3;
-    --warm: #f5f0e8;
-    --cream: #e8e1d5;
-    --feather: #2a2a2a;
-    --acorn: #8b5e3c;
-    --acorn-bright: #a0693f;
-    --ash: #6b6660;
-    --nest: #d4c9b8;
-    --branch: #8b7e6a;
-    --bark: #5c4a3a;
-    --teal: #2c6e6a;
-    --teal-bright: #38847f;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.65;
-    color: var(--feather);
-    background: var(--bone);
-  }
-
-  h1, h2, h3 { font-family: 'Fraunces', serif; color: var(--ink); line-height: 1.2; }
-  h1 { font-size: 2.2rem; font-weight: 400; }
-  h2 { font-size: 1.5rem; font-weight: 400; }
-  h3 { font-size: 1.1rem; font-weight: 600; }
-
-  p { margin-bottom: 1rem; }
-  p:last-child { margin-bottom: 0; }
-
-  a { color: var(--acorn); }
-
-  .wrap { max-width: 760px; margin: 0 auto; }
-  .wrap-wide { max-width: 1000px; margin: 0 auto; }
-
-  section { padding: 2.75rem 3rem; }
-
-  .bg-warm { background: var(--warm); }
-  .bg-bone { background: var(--bone); }
-  .bg-cream { background: var(--cream); }
-  .bg-dark { background: var(--feather); }
-  .bg-dark h2, .bg-dark h1, .bg-dark h3 { color: var(--bone); }
-  .bg-dark p { color: var(--nest); }
-
-  .section-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--teal);
-    font-weight: 600;
-    margin-bottom: 0.85rem;
-  }
-  .bg-dark .section-label { color: var(--teal-bright); }
-
-  /* Hero */
-  .hero { padding-top: 7rem; padding-bottom: 3.25rem; background: var(--warm); }
-  .hero .territories {
-    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--acorn); font-weight: 600; margin-bottom: 1.1rem;
-  }
-  .hero h1 { font-size: 2.6rem; max-width: 15ch; margin-bottom: 1.1rem; }
-  .hero .lead { font-size: 1.15rem; color: var(--ink); max-width: 52ch; margin-bottom: 1.75rem; }
-
-  .btn {
-    display: inline-block;
-    background: var(--acorn);
-    color: var(--bone);
-    padding: 0.8rem 1.6rem;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s ease;
-  }
-  .btn:hover { background: var(--acorn-bright); }
-  .btn-ghost {
-    display: inline-block; color: var(--acorn); padding: 0.8rem 1.1rem;
-    font-weight: 600; text-decoration: none; margin-left: 0.4rem;
-  }
-  .btn-ghost:hover { color: var(--acorn-bright); }
-
-  .lede { font-size: 1.08rem; color: var(--ink); }
-
-  /* Meet Max split */
-  .split { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: center; }
-  .photo-frame {
-    background: var(--cream); padding: 0.6rem; border-radius: 8px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.08); display: inline-block;
-  }
-  .photo-frame img { width: 100%; display: block; border-radius: 6px; }
-
-  /* Theme cards */
-  .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin-top: 1.5rem; }
-  .card {
-    background: var(--bone); border: 1px solid var(--nest); border-radius: 8px;
-    padding: 1.4rem; border-top: 3px solid var(--teal);
-  }
-  .card h3 { color: var(--bark); margin-bottom: 0.45rem; }
-  .card p { font-size: 0.92rem; }
-
-  /* Catalog cases */
-  .cases { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-top: 1.4rem; }
-  .case-chip {
-    width: 42px; height: 54px; border-radius: 6px;
-    background: linear-gradient(160deg, rgba(212,201,184,0.18), rgba(212,201,184,0.04));
-    border: 1px solid rgba(212,201,184,0.28);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-weight: 600; color: var(--nest);
-  }
-
-  /* Pricing */
-  .price-row { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 1.5rem; }
-  .price {
-    flex: 1; min-width: 220px; background: var(--bone);
-    border: 1px solid var(--nest); border-radius: 8px; padding: 1.6rem;
-  }
-  .price .amt { font-family: 'Fraunces', serif; font-size: 2.1rem; color: var(--acorn); line-height: 1; }
-  .price .unit { color: var(--ash); font-size: 0.92rem; margin-bottom: 0.9rem; display: block; }
-  .price p { font-size: 0.92rem; }
-
-  /* Meeting place */
-  .meet {
-    background: var(--cream); border-radius: 8px; padding: 1.75rem;
-    margin-top: 1.4rem;
-  }
-
-  /* Testimonials */
-  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 1.5rem; }
-  .quote {
-    background: var(--warm); border-left: 3px solid var(--teal);
-    padding: 1.25rem; border-radius: 0 6px 6px 0;
-  }
-  .quote p { font-style: italic; font-size: 0.92rem; margin-bottom: 0.65rem; }
-  .quote .who { font-weight: 600; color: var(--bark); font-size: 0.85rem; font-style: normal; }
-
-  /* Placeholder pattern */
-  .ph {
-    display: inline-block;
-    border: 2px dashed var(--branch);
-    background: repeating-linear-gradient(45deg, rgba(139,126,106,0.06), rgba(139,126,106,0.06) 6px, transparent 6px, transparent 12px);
-    color: var(--branch);
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-style: normal;
-  }
-
-  /* CTA strip */
-  .cta-strip { text-align: center; }
-  .cta-strip .btn { background: var(--acorn-bright); color: var(--bone); margin-top: 0.5rem; }
-  .cta-strip .btn:hover { background: var(--acorn); }
-
-  /* Footer */
-  footer { background: var(--feather); padding: 2rem 3rem; }
-  .footer-inner { max-width: 720px; margin: 0 auto; text-align: center; }
-  footer .ft { font-family: 'Fraunces', serif; font-style: italic; font-size: 0.95rem; color: var(--branch); margin-bottom: 0.75rem; }
-  footer p { margin: 0; }
-  .footer-contact, .footer-legal { margin-bottom: 0.5rem; }
-  .footer-contact a, .footer-legal a { color: var(--ash); text-decoration: none; font-size: 0.8rem; }
-  .footer-contact a:hover, .footer-legal a:hover { color: var(--bone); }
-  .footer-copy { font-size: 0.78rem; color: var(--ash); margin-bottom: 0.3rem; }
-  .footer-credit { font-size: 0.72rem; color: var(--branch); font-style: italic; }
-
-  @media (max-width: 720px) {
-    section { padding: 2rem 1.5rem; }
-    .hero { padding-top: 6rem; }
-    .hero h1 { font-size: 2rem; }
-    .split { grid-template-columns: 1fr; }
-    .photo-frame { max-width: 260px; }
-    .card-grid { grid-template-columns: 1fr; }
-    .quotes { grid-template-columns: 1fr; }
-  }
-  </style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-M0DFY2Y7XE');
+gtag('config', 'AW-17990603569');
+</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2148206675947024');fbq('track','PageView');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vp5j1zbe4c");
+</script>
 </head>
 <body>
 
 <div id="nav-placeholder"></div>
 
-<!-- HERO — FIRE FIRST, calm urgency -->
-<section class="hero">
-  <div class="wrap-wide">
-    <div class="territories">Pasadena &middot; Altadena &middot; San Marino &middot; Arcadia</div>
-    <h1>The photos you'd grab first, scanned before you ever have to.</h1>
-    <p class="lead">
-      After the Eaton fire, a lot of families here learned that the things you
-      can't replace are the things in the shoebox. We come to your home, scan
-      your photos at archival quality, and hand them back the same day &mdash; plus a
-      digital copy that can't burn. Calm, careful, local.
-    </p>
-    <a class="btn" href="#book">Book a scan with Max</a>
-    <a class="btn-ghost" href="#how">How it works &rarr;</a>
-  </div>
-</section>
+<main class="ter-page">
 
-<!-- FIRE / PREPAREDNESS -->
-<section class="bg-bone">
-  <div class="wrap">
-    <div class="section-label">Prepared, not panicked</div>
-    <h2>You don't need a disaster to want your memories safe.</h2>
-    <p class="lede" style="margin-top: 0.9rem;">
-      You just need a free afternoon and someone you trust handling them.
-    </p>
-    <p style="margin-top: 0.9rem;">
-      Altadena and the foothills were hit hard, and the rest of the area felt how
-      fast &ldquo;someday I'll get to it&rdquo; becomes &ldquo;I wish I had.&rdquo; Digitizing your photos
-      is one of the few preparedness steps that's genuinely easy: no contractor,
-      no permits, no insurance call. Your originals stay in your hands the entire
-      time, and you walk away with a backup that survives anything your house
-      might not.
-    </p>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="ter-hero">
+    <div class="wrap">
+      <span class="label">Pasadena &middot; South Pasadena &middot; Altadena</span>
+      <h1>Photo scanning in Pasadena</h1>
+      <p class="ter-hero-sub">I'm Max &mdash; I founded Scan Squirrel and I still do most of the scanning myself. If you're in Pasadena, let's grab coffee and talk about your photos.</p>
+    </div>
+  </section>
 
-<!-- MEET MAX -->
-<section class="bg-warm">
-  <div class="wrap-wide split">
-    <div>
-      <div class="photo-frame">
-        <img src="/img/brn/max_ferrigni.png" alt="Max, your Pasadena Squirrel">
+  <!-- WHAT I SCAN -->
+  <section class="ter-section">
+    <div class="wrap">
+      <span class="label">What I scan</span>
+      <h2>Five types of media</h2>
+      <div class="ter-media">
+        <div class="ter-media-item">
+          <a href="/scan/photographs">
+            <img src="/img/items/photo_l.png"
+                 srcset="/img/items/photo_s.png 256w, /img/items/photo_m.png 512w, /img/items/photo_l.png 1024w"
+                 sizes="(max-width:640px) 30vw, 120px"
+                 alt="Photographs">
+            <h3>Photographs</h3>
+            <div class="ter-grade">A+</div>
+          </a>
+        </div>
+        <div class="ter-media-item">
+          <a href="/scan/slides">
+            <img src="/img/items/slide_l.png"
+                 srcset="/img/items/slide_s.png 256w, /img/items/slide_m.png 512w, /img/items/slide_l.png 1024w"
+                 sizes="(max-width:640px) 30vw, 120px"
+                 alt="35mm slides">
+            <h3>35mm slides</h3>
+            <div class="ter-grade">A</div>
+          </a>
+        </div>
+        <div class="ter-media-item">
+          <a href="/scan/negatives">
+            <img src="/img/items/negative_strip_l.png"
+                 srcset="/img/items/negative_strip_s.png 256w, /img/items/negative_strip_m.png 512w, /img/items/negative_strip_l.png 1024w"
+                 sizes="(max-width:640px) 30vw, 120px"
+                 alt="Negatives">
+            <h3>Negatives</h3>
+            <div class="ter-grade">A</div>
+          </a>
+        </div>
+        <div class="ter-media-item">
+          <a href="/scan/documents">
+            <img src="/img/items/document_records_l.png"
+                 srcset="/img/items/document_records_s.png 256w, /img/items/document_records_m.png 512w, /img/items/document_records_l.png 1024w"
+                 sizes="(max-width:640px) 30vw, 120px"
+                 alt="Documents">
+            <h3>Documents</h3>
+            <div class="ter-grade">A+</div>
+          </a>
+        </div>
+        <div class="ter-media-item">
+          <a href="/scan/articles">
+            <img src="/img/items/article_pdf_l.png"
+                 srcset="/img/items/article_pdf_s.png 256w, /img/items/article_pdf_m.png 512w, /img/items/article_pdf_l.png 1024w"
+                 sizes="(max-width:640px) 30vw, 120px"
+                 alt="Magazines">
+            <h3>Magazines</h3>
+            <div class="ter-grade">A</div>
+          </a>
+        </div>
+      </div>
+      <p class="ter-body">I've scanned thousands of photographs, hundreds of slides and negatives, and more documents and magazines than I can count. Each type has its own page if you want to see exactly how I handle it &mdash; the equipment, the process, what you get back.</p>
+    </div>
+  </section>
+
+  <!-- COFFEE MEETUP SPOTS -->
+  <section class="ter-section">
+    <div class="wrap">
+      <span class="label">Let's meet up</span>
+      <h2>Two spots where we can talk</h2>
+      <p class="ter-body">No sales pitch &mdash; just a conversation about what you've got and whether scanning makes sense for you.</p>
+      <div class="ter-spots">
+        <div class="ter-spot">
+          <h3>Kaldi Coffee &amp; Tea</h3>
+          <div class="ter-spot-addr">1019 El Centro St, South Pasadena</div>
+          <p class="ter-spot-desc">Right on the corner by the South Pasadena Library. Laid-back, cozy, great for a conversation.</p>
+          <a class="ter-spot-map" href="https://maps.google.com/?cid=1364687669516350561" target="_blank" rel="noopener">View on Google Maps &rarr;</a>
+        </div>
+        <div class="ter-spot">
+          <h3>Criterion Coffee</h3>
+          <div class="ter-spot-addr">39 N Arroyo Pkwy, Old Town Pasadena</div>
+          <p class="ter-spot-desc">Old Town, excellent coffee, house-made pastries. One of the best-rated caf&eacute;s in Pasadena.</p>
+          <a class="ter-spot-map" href="https://maps.google.com/?cid=4265598606389451813" target="_blank" rel="noopener">View on Google Maps &rarr;</a>
+        </div>
       </div>
     </div>
-    <div>
-      <div class="section-label">Your Squirrel</div>
-      <h2>Hi, I'm Max.</h2>
-      <p style="margin-top: 0.8rem;">
-        I run ScanSquirrel and I'm the person who'll actually be at your kitchen
-        table. You're not shipping a box to a warehouse and hoping &mdash; you're
-        handing photos to a neighbor you've met.
-      </p>
-      <p>
-        <span class="ph">[PLACEHOLDER: Max's personal Pasadena connection &mdash; e.g. &ldquo;I've lived off ___ for ___ years,&rdquo; a specific street/landmark, why this area matters to him. 2&ndash;3 sentences, specific and real.]</span>
-      </p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOUR THEMES -->
-<section class="bg-bone">
-  <div class="wrap-wide">
-    <div class="section-label">Why Pasadena families call us</div>
-    <h2>Four reasons it's worth the afternoon.</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Protect what can't be reprinted</h3>
-        <p>One copy in a shoebox is one bad day from gone. A digital archive isn't.</p>
-      </div>
-      <div class="card">
-        <h3>Hand down the family story</h3>
-        <p>Photos of your parents and grandparents become something your kids can actually keep, share, and find.</p>
-      </div>
-      <div class="card">
-        <h3>Digitized right here, locally</h3>
-        <p>Your photos never leave Pasadena. We scan in your home and return everything the same day.</p>
-      </div>
-      <div class="card">
-        <h3>Simple, honest pricing</h3>
-        <p>About a dollar a photo, or $200 a shoebox. No subscriptions, no surprises.</p>
-      </div>
+  <!-- PASADENA CONNECTION -->
+  <section class="ter-section">
+    <div class="wrap">
+      <span class="label">The neighborhood</span>
+      <h2>I'm over here all the time</h2>
+      <p class="ter-body">I live close by, and Pasadena is where I spend most of my time outside of home. I walk the Rose Bowl loop regularly &mdash; the first time I went was in 1997, and it's been one of my favorite places in Los Angeles ever since. Gus's Barbecue is one of my favorite restaurants in the whole city. When someone in the area reaches out, I'm happy to drive over and meet in person &mdash; that's the whole point.</p>
+      <img class="ter-img" src="/img/pasadena/rosebowl.jpg" alt="The Rose Bowl in Pasadena">
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CATALOG -->
-<section class="bg-dark" id="how">
-  <div class="wrap">
-    <div class="section-label">The catalog</div>
-    <h2>Findable, not just scanned.</h2>
-    <p style="margin-top: 0.9rem;">
-      Most scanning services hand you a folder of 4,000 files named IMG_0001. We
-      organize as we go. Every photo goes into a lettered case &mdash; A, B, C &mdash; roughly
-      100 photos each, and your digital archive mirrors it exactly. So a year from
-      now, when you want the one of Grandma on the porch, you can actually find it.
-    </p>
-    <div class="cases">
-      <div class="case-chip">A</div>
-      <div class="case-chip">B</div>
-      <div class="case-chip">C</div>
-      <div class="case-chip">D</div>
-      <div class="case-chip">E</div>
-      <div class="case-chip">&hellip;</div>
-      <div class="case-chip">R</div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="bg-warm">
-  <div class="wrap">
-    <div class="section-label">What it costs</div>
-    <h2>Straightforward. You'll know the price before we start.</h2>
-    <div class="price-row">
-      <div class="price">
-        <div class="amt">~$1</div>
-        <span class="unit">per photo</span>
-        <p>Best when you've got a specific, curated set you care about.</p>
+  <!-- HOW THIS STARTED -->
+  <section class="ter-section">
+    <div class="wrap">
+      <span class="label">How this started</span>
+      <h2>The 2025 fires changed everything</h2>
+      <img class="ter-img" src="/img/pasadena/fire_from_home.jpg" alt="The Eaton fire seen from across the hills at night, January 2025">
+      <p class="ter-body">The Eaton and Palisades fires in January 2025 terrified me. Watching neighborhoods burn and knowing that people were losing irreplaceable photos &mdash; wedding albums, baby pictures, the only print of a grandparent &mdash; made me realize how fragile all of it is. I started scanning photos for friends and neighbors just to help. Then more people asked, and it turned into Scan Squirrel &mdash; a part-time side hustle doing something I actually care about.</p>
+      <p class="ter-body">I'm still very worried about fire risk in this part of Los Angeles. I'm incredibly grateful for the hard work of LAFD and all the agencies fighting to keep our communities safe. I love seeing the creative approaches too &mdash; like using goats for brush clearance. Anything that helps keep Pasadena and the surrounding neighborhoods safer is worth supporting.</p>
+      <div class="ter-imgs">
+        <img src="/img/pasadena/goats_1.jpg" alt="Goats clearing brush on a hillside near Pasadena">
+        <img src="/img/pasadena/goats_2.jpg" alt="Goats grazing to reduce fire risk in the Pasadena hills">
       </div>
-      <div class="price">
-        <div class="amt">$200</div>
-        <span class="unit">per shoebox</span>
-        <p>Best for &ldquo;just get it all done.&rdquo; Flat rate, scanned and organized.</p>
+      <p class="ter-body">A lot of the people who reach out to me fall into two camps &mdash; families preserving the photos of someone who's passed away, and people who watched the fires and thought, &ldquo;I need to protect this stuff before it's too late.&rdquo; Both of those feel important to me.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="ter-section">
+    <div class="wrap">
+      <div class="ter-cta">
+        <h2>Let's talk about your photos</h2>
+        <p>Reach out and we'll figure out the best way to get your collection scanned &mdash; no commitment, no pressure.</p>
+        <a class="btn" href="mailto:hello@scansquirrel.com">Email Max</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MEETING PLACE -->
-<section class="bg-bone">
-  <div class="wrap">
-    <div class="section-label">Let's meet first</div>
-    <h2>Coffee's on me.</h2>
-    <p style="margin-top: 0.9rem;">
-      Because this is photos we're talking about, it's worth a real conversation
-      before anything happens.
-    </p>
-    <div class="meet">
-      <strong>Where I usually meet Pasadena clients:</strong>
-      <p style="margin-top: 0.5rem;">
-        <span class="ph">[PLACEHOLDER: Coffee shop / meetup spot &mdash; name, neighborhood, and a line about why it's a good spot to talk through a job.]</span>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="bg-cream">
-  <div class="wrap-wide">
-    <div class="section-label">From neighbors</div>
-    <h2>What Pasadena families say.</h2>
-    <div class="quotes">
-      <div class="quote">
-        <p>&ldquo;<span class="ph">[PLACEHOLDER: Testimonial #1 &mdash; ideally fire/preparedness-related, real client.]</span>&rdquo;</p>
-        <div class="who">[PLACEHOLDER: Name, neighborhood]</div>
-      </div>
-      <div class="quote">
-        <p>&ldquo;<span class="ph">[PLACEHOLDER: Testimonial #2 &mdash; legacy/family angle.]</span>&rdquo;</p>
-        <div class="who">[PLACEHOLDER: Name, neighborhood]</div>
-      </div>
-      <div class="quote">
-        <p>&ldquo;<span class="ph">[PLACEHOLDER: Testimonial #3 &mdash; optional, local/personal-trust angle.]</span>&rdquo;</p>
-        <div class="who">[PLACEHOLDER: Name, neighborhood]</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="bg-dark cta-strip" id="book">
-  <div class="wrap">
-    <div class="section-label">Get started</div>
-    <h2>Your photos, safe by this weekend.</h2>
-    <p style="margin-top: 0.9rem;">
-      Serving Pasadena, Altadena, San Marino, and Arcadia. Reach out and I'll get
-      you on the calendar.
-    </p>
-    <a class="btn" href="mailto:hello@scansquirrel.com">Email Max &rarr;</a>
-  </div>
-</section>
+</main>
 
 <footer>
   <div class="footer-inner">
     <a href="/" class="footer-logo"><img src="/img/logos/footer_bone_on_feather.png" alt="Scan Squirrel"></a>
     <p class="ft">Gathered. Organized. Preserved.</p>
+    <div class="footer-cta">
+      <a href="tel:+12132902327">Call (213) 290-2327</a>
+      <a href="mailto:hello@scansquirrel.com">Email us</a>
+    </div>
     <p class="footer-legal"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/release.html">Release Agreement</a></p>
     <p class="footer-copy">&copy; 2026 Scan Squirrel &middot; Los Angeles, CA</p>
     <p class="footer-credit">All photographs displayed with permission. Please do not reproduce.</p>
   </div>
 </footer>
-
 <script src="/js/nav-loader.js"></script>
 </body>
 </html>
