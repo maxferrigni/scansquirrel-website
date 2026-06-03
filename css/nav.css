@@ -257,29 +257,24 @@ nav#nav {
   .subfooter {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 0.5rem;
+    gap: 0.25rem;
     background: var(--warm, #f5f0e8);
-    padding: 1.25rem 1rem;
+    padding: 1rem 0.5rem;
     border-top: 1px solid var(--cream, #e8e0d4);
   }
   .subfooter a {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
-    gap: 0.3rem;
   }
   .subfooter img {
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
   }
   .subfooter span {
-    font-size: 0.62rem;
-    font-weight: 600;
-    color: var(--ash, #6b6660);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    display: none;
   }
 }
 
