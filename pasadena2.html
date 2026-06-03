@@ -95,6 +95,15 @@ footer p { margin:0; }
 .pas-spot .pas-map:hover{color:var(--acorn-bright)}
 @media(max-width:540px){.pas-spots{grid-template-columns:1fr}}
 
+/* Media catalog */
+.pas-media{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin:1.2rem 0}
+.pas-item{text-align:center}
+.pas-item img{width:100%;aspect-ratio:1/1;object-fit:contain;border-radius:8px;border:1px solid rgba(0,0,0,.08);background:var(--bone);padding:.5rem}
+.pas-item h3{font-family:'Fraunces',serif;font-size:.95rem;font-weight:600;margin-top:.5rem;line-height:1.3}
+.pas-grade{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--teal);margin-top:.2rem}
+@media(max-width:640px){.pas-media{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:400px){.pas-media{grid-template-columns:repeat(2,1fr)}}
+
 /* What people need */
 .pas-needs{display:flex;gap:1.5rem;margin:1.2rem 0}
 .pas-need{flex:1}
@@ -133,7 +142,7 @@ footer p { margin:0; }
       <h2 class="pas-h2">I'm over here all the time</h2>
       <p class="pas-body">I live close by, and Pasadena is where I spend most of my time outside of home. I walk the Rose Bowl loop regularly &mdash; the first time I went was in 1997, and it's been one of my favorite places in Los Angeles ever since. Gus's Barbecue is one of my favorite restaurants in the whole city. When someone in the area reaches out, I'm happy to drive over and meet in person &mdash; that's the whole point.</p>
 
-      <img class="pas-img" src="/img/pas/rose_bowl.jpg" alt="Inside the Rose Bowl in Pasadena">
+      <img class="pas-img" src="/img/pasadena/rosebowl.jpg" alt="The Rose Bowl in Pasadena">
     </div>
   </section>
 
@@ -155,6 +164,56 @@ footer p { margin:0; }
           <div class="pas-addr">39 N Arroyo Pkwy, Old Town Pasadena</div>
           <p class="pas-desc">Old Town, excellent coffee, house-made pastries. One of the best-rated cafés in Pasadena.</p>
           <a class="pas-map" href="https://maps.google.com/?cid=4265598606389451813" target="_blank" rel="noopener">View on Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I SCAN -->
+  <section class="pas-section">
+    <div class="pas-wrap">
+      <span class="pas-label">What I scan</span>
+      <h2 class="pas-h2">Five types of media</h2>
+      <div class="pas-media">
+        <div class="pas-item">
+          <img src="/img/items/photo_l.png"
+               srcset="/img/items/photo_s.png 256w, /img/items/photo_m.png 512w, /img/items/photo_l.png 1024w"
+               sizes="(max-width:640px) 30vw, 120px"
+               alt="Photographs">
+          <h3>Photographs</h3>
+          <div class="pas-grade">A+</div>
+        </div>
+        <div class="pas-item">
+          <img src="/img/items/slide_l.png"
+               srcset="/img/items/slide_s.png 256w, /img/items/slide_m.png 512w, /img/items/slide_l.png 1024w"
+               sizes="(max-width:640px) 30vw, 120px"
+               alt="35mm slides">
+          <h3>35mm slides</h3>
+          <div class="pas-grade">A</div>
+        </div>
+        <div class="pas-item">
+          <img src="/img/items/negative_strip_l.png"
+               srcset="/img/items/negative_strip_s.png 256w, /img/items/negative_strip_m.png 512w, /img/items/negative_strip_l.png 1024w"
+               sizes="(max-width:640px) 30vw, 120px"
+               alt="Negatives">
+          <h3>Negatives</h3>
+          <div class="pas-grade">A</div>
+        </div>
+        <div class="pas-item">
+          <img src="/img/items/document_records_l.png"
+               srcset="/img/items/document_records_s.png 256w, /img/items/document_records_m.png 512w, /img/items/document_records_l.png 1024w"
+               sizes="(max-width:640px) 30vw, 120px"
+               alt="Documents">
+          <h3>Documents</h3>
+          <div class="pas-grade">A+</div>
+        </div>
+        <div class="pas-item">
+          <img src="/img/items/article_pdf_l.png"
+               srcset="/img/items/article_pdf_s.png 256w, /img/items/article_pdf_m.png 512w, /img/items/article_pdf_l.png 1024w"
+               sizes="(max-width:640px) 30vw, 120px"
+               alt="Magazines">
+          <h3>Magazines</h3>
+          <div class="pas-grade">A</div>
         </div>
       </div>
     </div>
