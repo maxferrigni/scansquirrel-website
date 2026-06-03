@@ -74,6 +74,7 @@ nav#nav {
   padding-bottom: 2px;
 }
 .nav-menu a.nav-phone {
+  order: 10;
   color: var(--acorn-bright);
   font-weight: 700;
   border: 1.5px solid var(--acorn-bright);
@@ -87,6 +88,7 @@ nav#nav {
   color: var(--bone);
 }
 .nav-menu a.nav-email {
+  order: 11;
   color: var(--bone);
   font-weight: 700;
   background: var(--acorn);
@@ -166,52 +168,57 @@ nav#nav {
   .nav-menu a {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    text-align: right;
     padding: 0.9rem 1.25rem;
     min-height: 44px;
     font-size: 1rem;
     color: var(--ink);
     border-bottom: 1px solid var(--cream);
-    border-left: 3px solid transparent;
+    border-left: none;
+    border-right: 3px solid transparent;
   }
   .nav-menu a:last-child { border-bottom: none; }
 
   /* Active page highlight in dropdown */
   .nav-menu a.active {
     background: var(--warm);
-    border-left-color: var(--acorn);
+    border-right-color: var(--acorn);
     border-bottom: 1px solid var(--cream);
     padding-bottom: 0.9rem;
     color: var(--acorn-bright);
   }
 
-  /* Phone link looks like a regular row inside the dropdown */
+  /* Phone link — first in mobile dropdown, 10% larger */
   .nav-menu a.nav-phone {
+    order: -2;
     border: none;
     border-bottom: 1px solid var(--cream);
-    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
     border-radius: 0;
     padding: 0.9rem 1.25rem;
     margin-left: 0;
     background: transparent;
     color: var(--acorn-bright);
     font-weight: 700;
+    font-size: 1.1rem;
   }
-  .nav-menu a.nav-phone:last-child { border-bottom: none; }
   .nav-menu a.nav-phone:hover { background: transparent; color: var(--acorn-bright); }
 
-  /* Email button looks like a regular row inside the dropdown */
+  /* Email — second in mobile dropdown, 10% larger */
   .nav-menu a.nav-email {
+    order: -1;
     border: none;
     border-bottom: 1px solid var(--cream);
-    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
     border-radius: 0;
     padding: 0.9rem 1.25rem;
     margin-left: 0;
     background: transparent;
     color: var(--acorn);
     font-weight: 700;
+    font-size: 1.1rem;
   }
-  .nav-menu a.nav-email:last-child { border-bottom: none; }
   .nav-menu a.nav-email:hover { background: transparent; color: var(--acorn-bright); }
 
   /* Anchor links should clear the smaller mobile nav, not the desktop 5rem */
