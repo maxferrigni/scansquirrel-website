@@ -19,6 +19,18 @@ gtag('config', 'AW-17990603569');
 gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
   'phone_conversion_number': '2132902327'
 });
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 <!-- Meta Pixel -->
 <script>
@@ -280,7 +292,7 @@ footer .ft { font-family:'Fraunces',serif; font-style:italic; font-size:0.95rem;
         <h2 class="sec-title">Find your local squirrel.</h2>
         <p class="lead" style="margin-top:1rem;">Each squirrel covers a small, familiar part of LA &mdash; so pickup and drop-off stay fast, your originals stay local, and you get someone who knows the area.</p>
       </div>
-      <a href="mailto:hello@scansquirrel.com" class="btn btn-ghost">Don't see your area?</a>
+      <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="btn btn-ghost">Don't see your area?</a>
     </div>
 
     <div class="areas-grid">
@@ -337,7 +349,7 @@ footer .ft { font-family:'Fraunces',serif; font-style:italic; font-size:0.95rem;
       <h2>Like scanning photos? Attentive to detail?</h2>
       <p>We help local squirrels get started with equipment, software, instructions, and customer flow &mdash; so careful people can do great scanning work close to home.</p>
     </div>
-    <a href="mailto:hello@scansquirrel.com?subject=Interested%20in%20scanning" class="btn btn-solid">Email hello@scansquirrel.com</a>
+    <a href="mailto:hello@scansquirrel.com?subject=Interested%20in%20scanning" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com?subject=Interested%20in%20scanning');" class="btn btn-solid">Email hello@scansquirrel.com</a>
   </div>
 </section>
 

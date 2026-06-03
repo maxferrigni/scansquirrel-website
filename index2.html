@@ -19,6 +19,18 @@ gtag('config', 'AW-17990603569');
 gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
   'phone_conversion_number': '2132902327'
 });
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 <!-- Meta Pixel -->
 <script>
@@ -507,7 +519,7 @@ footer p { margin:0; }
       <p class="hero-sub">Local pickup in Northeast LA. 48-hour turnaround. $1 per photo. Your originals returned in a fireproof case.</p>
       <div class="hero-ctas">
         <a href="tel:+12132902327" class="btn-call">Call (213) 290-2327</a>
-        <a href="mailto:hello@scansquirrel.com" class="btn-email">Email me</a>
+        <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="btn-email">Email me</a>
       </div>
       <p style="margin:-0.75rem 0 1.5rem;font-size:0.88rem"><a href="/pricing2.html" style="color:var(--acorn-bright);text-decoration:none;border-bottom:1px solid var(--acorn-bright);font-weight:600">See full pricing →</a></p>
       <div class="trust-pills">
@@ -697,7 +709,7 @@ footer p { margin:0; }
       <a href="tel:+12132902327" class="contact-email">(213) 290-2327</a>
     </p>
     <p style="margin-top:0.4rem">
-      <a href="mailto:hello@scansquirrel.com" class="contact-phone">hello@scansquirrel.com</a>
+      <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="contact-phone">hello@scansquirrel.com</a>
     </p>
   </div>
 </section>
@@ -734,7 +746,7 @@ footer p { margin:0; }
     <p class="ft">Gathered. Organized. Preserved.</p>
     <div class="footer-cta">
       <a href="tel:+12132902327">(213) 290-2327</a>
-      <a href="mailto:hello@scansquirrel.com">Email</a>
+      <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');">Email</a>
     </div>
     <p class="footer-legal"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/release.html">Release Agreement</a></p>
     <p class="footer-copy">&copy; 2026 Scan Squirrel &middot; Los Angeles, CA</p>

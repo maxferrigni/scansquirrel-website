@@ -19,6 +19,18 @@ gtag('config', 'AW-17990603569');
 gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
   'phone_conversion_number': '2132902327'
 });
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 <!-- Meta Pixel -->
 <script>
@@ -609,7 +621,7 @@ footer p { margin:0; }
   <h2>Free consultation. No pressure.</h2>
   <p>Tell me what you have. I'll tell you exactly what it would cost and how long it would take.</p>
   <a href="tel:+12132902327" class="btn-phone">(213) 290-2327</a>
-  <a href="mailto:hello@scansquirrel.com" class="btn-primary">hello@scansquirrel.com</a>
+  <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="btn-primary">hello@scansquirrel.com</a>
 </div>
 
 <footer>

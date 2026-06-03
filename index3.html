@@ -18,6 +18,18 @@ gtag('config', 'AW-17990603569');
 gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
   'phone_conversion_number': '2132902327'
 });
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -204,7 +216,7 @@ footer .ft{font-family:'Fraunces',serif;font-style:italic;font-size:0.82rem;colo
     <h1 class="hero-h1">Your old photos.<br><em>Saved. Organized.<br>Back on your phone.</em></h1>
     <p class="hero-sub">Local pickup in Northeast LA. 48-hour turnaround. $1 per photo. Originals returned in a labeled fireproof case.</p>
     <div class="hero-ctas">
-      <a href="mailto:hello@scansquirrel.com" class="btn-primary">Get a free consultation</a>
+      <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="btn-primary">Get a free consultation</a>
       <a href="/pricing2.html" class="btn-secondary">See pricing</a>
     </div>
     <div class="trust-pills">
@@ -340,7 +352,7 @@ footer .ft{font-family:'Fraunces',serif;font-style:italic;font-size:0.82rem;colo
   <div class="wrap">
     <h2>Ready to get started?</h2>
     <p>Every consultation is free. No pressure, ever.</p>
-    <a href="mailto:hello@scansquirrel.com" class="contact-email">hello@scansquirrel.com</a>
+    <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="contact-email">hello@scansquirrel.com</a>
   </div>
 </div>
 

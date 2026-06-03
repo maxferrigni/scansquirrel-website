@@ -287,6 +287,18 @@ gtag('config', 'AW-17990603569');
 gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
   'phone_conversion_number': '2132902327'
 });
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 
 <!-- Meta Pixel Code -->
@@ -321,7 +333,7 @@ fbq('track', 'PageView');
     <p class="lede">I am a one-person photo scanning service based in Eagle Rock. I drive to your home, scan your photos in person, and return everything within 48 hours - originals organized in a fireproof case, digital scans on your phone.</p>
     <div class="hero-ctas">
       <a href="tel:+12132902327" class="cta-primary">Call (213) 290-2327</a>
-      <a href="mailto:hello@scansquirrel.com?subject=I%20want%20you%20to%20come%20to%20me" class="cta-secondary">Email Me</a>
+      <a href="mailto:hello@scansquirrel.com?subject=I%20want%20you%20to%20come%20to%20me" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com?subject=I%20want%20you%20to%20come%20to%20me');" class="cta-secondary">Email Me</a>
     </div>
   </div>
 </section>
@@ -479,7 +491,7 @@ fbq('track', 'PageView');
   <div class="wrap">
     <h2>Ready to get started?</h2>
     <p>Every consultation is free. No pressure.</p>
-    <p><a href="mailto:hello@scansquirrel.com" class="contact-email">hello@scansquirrel.com</a></p>
+    <p><a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="contact-email">hello@scansquirrel.com</a></p>
     <a href="tel:+12132902327" class="contact-phone">(213) 290-2327</a>
   </div>
 </section>

@@ -240,6 +240,18 @@ gtag('config', 'AW-17990603569');
 gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
   'phone_conversion_number': '2132902327'
 });
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 
 <!-- Meta Pixel Code -->
@@ -332,7 +344,7 @@ fbq('track', 'PageView');
     <div class="squirrel-callout">
       <h3>Want to learn how to scan your own photos?</h3>
       <p>I will share what I have learned - the right scanner to buy, how to organize a shoebox, how to back things up properly, and how to avoid the mistakes that ruin originals. No catch. Just send me a note.</p>
-      <a href="mailto:hello@scansquirrel.com?subject=I%20want%20to%20become%20a%20Squirrel" class="cta-button">Email Me to Learn More</a>
+      <a href="mailto:hello@scansquirrel.com?subject=I%20want%20to%20become%20a%20Squirrel" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com?subject=I%20want%20to%20become%20a%20Squirrel');" class="cta-button">Email Me to Learn More</a>
     </div>
   </div>
 </section>

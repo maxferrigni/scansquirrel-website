@@ -20,6 +20,18 @@ gtag('config', 'AW-17990603569');
 gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
   'phone_conversion_number': '2132902327'
 });
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 <!-- Meta Pixel -->
 <script>
@@ -239,7 +251,7 @@ body {
       <div class="pas-cta">
         <h2>Let's talk about your photos</h2>
         <p>Reach out and we'll figure out the best way to get your collection scanned &mdash; no commitment, no pressure.</p>
-        <a href="mailto:hello@scansquirrel.com">Email Max</a>
+        <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');">Email Max</a>
       </div>
     </div>
   </section>
@@ -253,7 +265,7 @@ body {
     <p class="ft">Gathered. Organized. Preserved.</p>
     <div class="footer-cta">
       <a href="tel:+12132902327">(213) 290-2327</a>
-      <a href="mailto:hello@scansquirrel.com">Email</a>
+      <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');">Email</a>
     </div>
     <p class="footer-legal"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/release.html">Release Agreement</a></p>
     <p class="footer-copy">&copy; 2026 Scan Squirrel &middot; Los Angeles, CA</p>
