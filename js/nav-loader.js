@@ -30,6 +30,7 @@
 
       setupMobileToggle(placeholder);
       startSubtitleAnimation();
+      injectSubfooter();
     })
     .catch(function () { /* nav fetch failed — fail silent */ });
 
@@ -174,5 +175,19 @@
     setTimeout(function () { navSubtitle.classList.add('visible'); }, 500);
     setTimeout(updateSubtitle, 3500);
     setTimeout(function () { setInterval(updateSubtitle, 3500); }, 7000);
+  }
+
+  function injectSubfooter() {
+    var footer = document.querySelector('footer');
+    if (!footer) return;
+    var sf = document.createElement('div');
+    sf.className = 'subfooter';
+    sf.innerHTML =
+      '<a href="/scan/photographs/"><img src="/img/items/photo_s.png" alt="Photos"><span>Photos</span></a>' +
+      '<a href="/scan/slides/"><img src="/img/items/slide_s.png" alt="35mm slides"><span>35mm</span></a>' +
+      '<a href="/scan/negatives/"><img src="/img/items/negative_strip_s.png" alt="Negatives"><span>Negatives</span></a>' +
+      '<a href="/scan/documents/"><img src="/img/items/document_records_s.png" alt="Documents"><span>Docs</span></a>' +
+      '<a href="/scan/articles/"><img src="/img/items/article_pdf_s.png" alt="Magazines"><span>Magazines</span></a>';
+    footer.parentNode.insertBefore(sf, footer);
   }
 })();

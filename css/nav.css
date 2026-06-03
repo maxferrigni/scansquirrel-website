@@ -245,6 +245,43 @@ nav#nav {
 .eyebrow a:hover {
   color: var(--acorn, #8b5e3c);
 }
+@media (max-width: 768px) {
+  .eyebrow { display: none; }
+}
+
+/* ============================================================
+   Sub-footer — mobile scan-type icon strip
+   ============================================================ */
+.subfooter { display: none; }
+@media (max-width: 768px) {
+  .subfooter {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    background: var(--warm, #f5f0e8);
+    padding: 1.25rem 1rem;
+    border-top: 1px solid var(--cream, #e8e0d4);
+  }
+  .subfooter a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.3rem;
+  }
+  .subfooter img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+  .subfooter span {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--ash, #6b6660);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
 
 /* ============================================================
    Shared footer
