@@ -142,6 +142,16 @@ h2.sec-title {
 .area-body p { font-size: 0.88rem; line-height: 1.5; color: var(--ash); min-height: 42px; }
 .area-link { margin-top: 1rem; font-size: 0.88rem; font-weight: 700; color: var(--teal); }
 
+/* NOT LISTED */
+.not-listed { margin-top:2.5rem; padding:2rem 2.25rem; background:var(--teal); border-radius:1rem; text-align:center; }
+.not-listed h3 { font-size:1.5rem; font-weight:400; color:#fff; margin-bottom:0.5rem; }
+.not-listed p { font-size:1rem; line-height:1.6; color:rgba(255,255,255,0.85); max-width:34rem; margin:0 auto 1.25rem; }
+.not-listed-cta { display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center; }
+.not-listed .sq-btn-solid { background:#fff; color:var(--teal); }
+.not-listed .sq-btn-solid:hover { background:var(--bone); color:var(--teal); }
+.not-listed .sq-btn-ghost { border:1px solid rgba(255,255,255,0.4); color:#fff; }
+.not-listed .sq-btn-ghost:hover { background:rgba(255,255,255,0.12); color:#fff; }
+
 /* JOIN */
 .join { background: var(--acorn); color: var(--bone); }
 .join-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
@@ -257,6 +267,17 @@ h2.sec-title {
       </div>
 
     </div>
+
+    <!-- DON'T SEE YOUR TOWN -->
+    <div class="not-listed">
+      <h3 class="serif">Don't see your town? Don't worry.</h3>
+      <p>If you're anywhere in greater LA, reach out and a Squirrel will make it work.</p>
+      <div class="not-listed-cta">
+        <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="sq-btn sq-btn-solid">Email hello@scansquirrel.com</a>
+        <a href="tel:+12132902327" class="sq-btn sq-btn-ghost">Call (213) 290-2327</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
