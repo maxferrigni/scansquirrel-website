@@ -71,6 +71,8 @@ fbq('init','2148206675947024');fbq('track','PageView');
 .p3-hero .p3-lede { text-align: left; max-width: 500px; margin: 0 auto; }
 .p3-hero .p3-buttons { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; max-width: 320px; margin: 1.2rem auto 0; }
 .p3-lede { font-size: 1.08rem; color: var(--ink); line-height: 1.6; }
+.p3-about-bar { display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
+.p3-about-bar img { width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--bone); flex-shrink: 0; }
 
 .p3-img { width: 100%; border-radius: 8px; margin: 1.5rem 0; }
 .p3-split { display: grid; grid-template-columns: 3fr 2fr; gap: 2rem; align-items: center; }
@@ -84,6 +86,8 @@ fbq('init','2148206675947024');fbq('track','PageView');
   .p3-hero .label { font-size: 0.7rem; line-height: 1.6; }
   .p3-hero .p3-shoebox { max-width: 220px; }
   .p3-hero .p3-buttons { max-width: 280px; }
+  .p3-about-bar { flex-direction: column; text-align: center; }
+  .p3-about-bar img { width: 60px; height: 60px; }
   .ter-media { grid-template-columns: repeat(3, 1fr); }
   .ter-spots { grid-template-columns: 1fr; }
   .p3-imgs { grid-template-columns: 1fr; }
@@ -160,9 +164,14 @@ fbq('init','2148206675947024');fbq('track','PageView');
 
   <!-- ABOUT ME — dark divider -->
   <section class="p3-sec p3-dark">
-    <div class="wrap" style="text-align:center;padding:1.5rem 0">
-      <h2 style="margin:0">About your Eastside Squirrel</h2>
-      <p class="ter-body" style="margin-top:0.5rem">I work the Eastside because I live the Eastside. Eagle Rock isn't Highland Park. Highland Park isn't Silver Lake. You drive ten minutes and everything changes. Most of the city flattens out. This part doesn't.</p>
+    <div class="wrap" style="padding:1.5rem 0">
+      <div class="p3-about-bar">
+        <img src="/img/brn/max_avatar_transparent.png" alt="Max, founder of Scan Squirrel">
+        <div>
+          <h2 style="margin:0">About your Eastside Squirrel</h2>
+          <p class="ter-body" style="margin-top:0.5rem">I work the Eastside because I live the Eastside. Eagle Rock isn't Highland Park. Highland Park isn't Silver Lake. You drive ten minutes and everything changes. Most of the city flattens out. This part doesn't.</p>
+        </div>
+      </div>
     </div>
   </section>
 
