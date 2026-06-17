@@ -312,26 +312,33 @@ footer .ft {
 @media (max-width: 768px) {
   footer .ft { margin-bottom: 0.8rem; }
   .footer-cta {
-    display: flex;
-    gap: 0.6rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1.4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    max-width: 320px;
+    margin: 0 auto 1.4rem;
   }
   .footer-cta a {
-    display: inline-block;
-    background: var(--acorn, #8b5e3c);
-    color: #fff;
+    display: block;
+    text-align: center;
     font-weight: 700;
     font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
+    padding: 0.6rem 0;
     border-radius: 6px;
     text-decoration: none;
     transition: background 0.2s ease;
   }
-  .footer-cta a:hover {
-    background: var(--acorn-bright, #a0693f);
+  .footer-cta a:nth-child(odd) {
+    background: var(--acorn, #8b5e3c);
     color: #fff;
+  }
+  .footer-cta a:nth-child(even) {
+    background: transparent;
+    color: var(--bone, #f0ebe3);
+    border: 2px solid var(--bone, #f0ebe3);
+  }
+  .footer-cta a:nth-child(odd):hover {
+    background: var(--acorn-bright, #a0693f);
   }
 }
 .footer-legal { margin-bottom: 0.9rem; }
