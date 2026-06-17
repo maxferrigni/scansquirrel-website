@@ -33,7 +33,10 @@
       injectSubfooter();
       applyTerritoryContext();
     })
-    .catch(function () { /* nav fetch failed — fail silent */ });
+    .catch(function () {
+      // Nav fetch failed — still apply territory context to page links
+      applyTerritoryContext();
+    });
 
   function setupMobileToggle(placeholder) {
     var nav = placeholder.querySelector('#nav');
@@ -211,8 +214,8 @@
       var href = a.getAttribute('href');
       if (!href) return;
 
-      // Skip external, tel, mailto, anchor, javascript links
-      if (/^(https?:|tel:|mailto:|#|javascript:)/.test(href)) return;
+      // Skip external, tel, mailto, sms, anchor, javascript links
+      if (/^(https?:|tel:|mailto:|sms:|#|javascript:)/.test(href)) return;
 
       // Skip links already carrying ?from= or already inside a territory
       if (href.indexOf('from=') !== -1) return;
@@ -230,4 +233,10 @@
     });
   }
 
+  // Also run immediately for links already in the DOM (footer, in-page links)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyTerritoryContext);
+  } else {
+    applyTerritoryContext();
+  }
 })();
