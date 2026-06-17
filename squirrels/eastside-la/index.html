@@ -64,9 +64,12 @@ fbq('init','2148206675947024');fbq('track','PageView');
 .p3-brown p { color: var(--cream); }
 .p3-brown .label { color: var(--cream); }
 
-.p3-hero { display: grid; grid-template-columns: 1fr 200px; gap: 2.5rem; align-items: center; padding: 4.5rem 0 0; }
-.p3-frame { background: var(--cream); padding: 0.5rem; border-radius: 8px; box-shadow: 0 8px 22px rgba(0,0,0,0.08); }
-.p3-frame img { width: 100%; border-radius: 6px; display: block; }
+.p3-hero { max-width: 600px; margin: 0 auto; text-align: center; padding: 5rem 0 0; }
+.p3-hero h1 { text-align: center; }
+.p3-hero .label { display: block; text-align: center; }
+.p3-hero .p3-shoebox { display: block; max-width: 280px; margin: 1rem auto; border-radius: 8px; }
+.p3-hero .p3-lede { text-align: left; max-width: 500px; margin: 0 auto; }
+.p3-hero .p3-buttons { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; max-width: 320px; margin: 1.2rem auto 0; }
 .p3-lede { font-size: 1.08rem; color: var(--ink); line-height: 1.6; }
 
 .p3-img { width: 100%; border-radius: 8px; margin: 1.5rem 0; }
@@ -77,10 +80,10 @@ fbq('init','2148206675947024');fbq('track','PageView');
 .p3-imgs img { width: 100%; border-radius: 8px; object-fit: cover; aspect-ratio: 1/1; }
 
 @media (max-width: 700px) {
-  .p3-hero { grid-template-columns: 1fr; text-align: center; }
-  .p3-hero img { max-width: 100px; margin: 0 auto; }
+  .p3-hero { padding-top: 4.5rem; }
   .p3-hero .label { font-size: 0.7rem; line-height: 1.6; }
-  .p3-frame { max-width: 180px; margin: 0 auto; }
+  .p3-hero .p3-shoebox { max-width: 220px; }
+  .p3-hero .p3-buttons { max-width: 280px; }
   .ter-media { grid-template-columns: repeat(3, 1fr); }
   .ter-spots { grid-template-columns: 1fr; }
   .p3-imgs { grid-template-columns: 1fr; }
@@ -101,18 +104,15 @@ fbq('init','2148206675947024');fbq('track','PageView');
   <section class="p3-sec p3-warm">
     <div class="wrap-wide">
       <div class="p3-hero">
-        <div>
-          <span class="label">Eagle Rock &middot; Highland Park &middot; Silver Lake &middot; Los Feliz &middot; Echo Park &middot; Atwater Village</span>
-          <h1>Why wait? Your shoebox isn't getting any younger.</h1>
-          <img src="/img/ill/shoebox_disarray.png?v=2" alt="A messy shoebox of old photos" style="width:100%;max-width:320px;display:block;margin:1rem 0;border-radius:8px;">
-          <p class="p3-lede">You have old photos that are fading and could get damaged or destroyed. For around $200 you get expert-level scans done locally &mdash; I pick them up, scan them, and bring them back. A dollar a photo, everything included.</p>
-          <div style="margin-top:1.2rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;max-width:400px;">
-            <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" style="display:block;text-align:center;background:var(--acorn);color:var(--bone);padding:0.7rem 0;border-radius:6px;font-weight:600;text-decoration:none;">Email</a>
-            <a href="tel:+12132902327" style="display:block;text-align:center;background:transparent;color:var(--acorn);padding:0.7rem 0;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--acorn);">Call</a>
-            <a href="sms:+12132902327" style="display:block;text-align:center;background:var(--acorn);color:var(--bone);padding:0.7rem 0;border-radius:6px;font-weight:600;text-decoration:none;">Text</a>
-          </div>
+        <span class="label">Eagle Rock &middot; Highland Park &middot; Silver Lake &middot; Los Feliz &middot; Echo Park &middot; Atwater Village</span>
+        <h1>Why wait? Your shoebox isn't getting any younger.</h1>
+        <img class="p3-shoebox" src="/img/ill/shoebox_disarray.png?v=2" alt="A messy shoebox of old photos">
+        <p class="p3-lede">You have old photos that are fading and could get damaged or destroyed. For around $200 you get expert-level scans done locally &mdash; I pick them up, scan them, and bring them back. A dollar a photo, everything included.</p>
+        <div class="p3-buttons">
+          <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" style="background:var(--acorn);color:var(--bone);padding:0.7rem 0;border-radius:6px;font-weight:600;text-decoration:none;">Email</a>
+          <a href="tel:+12132902327" style="background:transparent;color:var(--acorn);padding:0.7rem 0;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--acorn);">Call</a>
+          <a href="sms:+12132902327" style="background:var(--acorn);color:var(--bone);padding:0.7rem 0;border-radius:6px;font-weight:600;text-decoration:none;">Text</a>
         </div>
-        <div></div>
       </div>
     </div>
   </section>
