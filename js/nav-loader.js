@@ -31,6 +31,7 @@
       setupMobileToggle(placeholder);
       startSubtitleAnimation();
       injectSubfooter();
+      applyTerritoryContext();
     })
     .catch(function () { /* nav fetch failed — fail silent */ });
 
@@ -229,6 +230,4 @@
     });
   }
 
-  // Run territory rewrite after a short delay so nav + subfooter are injected
-  setTimeout(applyTerritoryContext, 50);
 })();
