@@ -190,4 +190,45 @@
       '<a href="/scan/articles/"><img src="/img/items/article_pdf_s.png" alt="Magazines"><span>Magazines</span></a>';
     footer.parentNode.insertBefore(sf, footer);
   }
+  // ── Territory awareness ──
+  // Reads ?from= param or detects /squirrels/*/ path.
+  // Rewrites internal links so visitors stay "inside" their territory.
+  // No cookies, no storage — just a URL parameter passed along.
+  function applyTerritoryContext() {
+    var params = new URLSearchParams(window.location.search);
+    var from = params.get('from');
+
+    // Auto-detect territory from path (e.g. /squirrels/eastside-la/)
+    var match = window.location.pathname.match(/^\/squirrels\/([^\/]+)\//);
+    if (match) from = match[1];
+
+    if (!from) return;
+
+    var territoryHome = '/squirrels/' + from + '/';
+
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (!href) return;
+
+      // Skip external, tel, mailto, anchor, javascript links
+      if (/^(https?:|tel:|mailto:|#|javascript:)/.test(href)) return;
+
+      // Skip links already carrying ?from= or already inside a territory
+      if (href.indexOf('from=') !== -1) return;
+      if (href.indexOf('/squirrels/') === 0) return;
+
+      // Home / logo links → territory home
+      if (href === '/' || href === '/index.html' || href === '/index2.html' || href === '/index3.html') {
+        a.setAttribute('href', territoryHome);
+        return;
+      }
+
+      // Append ?from= to all other internal links
+      var sep = href.indexOf('?') !== -1 ? '&' : '?';
+      a.setAttribute('href', href + sep + 'from=' + from);
+    });
+  }
+
+  // Run territory rewrite after a short delay so nav + subfooter are injected
+  setTimeout(applyTerritoryContext, 50);
 })();
