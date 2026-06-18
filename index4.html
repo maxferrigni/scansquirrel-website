@@ -49,6 +49,12 @@
 .nbhd .not-listed .sq-btn-solid:hover { background:var(--bone); color:var(--teal); }
 .nbhd .not-listed .sq-btn-ghost { border:1px solid rgba(255,255,255,0.4); color:#fff; }
 .nbhd .not-listed .sq-btn-ghost:hover { background:rgba(255,255,255,0.12); color:#fff; }
+/* Dark-background variant (section uses .bg-dark) */
+.bg-dark .nbhd .sec-title { color: var(--bone); }
+.bg-dark .nbhd .lead { color: var(--nest); }
+.bg-dark .nbhd .kicker { color: #5dcaa5; }
+.bg-dark .nbhd .sq-btn-ghost { border-color: rgba(255,255,255,0.4); color: var(--bone); }
+.bg-dark .nbhd .sq-btn-ghost:hover { background: rgba(255,255,255,0.12); color: var(--bone); }
 @media (max-width: 980px) { .nbhd .areas-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 760px) { .nbhd .areas-grid { grid-template-columns: 1fr; } .nbhd .sec-title { font-size: 1.8rem; } }
 </style>
@@ -194,17 +200,8 @@ section { padding: 2.6rem 3rem; }
   </div>
 </section>
 
-<section class="bg-dark">
-  <div class="wrap net">
-    <span class="label">Trusted hands nearby</span>
-    <h2>There are Squirrels near you</h2>
-    <p>Trained, careful, and local &mdash; the kind of person who treats your irreplaceable things like their own.</p>
-    <a class="idx-btn" href="#areas">Meet the Squirrels</a>
-  </div>
-</section>
-
 <!-- NEIGHBORHOODS (folded in from Meet the Squirrels) -->
-<section class="bg-warm" id="areas">
+<section class="bg-dark" id="areas">
   <div class="nbhd">
     <div class="areas-head">
       <div class="areas-intro">
