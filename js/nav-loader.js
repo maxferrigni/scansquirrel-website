@@ -221,8 +221,8 @@
       if (href.indexOf('from=') !== -1) return;
       if (href.indexOf('/squirrels/') === 0) return;
 
-      // Home / logo links → territory home
-      if (href === '/' || href === '/index.html' || href === '/index2.html' || href === '/index3.html') {
+      // Home / logo links (incl. home-page anchors like /#areas) → territory home
+      if (href === '/' || href.indexOf('/#') === 0 || href === '/index.html' || href === '/index2.html' || href === '/index3.html') {
         a.setAttribute('href', territoryHome);
         return;
       }
