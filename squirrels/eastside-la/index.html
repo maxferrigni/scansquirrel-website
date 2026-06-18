@@ -71,6 +71,9 @@ fbq('init','2148206675947024');fbq('track','PageView');
 .p3-hero .p3-lede { text-align: left; max-width: 680px; margin: 0 auto; }
 .p3-hero .p3-buttons { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; max-width: 320px; margin: 1.2rem auto 0; }
 .p3-lede { font-size: 1.08rem; color: var(--ink); line-height: 1.6; }
+.p3-hero .p3-lede-row { display: flex; align-items: center; gap: 1.5rem; max-width: 680px; margin: 1rem auto 0; text-align: left; }
+.p3-hero .p3-lede-avatar { width: 140px; flex-shrink: 0; }
+.p3-hero .p3-lede-row .p3-lede { margin: 0; max-width: none; }
 .p3-about-bar { display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
 .p3-about-bar img { width: 90px; flex-shrink: 0; order: 1; }
 
@@ -86,6 +89,8 @@ fbq('init','2148206675947024');fbq('track','PageView');
   .p3-hero .label { font-size: 0.7rem; line-height: 1.6; }
   .p3-hero .p3-shoebox { max-width: 220px; }
   .p3-hero .p3-buttons { max-width: 280px; }
+  .p3-hero .p3-lede-row { flex-direction: column; gap: 0.75rem; text-align: center; }
+  .p3-hero .p3-lede-avatar { width: 110px; }
   .p3-about-bar { flex-direction: column; text-align: center; }
   .p3-about-bar img { width: 60px; order: 0; }
   .ter-media { grid-template-columns: repeat(3, 1fr); }
@@ -111,7 +116,10 @@ fbq('init','2148206675947024');fbq('track','PageView');
         <span class="label">Eagle Rock &middot; Highland Park &middot; Silver Lake &middot; Los Feliz &middot; Echo Park &middot; Atwater Village</span>
         <h1>Scan a shoebox for about $200.</h1>
         <img class="p3-shoebox" src="/img/ill/shoebox2.png" alt="A messy shoebox of old photos">
-        <p class="p3-lede">Old photos, documents, slides, and negatives fade with time &mdash; and a fire can take them in minutes. I live on the Eastside. I pick them up, scan them, make them look amazing, and bring them back in about two days. A dollar a photo, and most shoeboxes run about $200 &mdash; bigger or smaller, we'll work out a fair price. No surprises, and you don't ship anything to Tennessee and wait six weeks.</p>
+        <div class="p3-lede-row">
+          <img class="p3-lede-avatar" src="/img/brn/max_avatar_transparent.png" alt="Max, founder of Scan Squirrel">
+          <p class="p3-lede">Hi, I'm Max. Old photos, documents, slides, and negatives fade with time &mdash; and a fire can take them in minutes. I live on the Eastside. I pick them up, scan them, make them look amazing, and bring them back in about two days. A dollar a photo, and most shoeboxes run about $200 &mdash; bigger or smaller, we'll work out a fair price. No surprises, and you don't ship anything to Tennessee and wait six weeks.</p>
+        </div>
         <div class="p3-buttons">
           <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" style="background:var(--acorn);color:var(--bone);padding:0.7rem 0;border-radius:6px;font-weight:600;text-decoration:none;">Email</a>
           <a href="tel:+12132902327" onclick="gtag('event','conversion',{'send_to':'AW-17990603569/QULVCOeUgMEcELGmy4JD'});" style="background:transparent;color:var(--acorn);padding:0.7rem 0;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--acorn);">Call</a>
@@ -143,22 +151,8 @@ fbq('init','2148206675947024');fbq('track','PageView');
   <section class="p3-sec p3-warm">
     <div class="wrap">
       <span class="label">Getting started</span>
-      <h2>I'll come to you</h2>
-      <p class="ter-body" style="margin-top:0.8rem">I'll come to your place, grab the photos, talk through what you've got. Or we meet for coffee &mdash; couple spots I like:</p>
-      <div class="ter-spots" style="margin-top:1.2rem">
-        <div class="ter-spot">
-          <h3>Civil Coffee</h3>
-          <div class="ter-spot-addr">5629 N Figueroa St, Highland Park</div>
-          <p class="ter-spot-desc">Right on Figueroa. Lots of room to spread photos out on the table.</p>
-          <a class="ter-spot-map" href="https://maps.google.com/?cid=14622507589498498639" target="_blank" rel="noopener">View on Google Maps &rarr;</a>
-        </div>
-        <div class="ter-spot">
-          <h3>Dinosaur Coffee</h3>
-          <div class="ter-spot-addr">4334 Sunset Blvd, Silver Lake</div>
-          <p class="ter-spot-desc">On Sunset. Small but good for a quick hand-off.</p>
-          <a class="ter-spot-map" href="https://maps.google.com/?cid=7532721479498498177" target="_blank" rel="noopener">View on Google Maps &rarr;</a>
-        </div>
-      </div>
+      <h2>Let's connect</h2>
+      <p class="ter-body" style="margin-top:0.8rem">To get started, give me a call and tell me what you've got. Or we meet up and go through it together &mdash; simple as that. I'm always happy to offer free advice on any project if you just have questions.</p>
     </div>
   </section>
 
@@ -166,7 +160,6 @@ fbq('init','2148206675947024');fbq('track','PageView');
   <section class="p3-sec p3-dark">
     <div class="wrap" style="padding:1.5rem 0">
       <div class="p3-about-bar">
-        <img src="/img/brn/max_avatar_transparent.png" alt="Max, founder of Scan Squirrel">
         <div>
           <h2 style="margin:0">About your Eastside Squirrel</h2>
           <p class="ter-body" style="margin-top:0.5rem">I work the Eastside because I live the Eastside. Eagle Rock isn't Highland Park. Highland Park isn't Silver Lake. You drive ten minutes and everything changes. Most of the city flattens out. This part doesn't.</p>
