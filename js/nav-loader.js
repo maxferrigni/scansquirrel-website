@@ -3,6 +3,31 @@
 // sets .active on the matching menu link, and runs the
 // rotating "Me:/You: Why?/Because..." subtitle animation.
 
+// Click-to-copy email — used by the footer "or email …" link on every page.
+// Copies the address, shows a brief "Copied!", and fires the email conversion.
+function copyEmail(btn) {
+  var text = btn.getAttribute('data-copy');
+  var note = btn.parentNode.querySelector('.copy-note');
+  function done() {
+    if (note) { note.style.opacity = '1'; setTimeout(function () { note.style.opacity = '0'; }, 1800); }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, function () { fallbackCopyEmail(text, done); });
+  } else {
+    fallbackCopyEmail(text, done);
+  }
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', { 'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD' });
+  }
+}
+function fallbackCopyEmail(text, cb) {
+  var t = document.createElement('textarea');
+  t.value = text; t.setAttribute('readonly', ''); t.style.position = 'absolute'; t.style.left = '-9999px';
+  document.body.appendChild(t); t.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(t); if (cb) cb();
+}
+
 (function () {
   var page = window.location.pathname.split('/').pop() || 'index.html';
 
