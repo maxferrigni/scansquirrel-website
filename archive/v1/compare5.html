@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 ways to do this — Scan Squirrel</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/nav.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-M0DFY2Y7XE');
+gtag('config', 'AW-17990603569');
+gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
+  'phone_conversion_number': '2132902327'
+});
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2148206675947024');fbq('track','PageView');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vp5j1zbe4c");
+</script>
+
+<style>
+  html,body{margin:0;padding:0;background:#f0ebe3}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════
+     COMPARE 5 — Decision path concept
+     Palette: bone/warm/acorn/teal · Fonts: Fraunces + DM Sans
+     Goal: make the local Squirrel feel like the obvious path of least resistance
+     ════════════════════════════════════════════════════ -->
+
+<div id="nav-placeholder"></div>
+
+<style>
+  .c5{--ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;--acorn:#8b5e3c;--acorn-bright:#a0693f;--ash:#6b6660;--nest:#d4c9b8;--branch:#8b7e6a;--bark:#5c4a3a;--teal:#2c6e6a;--teal-soft:#dbe9e6;--danger:#c97a5a}
+  .c5{font-family:'DM Sans',sans-serif;color:var(--ink);line-height:1.6;background:var(--bone);padding-bottom:4rem}
+  .c5 *{box-sizing:border-box}
+  .c5 .wrap{max-width:960px;margin:0 auto;padding:0 1.5rem}
+
+  /* hero */
+  .c5 .hero{text-align:center;padding:3.7rem 1.5rem 2rem}
+  .c5 .eyebrow{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--branch);font-weight:700;margin-bottom:.8rem}
+  .c5 .hero h1{font-family:'Fraunces',serif;font-weight:400;font-size:3.15rem;line-height:1.03;letter-spacing:-.035em;margin:0 auto .95rem;max-width:760px}
+  .c5 .hero h1 .n{color:var(--acorn)}
+  .c5 .hero p{max-width:610px;margin:0 auto;color:var(--ash);font-size:1.04rem}
+  .c5 .types{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--branch);font-weight:600;margin-top:1.2rem}
+  .c5 .types span{color:var(--nest);margin:0 .35rem}
+
+  /* decision frame */
+  .c5 .decision{position:relative;margin-top:1.8rem}
+  .c5 .decision:before{content:"";position:absolute;left:50%;top:2rem;bottom:2rem;width:2px;background:linear-gradient(var(--nest),var(--acorn),var(--nest));opacity:.45;transform:translateX(-50%)}
+  .c5 .route{position:relative;display:grid;grid-template-columns:1fr 1.16fr 1fr;gap:1.15rem;align-items:start}
+
+  .c5 .card{position:relative;border-radius:18px;text-decoration:none;color:inherit;display:flex;flex-direction:column;border:1px solid var(--nest);box-shadow:0 1px 3px rgba(92,74,58,.06);overflow:hidden}
+  .c5 .card-inner{padding:1.35rem 1.35rem 1.25rem;display:flex;flex-direction:column;height:100%}
+  .c5 .num{font-family:'Fraunces',serif;font-weight:700;width:2.25rem;height:2.25rem;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:1.08rem;margin-bottom:1rem}
+  .c5 h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.38rem;line-height:1.08;letter-spacing:-.015em;margin:.05rem 0 .55rem}
+  .c5 .card p{font-size:.95rem;line-height:1.55;margin:0;color:var(--ash);min-height:4.6em}
+  .c5 .tag{display:inline-flex;align-items:center;gap:.4rem;width:max-content;max-width:100%;border-radius:999px;padding:.34rem .65rem;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.85rem}
+
+  /* one shared list skeleton across all three cards */
+  .c5 .feat{list-style:none;margin:1.05rem 0 1.3rem;padding:1.05rem 0 0;border-top:1px solid rgba(139,126,106,.2);display:grid;gap:.6rem;font-size:.9rem;line-height:1.4}
+  .c5 .feat li{display:flex;gap:.6rem;align-items:flex-start}
+  .c5 .feat li:before{flex:none;font-size:.95rem;line-height:1.4;font-weight:700}
+  .c5 .cta{margin-top:auto}
+  .c5 .cta a,.c5 .cta .go{text-decoration:none;font-weight:700;font-size:.92rem;display:inline-flex;align-items:center;gap:.4rem}
+
+  /* DIY */
+  .c5 .diy{background:var(--teal-soft);border-color:#bdd9d4;transform:translateY(1.15rem)}
+  .c5 .diy .num{background:var(--teal)}
+  .c5 .diy .tag{background:rgba(44,110,106,.1);color:var(--teal)}
+  .c5 .diy .feat li:before{content:"›";color:var(--teal);font-weight:700}
+  .c5 .diy .feat li{color:#385f5b}
+  .c5 .diy .cta a{color:var(--teal);border-bottom:1.5px solid rgba(44,110,106,.28);padding-bottom:1px}
+
+  /* Squirrel winner */
+  .c5 .squirrel{background:var(--warm);border:2px solid var(--acorn);box-shadow:0 6px 18px rgba(92,74,58,.10);transform:translateY(-.3rem);transition:transform .16s,box-shadow .25s}
+  .c5 .squirrel .card-inner{padding-top:2.6rem}
+  .c5 .squirrel:hover{transform:translateY(-.55rem);box-shadow:0 10px 24px rgba(92,74,58,.13)}
+  .c5 .squirrel:before{content:"Recommended";position:absolute;top:0;right:0;background:var(--acorn);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.45rem .85rem;border-bottom-left-radius:14px}
+  .c5 .squirrel .num{background:var(--acorn);margin-top:.25rem}
+  .c5 .squirrel .tag{background:rgba(139,94,60,.11);color:var(--acorn)}
+  .c5 .squirrel h3 em{font-style:italic;color:var(--acorn)}
+  .c5 .squirrel p{color:var(--bark)}
+  .c5 .squirrel .feat li{color:var(--bark)}
+  .c5 .squirrel .feat li:before{content:"✓";color:var(--acorn)}
+  .c5 .squirrel .go{color:#fff;background:var(--acorn);border-radius:999px;padding:.72rem 1.1rem}
+
+  /* Shipping */
+  .c5 .ship{background:#2b2724;border-color:#1c1916;transform:translateY(1.15rem)}
+  .c5 .ship .num{background:#5c4a3a;color:#d8cdbf}
+  .c5 .ship .tag{background:rgba(201,122,90,.1);color:#d79a80}
+  .c5 .ship h3{color:#e8e1d5}
+  .c5 .ship p{color:#a89e90}
+  .c5 .ship .warn{color:var(--danger);font-weight:700}
+  .c5 .ship .feat{border-top-color:rgba(232,225,213,.14)}
+  .c5 .ship .feat li{color:#a89e90}
+  .c5 .ship .feat li:before{content:"–";color:var(--danger);font-weight:700}
+  .c5 .ship .cta span{color:#9c9183;font-weight:500}
+
+  /* pull quote */
+  .c5 .plain{max-width:660px;margin:3.3rem auto 2rem;text-align:center;padding:0 1.5rem}
+  .c5 .plain .quote{font-family:'Fraunces',serif;font-size:1.55rem;line-height:1.28;letter-spacing:-.015em;color:var(--bark);margin:0}
+  .c5 .plain .quote em{color:var(--acorn);font-style:italic}
+
+  /* compare strip */
+  .c5 .lead{text-align:center;max-width:600px;margin:2.6rem auto 1.1rem;padding:0 1.5rem}
+  .c5 .lead h2{font-family:'Fraunces',serif;font-weight:400;font-size:1.9rem;letter-spacing:-.02em;margin:0}
+  .c5 .strip{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--nest);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(92,74,58,.07)}
+  .c5 .strip .row{display:grid;grid-template-columns:1.25fr 1fr 1fr;border-top:1px solid var(--cream)}
+  .c5 .strip .row:first-child{border-top:none}
+  .c5 .strip .row > div{padding:.9rem 1rem;font-size:.92rem}
+  .c5 .strip .head-row{background:var(--warm)}
+  .c5 .strip .head-row > div{font-family:'Fraunces',serif;font-weight:600;font-size:.98rem}
+  .c5 .strip .head-row .ss{color:var(--acorn)}
+  .c5 .strip .lab{color:var(--ash);font-weight:500}
+  .c5 .strip .ss-col{color:var(--ink);font-weight:700;background:#faf7f2}
+  .c5 .strip .other{color:var(--branch)}
+
+  .c5 .ph{border:1.5px dashed var(--nest);border-radius:14px;padding:1.4rem;text-align:center;color:var(--branch);font-size:.86rem;margin:2rem auto 0;max-width:760px;background:rgba(255,255,255,.35)}
+  .c5 .ph b{display:block;font-family:'Fraunces',serif;font-size:1rem;color:var(--acorn);margin-bottom:.3rem;font-weight:600}
+
+  .c5 .banner{margin:3.2rem auto 0;max-width:980px;padding:0 1.5rem;text-align:center}
+  .c5 .banner img{width:100%;height:auto;display:block;border:1px solid var(--nest);border-radius:14px}
+  .c5 .banner figcaption{margin-top:.9rem;font-family:'Fraunces',serif;font-style:italic;font-size:1rem;color:var(--ash)}
+
+  @media(max-width:840px){
+    .c5 .route{grid-template-columns:1fr;max-width:680px;margin:0 auto}
+    .c5 .decision:before{display:none}
+    .c5 .diy,.c5 .ship,.c5 .squirrel{transform:none;min-height:auto}
+    .c5 .squirrel:hover{transform:translateY(-2px)}
+  }
+
+  @media(max-width:600px){
+    .c5 .hero{padding-top:2.8rem}
+    .c5 .hero h1{font-size:2.25rem}
+    .c5 .hero p{font-size:.98rem}
+    .c5 .types{font-size:.7rem;letter-spacing:.07em}
+    .c5 .card-inner{padding:1.2rem}
+    .c5 .strip .row > div{padding:.7rem .55rem;font-size:.8rem}
+    .c5 .plain .quote{font-size:1.28rem}
+  }
+</style>
+
+<div class="c5">
+
+  <section class="hero">
+    <div class="eyebrow">Photos · 35mm · Negatives · Documents · Magazine Articles</div>
+    <h1><span class="n">3</span> ways to do this.</h1>
+  </section>
+
+  <main class="wrap decision">
+    <div class="route">
+
+      <section class="card diy">
+        <div class="card-inner">
+          <span class="tag">Best if you have time</span>
+          <span class="num">1</span>
+          <h3>Do it yourself</h3>
+          <p>Extremely rewarding if you have the time & patience — and a lot more than pressing scan.</p>
+          <ul class="feat">
+            <li>Choose and set up the scanner</li>
+            <li>Sort and rescan every batch</li>
+            <li>Name and back up the files</li>
+            <li>Your time, on your schedule</li>
+          </ul>
+          <div class="cta">
+            <a href="mailto:hello@scansquirrel.com?subject=DIY%20suggestions" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com?subject=DIY%20suggestions');">Email us for DIY suggestions →</a>
+          </div>
+        </div>
+      </section>
+
+      <a class="card squirrel" href="/squirrels.html">
+        <div class="card-inner">
+          <span class="tag">Best if you need it done right</span>
+          <span class="num">2</span>
+          <h3>Hire a local <em>Squirrel</em></h3>
+          <p>A Squirrel comes to you, scans everything, and delivers it to your drive or phone — no dining-table scanning station.</p>
+          <ul class="feat">
+            <li>Work with your neighbor, in person</li>
+            <li>Your photos never leave your city</li>
+            <li>600 DPI archival scans, front & back</li>
+            <li>Original scans preserved untouched</li>
+            <li>Enhanced versions: color, faces, fading</li>
+            <li>Dated and tagged with names and events</li>
+            <li>Arrives organized in Google or Apple Photos</li>
+            <li>Originals returned in a fireproof case</li>
+            <li>Clean digital files in about 48 hours</li>
+            <li>We work until you're happy</li>
+          </ul>
+          <div class="cta">
+            <span class="go">Find a Squirrel near you →</span>
+          </div>
+        </div>
+      </a>
+
+      <section class="card ship">
+        <div class="card-inner">
+          <span class="tag">Best if you like waiting</span>
+          <span class="num">3</span>
+          <h3>Ship them away</h3>
+          <p>Your irreplaceable items, boxed and shipped to a warehouse <span class="warn">100s of miles away.</span></p>
+          <ul class="feat">
+            <li>Photos leave your city for weeks</li>
+            <li>Six weeks gone, a USB stick back</li>
+            <li>If something's wrong, you're a ticket</li>
+            <li>No refund once processed</li>
+          </ul>
+          <div class="cta"></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <section class="plain">
+    <p class="quote">The best choice is the one where your items stay close, and <em>get processed fast by someone local who cares.</em></p>
+  </section>
+
+  <figure class="banner">
+    <img src="/img/ill/why_local.png" alt="A neighbor and a Squirrel going through a shoebox of photos together at a kitchen table, versus a box of photos shipped away on a truck toward a distant warehouse">
+    <figcaption>Handed to a neighbor who cares — not boxed up and shipped hundreds of miles away.</figcaption>
+  </figure>
+
+  <div class="lead">
+    <h2>Why local is better</h2>
+  </div>
+
+  <div class="strip">
+    <div class="row head-row"><div>&nbsp;</div><div class="ss">Local Squirrel</div><div>Shipping away</div></div>
+    <div class="row"><div class="lab">Who handles them</div><div class="ss-col">Your neighbor</div><div class="other">Warehouse staff</div></div>
+    <div class="row"><div class="lab">Where they go</div><div class="ss-col">Stay in your city</div><div class="other">100s of miles away</div></div>
+    <div class="row"><div class="lab">How long</div><div class="ss-col">About 48 hours</div><div class="other">3–8 weeks</div></div>
+    <div class="row"><div class="lab">You get back</div><div class="ss-col">Files on your drive or phone</div><div class="other">A USB stick</div></div>
+    <div class="row"><div class="lab">If something's wrong</div><div class="ss-col">Call your neighbor</div><div class="other">Support queue</div></div>
+    <div class="row"><div class="lab">Until you're happy</div><div class="ss-col">We keep working</div><div class="other">No refund once processed</div></div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo"><img src="/img/logos/footer_bone_on_feather.png" alt="Scan Squirrel"></a>
+    <p class="ft">Gathered. Organized. Preserved.</p>
+    <p class="footer-legal"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/release.html">Release Agreement</a></p>
+    <p class="footer-copy">&copy; 2026 Scan Squirrel &middot; Los Angeles, CA</p>
+    <p class="footer-credit">All photographs displayed with permission. Please do not reproduce.</p>
+  </div>
+</footer>
+
+<script src="/js/nav-loader.js"></script>
+</body>
+</html>

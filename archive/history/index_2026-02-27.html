@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan Squirrel — Photo Scanning & Preservation</title>
+<meta name="description" content="Professional in-home photo scanning in Los Angeles. 600 DPI archival scans, AI enhancement, and direct delivery to your Google Photos or Apple Photos timeline.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a1a;--bone:#f0ebe3;--warm:#f5f0e8;--cream:#e8e1d5;--feather:#2a2a2a;--acorn:#8b5e3c;--acorn-bright:#a0693f;--ash:#6b6660;--nest:#d4c9b8;--branch:#8b7e6a;--bark:#5c4a3a;--teal:#2c6e6a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--bone);-webkit-font-smoothing:antialiased;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:background .4s}
+nav.scrolled{background:rgba(240,235,227,.95);backdrop-filter:blur(12px)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo img{height:64px;width:auto}
+.nav-logo span{font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--ash);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .3s}
+.nav-links a:hover{color:var(--acorn)}
+section[id]{scroll-margin-top:5rem}
+section{padding:2rem 3rem}
+.wrap{max-width:720px;margin:0 auto}
+h2{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;letter-spacing:-.02em;line-height:1.25;margin-bottom:.6rem}
+h3{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;margin-bottom:.3rem}
+p{margin-bottom:.5rem;color:var(--feather);font-size:.95rem}
+ul{margin:.15rem 0 .6rem 1.25rem;color:var(--feather);font-size:.95rem}
+ul li{margin-bottom:.25rem}
+ul.punchy{list-style:none;margin-left:0}
+ul.punchy li{padding:.45rem 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:.95rem}
+ul.punchy li:last-child{border-bottom:none}
+ul.punchy li strong{color:var(--ink)}
+
+/* Hero — CTA */
+.hero{background:var(--bone);display:flex;align-items:center;justify-content:center;padding:7rem 2rem 2.5rem}
+.hero-content{max-width:960px;width:100%;text-align:center}
+.hero-headline{font-family:'DM Sans',sans-serif;font-size:3.4rem;font-weight:800;color:#2c5f5c;line-height:1.15;letter-spacing:-.03em;margin-bottom:.75rem}
+.hero-sub{font-family:'DM Sans',sans-serif;font-size:1.25rem;font-weight:400;color:var(--ash);margin-bottom:.4rem}
+.hero-cta{font-family:'DM Sans',sans-serif;font-size:1.05rem;color:var(--branch);margin-bottom:0}
+.hero-cta a{color:var(--acorn);text-decoration:none;font-weight:500}
+.hero-cta a:hover{text-decoration:underline}
+
+/* Story Image */
+.story-section{padding:2.5rem 2rem}
+.story-wrap{max-width:1100px;margin:0 auto;text-align:center}
+.story-table{width:100%;border-collapse:collapse;border:none}
+.story-table td{vertical-align:middle;text-align:center;padding:.25rem}
+.story-table img{max-width:100%;height:auto;max-height:300px;object-fit:contain}
+.story-table .symbol{font-family:'Fraunces',serif;font-size:2rem;font-weight:700;color:var(--ink);padding:0 .2rem;vertical-align:middle}
+
+/* Two-column about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:.5rem}
+.about-card{background:var(--bone);border-radius:8px;padding:1.25rem 1.5rem}
+
+.bg-warm{background:var(--warm)}
+.bg-bone{background:var(--bone)}
+.bg-cream{background:var(--cream)}
+.bg-dark{background:var(--feather);color:var(--bone)}
+.bg-dark h2,.bg-dark p,.bg-dark ul,.bg-dark li{color:var(--nest)}
+.bg-dark h2{color:var(--bone)}
+
+/* Service area pills */
+.area-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.area-pill{background:var(--cream);color:var(--bark);padding:.3rem .85rem;border-radius:20px;font-size:.85rem;font-weight:500}
+
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
+.price-row:last-child{border-bottom:none}
+.price-row h3{font-size:.95rem;font-weight:600;margin-bottom:0}
+.price-row .price{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--acorn)}
+.price-row p{font-size:.85rem;color:var(--ash);margin:0}
+.contact-email{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--acorn-bright);text-decoration:none}
+.contact-email:hover{color:var(--bone)}
+footer{background:var(--feather);padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:.8rem;color:var(--ash);margin:0}
+footer .ft{font-family:'Fraunces',serif;font-style:italic;font-size:.85rem;color:var(--branch)}
+@media(max-width:768px){
+nav{padding:1rem 1.5rem}.nav-links{display:none}section{padding:1.5rem 1.5rem}
+.hero{padding:5rem 1.5rem 2rem}
+.hero-headline{font-size:2.2rem}
+.about-grid{grid-template-columns:1fr}
+.price-row{flex-direction:column;gap:.25rem}
+footer{flex-direction:column;gap:.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <img src="Max.png" alt="Max">
+    <span>Scan Squirrel</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#what">No More Shoebox</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+</nav>
+
+<!-- Hero — CTA -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-headline">What If You Lost<br>All Your Old Photos?</h1>
+    <p class="hero-cta"><a href="mailto:hello@scansquirrel.com">hello@scansquirrel.com</a></p>
+  </div>
+</section>
+
+<!-- About Me -->
+<section class="bg-warm">
+  <div class="wrap">
+    <h2>Hey, I'm Max.</h2>
+    <p>I'm based in Eagle Rock, Los Angeles. I'm deeply passionate about photos, preservation, and the new technologies that are making it easier than ever to bring old prints back to life.</p>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section id="how" class="bg-bone">
+  <div class="wrap">
+    <h2>How It Works</h2>
+    <div class="about-grid">
+      <div class="about-card" style="background:var(--warm)">
+        <h3>1. We Meet Up</h3>
+        <p>I come to your home and we go through your collection together. We organize your photos into batches by the events and eras of your life — holidays, vacations, school years, whatever matters to you.</p>
+      </div>
+      <div class="about-card" style="background:var(--warm)">
+        <h3>2. I Scan Everything</h3>
+        <p>I take your photos back to my studio and scan every single one at 600 DPI — front and back. This is archive-quality, the same standard used by museums and libraries for long-term preservation.</p>
+      </div>
+      <div class="about-card" style="background:var(--warm)">
+        <h3>3. AI Enhancement</h3>
+        <p>Each photo gets an AI-enhanced version: colors corrected, faces sharpened, fading reversed. The original scan is always preserved untouched — the enhanced version is a bonus, not a replacement.</p>
+      </div>
+      <div class="about-card" style="background:var(--warm)">
+        <h3>4. You Get It All Back</h3>
+        <p>Your originals come back organized in a fireproof, water-resistant case. You get a simple link that drops your enhanced photos directly into Google Photos or Apple Photos — dated and organized, right in your timeline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story Table -->
+<section class="story-section bg-bone" style="padding-top:0">
+  <div class="story-wrap">
+    <table class="story-table">
+      <tr>
+        <td style="vertical-align:middle" rowspan="2"><img src="Shoebox%20Disarray_f0ebe3.png" alt="Messy shoebox of photos" style="max-height:400px"></td>
+        <td class="symbol" rowspan="2">+</td>
+        <td><img src="Max.png" alt="Max from Scan Squirrel" style="max-height:245px"></td>
+        <td class="symbol" rowspan="2">=</td>
+        <td><img src="Happy_Customer.png" alt="Happy customer with photos on phone"></td>
+      </tr>
+      <tr>
+        <td><img src="AI%20Scanning_f0ebe3.png" alt="AI scanning and enhancement"></td>
+        <td><img src="Organized%20Photos_f0ebe3.png" alt="Photos organized in fireproof case"></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="bg-warm">
+  <div class="wrap">
+    <h2>Simple Pricing</h2>
+    <div class="price-row">
+      <div><h3>Per photo</h3></div>
+      <div class="price">$1</div>
+    </div>
+    <div class="price-row">
+      <div><h3>Per Shoebox (~200 photos)</h3></div>
+      <div class="price">~$200</div>
+    </div>
+    <div class="price-row">
+      <div><h3>Fireproof storage case</h3><p>Included as an option</p></div>
+      <div class="price">$50</div>
+    </div>
+    <p style="margin-top:.5rem;color:var(--ash)">No surprise add-ons. No complicated tiers. Just photos scanned.</p>
+  </div>
+</section>
+
+<!-- Fire Quote + Free Advice -->
+<section style="background:#c44a1a;color:#1a1a1a;padding:2rem 3rem">
+  <div class="wrap">
+    <p style="color:#1a1a1a;font-size:1.05rem;line-height:1.8">Watching the Eaton fires consume Altadena in 2025 left a permanent mark on me. What really stuck was knowing hundreds of thousands of irreplaceable photos were gone. If you've been thinking about preserving yours — don't wait. My service is personal, nearby, and much cheaper than the big scanning companies. Talking to me is always free. Make this the week you do something about it.</p>
+  </div>
+</section>
+
+<!-- What You Get -->
+<section id="what" class="bg-warm">
+  <div class="wrap">
+    <h2>From Messy Shoebox to&hellip;</h2>
+    <ul>
+      <li><strong>600 DPI archival scans</strong> — front &amp; back, every photo</li>
+      <li><strong>AI-enhanced versions</strong> — fading reversed, faces sharpened, colors corrected</li>
+      <li><strong>Dates &amp; names embedded</strong> — so photos land in the right spot on your timeline</li>
+      <li><strong>Delivered to your phone</strong> — one link drops everything into Google Photos or Apple Photos</li>
+      <li><strong>Originals returned in a fireproof case</strong> — organized, labeled, protected</li>
+      <li><strong>48-hour turnaround</strong> — your photos never leave the neighborhood</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-bone">
+  <div class="wrap" style="text-align:center">
+    <p style="font-size:1.05rem">Your memories, safely stashed.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-dark" style="text-align:center">
+  <div class="wrap">
+    <h2>Ready to get started?</h2>
+    <p>Every consultation is free. No pressure.</p>
+    <a href="mailto:hello@scansquirrel.com" class="contact-email">hello@scansquirrel.com</a>
+  </div>
+</section>
+
+<!-- Service Areas -->
+<section class="bg-warm">
+  <div class="wrap">
+    <h2>Where I Work</h2>
+    <p>I'm based in Eagle Rock and serve neighborhoods across Northeast LA, Pasadena, and the surrounding area. If you're nearby and have photos to preserve, I can come to you.</p>
+    <div class="area-list">
+      <span class="area-pill">Eagle Rock</span>
+      <span class="area-pill">Highland Park</span>
+      <span class="area-pill">Glassell Park</span>
+      <span class="area-pill">Pasadena</span>
+      <span class="area-pill">Altadena</span>
+      <span class="area-pill">Silver Lake</span>
+      <span class="area-pill">Los Feliz</span>
+      <span class="area-pill">Glendale</span>
+      <span class="area-pill">Atwater Village</span>
+      <span class="area-pill">Mt. Washington</span>
+    </div>
+    <p style="margin-top:.6rem;color:var(--ash);font-size:.9rem">Somewhere else in LA? Reach out anyway — I'm flexible.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Scan Squirrel &middot; Los Angeles, CA</p>
+  <span class="ft">Gathered. Organized. Preserved.</span>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
+</script>
+</body>
+</html>

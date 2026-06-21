@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Squirrels — ScanSquirrel Photo Scanning Los Angeles</title>
+<meta name="description" content="Meet the Squirrels — the people behind ScanSquirrel. Based in Eagle Rock, serving Northeast LA, Pasadena, and beyond. Interested in becoming a Squirrel? We'd love to hear from you.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/nav.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-M0DFY2Y7XE');
+gtag('config', 'AW-17990603569');
+gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
+  'phone_conversion_number': '2132902327'
+});
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2148206675947024');fbq('track','PageView');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vp5j1zbe4c");
+</script>
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --bone: #f0ebe3;
+  --warm: #f5f0e8;
+  --cream: #e8e1d5;
+  --feather: #2a2a2a;
+  --acorn: #8b5e3c;
+  --acorn-bright: #a0693f;
+  --ash: #6b6660;
+  --nest: #d4c9b8;
+  --branch: #8b7e6a;
+  --bark: #5c4a3a;
+  --teal: #2c6e6a;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'DM Sans',sans-serif;
+  color:var(--ink);
+  background:var(--bone);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+section { padding:2.5rem 3rem; }
+section[id] { scroll-margin-top:5rem; }
+.wrap { max-width:760px; margin:0 auto; }
+.wrap-wide { max-width:1000px; margin:0 auto; }
+
+h1 {
+  font-family:'Fraunces',serif;
+  font-size:2.2rem;
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.2;
+  margin-bottom:0.5rem;
+}
+h2 {
+  font-family:'Fraunces',serif;
+  font-size:1.4rem;
+  font-weight:400;
+  letter-spacing:-0.02em;
+  margin-bottom:0.5rem;
+}
+h3 {
+  font-family:'Fraunces',serif;
+  font-size:1.1rem;
+  font-weight:600;
+  margin-bottom:0.3rem;
+}
+p {
+  color:var(--feather);
+  font-size:0.95rem;
+  margin-bottom:0.5rem;
+  line-height:1.7;
+}
+p:last-child { margin-bottom:0; }
+
+.bg-warm  { background:var(--warm); }
+.bg-bone  { background:var(--bone); }
+.bg-cream { background:var(--cream); }
+.bg-dark  { background:var(--feather); }
+.bg-dark p { color:var(--nest); }
+.bg-dark h2, .bg-dark h3 { color:var(--bone); }
+
+/* ---- Hero ---- */
+.hero {
+  padding-top:7rem;
+  padding-bottom:2.5rem;
+  background:var(--warm);
+}
+.hero .eyebrow {
+  font-size:0.8rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:0.6rem;
+}
+.hero p.sub {
+  font-size:1.05rem;
+  color:var(--ash);
+  max-width:560px;
+  margin-top:0.5rem;
+  line-height:1.7;
+}
+
+/* ---- Squirrel cards grid ---- */
+.squirrels-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:1.5rem;
+  margin-top:1.5rem;
+}
+
+/* ---- Active Squirrel card ---- */
+.squirrel-card {
+  background:var(--bone);
+  border-radius:8px;
+  overflow:hidden;
+}
+.squirrel-headshot-wrap {
+  padding:1.5rem 1.25rem 0;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+.squirrel-headshot {
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center top;
+  flex-shrink:0;
+  border:3px solid var(--cream);
+}
+.squirrel-headshot-info .squirrel-name {
+  font-family:'Fraunces',serif;
+  font-size:1.2rem;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:0.1rem;
+}
+.squirrel-headshot-info .squirrel-title {
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--teal);
+}
+.squirrel-body {
+  padding:1rem 1.25rem 1.5rem;
+}
+.squirrel-badge {
+  display:inline-block;
+  background:var(--acorn);
+  color:var(--bone);
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:0.2rem 0.6rem;
+  border-radius:3px;
+  margin-bottom:0.6rem;
+}
+.squirrel-name {
+  font-family:'Fraunces',serif;
+  font-size:1.3rem;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:0.15rem;
+}
+.squirrel-title {
+  font-size:0.8rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:0.75rem;
+}
+.squirrel-body p {
+  font-size:0.88rem;
+  color:var(--ash);
+  line-height:1.65;
+  margin-bottom:0.75rem;
+}
+.area-pills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.35rem;
+  margin-top:0.75rem;
+}
+.area-pill {
+  background:var(--cream);
+  color:var(--bark);
+  padding:0.2rem 0.65rem;
+  border-radius:20px;
+  font-size:0.75rem;
+  font-weight:600;
+}
+
+/* ---- Coming soon card ---- */
+.squirrel-card.coming-soon {
+  border:2px dashed var(--cream);
+  background:transparent;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:320px;
+  text-align:center;
+  padding:2rem;
+}
+.squirrel-card.coming-soon .cs-icon {
+  font-family:'Fraunces',serif;
+  font-size:2.5rem;
+  color:var(--nest);
+  margin-bottom:0.75rem;
+  line-height:1;
+}
+.squirrel-card.coming-soon h3 {
+  color:var(--ash);
+  font-size:1rem;
+  margin-bottom:0.4rem;
+}
+.squirrel-card.coming-soon p {
+  font-size:0.82rem;
+  color:var(--nest);
+}
+.squirrel-card.coming-soon .cs-area {
+  font-size:0.75rem;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--branch);
+  margin-top:0.5rem;
+}
+
+/* ---- What makes a Squirrel ---- */
+.traits-list {
+  list-style:none;
+  padding:0;
+  margin-top:1rem;
+}
+.traits-list li {
+  display:flex;
+  align-items:flex-start;
+  gap:0.75rem;
+  padding:0.65rem 0;
+  border-bottom:1px solid var(--cream);
+  font-size:0.93rem;
+  color:var(--feather);
+  line-height:1.5;
+}
+.traits-list li:last-child { border-bottom:none; }
+.trait-icon { color:var(--acorn); flex-shrink:0; font-weight:700; margin-top:0.05rem; }
+
+/* ---- What you get / training ---- */
+.training-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  margin-top:1.25rem;
+}
+.training-card {
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:6px;
+  padding:1.25rem;
+}
+.training-card h3 {
+  color:var(--bone);
+  font-size:0.95rem;
+  margin-bottom:0.4rem;
+}
+.training-card p {
+  color:var(--nest);
+  font-size:0.84rem;
+  line-height:1.6;
+}
+
+/* ---- Areas looking section ---- */
+.areas-looking {
+  margin-top:1.25rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem;
+}
+.area-wanted {
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.15);
+  color:var(--nest);
+  padding:0.4rem 0.9rem;
+  border-radius:20px;
+  font-size:0.82rem;
+  font-weight:500;
+}
+
+/* ---- Apply CTA ---- */
+.apply-box {
+  background:var(--cream);
+  border-radius:8px;
+  padding:2rem;
+  text-align:center;
+  margin-top:1.5rem;
+}
+.apply-box h3 { color:var(--ink); font-size:1.2rem; margin-bottom:0.4rem; }
+.apply-box p { color:var(--ash); font-size:0.92rem; margin-bottom:1.25rem; }
+.btn-primary {
+  background:var(--acorn);
+  color:var(--bone);
+  padding:0.75rem 1.75rem;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:0.95rem;
+  transition:background 0.2s;
+  display:inline-block;
+  margin:0.3rem;
+}
+.btn-primary:hover { background:var(--acorn-bright); }
+
+/* ---- Page CTA ---- */
+.cta-strip {
+  text-align:center;
+  padding:3rem;
+  background:var(--feather);
+}
+.cta-strip h2 {
+  font-family:'Fraunces',serif;
+  font-size:1.5rem;
+  font-weight:400;
+  color:var(--bone);
+  margin-bottom:0.5rem;
+}
+.cta-strip p { color:var(--nest); font-size:0.95rem; margin-bottom:1.25rem; }
+.btn-phone {
+  color:var(--acorn-bright);
+  padding:0.75rem 1.5rem;
+  border:2px solid var(--acorn-bright);
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:0.95rem;
+  display:inline-block;
+  margin:0.3rem;
+  transition:all 0.2s;
+}
+.btn-phone:hover { background:var(--acorn-bright); color:var(--bone); }
+
+footer { background:var(--feather); padding:2rem 3rem; }
+.footer-inner { max-width:720px; margin:0 auto; text-align:center; }
+footer .ft { font-family:'Fraunces',serif; font-style:italic; font-size:0.95rem; color:var(--branch); margin-bottom:0.75rem; }
+footer p { margin:0; }
+.footer-contact, .footer-legal { margin-bottom:0.5rem; }
+.footer-contact a, .footer-legal a { color:var(--ash); text-decoration:none; font-size:0.8rem; }
+.footer-contact a:hover, .footer-legal a:hover { color:var(--bone); }
+.footer-copy { font-size:0.78rem; color:var(--ash); margin-bottom:0.3rem; }
+.footer-credit { font-size:0.72rem; color:var(--branch); font-style:italic; }
+
+@media (max-width:768px) {
+  section { padding:1.5rem 1.25rem; }
+  .hero { padding-top:5rem; }
+  h1 { font-size:1.7rem; }
+  .squirrels-grid { grid-template-columns:1fr; }
+  .training-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">The people behind ScanSquirrel</p>
+    <h1>Meet the Squirrels.</h1>
+    <p class="sub">Every Squirrel is a trained, local specialist who handles your collection personally — from pickup to delivery. We're building a network of people who care about this the way we do.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SQUIRREL CARDS
+     ============================================================ -->
+<section class="bg-warm">
+  <div class="wrap-wide">
+    <div class="squirrels-grid">
+
+      <div class="squirrel-card">
+        <div class="squirrel-headshot-wrap">
+          <img src="/img/brn/Max.png" alt="Max Ferrigni" class="squirrel-headshot">
+          <div class="squirrel-headshot-info">
+            <span class="squirrel-badge">#1 Squirrel · Founder</span>
+            <div class="squirrel-name">Max Ferrigni</div>
+            <div class="squirrel-title">Eagle Rock, Los Angeles</div>
+          </div>
+        </div>
+        <div class="squirrel-body">
+          <p>I started ScanSquirrel after the 2025 Eaton fires. Watching families in Altadena lose decades of irreplaceable photos — overnight, with no warning — made something click. Most of us have shoeboxes sitting in closets right now that would be gone in twenty minutes. I wanted to build something that actually fixed that.</p>
+          <p>I grew up around cameras and have spent years learning what it takes to do this right — the scanning hardware, the workflow, the AI correction tools, the way to organize a collection so it makes sense to the family who owns it. I handle every job personally, and I bring the same care to your photos that I'd want someone to bring to mine.</p>
+          <p>Based in Eagle Rock. Glassell Park native. Dad. Neighbor.</p>
+          <div class="area-pills">
+            <span class="area-pill">Eagle Rock</span>
+            <span class="area-pill">Glassell Park</span>
+            <span class="area-pill">Highland Park</span>
+            <span class="area-pill">Pasadena</span>
+            <span class="area-pill">Altadena</span>
+            <span class="area-pill">Silver Lake</span>
+            <span class="area-pill">Los Feliz</span>
+            <span class="area-pill">Glendale</span>
+            <span class="area-pill">Atwater Village</span>
+            <span class="area-pill">Mt. Washington</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMING SOON — Westside -->
+      <div class="squirrel-card coming-soon">
+        <h3>Coming soon</h3>
+        <p>A Squirrel for the Westside is on the way.</p>
+        <div class="cs-area">Santa Monica · Brentwood · Culver City</div>
+      </div>
+
+      <!-- COMING SOON — SFV -->
+      <div class="squirrel-card coming-soon">
+        <h3>Coming soon</h3>
+        <p>Looking for the right person in the Valley.</p>
+        <div class="cs-area">Burbank · Studio City · Sherman Oaks</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT MAKES A SQUIRREL
+     ============================================================ -->
+<section class="bg-bone">
+  <div class="wrap">
+    <h2>What it means to be a Squirrel.</h2>
+    <p>We don't send just anyone. Every Squirrel goes through training, gets the right equipment, and works in a way that earns the trust of the people handing over their most irreplaceable things.</p>
+
+    <ul class="traits-list">
+      <li>
+        <span class="trait-icon">→</span>
+        <span><strong>You know your neighborhood.</strong> A Squirrel serves the area they live in — people who know the same streets, the same history, the same fire risk. That's not a marketing angle. It's the whole point.</span>
+      </li>
+      <li>
+        <span class="trait-icon">→</span>
+        <span><strong>You handle things personally.</strong> No hand-offs to a warehouse. You pick up, you scan, you return. Your name is on it.</span>
+      </li>
+      <li>
+        <span class="trait-icon">→</span>
+        <span><strong>You care about getting it right.</strong> Not just technically correct — actually right. The kind of careful that comes from understanding what these photos mean to the person who owns them.</span>
+      </li>
+      <li>
+        <span class="trait-icon">→</span>
+        <span><strong>You follow the ScanSquirrel standard.</strong> 600 DPI, proper handling, consistent workflow, honest pricing. Same quality, every job, every Squirrel.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT YOU GET — TRAINING (placeholder, to be expanded)
+     ============================================================ -->
+<section class="bg-dark">
+  <div class="wrap">
+    <h2>What ScanSquirrel provides.</h2>
+    <p style="margin-bottom:1.5rem">We set you up to succeed — equipment, training, workflow, and ongoing support. More details coming soon.</p>
+
+    <div class="training-grid">
+      <div class="training-card">
+        <h3>Equipment</h3>
+        <p>We guide you on the exact scanner setup that meets the ScanSquirrel standard — and how to use it properly from day one.</p>
+      </div>
+      <div class="training-card">
+        <h3>Training</h3>
+        <p>Hands-on training covering photo handling, scanning workflow, organization standards, and how to work with customers confidently.</p>
+      </div>
+      <div class="training-card">
+        <h3>Software & tools</h3>
+        <p>Access to the ScanSquirrel processing tools — AI Photo Correction, delivery system, and everything you need to run a job professionally.</p>
+      </div>
+      <div class="training-card">
+        <h3>Ongoing support</h3>
+        <p>You're not on your own. Questions, edge cases, weird collections — we've seen it and we'll help you through it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AREAS LOOKING
+     ============================================================ -->
+<section class="bg-bone">
+  <div class="wrap">
+    <h2>Neighborhoods we're looking to cover.</h2>
+    <p>If you live in or near any of these areas and want to talk about becoming a Squirrel, we'd love to hear from you.</p>
+
+    <div class="areas-looking" style="margin-top:1rem">
+      <!-- West LA -->
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Santa Monica</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Brentwood</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">West Hollywood</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Culver City</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Mar Vista</span>
+      <!-- SFV -->
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Burbank</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Studio City</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Sherman Oaks</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Encino</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Woodland Hills</span>
+      <!-- SGV -->
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Arcadia</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Monrovia</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">San Marino</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Temple City</span>
+      <!-- South -->
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Long Beach</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Torrance</span>
+      <span class="area-pill" style="background:var(--warm);color:var(--bark)">Redondo Beach</span>
+    </div>
+
+    <p style="margin-top:1rem;color:var(--ash);font-size:0.88rem">Don't see your neighborhood? Reach out anyway — if you're the right person, geography is a detail we can work around.</p>
+
+    <!-- Apply box -->
+    <div class="apply-box">
+      <h3>Interested in becoming a Squirrel?</h3>
+      <p>Tell me a little about yourself — where you live, why this appeals to you, and any relevant background. No formal application, no bureaucracy. Just a conversation.</p>
+      <a href="mailto:hello@scansquirrel.com?subject=I%20want%20to%20be%20a%20Squirrel" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com?subject=I%20want%20to%20be%20a%20Squirrel');" class="btn-primary">Email Max — hello@scansquirrel.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PAGE CTA
+     ============================================================ -->
+<div class="cta-strip">
+  <h2>Want your photos scanned?</h2>
+  <p>Start with a free consultation. No pressure, ever.</p>
+  <a href="tel:+12132902327" class="btn-phone">(213) 290-2327</a>
+  <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="btn-primary">hello@scansquirrel.com</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo"><img src="/img/logos/footer_bone_on_feather.png" alt="Scan Squirrel"></a>
+    <p class="ft">Gathered. Organized. Preserved.</p>
+    <p class="footer-legal"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/release.html">Release Agreement</a></p>
+    <p class="footer-copy">&copy; 2026 Scan Squirrel &middot; Los Angeles, CA</p>
+    <p class="footer-credit">All photographs displayed with permission. Please do not reproduce.</p>
+  </div>
+</footer>
+<script src="/js/nav-loader.js"></script>
+</body>
+</html>

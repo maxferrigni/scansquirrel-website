@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScanSquirrel — Photo Scanning and Preservation, Los Angeles</title>
+<meta name="description" content="Local photo scanning in Northeast LA. $1 per photo, 48-hour turnaround, originals returned in a fireproof case. Serving Eagle Rock, Pasadena, Glendale and beyond.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/nav.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0DFY2Y7XE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-M0DFY2Y7XE');
+gtag('config', 'AW-17990603569');
+gtag('config', 'AW-17990603569/loRNCJPgyLgcELGmy4JD', {
+  'phone_conversion_number': '2132902327'
+});
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17990603569/MyWeCNm7ybgcELGmy4JD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2148206675947024');fbq('track','PageView');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","vp5j1zbe4c");
+</script>
+
+<style>
+:root {
+  --ink: #1a1a1a;
+  --bone: #f0ebe3;
+  --warm: #f5f0e8;
+  --cream: #e8e1d5;
+  --feather: #2a2a2a;
+  --acorn: #8b5e3c;
+  --acorn-bright: #a0693f;
+  --ash: #6b6660;
+  --nest: #d4c9b8;
+  --branch: #8b7e6a;
+  --bark: #5c4a3a;
+  --teal: #2c6e6a;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'DM Sans',sans-serif;
+  color:var(--ink);
+  background:var(--bone);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+section { padding:2.5rem 3rem; }
+section[id] { scroll-margin-top:5rem; }
+.wrap { max-width:720px; margin:0 auto; }
+.wrap-wide { max-width:1100px; margin:0 auto; }
+
+h2 {
+  font-family:'Fraunces',serif;
+  font-size:1.5rem;
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.25;
+  margin-bottom:0.6rem;
+}
+h3 {
+  font-family:'Fraunces',serif;
+  font-size:1.1rem;
+  font-weight:600;
+  margin-bottom:0.3rem;
+}
+p {
+  margin-bottom:0.5rem;
+  color:var(--feather);
+  font-size:0.95rem;
+}
+
+.bg-warm  { background:var(--warm); }
+.bg-bone  { background:var(--bone); }
+.bg-cream { background:var(--cream); }
+.bg-dark  { background:var(--feather); color:var(--bone); }
+.bg-dark h2, .bg-dark p { color:var(--nest); }
+.bg-dark h2 { color:var(--bone); }
+
+/* ============================================================
+   HERO — two column
+   ============================================================ */
+.hero {
+  background:var(--warm);
+  padding-top:6.5rem;
+  padding-bottom:0;
+}
+.hero-inner {
+  max-width:1100px;
+  margin:0 auto;
+  padding:2rem 3rem 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:center;
+  min-height:calc(100vh - 6.5rem);
+}
+.hero-left { padding-bottom:3rem; }
+.hero-eyebrow {
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:1rem;
+  display:block;
+}
+.hero-h1 {
+  font-family:'Fraunces',serif;
+  font-size:3rem;
+  font-weight:400;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  color:var(--ink);
+  margin-bottom:1rem;
+}
+.hero-h1 em {
+  font-style:italic;
+  color:var(--acorn);
+}
+.hero-sub {
+  font-size:1.05rem;
+  color:var(--ash);
+  line-height:1.7;
+  margin-bottom:1.75rem;
+  max-width:420px;
+}
+.hero-ctas {
+  display:flex;
+  gap:0.75rem;
+  flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+.btn-call {
+  background:var(--acorn);
+  color:var(--bone);
+  padding:0.8rem 1.6rem;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1rem;
+  transition:background 0.2s;
+  display:inline-block;
+}
+.btn-call:hover { background:var(--acorn-bright); }
+.btn-email {
+  color:var(--acorn);
+  padding:0.8rem 1.4rem;
+  border:2px solid var(--acorn);
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1rem;
+  display:inline-block;
+  transition:all 0.2s;
+}
+.btn-email:hover { background:var(--acorn); color:var(--bone); }
+
+/* Trust pills */
+.trust-pills {
+  display:flex;
+  gap:0.6rem;
+  flex-wrap:wrap;
+}
+.trust-pill {
+  background:var(--cream);
+  color:var(--bark);
+  padding:0.3rem 0.8rem;
+  border-radius:20px;
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.04em;
+}
+
+/* Hero photo — physical photo feel */
+.hero-right {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-bottom:3rem;
+  position:relative;
+}
+.hero-photo-frame {
+  position:relative;
+  display:inline-block;
+}
+/* Shadow photo behind — gives depth */
+.hero-photo-frame::before {
+  content:'';
+  position:absolute;
+  inset:-4px;
+  background:var(--cream);
+  transform:rotate(3.5deg);
+  border-radius:2px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.12);
+  z-index:0;
+}
+.hero-photo-frame::after {
+  content:'';
+  position:absolute;
+  inset:-4px;
+  background:var(--nest);
+  transform:rotate(-1.5deg);
+  border-radius:2px;
+  z-index:1;
+}
+.hero-photo {
+  position:relative;
+  z-index:2;
+  display:block;
+  width:100%;
+  max-width:400px;
+  border-radius:2px;
+  object-fit:cover;
+}
+.hero-photo-caption {
+  position:absolute;
+  bottom:-2rem;
+  right:0;
+  font-family:'Fraunces',serif;
+  font-size:0.78rem;
+  font-style:italic;
+  color:var(--ash);
+  z-index:3;
+}
+
+/* ============================================================
+   TESTIMONIALS STRIP
+   ============================================================ */
+.testimonials {
+  background:var(--cream);
+  padding:3rem;
+}
+.testimonials-inner {
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:2rem;
+}
+.testimonial {
+  display:flex;
+  flex-direction:column;
+  gap:0.75rem;
+}
+.testimonial-quote {
+  font-family:'Fraunces',serif;
+  font-size:1rem;
+  font-weight:400;
+  font-style:italic;
+  color:var(--ink);
+  line-height:1.65;
+  flex:1;
+}
+.testimonial-quote::before {
+  content:'\201C';
+  color:var(--acorn);
+  font-size:1.4rem;
+  line-height:0;
+  vertical-align:-0.3rem;
+  margin-right:0.15rem;
+}
+.testimonial-attr {
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ash);
+}
+
+/* ============================================================
+   GALLERY — below fold
+   ============================================================ */
+.gallery-section {
+  background:var(--warm);
+  padding:2.5rem 3rem;
+}
+.gallery-header {
+  max-width:1100px;
+  margin:0 auto 1.5rem;
+}
+.gallery-header h2 { margin-bottom:0.25rem; }
+.gallery-header p { color:var(--ash); font-size:0.9rem; }
+
+.gallery-grid {
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+}
+.gallery-item { display:flex; flex-direction:column; }
+.gallery-img-wrap {
+  position:relative;
+  width:100%;
+  padding-bottom:100%;
+  overflow:hidden;
+  border-radius:4px;
+  background:var(--cream);
+}
+.gallery-img-wrap img {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform 0.3s ease;
+}
+.gallery-img-wrap:hover img { transform:scale(1.03); }
+.gallery-caption { margin-top:0.5rem; }
+.gallery-caption .era {
+  font-family:'Fraunces',serif;
+  font-size:0.9rem;
+  font-weight:600;
+  color:var(--ink);
+  display:block;
+  line-height:1.3;
+}
+.gallery-caption .decade {
+  font-size:0.75rem;
+  color:var(--ash);
+  display:block;
+  margin-top:0.1rem;
+}
+.gallery-disclaimer {
+  text-align:center;
+  font-size:0.78rem;
+  color:var(--ash);
+  font-style:italic;
+  margin-top:1.25rem;
+  max-width:1100px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.steps-grid {
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+}
+.step { display:flex; flex-direction:column; align-items:center; text-align:center; }
+.step-num {
+  font-family:'Fraunces',serif;
+  font-size:0.8rem;
+  font-weight:600;
+  color:var(--acorn);
+  margin-bottom:0.25rem;
+  letter-spacing:0.08em;
+}
+.step-title {
+  font-family:'Fraunces',serif;
+  font-size:1rem;
+  font-weight:600;
+  margin-bottom:0.4rem;
+  color:var(--ink);
+}
+.step p {
+  font-size:0.84rem;
+  line-height:1.55;
+  color:var(--ash);
+  margin-bottom:0.75rem;
+}
+.step img {
+  max-width:100%;
+  max-height:160px;
+  object-fit:contain;
+  margin-top:auto;
+}
+
+/* ============================================================
+   WHAT YOU GET
+   ============================================================ */
+.what-list {
+  list-style:none;
+  padding:0;
+  margin-top:0.5rem;
+}
+.what-list li {
+  display:flex;
+  align-items:flex-start;
+  gap:0.75rem;
+  padding:0.5rem 0;
+  border-bottom:1px solid var(--cream);
+  font-size:0.93rem;
+  color:var(--feather);
+}
+.what-list li:last-child { border-bottom:none; }
+.what-check { color:var(--teal); font-weight:700; flex-shrink:0; }
+
+/* ============================================================
+   PRICING
+   ============================================================ */
+.price-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  padding:0.6rem 0;
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+.price-row:last-child { border-bottom:none; }
+.price-row h3 { font-size:0.95rem; font-weight:600; margin-bottom:0; }
+.price-row .price {
+  font-family:'Fraunces',serif;
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--acorn);
+}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-email {
+  font-family:'Fraunces',serif;
+  font-size:1.4rem;
+  color:var(--acorn-bright);
+  text-decoration:none;
+}
+.contact-phone {
+  font-family:'Fraunces',serif;
+  font-size:1.2rem;
+  color:var(--acorn-bright);
+  text-decoration:none;
+  display:block;
+  margin-top:0.3rem;
+}
+
+/* ============================================================
+   AREA PILLS
+   ============================================================ */
+.area-list { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem; }
+.area-pill {
+  background:var(--cream);
+  color:var(--bark);
+  padding:0.3rem 0.85rem;
+  border-radius:20px;
+  font-size:0.85rem;
+  font-weight:500;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+footer { background:var(--feather); padding:2rem 3rem; }
+.footer-inner { max-width:720px; margin:0 auto; text-align:center; }
+footer .ft { font-family:'Fraunces',serif; font-style:italic; font-size:0.95rem; color:var(--branch); margin-bottom:0.75rem; }
+footer p { margin:0; }
+.footer-contact, .footer-legal { margin-bottom:0.5rem; }
+.footer-contact a, .footer-legal a { color:var(--ash); text-decoration:none; font-size:0.8rem; }
+.footer-contact a:hover, .footer-legal a:hover { color:var(--bone); }
+.footer-copy { font-size:0.78rem; color:var(--ash); margin-bottom:0.3rem; }
+.footer-credit { font-size:0.72rem; color:var(--branch); font-style:italic; }
+
+@media (max-width:900px) {
+  .hero { padding-top:5rem; }
+  .hero-inner {
+    grid-template-columns:1fr;
+    min-height:auto;
+    gap:2rem;
+    padding:1.5rem 1.5rem 0;
+  }
+  .hero-h1 { font-size:2.2rem; }
+  .hero-right { padding-bottom:2rem; }
+  .hero-photo { max-width:280px; }
+  .testimonials-inner { grid-template-columns:1fr; gap:1.5rem; }
+  .gallery-grid { grid-template-columns:1fr 1fr; }
+  .steps-grid { grid-template-columns:1fr 1fr; gap:1.25rem; }
+  section { padding:1.5rem 1.5rem; }
+  .gallery-section { padding:1.5rem 1.5rem; }
+  .testimonials { padding:2rem 1.5rem; }
+}
+@media (max-width:540px) {
+  .hero-h1 { font-size:1.75rem; }
+  .gallery-grid { grid-template-columns:1fr; }
+  .steps-grid { grid-template-columns:1fr; }
+  .hero-ctas { flex-direction:column; }
+  .btn-call, .btn-email { text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<div class="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT: headline + CTAs -->
+    <div class="hero-left">
+      <span class="hero-eyebrow">Eagle Rock · Los Angeles</span>
+      <h1 class="hero-h1">Your old photos.<br><em>Saved. Organized.<br>Back on your phone.</em></h1>
+      <p class="hero-sub">Local pickup in Northeast LA. 48-hour turnaround. $1 per photo. Your originals returned in a fireproof case.</p>
+      <div class="hero-ctas">
+        <a href="tel:+12132902327" class="btn-call">Call (213) 290-2327</a>
+        <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="btn-email">Email me</a>
+      </div>
+      <p style="margin:-0.75rem 0 1.5rem;font-size:0.88rem"><a href="/pricing2.html" style="color:var(--acorn-bright);text-decoration:none;border-bottom:1px solid var(--acorn-bright);font-weight:600">See full pricing →</a></p>
+      <div class="trust-pills">
+        <span class="trust-pill">600 DPI archival</span>
+        <span class="trust-pill">48-hour turnaround</span>
+        <span class="trust-pill">$1 per photo</span>
+        <span class="trust-pill">No subscriptions</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: single hero photo -->
+    <div class="hero-right">
+      <div class="hero-photo-frame">
+        <img
+          src="/img/cst/5514008_5080152_02_001.jpg"
+          alt="Jazz band performing on stage, 1960s — scanned by ScanSquirrel"
+          class="hero-photo"
+        >
+      </div>
+      <span class="hero-photo-caption">Smoky Stages, 1960s</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+
+    <div class="testimonial">
+      <p class="testimonial-quote">I've been meaning to digitize my parents' photos for years. Max showed up, went through everything with me, and two days later they were in my iPhone sorted by date — no hassle, no requirements from me. I was able to share with my family and to Facebook easily. I didn't have to ship anything, didn't have to figure out a scanner, didn't have to do anything except let him in. Worth every penny.</p>
+      <span class="testimonial-attr">Brian · Highland Park</span>
+    </div>
+
+    <div class="testimonial">
+      <p class="testimonial-quote">Max scanned all of my family's photos as a test run before he ever took a client. My mom called me crying when I sent her the album. That was the moment I knew this was something real.</p>
+      <span class="testimonial-attr">Kristin · Eagle Rock</span>
+    </div>
+
+    <div class="testimonial">
+      <p class="testimonial-quote">I scanned my own family's photos before I started taking clients. Seeing my grandmother at 25, looking exactly like my daughter does now — that's why I do this. These photos deserve better than a shoebox.</p>
+      <span class="testimonial-attr">Max · Founder, ScanSquirrel</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY — the proof
+     ============================================================ -->
+<section class="gallery-section">
+  <div class="gallery-header">
+    <h2>Look at what people have brought us.</h2>
+    <p>Real photos from real collections. This is what's sitting in shoeboxes right now.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/img/cst/8194966_6987301_03_004.jpg" alt="Vintage portrait of a baby in a wicker chair">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Way, Way Back</span>
+        <span class="decade">Early 1900s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/img/cst/8194966_6987301_15_010.jpg" alt="Worker on a Los Angeles building, 1940s">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Old Los Angeles</span>
+        <span class="decade">1940s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/img/cst/8899420_9490747_01_002.jpg" alt="Boy in a pedal car, 1950s">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Mid-Century Memories</span>
+        <span class="decade">1950s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/img/cst/7189107_5997803_01_005.jpg" alt="Three brothers studio portrait, 1980s" style="object-position:top">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Family Studio Portraits</span>
+        <span class="decade">1980s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/img/cst/7189107_7365862_03_027.jpg" alt="Young dancer at a recital, 1980s">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Dance Recitals</span>
+        <span class="decade">1980s</span>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img-wrap">
+        <img src="/img/cst/7189107_7196181_01_227.jpg" alt="Goofy moment with a cat, 1990s">
+      </div>
+      <div class="gallery-caption">
+        <span class="era">Goofy Moments</span>
+        <span class="decade">1990s</span>
+      </div>
+    </div>
+  </div>
+  <p class="gallery-disclaimer">Photographs shown with permission of their owners. Please do not reproduce without consent.</p>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
+<section class="bg-bone" id="how">
+  <div style="max-width:1100px;margin:0 auto">
+    <h2 style="text-align:center;margin-bottom:1.75rem">How it works.</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">We Talk</div>
+        <p>Tell me what you have — a shoebox, a bin, frames on the wall. Every collection is different. Free consultation, no commitment.</p>
+        <img src="/img/ill/shoebox_disarray.png" alt="Messy shoebox of photos">
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Local Pickup</div>
+        <p>We meet near you. I take your photos back to my Eagle Rock studio. No shipping, no warehouse, no strangers.</p>
+        <img src="/img/ill/scan_office.png" alt="Scanning studio">
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Organized and Safe</div>
+        <p>600 DPI scans. AI Photo Correction for damaged prints. Dates and names embedded. Originals organized and labeled.</p>
+        <img src="/img/ill/organized_photos.png" alt="Organized photos">
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Enjoyed Forever</div>
+        <p>Your photos land on your phone in Google Photos or Apple Photos. They start showing up as memories. That's the magic.</p>
+        <img src="/img/ill/happy_customer.png" alt="Enjoying photos on phone">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT YOU GET
+     ============================================================ -->
+<section class="bg-warm" id="what">
+  <div class="wrap">
+    <h2>From messy shoebox to...</h2>
+    <ul class="what-list">
+      <li><span class="what-check">✓</span><span><strong>600 DPI archival scans</strong> — front and back, every photo</span></li>
+      <li><span class="what-check">✓</span><span><strong>AI Photo Correction</strong> — color restoration, scratch and dust removal for damaged prints</span></li>
+      <li><span class="what-check">✓</span><span><strong>Dates and names embedded</strong> — photos land in the right spot on your timeline automatically</span></li>
+      <li><span class="what-check">✓</span><span><strong>Delivered to your phone</strong> — one link drops everything into Google Photos or Apple Photos</span></li>
+      <li><span class="what-check">✓</span><span><strong>Originals returned organized</strong> — sorted, labeled, protected</span></li>
+      <li><span class="what-check">✓</span><span><strong>48-hour turnaround</strong> — your photos stay in Los Angeles the entire time</span></li>
+    </ul>
+    <p style="margin-top:1rem;color:var(--ash);font-size:0.88rem;font-style:italic">Your memories, safely stashed.</p>
+  </div>
+</section>
+
+<!-- Pricing lives on its own page -->
+<section class="bg-bone" id="pricing" style="text-align:center">
+  <div class="wrap">
+    <h2>Simple, transparent pricing.</h2>
+    <p>$1 per photo. No subscriptions, no hidden fees, no surprises.</p>
+    <a href="/pricing2.html" style="display:inline-block;margin-top:1rem;background:var(--acorn);color:var(--bone);padding:0.75rem 1.75rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:0.95rem;">See full pricing →</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="bg-dark" id="contact" style="text-align:center">
+  <div class="wrap">
+    <h2>Ready to get started?</h2>
+    <p>Every consultation is free. No pressure, ever.</p>
+    <p style="margin-top:1rem">
+      <a href="tel:+12132902327" class="contact-email">(213) 290-2327</a>
+    </p>
+    <p style="margin-top:0.4rem">
+      <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');" class="contact-phone">hello@scansquirrel.com</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHERE I WORK
+     ============================================================ -->
+<section class="bg-bone">
+  <div class="wrap">
+    <h2>Where I work.</h2>
+    <p>Based in Eagle Rock. Serving Northeast LA, Pasadena, and the surrounding area.</p>
+    <div class="area-list">
+      <span class="area-pill">Eagle Rock</span>
+      <span class="area-pill">Highland Park</span>
+      <span class="area-pill">Glassell Park</span>
+      <span class="area-pill">Pasadena</span>
+      <span class="area-pill">Altadena</span>
+      <span class="area-pill">Silver Lake</span>
+      <span class="area-pill">Los Feliz</span>
+      <span class="area-pill">Glendale</span>
+      <span class="area-pill">Atwater Village</span>
+      <span class="area-pill">Mt. Washington</span>
+    </div>
+    <p style="margin-top:0.75rem;color:var(--ash);font-size:0.9rem">Somewhere else in LA? Reach out anyway — I'm flexible.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo"><img src="/img/logos/footer_bone_on_feather.png" alt="Scan Squirrel"></a>
+    <p class="ft">Gathered. Organized. Preserved.</p>
+    <div class="footer-cta">
+      <a href="mailto:hello@scansquirrel.com" onclick="return gtag_report_conversion('mailto:hello@scansquirrel.com');">Email</a>
+      <a href="tel:+12132902327">Call</a>
+      <a href="sms:+12132902327">Text</a>
+    </div>
+    <p class="footer-legal"><a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/release.html">Release Agreement</a></p>
+    <p class="footer-copy">&copy; 2026 Scan Squirrel &middot; Los Angeles, CA</p>
+    <p class="footer-credit">All photographs displayed with permission. Please do not reproduce.</p>
+  </div>
+</footer>
+<script src="/js/nav-loader.js"></script>
+</body>
+</html>
