@@ -80,7 +80,7 @@ fbq('init','2148206675947024');fbq('track','PageView');
   .v-header { display: none; }
   .v-crow { grid-template-columns: 1fr 1fr; }
   .v-feat { grid-column: 1 / -1; }
-  .v-you::before { content: "Your neighbor"; display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--teal); font-weight: 800; margin-bottom: 0.25rem; }
+  .v-you::before { content: "Max"; display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--teal); font-weight: 800; margin-bottom: 0.25rem; }
   .v-them::before { content: "Big Box Digitizers"; display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ash); font-weight: 800; margin-bottom: 0.25rem; }
 }
 
@@ -98,11 +98,11 @@ fbq('init','2148206675947024');fbq('track','PageView');
 @media (max-width: 640px) { .v-quotes { grid-template-columns: 1fr; } }
 
 /* ── HERO B: confrontation ── */
-.v-versus { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin: 1.6rem auto 0; }
-.v-vs-side { margin: 0; text-align: center; }
+.v-versus { display: flex; align-items: flex-end; justify-content: center; gap: 1.5rem; margin: 1.6rem auto 0; }
+.v-vs-side { margin: 0; text-align: center; display: flex; flex-direction: column; justify-content: flex-end; }
 .v-vs-side img { width: 150px; height: auto; }
-.v-vs-side figcaption { margin-top: 0.5rem; font-weight: 700; font-size: 0.9rem; color: var(--bark); }
-.v-vs-word { font-size: 1.4rem; font-weight: 800; color: var(--ash); }
+.v-vs-side figcaption { margin-top: 0.5rem; font-weight: 700; font-size: 0.9rem; color: var(--bark); min-height: 1.2em; }
+.v-vs-word { font-size: 1.4rem; font-weight: 800; color: var(--ash); align-self: center; margin-bottom: 1.6rem; }
 .v-box { width: 150px; margin: 0 auto; }
 .v-box-lid { height: 0; width: 78%; margin: 0 auto; border-left: 17px solid transparent; border-right: 17px solid transparent; border-bottom: 22px solid #b07c46; }
 .v-box-body { height: 96px; background: linear-gradient(#d6ac7c, #c4925f); border: 2px solid #a9774a; border-top: none; position: relative; }
@@ -179,14 +179,14 @@ fbq('init','2148206675947024');fbq('track','PageView');
   <section class="v-sec v-bone">
     <div class="wrap-wide v-center">
       <span class="label">The honest comparison</span>
-      <h2>Your neighbor vs. the Big Box Digitizers</h2>
+      <h2>Max vs. the Big Box Digitizers</h2>
       <div class="v-compare">
         <div class="v-crow v-header">
           <div class="v-feat">&nbsp;</div>
-          <div class="v-you">Your neighbor</div>
+          <div class="v-you">Max</div>
           <div class="v-them">The Big Box Digitizers</div>
         </div>
-        <div class="v-crow"><div class="v-feat">Local</div><div class="v-you">A real neighbor here in LA</div><div class="v-them">A warehouse two time zones away</div></div>
+        <div class="v-crow"><div class="v-feat">Local</div><div class="v-you">A real neighbor here in LA</div><div class="v-them">Hundreds of miles away</div></div>
         <div class="v-crow"><div class="v-feat">Speed</div><div class="v-you">Back in about 48 hours</div><div class="v-them">Gone, typically 4&ndash;6 weeks</div></div>
         <div class="v-crow"><div class="v-feat">Personal care</div><div class="v-you">I scan your photos myself, by hand</div><div class="v-them">Batch-run with thousands of strangers'</div></div>
         <div class="v-crow"><div class="v-feat">AI-enhanced</div><div class="v-you">Enhanced to look their best &mdash; with you in the loop</div><div class="v-them">AI-enhanced too &mdash; but without a word to you</div></div>
@@ -218,11 +218,11 @@ fbq('init','2148206675947024');fbq('track','PageView');
         </div>
         <div class="v-quote">
           <p>&ldquo;Going with someone local was the whole reason I reached out, and it paid off &mdash; fast turnaround, and the photos came back looking fantastic.&rdquo;</p>
-          <span class="v-cite">&mdash; Frederic, Eagle Rock</span>
+          <span class="v-cite">&mdash; Freddie, Eagle Rock</span>
         </div>
         <div class="v-quote">
           <p>&ldquo;No shipping, no hassle. Max picked everything up and had it back to me in two days. So much easier than mailing my photos off somewhere.&rdquo;</p>
-          <span class="v-cite">&mdash; Brian</span>
+          <span class="v-cite">&mdash; Brian, Glassell Park</span>
         </div>
         <div class="v-quote">
           <p>&ldquo;Incredibly fast turnaround and super responsive the whole way through. We met up twice and it was easy every step of the way.&rdquo;</p>
@@ -257,11 +257,6 @@ fbq('init','2148206675947024');fbq('track','PageView');
       <span class="label">Let's connect</span>
       <h2>Ready when you are.</h2>
       <p style="margin-top:0.6rem">Tell me what you've got &mdash; a shoebox, a closet, a lifetime. Email, call, or text and we'll get started.</p>
-      <div class="v-buttons">
-        <a class="v-btn-fill" href="mailto:hello@scansquirrel.com" onclick="gtag('event','conversion',{'send_to':'AW-17990603569/MyWeCNm7ybgcELGmy4JD'});">Email</a>
-        <a class="v-btn-out" href="tel:+12132902327" onclick="gtag('event','conversion',{'send_to':'AW-17990603569/QULVCOeUgMEcELGmy4JD'});" style="color:var(--bone);border-color:var(--bone)">Call</a>
-        <a class="v-btn-fill" href="sms:+12132902327" onclick="gtag('event','conversion',{'send_to':'AW-17990603569/JB9MCOqUgMEcELGmy4JD'});">Text</a>
-      </div>
     </div>
   </section>
 
