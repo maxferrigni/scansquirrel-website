@@ -4,96 +4,151 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scan Squirrel — What would you like to digitize?</title>
-<meta name="description" content="Tell us what you have. Scan it yourself, or get help from a local Squirrel.">
+<meta name="description" content="Tell us what you have. We'll give you a simple plan — scan it yourself, prepare it safely, or find someone local.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=DM+Sans:wght@400;500;600;700&display=swap">
 
 <style>
-/* ═══ index9 — skeleton: intake only (test) ═══ */
+/* ═══ index9 — calm minimalist front door (test) ═══ */
 :root {
-  --ink:   #1a1a1a;
-  --mute:  #6b6660;
-  --line:  #e6e2da;
-  --acorn: #8b5e3c;
-  --acorn2:#a0693f;
-  --teal:  #2c6e6a;
+  --bone:   #f0ebe3;
+  --warm:   #f5f0e8;
+  --cream:  #e8e1d5;
+  --feather:#2a2a2a;
+  --ink:    #1a1a1a;
+  --ash:    #6b6660;
+  --acorn:  #8b5e3c;
+  --acorn2: #a0693f;
+  --teal:   #2c6e6a;
+  --nest:   #d4c9b8;
+  --line:   rgba(42,42,42,0.12);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Hanken Grotesk', -apple-system, sans-serif;
-  color: var(--ink); background: #fff; line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink); background: var(--bone);
+  line-height: 1.55; -webkit-font-smoothing: antialiased;
   min-height: 100vh; display: flex; flex-direction: column;
 }
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.01em; }
 
-/* NAV — logo only */
-.nav { padding: 1.5rem; }
-.nav .brand { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.01em; text-decoration: none; color: var(--ink); }
+/* ── main column ── */
+.page { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3rem 1.5rem 4rem; }
+.col { width: 100%; max-width: 600px; }
 
-/* HERO / INTAKE — the whole page */
-.hero { flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem 1.5rem 5rem; }
-.center { width: 100%; max-width: 560px; text-align: center; }
-.hero h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 1rem; }
-.hero .sub { font-size: 1.1rem; color: var(--mute); margin-bottom: 2.5rem; }
+.wordmark { font-family: 'Fraunces', serif; font-size: 1.35rem; color: var(--ink); text-decoration: none; }
+.wordmark b { color: var(--teal); font-weight: 500; }
 
+.frame { margin: 2.4rem auto 1.4rem; width: 44px; height: 44px; }
+.frame svg { display: block; }
+
+.mission { font-size: 0.98rem; color: var(--ash); max-width: 30rem; margin: 0 auto 1.6rem; }
+
+h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); line-height: 1.06; margin-bottom: 1rem; }
+.sub { font-size: 1.12rem; color: var(--ink); max-width: 32rem; margin: 0 auto 2.4rem; }
+
+/* ── prompt box ── */
 .intake { text-align: left; }
-.intake textarea {
-  width: 100%; min-height: 120px; padding: 1rem 1.1rem;
-  border: 1px solid var(--line); border-radius: 12px;
-  font: inherit; font-size: 1rem; color: var(--ink); background: #fff; resize: vertical;
+textarea {
+  width: 100%; min-height: 132px; padding: 1.2rem 1.3rem;
+  border: 1px solid var(--line); border-radius: 16px;
+  font: inherit; font-size: 1.05rem; line-height: 1.6; color: var(--ink);
+  background: var(--warm); resize: vertical;
 }
-.intake textarea::placeholder { color: #a8a29a; }
-.intake textarea:focus { outline: none; border-color: var(--ink); }
-.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
-.chip { font: inherit; font-size: 0.88rem; font-weight: 500; padding: 0.45rem 0.9rem; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--mute); cursor: pointer; }
+textarea::placeholder { color: #a89e90; }
+textarea:focus { outline: none; border-color: var(--acorn); background: #fff; }
+
+/* category chips — quiet */
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.chip {
+  font: inherit; font-size: 0.9rem; font-weight: 500;
+  padding: 0.45rem 0.95rem; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--bone); color: var(--ash); cursor: pointer; transition: all 0.15s ease;
+}
 .chip:hover { border-color: var(--acorn); color: var(--acorn); }
-.chip.on { background: var(--acorn); border-color: var(--acorn); color: #fff; }
-.chip.on:hover { background: var(--acorn2); border-color: var(--acorn2); color: #fff; }
+.chip.on { background: var(--acorn); border-color: var(--acorn); color: var(--bone); }
+.chip.on:hover { background: var(--acorn2); border-color: var(--acorn2); color: var(--bone); }
 
-/* suggestions — prime the box */
-.suggest { margin-top: 0.9rem; font-size: 0.9rem; color: var(--mute); }
-.suggest .lbl { margin-right: 0.4rem; }
-.sugg { font: inherit; font-size: 0.9rem; background: none; border: none; padding: 0; color: var(--acorn); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
-.sugg + .sugg { margin-left: 0.9rem; }
-@media (max-width: 560px){ .sugg { display: block; margin: 0.35rem 0 0; } .sugg + .sugg { margin-left: 0; } }
-.go-row { display: flex; align-items: center; gap: 1rem; margin-top: 1.4rem; flex-wrap: wrap; }
-.btn { font: inherit; font-size: 0.98rem; font-weight: 600; padding: 0.8rem 1.6rem; border: none; border-radius: 10px; background: var(--acorn); color: #fff; cursor: pointer; text-decoration: none; }
+/* example prompts */
+.suggest { margin-top: 1rem; font-size: 0.92rem; color: var(--ash); }
+.suggest .lbl { display: block; margin-bottom: 0.4rem; }
+.sugg {
+  font: inherit; font-size: 0.9rem; background: var(--cream); border: 1px solid transparent;
+  padding: 0.4rem 0.8rem; border-radius: 999px; color: var(--acorn); cursor: pointer;
+  margin: 0 0.4rem 0.45rem 0; transition: background 0.15s ease;
+}
+.sugg:hover { background: #ded5c6; }
+
+/* CTA */
+.go-row { margin-top: 1.8rem; text-align: center; }
+.btn {
+  font: inherit; font-size: 1.02rem; font-weight: 600;
+  padding: 0.9rem 2rem; border: none; border-radius: 12px;
+  background: var(--acorn); color: var(--bone); cursor: pointer; text-decoration: none;
+  transition: background 0.2s ease;
+}
 .btn:hover { background: var(--acorn2); }
-.btn.ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
-.btn.ghost:hover { border-color: var(--ink); }
-.reassure { font-size: 0.88rem; color: var(--mute); }
+.btn.ghost { background: transparent; color: var(--nest); border: 1px solid rgba(212,201,184,0.4); }
+.btn.ghost:hover { background: rgba(212,201,184,0.12); color: var(--nest); }
+.reassure { display: block; font-size: 0.9rem; color: var(--ash); margin-top: 0.9rem; }
 
-/* CONVERSATION */
+/* three steps */
+.steps { display: flex; justify-content: center; gap: 2.4rem; margin-top: 3.5rem; flex-wrap: wrap; }
+.step { max-width: 9rem; }
+.step .n { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--teal); display: block; margin-bottom: 0.3rem; }
+.step p { font-size: 0.9rem; color: var(--ash); line-height: 1.45; }
+
+/* ── conversation (revealed) ── */
 .convo { display: none; text-align: left; }
 .convo.show { display: block; }
 .bubble { margin-bottom: 1rem; }
-.bubble.ai .who { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.35rem; }
-.bubble.ai .msg { font-size: 1.02rem; line-height: 1.55; }
+.bubble.ai .who { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; color: var(--teal); margin-bottom: 0.35rem; }
+.bubble.ai .msg { font-size: 1.05rem; line-height: 1.55; }
 .bubble.me { text-align: right; }
-.bubble.me .msg { display: inline-block; background: #f4f2ee; border-radius: 12px; padding: 0.6rem 1rem; font-size: 0.95rem; max-width: 85%; text-align: left; }
+.bubble.me .msg { display: inline-block; background: var(--cream); border-radius: 14px; padding: 0.6rem 1rem; font-size: 0.98rem; max-width: 85%; text-align: left; }
 .answers { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.3rem 0 1.4rem; }
 .zip-row { display: flex; gap: 0.5rem; margin-bottom: 1.4rem; }
-.zip-row input { flex: 1; padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 0.98rem; }
-.zip-row input:focus { outline: none; border-color: var(--ink); }
-.g-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.8rem; }
-.restart { margin-top: 1.2rem; font: inherit; font-size: 0.85rem; color: var(--mute); background: none; border: none; cursor: pointer; }
-.restart:hover { color: var(--ink); }
+.zip-row input { flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--line); border-radius: 10px; font: inherit; font-size: 1rem; background: var(--warm); }
+.zip-row input:focus { outline: none; border-color: var(--acorn); }
+.g-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
+.restart { margin-top: 1.3rem; font: inherit; font-size: 0.85rem; color: var(--ash); background: none; border: none; cursor: pointer; }
+.restart:hover { color: var(--acorn); }
 
-/* FOOTER — minimal */
-.foot { padding: 1.5rem; text-align: center; font-size: 0.82rem; color: var(--mute); }
-.foot a { color: var(--mute); text-decoration: none; }
+/* ── dark operator band ── */
+.operator { background: var(--feather); color: var(--nest); text-align: center; padding: 3rem 1.5rem; }
+.operator .inner { max-width: 460px; margin: 0 auto; }
+.operator h3 { font-size: 1.6rem; color: var(--bone); margin-bottom: 0.6rem; }
+.operator p { font-size: 0.98rem; color: var(--nest); margin-bottom: 1.3rem; }
+.operator .indep { font-size: 0.82rem; color: #9a9488; margin-top: 2rem; line-height: 1.5; }
+.foot { margin-top: 1.6rem; font-size: 0.85rem; color: var(--nest); }
+.foot a { color: var(--nest); text-decoration: none; }
+.foot a:hover { color: var(--bone); }
+.foot .tags { font-size: 0.78rem; color: #9a9488; margin-top: 0.5rem; }
 </style>
 </head>
 <body>
 
-<nav class="nav"><a class="brand" href="/">Scan Squirrel</a></nav>
+<main class="page">
+  <div class="col">
+    <a class="wordmark" href="/">Scan <b>Squirrel</b></a>
 
-<main class="hero">
-  <div class="center">
+    <div class="frame" aria-hidden="true">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#8b5e3c" stroke-width="1.4" style="transform:rotate(-7deg);">
+        <rect x="7" y="7" width="30" height="30" rx="2"/>
+        <rect x="12" y="12" width="20" height="20" rx="1"/>
+        <path d="M12 27l6-6 4 4 5-6 5 6"/>
+        <circle cx="18" cy="17.5" r="1.6"/>
+      </svg>
+    </div>
+
+    <p class="mission">Old photos fade, scatter, and get lost. Scan Squirrel helps you preserve them before that happens.</p>
+
     <h1>What would you like to digitize?</h1>
-    <p class="sub">Tell us what you have. We'll help you scan it yourself or find someone local.</p>
+    <p class="sub">Tell us what you have. We'll give you a simple plan — scan it yourself, prepare it safely, or find someone local.</p>
 
+    <!-- prompt -->
     <div class="intake" id="intake">
       <textarea id="projText" placeholder="Three shoeboxes of family photos, two albums, and some old slides — Pasadena, not sure where to begin."></textarea>
       <div class="chips" id="typeChips">
@@ -109,27 +164,47 @@ body {
         <button class="sugg" type="button" onclick="fillBox(this)">3 shoeboxes of family photos in Pasadena</button>
         <button class="sugg" type="button" onclick="fillBox(this)">A box of old slides and negatives</button>
         <button class="sugg" type="button" onclick="fillBox(this)">My grandma's photo albums</button>
+        <button class="sugg" type="button" onclick="fillBox(this)">Old family documents and photos</button>
+        <button class="sugg" type="button" onclick="fillBox(this)">Albums I'm afraid to take apart</button>
       </div>
       <div class="go-row">
-        <button class="btn" onclick="startConvo()">Get Guidance</button>
+        <button class="btn" onclick="startConvo()">Get guidance</button>
         <span class="reassure">Free advice. No account needed.</span>
       </div>
     </div>
 
+    <!-- conversation -->
     <div class="convo" id="convo"></div>
+
+    <!-- three steps -->
+    <div class="steps" id="steps">
+      <div class="step"><span class="n">1</span><p>Describe what you have</p></div>
+      <div class="step"><span class="n">2</span><p>Get a simple scanning plan</p></div>
+      <div class="step"><span class="n">3</span><p>Scan it yourself or find local help</p></div>
+    </div>
   </div>
 </main>
 
-<footer class="foot"><a href="mailto:hello@scansquirrel.com">hello@scansquirrel.com</a> &middot; <a href="tel:+12132902327">(213) 290-2327</a></footer>
+<!-- operator band -->
+<section class="operator">
+  <div class="inner">
+    <h3>Become a squirrel</h3>
+    <p>Use Scan Squirrel tools to help people preserve old photos locally.</p>
+    <a class="btn ghost" href="#">Learn about becoming a squirrel</a>
+    <p class="indep">Local operators are independent and set their own pricing, scheduling, and services.</p>
+    <div class="foot">
+      <a href="mailto:hello@scansquirrel.com">hello@scansquirrel.com</a> &middot; <a href="tel:+12132902327">(213) 290-2327</a>
+      <div class="tags">Free guidance &middot; Local operators &middot; Scan it yourself</div>
+    </div>
+  </div>
+</section>
 
 <script>
-/* ── CAPTURE: paste your endpoint URL below to start recording what people type.
-   Easiest: make a free form at formspree.io (30 sec) and paste its URL here.
-   Until then, submissions are just logged to the browser console. ── */
+/* ── CAPTURE: paste an endpoint URL to record what people type
+   (free form at formspree.io → paste its URL here). Until then, console only. ── */
 var LOG_URL = '';
 function logIt(data){
   data.ts = new Date().toISOString();
-  data.ua = navigator.userAgent;
   if (LOG_URL){ try { fetch(LOG_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) }); } catch(e){} }
   else { console.log('[intake]', data); }
 }
@@ -143,12 +218,16 @@ document.querySelectorAll('#typeChips .chip').forEach(function(c){
     else selectedTypes = selectedTypes.filter(function(x){ return x !== t; });
   });
 });
+
 var convo = document.getElementById('convo'), state = {};
 function aiBubble(html){ var d=document.createElement('div'); d.className='bubble ai'; d.innerHTML='<div class="who">Scan Squirrel</div><div class="msg">'+html+'</div>'; convo.appendChild(d); d.scrollIntoView({behavior:'smooth',block:'center'}); }
 function meBubble(t){ var d=document.createElement('div'); d.className='bubble me'; d.innerHTML='<div class="msg">'+t+'</div>'; convo.appendChild(d); }
 function answerRow(options, cb){ var row=document.createElement('div'); row.className='answers'; options.forEach(function(opt){ var b=document.createElement('button'); b.className='chip'; b.textContent=opt; b.onclick=function(){ row.remove(); meBubble(opt); cb(opt); }; row.appendChild(b); }); convo.appendChild(row); row.scrollIntoView({behavior:'smooth',block:'center'}); }
+
 function startConvo(){
-  document.getElementById('intake').style.display='none'; convo.classList.add('show');
+  document.getElementById('intake').style.display='none';
+  document.getElementById('steps').style.display='none';
+  convo.classList.add('show');
   var txt=document.getElementById('projText').value.trim();
   var opening = txt || (selectedTypes.length ? selectedTypes.join(', ') : 'A mix of old photos and film');
   state.text = txt; state.types = selectedTypes.slice();
@@ -167,7 +246,7 @@ function q3(p){ state.pref=p; setTimeout(function(){
 function guidance(){
   var hours = state.size==='A closet full' ? '25–40 hours' : state.size==='A few albums' ? '5–10 hours' : '15–25 hours';
   setTimeout(function(){
-    aiBubble("Looks like a <b>medium mixed collection</b>. Doing it yourself well runs about <b>"+hours+"</b> and often needs a film scanner.<br><br>Use Scan Squirrel <b>free for your first 100 photos</b>, or get a quote from a local Squirrel with the gear.<br><br><span style='font-size:0.85rem;color:var(--mute);'>General guidance, not a final price — your Squirrel confirms that.</span><div class='g-actions'><a class='btn' href='#'>Scan 100 Photos Free</a><a class='btn ghost' href='#'>Get a Local Quote</a></div>");
+    aiBubble("Looks like a <b>medium mixed collection</b>. Doing it yourself well runs about <b>"+hours+"</b> and often needs a film scanner.<br><br>You can scan it yourself with Scan Squirrel, or connect with an independent local operator who has the right equipment.<br><br><span style='font-size:0.85rem;color:var(--ash);'>General guidance, not a final price — operators set their own pricing.</span><div class='g-actions'><a class='btn' href='#'>Start scanning</a><a class='btn ghost' style='color:var(--acorn);border-color:var(--line);' href='#'>Find local help</a></div>");
     var r=document.createElement('button'); r.className='restart'; r.textContent='↺ Start over'; r.onclick=function(){ location.reload(); }; convo.appendChild(r);
   },450);
 }
