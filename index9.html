@@ -76,7 +76,9 @@ h3 { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.01em; 
 
 /* ── dark operator band ── */
 .operator { background: var(--feather); color: var(--nest); text-align: center; padding: 3rem 1.5rem; }
-.operator .inner { max-width: 380px; margin: 0 auto; }
+.operator .inner { max-width: 480px; margin: 0 auto; }
+.operator .mission { font-family: 'Fraunces', serif; font-size: 1.2rem; line-height: 1.6; color: var(--bone); max-width: 28rem; margin: 0 auto; text-wrap: balance; }
+.operator .rule { border: none; border-top: 1px solid rgba(212,201,184,0.18); width: 110px; margin: 2.6rem auto; }
 .operator h3 { font-size: 1.6rem; color: var(--bone); margin-bottom: 0.5rem; }
 .operator p { font-size: 0.98rem; color: var(--nest); margin: 0 auto 1.3rem; max-width: 22rem; text-wrap: balance; }
 .operator .btn.ghost { color: var(--nest); border-color: rgba(212,201,184,0.4); }
@@ -86,6 +88,7 @@ h3 { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.01em; 
 .foot a { color: var(--nest); text-decoration: none; }
 .foot a:hover { color: var(--bone); }
 .foot .tags { font-size: 0.78rem; color: #9a9488; margin-top: 0.5rem; }
+.foot .copy { font-size: 0.78rem; color: #9a9488; margin-top: 0.6rem; }
 </style>
 </head>
 <body>
@@ -98,7 +101,7 @@ h3 { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.01em; 
       <input class="searchbox" id="projText" type="text" autocomplete="off"
              placeholder="What would you like to digitize?"
              onkeydown="if(event.key==='Enter'){event.preventDefault();startConvo();}">
-      <p class="tagline">Scan your own photos, or find a skilled local Squirrel with the right gear to do it for you.</p>
+      <p class="tagline">Tell us what you have — we'll suggest a simple plan, a quote, or a local Squirrel nearby.</p>
     </div>
 
     <div class="convo" id="convo"></div>
@@ -108,6 +111,10 @@ h3 { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.01em; 
 <!-- operator band -->
 <section class="operator">
   <div class="inner">
+    <p class="mission">Scan Squirrel began after the Palisades and Altadena fires — a simple project to help people preserve old photos, slides, documents, and family records before they're gone.</p>
+
+    <hr class="rule">
+
     <h3>Become a squirrel</h3>
     <p>Have a scanner? Use Scan Squirrel's tools to preserve memories for your neighbors — and earn.</p>
     <a class="btn ghost" href="#">Learn about becoming a squirrel</a>
@@ -115,6 +122,7 @@ h3 { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.01em; 
     <div class="foot">
       <a href="mailto:hello@scansquirrel.com">hello@scansquirrel.com</a> &middot; <a href="tel:+12132902327">(213) 290-2327</a>
       <div class="tags">Free guidance &middot; Local operators &middot; Scan it yourself</div>
+      <div class="copy">&copy; 2026 Scan Squirrel</div>
     </div>
   </div>
 </section>
