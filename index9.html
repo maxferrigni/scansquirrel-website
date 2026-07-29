@@ -47,7 +47,16 @@ body {
 .intake textarea:focus { outline: none; border-color: var(--ink); }
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
 .chip { font: inherit; font-size: 0.88rem; font-weight: 500; padding: 0.45rem 0.9rem; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--mute); cursor: pointer; }
-.chip:hover, .chip.on { border-color: var(--ink); color: var(--ink); }
+.chip:hover { border-color: var(--acorn); color: var(--acorn); }
+.chip.on { background: var(--acorn); border-color: var(--acorn); color: #fff; }
+.chip.on:hover { background: var(--acorn2); border-color: var(--acorn2); color: #fff; }
+
+/* suggestions — prime the box */
+.suggest { margin-top: 0.9rem; font-size: 0.9rem; color: var(--mute); }
+.suggest .lbl { margin-right: 0.4rem; }
+.sugg { font: inherit; font-size: 0.9rem; background: none; border: none; padding: 0; color: var(--acorn); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.sugg + .sugg { margin-left: 0.9rem; }
+@media (max-width: 560px){ .sugg { display: block; margin: 0.35rem 0 0; } .sugg + .sugg { margin-left: 0; } }
 .go-row { display: flex; align-items: center; gap: 1rem; margin-top: 1.4rem; flex-wrap: wrap; }
 .btn { font: inherit; font-size: 0.98rem; font-weight: 600; padding: 0.8rem 1.6rem; border: none; border-radius: 10px; background: var(--acorn); color: #fff; cursor: pointer; text-decoration: none; }
 .btn:hover { background: var(--acorn2); }
@@ -95,6 +104,12 @@ body {
         <button class="chip" type="button">Albums</button>
         <button class="chip" type="button">Not sure</button>
       </div>
+      <div class="suggest">
+        <span class="lbl">Not sure what to say? Try:</span>
+        <button class="sugg" type="button" onclick="fillBox(this)">3 shoeboxes of family photos in Pasadena</button>
+        <button class="sugg" type="button" onclick="fillBox(this)">A box of old slides and negatives</button>
+        <button class="sugg" type="button" onclick="fillBox(this)">My grandma's photo albums</button>
+      </div>
       <div class="go-row">
         <button class="btn" onclick="startConvo()">Get Guidance</button>
         <span class="reassure">Free advice. No account needed.</span>
@@ -108,6 +123,18 @@ body {
 <footer class="foot"><a href="mailto:hello@scansquirrel.com">hello@scansquirrel.com</a> &middot; <a href="tel:+12132902327">(213) 290-2327</a></footer>
 
 <script>
+/* ── CAPTURE: paste your endpoint URL below to start recording what people type.
+   Easiest: make a free form at formspree.io (30 sec) and paste its URL here.
+   Until then, submissions are just logged to the browser console. ── */
+var LOG_URL = '';
+function logIt(data){
+  data.ts = new Date().toISOString();
+  data.ua = navigator.userAgent;
+  if (LOG_URL){ try { fetch(LOG_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) }); } catch(e){} }
+  else { console.log('[intake]', data); }
+}
+function fillBox(el){ var t = document.getElementById('projText'); t.value = el.textContent; t.focus(); }
+
 var selectedTypes = [];
 document.querySelectorAll('#typeChips .chip').forEach(function(c){
   c.addEventListener('click', function(){
@@ -123,7 +150,10 @@ function answerRow(options, cb){ var row=document.createElement('div'); row.clas
 function startConvo(){
   document.getElementById('intake').style.display='none'; convo.classList.add('show');
   var txt=document.getElementById('projText').value.trim();
-  meBubble(txt || (selectedTypes.length ? selectedTypes.join(', ') : 'A mix of old photos and film'));
+  var opening = txt || (selectedTypes.length ? selectedTypes.join(', ') : 'A mix of old photos and film');
+  state.text = txt; state.types = selectedTypes.slice();
+  logIt({ event:'started', text: txt, types: selectedTypes.slice() });
+  meBubble(opening);
   setTimeout(function(){ aiBubble("Got it. A couple of quick questions.<br><br><b>Roughly how much do you have?</b>"); answerRow(['A shoebox or two','A closet full','A few albums','Not sure'], q2); },350);
 }
 function q2(s){ state.size=s; setTimeout(function(){ aiBubble("<b>Scan it yourself, or get local help?</b>"); answerRow(['Myself','Get help','Help me decide'], q3); },300); }
@@ -131,7 +161,7 @@ function q3(p){ state.pref=p; setTimeout(function(){
   aiBubble("<b>What ZIP code are you in?</b>");
   var row=document.createElement('div'); row.className='zip-row';
   row.innerHTML='<input id="zipIn" inputmode="numeric" maxlength="5" placeholder="91101"><button class="btn" type="button">Check</button>';
-  row.querySelector('button').onclick=function(){ var z=row.querySelector('#zipIn').value.trim()||'91101'; row.remove(); meBubble(z); guidance(); };
+  row.querySelector('button').onclick=function(){ var z=row.querySelector('#zipIn').value.trim()||'91101'; state.zip=z; logIt({ event:'completed', text: state.text, types: state.types, size: state.size, pref: state.pref, zip: z }); row.remove(); meBubble(z); guidance(); };
   convo.appendChild(row); row.querySelector('#zipIn').focus(); row.scrollIntoView({behavior:'smooth',block:'center'});
 },300); }
 function guidance(){
