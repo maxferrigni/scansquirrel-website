@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan Squirrel — Digitize your old photos, yourself or with local help</title>
+<meta name="description" content="Scan up to 100 photos yourself for free with Scan Squirrel's software, or get a quote from a trusted local Squirrel who has the equipment and does the work for you.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/css/base.css">
+
+<style>
+/* ── index8 — tools + local Squirrel platform (test) ── */
+section { padding: 3rem 1.5rem; }
+.w8 { max-width: 900px; margin: 0 auto; }
+.w8-narrow { max-width: 660px; margin: 0 auto; }
+
+.call-top { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; padding: 1rem 1.5rem 0; }
+.call-top .brand { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+.call-top .brand span { color: var(--teal); }
+.call-top a.call { font-weight: 700; font-size: 0.9rem; color: var(--acorn); text-decoration: none; }
+
+/* HERO */
+.hero8 { text-align: center; }
+.hero8 h1 { font-size: clamp(2.1rem, 5.5vw, 2.9rem); font-weight: 400; line-height: 1.1; color: var(--ink); max-width: 720px; margin: 0.5rem auto 0.8rem; }
+.hero8 .sub { font-size: 1.12rem; line-height: 1.55; color: var(--feather); max-width: 580px; margin: 0 auto 1.6rem; }
+.hero8 .sub strong { color: var(--ink); font-weight: 600; }
+.cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-bottom: 1.6rem; }
+.btn-solid { background: var(--acorn); color: var(--warm); font-weight: 700; font-size: 1rem; padding: 0.9rem 1.7rem; border-radius: var(--radius-small); text-decoration: none; border: none; cursor: pointer; transition: background 0.2s ease; }
+.btn-solid:hover { background: var(--acorn-bright); color: var(--warm); }
+.btn-teal { background: var(--teal); color: #fff; font-weight: 700; font-size: 1rem; padding: 0.9rem 1.7rem; border-radius: var(--radius-small); text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s ease; }
+.btn-teal:hover { opacity: 0.9; color: #fff; }
+
+/* ZIP finder */
+.zip { max-width: 460px; margin: 0 auto; }
+.zip .prompt { font-size: 0.95rem; font-weight: 600; color: var(--feather); margin-bottom: 0.6rem; }
+.zip form { display: flex; gap: 0.5rem; }
+.zip input { flex: 1; padding: 0.85rem 1rem; border: 1.5px solid var(--line-strong); border-radius: var(--radius-small); font-size: 1rem; background: #fff; }
+.zip input:focus { outline: none; border-color: var(--teal); }
+.zip button { background: var(--acorn); color: var(--warm); font-weight: 700; padding: 0 1.3rem; border: none; border-radius: var(--radius-small); cursor: pointer; }
+.zip button:hover { background: var(--acorn-bright); }
+
+/* SQUIRREL PROFILE reveal */
+.profile-wrap { display: none; margin-top: 2rem; }
+.profile-wrap.show { display: block; animation: fade 0.3s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.profile { display: grid; grid-template-columns: 200px 1fr; gap: 1.6rem; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-soft); padding: 1.6rem; text-align: left; }
+.profile .photo { width: 100%; aspect-ratio: 1; border-radius: 12px; border: 2px dashed rgba(139,94,60,0.35); background: var(--warm); display: flex; align-items: center; justify-content: center; color: var(--branch); font-size: 0.8rem; text-align: center; padding: 0.5rem; }
+.profile .eyebrow2 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); }
+.profile h3 { font-size: 1.7rem; font-weight: 400; margin: 0.2rem 0 0.3rem; }
+.profile .serves { font-size: 0.92rem; color: var(--ash); margin-bottom: 0.8rem; }
+.profile .bio { font-size: 0.95rem; color: var(--feather); line-height: 1.55; margin-bottom: 1rem; }
+.profile .meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-bottom: 1rem; }
+.profile .meta span { font-size: 0.85rem; color: var(--feather); }
+.profile .meta b { color: var(--teal); }
+.profile .stars { color: var(--acorn); font-size: 0.9rem; letter-spacing: 0.08em; }
+.profile .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.profile .actions .avail { font-size: 0.82rem; font-weight: 600; color: #2c6e6a; background: rgba(44,110,106,0.1); padding: 0.4rem 0.8rem; border-radius: 999px; align-self: center; }
+
+/* TWO CHOICES explainer */
+.choices { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.choice { background: var(--bone); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 1.6rem 1.5rem; }
+.choice.help { border-top: 3px solid var(--acorn); }
+.choice.diy { border-top: 3px solid var(--teal); }
+.choice h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.choice p { font-size: 0.93rem; color: var(--feather); line-height: 1.55; margin-bottom: 1rem; }
+.choice a { font-weight: 700; font-size: 0.9rem; color: var(--acorn); text-decoration: none; }
+.choice.diy a { color: var(--teal); }
+
+/* BECOME A SQUIRREL strip */
+.becomestrip { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; max-width: 820px; margin: 0 auto; background: var(--warm); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 1.4rem 1.6rem; }
+.becomestrip .t h3 { font-size: 1.2rem; margin-bottom: 0.2rem; }
+.becomestrip .t p { font-size: 0.9rem; color: var(--ash); margin: 0; max-width: 44ch; }
+
+/* POSITIONING band */
+.posit { text-align: center; }
+.posit .label { color: #5dcaa5; }
+.posit h2 { color: var(--bone); font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 400; max-width: 600px; margin: 0.6rem auto 0; line-height: 1.25; }
+.posit h2 strong { color: #5dcaa5; font-weight: 400; }
+
+.mini-foot { text-align: center; padding: 1.6rem; font-size: 0.82rem; color: var(--ash); }
+.mini-foot a { color: var(--teal); text-decoration: none; }
+
+@media (max-width: 720px) {
+  .choices { grid-template-columns: 1fr; }
+  .profile { grid-template-columns: 1fr; }
+  .profile .photo { max-width: 200px; margin: 0 auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-warm">
+  <div class="call-top">
+    <a class="brand" href="/">Scan<span>Squirrel</span></a>
+    <a class="call" href="tel:+12132902327">(213) 290-2327</a>
+  </div>
+
+  <!-- HERO -->
+  <section style="padding-top:2rem;">
+    <div class="hero8">
+      <h1>Digitize your old photos.</h1>
+      <p class="sub">Scan <strong>100 photos free</strong> yourself, or get a quote from a local Squirrel.</p>
+      <div class="cta-row">
+        <a class="btn-solid" href="#">Scan 100 Photos Free</a>
+        <button class="btn-teal" onclick="document.getElementById('zipInput').focus()">Find a Local Squirrel</button>
+      </div>
+
+      <div class="zip">
+        <p class="prompt">Enter your ZIP code to see who serves your neighborhood.</p>
+        <form onsubmit="findSquirrel(); return false;">
+          <input type="text" id="zipInput" inputmode="numeric" maxlength="5" placeholder="e.g. 90065" required>
+          <button type="submit">Find</button>
+        </form>
+      </div>
+
+      <!-- PROFILE REVEAL -->
+      <div class="profile-wrap w8" id="profileWrap">
+        <div class="profile">
+          <div class="photo">[ Real photo of<br>your local Squirrel ]</div>
+          <div>
+            <div class="eyebrow2">Your local Squirrel</div>
+            <h3>Max</h3>
+            <p class="serves">Eagle Rock, Glassell Park, Pasadena &amp; nearby.</p>
+            <p class="bio">Picks up your box, agrees the price first, scans and organizes it, and returns your originals with the digital files.</p>
+            <div class="meta">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; <b>4.9</b> &middot; 60+ jobs</span>
+              <span>From <b>~$1/photo</b> &middot; quote first</span>
+            </div>
+            <div class="actions">
+              <a class="btn-solid" href="#">Show Me What You Have</a>
+              <a class="btn-teal" href="sms:+12132902327">Text Max</a>
+              <span class="avail">&#9679; Available this week</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- TWO CHOICES -->
+<section class="bg-bone">
+  <div class="w8">
+    <div class="choices">
+      <div class="choice diy">
+        <h3>Scan them yourself</h3>
+        <p>Have a scanner or phone? Use our software to digitize 100 photos free.</p>
+        <a href="#">Scan 100 photos free &rarr;</a>
+      </div>
+      <div class="choice help">
+        <h3>Get help from a local Squirrel</h3>
+        <p>No gear or no time? A local Squirrel has it covered &mdash; you approve the price first.</p>
+        <a href="#">Find a Squirrel near you &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE MESSAGE -->
+<section class="bg-warm">
+  <div class="w8-narrow" style="text-align:center;">
+    <p style="font-size:1.15rem;line-height:1.5;color:var(--feather);">Scanning a big collection takes real time and gear. <strong style="color:var(--ink);">Do it yourself, or hire a local Squirrel who already has both.</strong></p>
+  </div>
+</section>
+
+<!-- BECOME A SQUIRREL -->
+<section class="bg-bone">
+  <div class="becomestrip">
+    <div class="t">
+      <h3>Already own scanning equipment?</h3>
+      <p>Use our tools to help your community and earn as a local Squirrel.</p>
+    </div>
+    <a class="btn-teal" href="#">Learn About Becoming a Squirrel</a>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section class="bg-dark">
+  <div class="posit">
+    <span class="label">The Scan Squirrel model</span>
+    <h2>Scan Squirrel provides the tools. <strong>Your local Squirrel provides the service.</strong></h2>
+  </div>
+</section>
+
+<div class="mini-foot">&copy; 2026 Scan Squirrel &middot; Los Angeles, CA &middot; <a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a></div>
+
+<script>
+function findSquirrel(){
+  var wrap = document.getElementById('profileWrap');
+  wrap.classList.add('show');
+  wrap.scrollIntoView({behavior:'smooth', block:'center'});
+}
+</script>
+
+</body>
+</html>
