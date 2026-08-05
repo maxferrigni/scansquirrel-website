@@ -1,4 +1,14 @@
-# CLAUDE.md — ScanSquirrel Website Repository
+# CLAUDE.md — ScanSquirrel Website (.com)
+
+## What this is
+The **marketing site** — how Max advertises and finds people. Pricing, territories, FAQ, SEO,
+ad landing pages.
+
+**There is a second website: `.org`** at `~/Projects/scansquirrel-org/`
+(note: `_internal/CLAUDE.md`). It is the *product front door* — intake, client/Squirrel logins,
+operator recruiting. Separate repo, separate deploy, separate analytics. The two run in
+parallel and **deliberately diverge**; do not sync a change from one to the other unless asked.
+They may merge one day — undecided as of 2026-08-04.
 
 ## Repository
 - GitHub: https://github.com/maxferrigni/scansquirrel-website
@@ -30,7 +40,18 @@
 - `js/nav-loader.js` — Injects nav, rotating subtitle, and "captive territory" link rewriting: `?from=` param or `/squirrels/<t>/` path keeps visitors inside their territory. Home-anchor links (`/#...`) and `/` are rewritten to the territory home for captive visitors.
 - `css/base.css`, `css/nav.css`, `css/territory.css` — Stylesheets.
 - `img/map/*.jpg` — Territory map cards, compressed to ~200–250KB. Keep new ones small (sips JPEG ~q60–80).
+- `index5.html`–`index9.html` — **LIVE ad landing variants.** Unlinked from the nav on purpose. They are NOT mocks — see the Gotcha in the 2026-08-04 session log. `index9.html` is the page the whole `.org` site was forked from.
+- `scan/<type>/index.html` — Media-type landing pages (`photographs`, `documents`, `slides`, `negatives`, `articles`). There is no top-level `/scan/index.html` here; that page lives on **scansquirrel.org**.
+- `squirrels/glendale/` — **Empty folder.** Scaffolded 2026-05-29, never built, not linked from home. Either build it or delete it.
+- `archive/` — `history/`, `index.html`, `old/`, `v1/`. Retired material.
 - `_internal/old/` — Archived/retired pages (index2/3/4, the old squirrels.html hub, pricing2.html, v1/, etc.). NOT linked from the live site; keep out of SEO.
+- `_internal/scansquirrel-styleguide.html` — Brand/style reference.
+
+## Analytics
+- GTM container **`GTM-WCLRP7VB`** on all 14 live pages plus the 8 ad landing variants.
+- The `.org` site does **not** use GTM — it has raw GA4 `G-M0DFY2Y7XE` + Google Ads
+  `AW-17990603569` on `/scan/` only. The two sites are not measured the same way; don't
+  compare their numbers without accounting for that.
 
 ## Known Issues / Recurring Fixes (READ BEFORE DIAGNOSING)
 ### Mobile: fixed nav overlaps the first section (RECURRING — seen 3+ times)
@@ -39,3 +60,25 @@
 - Fix / rule: in the page's mobile `@media` block, set the first section's `padding-top` to **≥ 7rem** (≈112px). `5.5rem` is too short and fails on real phones. Reference: `index.html` uses `6rem` (OK); territory pages use `4.5rem` (their layout adds extra top space).
 - Already fixed: `compare.html`, `faq.html`, `pricing.html` bumped 5.5rem → 7rem (2026-06-18). 
 - CHECKLIST for ANY new/edited page: at ~390px width, confirm the H1 clears the nav; if not, raise the first section's mobile `padding-top` to 7rem.
+
+### Unlinked ≠ dead in this repo
+- `index5.html`–`index9.html` and the Pasadena hero variants are not linked from the nav, but
+  they ARE live ad landing pages. Do not "clean up" unlinked HTML here without asking.
+
+## Session Log
+*Newest first. Did / Next / Gotcha.*
+
+### 2026-08-04
+- **Did:** Added the `.org` site to the project map and gave it its own folder note — it existed
+  with neither. Refreshed this note's Site Structure (it was missing index5–9, `/scan/`,
+  `archive/`, glendale, GTM) and added this Session Log, which the note had never had.
+- **Next:** Max chose to work on `.org` this session. Open here: `squirrels/glendale/` is an
+  empty scaffolded folder — build or delete.
+- **Gotcha:** Commit `7892cf1` deleted index5–9 + Pasadena hero variants as "unlinked mock
+  pages"; `60c7fd6` restored them. They are live ad landing variants. Unlinked does not mean
+  unused in this repo.
+
+### Earlier (reconstructed from git history, not contemporaneous)
+- 2026-08-04 — GTM `GTM-WCLRP7VB` installed on all 14 live pages, then on the 8 ad variants.
+- 2026-07-30 — `/scan/index.html` removed here; that landing page lives on scansquirrel.org.
+- 2026-05-29 — `squirrels/` scaffolded for pasadena + glendale. Glendale never built.
