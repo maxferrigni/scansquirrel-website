@@ -1,0 +1,58 @@
+<!doctype html><html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Scan Squirrel · Facebook & Instagram</title><style>*{box-sizing:border-box}body{margin:0;background:#f0ebe3;color:#492b25;font:16px/1.45 system-ui}main{max-width:470px;margin:auto;padding:14px 10px 40px}h1{font:28px/1.2 Georgia}p{margin:10px 0}a{color:inherit}.intro{font-size:14px}.status{font-size:12px;position:sticky;top:0;background:#f0ebe3f5;padding:8px 0;z-index:3}.card,.reference{margin:20px 0;background:white;border-radius:5px;overflow:hidden}.label{font:600 16px/1.4 system-ui;margin:0;padding:12px}.image{display:block;width:100%;height:auto}.why{padding:10px 12px;font-size:13px}.cta{display:table;background:#492b25;color:white;padding:12px 22px;margin:14px auto 18px;font-weight:700;border-radius:4px}.notes{padding:12px;background:#faf7f2}summary{cursor:pointer}textarea{width:100%;min-height:64px;font:16px system-ui;margin-top:10px;padding:8px}button{font:14px system-ui;padding:8px 12px;background:white;border:1px solid #b8a797;color:#492b25;border-radius:4px;cursor:pointer}button.active{background:#492b25;color:white}select{font:16px system-ui;margin:10px;max-width:calc(100% - 20px);padding:8px}.caption{font-size:12px;padding:10px}.rules{font-size:13px}</style><main><nav><a id="other" href="../momsla/">MomsLA designs →</a></nav><h1>Facebook & Instagram</h1><p class="intro">Your strongest saved choices, with the font, photo scale, wording and logo placement you asked for.</p><details class="rules"><summary>Your feedback applied</summary><p>Older serif font · large photos · cleaned images or a clear before/after · one-line headlines · original horizontal logo just before Learn More.</p></details><p class="status" id="save">Loading saved notes…</p><div id="cards"></div></main><script>class ReviewFeedbackSync {
+  constructor({endpoint, key, initial, onStatus, onLoad, fetcher=fetch, storage=localStorage}) {
+    Object.assign(this,{endpoint,key,onStatus,onLoad,fetcher,storage});
+    this.state=structuredClone(initial);this.pending=null;this.running=false;this.retry=null;this.ackAt=null;
+  }
+  merge(local,remote) {
+    const valid=x=>x && x.round===this.state.round;
+    if(!valid(local))return valid(remote)?remote:this.state;
+    if(!valid(remote))return local;
+    const newer=(local.updatedAt||'')>(remote.updatedAt||'')?local:remote;
+    const answers={...remote.answers};
+    for(const [id,answer] of Object.entries(local.answers||{})) {
+      const old=answers[id];
+      if(!old || (answer.editedAt||local.updatedAt||'') >= (old.editedAt||remote.updatedAt||''))answers[id]=answer;
+    }
+    return {...newer,answers};
+  }
+  backup(){try{this.storage.setItem(this.key,JSON.stringify(this.state))}catch{}}
+  async load(){
+    let cached,remote;
+    try{cached=JSON.parse(this.storage.getItem(this.key))}catch{}
+    try{const res=await this.fetcher(this.endpoint,{cache:'no-store'});if(!res.ok)throw Error('load');remote=await res.json()}catch{}
+    this.state=this.merge(this.merge(cached,this.state),remote);this.backup();this.onLoad?.(structuredClone(this.state));
+    if(JSON.stringify(this.state.answers||{})!==JSON.stringify(remote?.answers||{}))this.update(this.state);
+    else this.onStatus?.(remote?.round===this.state.round?'Saved for Jen ✓':'Ready');
+    return this.state;
+  }
+  update(value){const next=structuredClone(value);for(const [id,a]of Object.entries(next.answers||{})){const old=this.state.answers?.[id];a.editedAt=(!old||a.choice!==old.choice||a.notes!==old.notes)?next.updatedAt:(old.editedAt||this.state.updatedAt||next.updatedAt)}this.state=next;this.backup();this.pending=JSON.stringify(this.state);this.onStatus?.('Saving…');clearTimeout(this.debounce);this.debounce=setTimeout(()=>this.flush(),250)}
+  async flush(){
+    clearTimeout(this.debounce);clearTimeout(this.retry);
+    if(this.running)return;
+    this.running=true;
+    try {
+      while(this.pending){
+        const body=this.pending;this.pending=null;
+        try {
+          const res=await this.fetcher(this.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body,keepalive:true});
+          if(!res.ok)throw Error('save');
+          const ack=await res.json();if(ack.saved!==true)throw Error('no acknowledgement');
+          this.ackAt=JSON.parse(body).updatedAt;
+          if(!this.pending)this.onStatus?.('Saved for Jen ✓');
+        }catch{
+          if(!this.pending)this.pending=body;
+          this.onStatus?.('Saved on phone · waiting to sync');
+          this.retry=setTimeout(()=>this.flush(),3000);break;
+        }
+      }
+    }finally{this.running=false}
+  }
+  leave(){
+    this.backup();
+    if(this.pending)this.fetcher(this.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:this.pending,keepalive:true}).catch(()=>{});
+  }
+}
+if(typeof module!=='undefined')module.exports={ReviewFeedbackSync};
+</script><script>
+
+const items=[{"title":"You Can’t Replace These","file":"01 - You Cant Replace These v01.jpg","why":"You called this great. Preservation and loss, with a large family photo.","source":"17A","copy":"Scan Squirrel helps you digitize your old photos. Started in LA after the Eaton fires, with a simple goal: help families preserve what they can’t replace."},{"title":"A Box Is Not a Backup","file":"02 - A Box Is Not a Backup v01.jpg","why":"You called this great. A single large photo carries the flood and backup idea.","source":"21A","copy":"Scan Squirrel helps you digitize your old photos. A leak or flood can ruin a box of memories. Keep a digital copy somewhere else."},{"title":"Bring It Back","file":"03 - Bring It Back v01.jpg","why":"Your preferred cleanup comparison, with your shorter headline applied.","source":"23B","copy":"Scan Squirrel helps you digitize your old photos. Careful scanning and cleanup can bring faded details back into view. Ask what’s possible for your collection."},{"title":"A Lifetime of Love","file":"04 - A Lifetime of Love v01.jpg","why":"Your chosen love concept, with a large crop.","source":"01A","copy":"Scan Squirrel helps you digitize your old photos. Keep the people you love close, and share their photos with your family."},{"title":"A Family Gift","file":"05 - A Family Gift v01.jpg","why":"Your chosen gift concept and photograph.","source":"06A","copy":"Scan Squirrel helps you digitize your old photos. Turn a favorite family memory into a photo book or a gift worth keeping."},{"title":"Who Will Tell Them?","file":"06 - Who Will Tell Them v01.jpg","why":"Your chosen generations concept.","source":"07A","copy":"Scan Squirrel helps you digitize your old photos. Give the next generation more than a box of pictures. Give them their family story."},{"title":"Check the “B” Side","file":"07 - Check the B Side v01.jpg","why":"Your handwriting concept, renamed as requested.","source":"28B","copy":"Scan Squirrel helps you digitize your old photos. Sometimes the most incredible thing is on the back. Keep the handwriting, names, and little notes too."},{"title":"Want to Try It Yourself?","file":"08 - Want to Try It Yourself v01.jpg","why":"Your chosen free-advice concept, without using Max or “we”.","source":"30B","copy":"Scan Squirrel helps you digitize your old photos. Want to try it yourself? Ask for free advice, or let Scan Squirrel handle the work."}],phone=true,round='designs-facebook-instagram-20261123';const $=id=>document.getElementById(id),qs=new URLSearchParams(location.search);let state={round,index:0,answers:{},updatedAt:new Date().toISOString()};const key='scansquirrel-'+round+(qs.has('test')?'-test':'');try{let v=JSON.parse(localStorage.getItem(key));if(v?.round===round)state=v}catch{}const reviewId=qs.get('review')||localStorage.getItem('scansquirrel-review-link');if(reviewId&&/^[0-9a-f-]{36}$/i.test(reviewId)){localStorage.setItem('scansquirrel-review-link',reviewId);$('other').href+='?review='+encodeURIComponent(reviewId)+'&v=1'}if(location.protocol==='file:')$('other').href='../01 - MomsLA/index.html';const sync=reviewId&&/^[0-9a-f-]{36}$/i.test(reviewId)?new ReviewFeedbackSync({endpoint:'https://backend-production-1222.up.railway.app/api/creative-reviews/'+reviewId+'/'+round,key,initial:state,fetcher:(...args)=>fetch(...args),onStatus:s=>$('save').textContent=s,onLoad:s=>{state=s;render()}}):null;function asset(file){return 'assets/'+encodeURIComponent(file)}function save(){state.updatedAt=new Date().toISOString();localStorage.setItem(key,JSON.stringify(state));if(sync)sync.update(state)}function render(){$('cards').replaceChildren(...items.map((a,i)=>{const el=document.createElement('article');el.className='card';el.innerHTML='<h2 class="label"></h2><p style="font-size:15px;padding:0 12px">Scan Squirrel helps you digitize your old photos.</p><img class="image"><div class="action"></div><details class="why"><summary>Why this version</summary><p></p></details><div class="notes"><details><summary>Keep, tweak or leave a note</summary><button data-choice="left">Keep</button> <button data-choice="both">Tweak</button> <button data-choice="neither">Pass</button><textarea placeholder="Your notes"></textarea></details></div>';el.querySelector('.label').textContent=(i+1)+' · '+a.title;let im=el.querySelector('.image');im.src=asset(a.file);im.alt=a.title;if(phone)el.querySelector('.action').innerHTML='<div class="cta">Learn More</div>';el.querySelector('.why p').textContent=a.why;let ans=state.answers[i]||{};el.querySelector('textarea').value=ans.notes||'';el.querySelector('textarea').oninput=e=>{state.answers[i]={...(state.answers[i]||{}),notes:e.target.value};save()};for(let b of el.querySelectorAll('[data-choice]')){b.classList.toggle('active',ans.choice===b.dataset.choice);b.onclick=()=>{state.answers[i]={...(state.answers[i]||{}),choice:b.dataset.choice};el.querySelectorAll('[data-choice]').forEach(x=>x.classList.toggle('active',x===b));save()}}return el}));}render();if(sync)sync.load();else $('save').textContent='Design review';if($('referenceChoice'))$('referenceChoice').onchange=e=>$('referenceImage').src=asset(e.target.value);window.addEventListener('online',()=>sync?.flush());window.addEventListener('pagehide',()=>sync?.leave());</script></html>
